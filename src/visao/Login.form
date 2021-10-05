@@ -78,7 +78,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="SubPainelLog" alignment="0" pref="494" max="32767" attributes="0"/>
+                  <Component id="SubPainelLog" alignment="0" pref="496" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Component id="lblLogoUser" max="32767" attributes="0"/>
@@ -123,8 +123,8 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                          <Component id="jLabel4" pref="92" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="208" max="-2" attributes="0"/>
+                          <Component id="jLabel4" pref="62" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -270,10 +270,10 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="SubPainelRedefinir" alignment="0" pref="494" max="32767" attributes="0"/>
+                  <Component id="SubPainelRedefinir" alignment="0" pref="496" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="lblLogoRedefinir" pref="123" max="32767" attributes="0"/>
+                      <Component id="lblLogoRedefinir" pref="128" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="enRedefinirUser" min="-2" pref="46" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -281,7 +281,7 @@
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="enRedefinirSenha" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="jSeparator4" pref="16" max="32767" attributes="0"/>
+                      <Component id="jSeparator4" pref="21" max="32767" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="enConfirmaSenha" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -318,7 +318,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                          <Component id="jLabel8" pref="92" max="32767" attributes="0"/>
+                          <Component id="jLabel8" pref="94" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -471,7 +471,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="SubPainelAdmLog" alignment="0" pref="494" max="32767" attributes="0"/>
+                  <Component id="SubPainelAdmLog" alignment="0" pref="496" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="lblLogoAdm" pref="126" max="32767" attributes="0"/>
@@ -515,7 +515,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                          <Component id="jLabel9" pref="92" max="32767" attributes="0"/>
+                          <Component id="jLabel9" pref="94" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                   </Group>
