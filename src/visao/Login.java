@@ -92,8 +92,8 @@ public class Login extends javax.swing.JFrame {
         SubPainelLogLayout.setVerticalGroup(
             SubPainelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelLogLayout.createSequentialGroup()
-                .addGap(176, 176, 176)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addGap(208, 208, 208)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
         );
         logLayout.setVerticalGroup(
             logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(logLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -208,7 +208,7 @@ public class Login extends javax.swing.JFrame {
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
@@ -278,10 +278,10 @@ public class Login extends javax.swing.JFrame {
         );
         RedefinirLayout.setVerticalGroup(
             RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(enRedefinirUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -289,7 +289,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(enRedefinirSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(enConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -324,7 +324,7 @@ public class Login extends javax.swing.JFrame {
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
@@ -377,7 +377,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(enAdmUser)
-                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 360, Short.MAX_VALUE)
                     .addComponent(enAdmSenha)
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -385,7 +385,7 @@ public class Login extends javax.swing.JFrame {
         );
         AdmLogLayout.setVerticalGroup(
             AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(AdmLogLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
@@ -533,11 +533,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField enSenhaLog;
     private javax.swing.JTextField enUserLog;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
