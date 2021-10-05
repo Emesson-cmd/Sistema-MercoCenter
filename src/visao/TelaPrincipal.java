@@ -5,6 +5,8 @@
  */
 package visao;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author sulis
@@ -29,14 +31,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
-        jDesktopPane1 = new javax.swing.JDesktopPane();
+        desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        menRh = new javax.swing.JMenu();
+        abrRecHum = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
+        menSair = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -44,6 +48,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2.setText("jMenu2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MercoCenter System");
+        setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jMenu3.setText("Home");
         jMenuBar1.add(jMenu3);
@@ -51,8 +62,22 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu4.setText("Caixa");
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setText("RH");
-        jMenuBar1.add(jMenu5);
+        menRh.setText("RH");
+        menRh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menRhActionPerformed(evt);
+            }
+        });
+
+        abrRecHum.setText("Abrir Recursos Humanos");
+        abrRecHum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrRecHumActionPerformed(evt);
+            }
+        });
+        menRh.add(abrRecHum);
+
+        jMenuBar1.add(menRh);
 
         jMenu6.setText("Estoque");
         jMenuBar1.add(jMenu6);
@@ -61,6 +86,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu7);
 
         jMenu8.setText("Sair");
+
+        menSair.setText("Sair");
+        menSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menSairActionPerformed(evt);
+            }
+        });
+        jMenu8.add(menSair);
+
         jMenuBar1.add(jMenu8);
 
         jMenu9.setText("Sobre");
@@ -74,19 +108,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // As ações a seguir serão executadas quando a TelaPrincipal for iniciada
+    }//GEN-LAST:event_formWindowActivated
+
+    private void menSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSairActionPerformed
+        // exibe uma caixa de diálogo pra confirmar se quer sair sim ou nao
+        int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (sair == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_menSairActionPerformed
+
+    private void menRhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRhActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_menRhActionPerformed
+
+    private void abrRecHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRecHumActionPerformed
+        // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
+        // Será aberto o form de Recursos Humanos dentro do desktop pane
+        
+        TelaRh rh = new TelaRh();
+        rh.setVisible(true);
+        desktop.add(rh);
+    }//GEN-LAST:event_abrRecHumActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,16 +188,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JMenuItem abrRecHum;
+    private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menRh;
+    private javax.swing.JMenuItem menSair;
     // End of variables declaration//GEN-END:variables
 }
