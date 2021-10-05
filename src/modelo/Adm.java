@@ -8,22 +8,21 @@ package modelo;
 /**
  *
  * @author sulis
- */
-public class Pessoa implements InterPessoa{
-    protected int id;
-    protected String user;
-    protected String password;
+*/
+
+public class Adm extends Pessoa{
  
-    public Pessoa(){
+    public Adm(){
         
     }
-    public Pessoa(String user,String password,int id){
+    public Adm(String user,String password,int id){
         this.id = (id);
+
         this.password = (password);
         this.user = (user);
+        
     }
-
- 
+    
     @Override
 
     public String getUser() {
@@ -57,4 +56,5 @@ public class Pessoa implements InterPessoa{
     
 
         
+    
 }

@@ -1,29 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package modelo;
 
-/**
- *
- * @author sulis
- */
-public class Pessoa implements InterPessoa{
-    protected int id;
-    protected String user;
-    protected String password;
+public class User extends Pessoa implements InterPessoa{
  
-    public Pessoa(){
+    public User(){
         
     }
-    public Pessoa(String user,String password,int id){
+    public User(String nome,String user,String password,int id){
         this.id = (id);
         this.password = (password);
         this.user = (user);
+        
     }
-
- 
     @Override
 
     public String getUser() {
@@ -57,4 +44,5 @@ public class Pessoa implements InterPessoa{
     
 
         
+    
 }
