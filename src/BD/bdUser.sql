@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Out-2021 às 20:40
+-- Tempo de geração: 06-Out-2021 às 22:17
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -24,18 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adm`
---
-
-CREATE TABLE `adm` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(80) NOT NULL,
-  `senha` varchar(8) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `log`
 --
 
@@ -52,11 +40,11 @@ CREATE TABLE `log` (
 --
 
 INSERT INTO `log` (`id`, `usuario`, `senha`, `tipo`, `user_cpf`) VALUES
-(1, 'ulisses', '3512', 'caixa', '08900380498'),
-(2, 'ulisses', '3512', 'adm', '08900380498'),
-(5, 'tb123', '1234', 'adm', '08902209498'),
-(6, 'as123', '1234', 'gerente', '08902329498'),
-(7, 'al123', '1234', 'almoxarife', '08122329498');
+(1, 'Emesson123', '1234', 'adm', '11111111111'),
+(2, 'Ulisses123', '1234', 'adm', '22222222222'),
+(3, 'Jonas123', '1234', 'caixa', '33333333333'),
+(4, 'Alan123', '1234', 'gerente', '44444444444'),
+(5, 'Gilherme123', '1234', 'almoxarife', '55555555555');
 
 -- --------------------------------------------------------
 
@@ -74,21 +62,15 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cpf`, `nome`) VALUES
-('08122329498', 'al'),
-('08900380498', 'jonas'),
-('08900909498', 'ti'),
-('08902209498', 'tecbooter'),
-('08902329498', 'as');
+('11111111111', 'Emesson'),
+('22222222222', 'Ulisses'),
+('33333333333', 'Jonas'),
+('44444444444', 'Alan'),
+('55555555555', 'Gilherme');
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices para tabela `adm`
---
-ALTER TABLE `adm`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `log`
@@ -108,16 +90,10 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `adm`
---
-ALTER TABLE `adm`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `log`
 --
 ALTER TABLE `log`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
