@@ -46,14 +46,14 @@ public class Login extends javax.swing.JFrame {
         Redefinir = new javax.swing.JPanel();
         SubPainelRedefinir = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        enRedefinirUser = new javax.swing.JTextField();
-        enRedefinirSenha = new javax.swing.JPasswordField();
+        enRedefinircpf = new javax.swing.JTextField();
         btRedefinir = new javax.swing.JToggleButton();
         lblLogoRedefinir = new javax.swing.JLabel();
-        enConfirmaSenha = new javax.swing.JPasswordField();
+        enRedefinirSenha = new javax.swing.JPasswordField();
         jSeparator3 = new javax.swing.JSeparator();
-        jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        enRedefinirUser1 = new javax.swing.JTextField();
         AdmLog = new javax.swing.JPanel();
         SubPainelAdmLog = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
@@ -92,8 +92,8 @@ public class Login extends javax.swing.JFrame {
         SubPainelLogLayout.setVerticalGroup(
             SubPainelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelLogLayout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                .addGap(176, 176, 176)
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
         );
         logLayout.setVerticalGroup(
             logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
             .addGroup(logLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,7 +175,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(enSenhaLog, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -208,27 +208,17 @@ public class Login extends javax.swing.JFrame {
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
-        enRedefinirUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirUser.setForeground(new java.awt.Color(51, 153, 255));
-        enRedefinirUser.setText("Username");
-        enRedefinirUser.setBorder(null);
-        enRedefinirUser.addActionListener(new java.awt.event.ActionListener() {
+        enRedefinircpf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enRedefinircpf.setForeground(new java.awt.Color(51, 153, 255));
+        enRedefinircpf.setText("Cpf");
+        enRedefinircpf.setBorder(null);
+        enRedefinircpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enRedefinirUserActionPerformed(evt);
-            }
-        });
-
-        enRedefinirSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirSenha.setForeground(new java.awt.Color(51, 153, 255));
-        enRedefinirSenha.setText("password");
-        enRedefinirSenha.setBorder(null);
-        enRedefinirSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enRedefinirSenhaActionPerformed(evt);
+                enRedefinircpfActionPerformed(evt);
             }
         });
 
@@ -247,16 +237,26 @@ public class Login extends javax.swing.JFrame {
         lblLogoRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoRedefinir.setText("Redefinir");
 
-        enConfirmaSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enConfirmaSenha.setForeground(new java.awt.Color(51, 153, 255));
-        enConfirmaSenha.setText("passwrd");
-        enConfirmaSenha.setBorder(null);
+        enRedefinirSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enRedefinirSenha.setForeground(new java.awt.Color(51, 153, 255));
+        enRedefinirSenha.setText("passwrd");
+        enRedefinirSenha.setBorder(null);
 
         jSeparator3.setForeground(new java.awt.Color(51, 153, 255));
 
-        jSeparator4.setForeground(new java.awt.Color(51, 153, 255));
-
         jSeparator5.setForeground(new java.awt.Color(51, 153, 255));
+
+        jSeparator8.setForeground(new java.awt.Color(51, 153, 255));
+
+        enRedefinirUser1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enRedefinirUser1.setForeground(new java.awt.Color(51, 153, 255));
+        enRedefinirUser1.setText("Username");
+        enRedefinirUser1.setBorder(null);
+        enRedefinirUser1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enRedefinirUser1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout RedefinirLayout = new javax.swing.GroupLayout(Redefinir);
         Redefinir.setLayout(RedefinirLayout);
@@ -266,32 +266,32 @@ public class Login extends javax.swing.JFrame {
                 .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
                 .addGap(45, 45, 45)
                 .addGroup(RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(enRedefinirSenha)
                     .addComponent(btRedefinir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
-                    .addComponent(enConfirmaSenha, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(enRedefinirSenha, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(enRedefinirUser)
-                    .addComponent(jSeparator4)
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(enRedefinircpf)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(enRedefinirUser1))
                 .addGap(47, 47, 47))
         );
         RedefinirLayout.setVerticalGroup(
             RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enRedefinirUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(enRedefinircpf, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
                 .addComponent(jSeparator3)
+                .addGap(35, 35, 35)
+                .addComponent(enRedefinirUser1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator8)
                 .addGap(18, 18, 18)
                 .addComponent(enRedefinirSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(enConfirmaSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5)
                 .addGap(25, 25, 25)
@@ -324,7 +324,7 @@ public class Login extends javax.swing.JFrame {
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
                 .addGap(176, 176, 176)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
@@ -377,7 +377,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(enAdmUser)
-                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                     .addComponent(enAdmSenha)
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -385,7 +385,7 @@ public class Login extends javax.swing.JFrame {
         );
         AdmLogLayout.setVerticalGroup(
             AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
+            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
             .addGroup(AdmLogLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
@@ -425,23 +425,47 @@ public class Login extends javax.swing.JFrame {
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
         // TODO add your handling code here:
-        System.out.println(this.us.logar(enUserLog.getText(),enSenhaLog.getText()));
-        if (this.us.logar(enUserLog.getText(),enSenhaLog.getText()).equals("deu certo")) {
-               new TelaPrincipal().setVisible(true);
-               this.dispose();
-                
-                
-            } else {
+        String tipo=this.us.logar(enUserLog.getText(),enSenhaLog.getText());
+        switch (tipo){
+//            case "adm":
+////                new Adm().setVisible(true);
+////                this.dispose();
+//            break;
+            case "caixa":
+                new TelaCaixa().setVisible(true);
+                this.dispose();
+            break;
+//            case "almoxarife":
+////                new Almoxarife().setVisible(true);
+////                this.dispose();
+//            break;
+            case "gerente":
+                new TelaPrincipalCaixa().setVisible(true);
+                this.dispose();
+            break;
+            default:
                 JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
-            }
+                break;
+        }
+               
     }//GEN-LAST:event_btLoginActionPerformed
 
-    private void enRedefinirUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enRedefinirUserActionPerformed
+    private void enRedefinircpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enRedefinircpfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enRedefinirUserActionPerformed
+    }//GEN-LAST:event_enRedefinircpfActionPerformed
 
     private void btRedefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRedefinirActionPerformed
         // TODO add your handling code here:
+        System.out.println("ok");
+        boolean result=this.us.redefinirSenha(enRedefinircpf.getText(), enRedefinirUser1.getText(), enRedefinirSenha.getText());
+        if(result==true){
+            JOptionPane.showMessageDialog(null, "Dados de usuario e senha alterados com sucesso");
+            new Login().setVisible(true);
+            this.dispose();
+        }else if(result == false){
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro");
+        }
+        
                 
                 
     }//GEN-LAST:event_btRedefinirActionPerformed
@@ -452,15 +476,20 @@ public class Login extends javax.swing.JFrame {
 
     private void btAutenticarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAutenticarActionPerformed
         // TODO add your handling code here:
-        System.out.println(this.us.logar(enAdmUser.getText(),enAdmSenha.getText()));
-        if (this.us.logar(enAdmUser.getText(),enAdmSenha.getText()).equals("deu certo")) {
+        String tipo=this.us.logar(enAdmUser.getText(),enAdmSenha.getText());
+        System.out.println(enAdmSenha.getText());
+        switch (tipo){
+             
+            case "adm":
                 CardLayout card = (CardLayout) root.getLayout();
                 card.show(root, "Redefinir");
                 
-                
-            } else {
+            break;
+            default:
                 JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
-            }
+                break;
+        }
+        
     }//GEN-LAST:event_btAutenticarActionPerformed
 
     private void lblRedefinirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRedefinirMouseClicked
@@ -473,13 +502,13 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_enSenhaLogActionPerformed
 
-    private void enRedefinirSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enRedefinirSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_enRedefinirSenhaActionPerformed
-
     private void enAdmSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enAdmSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_enAdmSenhaActionPerformed
+
+    private void enRedefinirUser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enRedefinirUser1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enRedefinirUser1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -527,9 +556,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JToggleButton btRedefinir;
     private javax.swing.JPasswordField enAdmSenha;
     private javax.swing.JTextField enAdmUser;
-    private javax.swing.JPasswordField enConfirmaSenha;
     private javax.swing.JPasswordField enRedefinirSenha;
-    private javax.swing.JTextField enRedefinirUser;
+    private javax.swing.JTextField enRedefinirUser1;
+    private javax.swing.JTextField enRedefinircpf;
     private javax.swing.JPasswordField enSenhaLog;
     private javax.swing.JTextField enUserLog;
     private javax.swing.JLabel jLabel4;
@@ -538,10 +567,10 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JLabel lblLogoAdm;
     private javax.swing.JLabel lblLogoRedefinir;
     private javax.swing.JLabel lblLogoUser;
