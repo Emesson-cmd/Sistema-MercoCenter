@@ -5,6 +5,9 @@
  */
 package visao;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -63,6 +66,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         menRh.setText("RH");
+        menRh.setEnabled(false);
         menRh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menRhActionPerformed(evt);
@@ -144,7 +148,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
         // Será aberto o form de Recursos Humanos dentro do desktop pane
         
-        TelaRh rh = new TelaRh();
+        TelaRh rh = null;
+        try {
+            rh = new TelaRh();
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         rh.setVisible(true);
         desktop.add(rh);
     }//GEN-LAST:event_abrRecHumActionPerformed
@@ -199,7 +208,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu menRh;
+    public javax.swing.JMenu menRh;
     private javax.swing.JMenuItem menSair;
     // End of variables declaration//GEN-END:variables
 }

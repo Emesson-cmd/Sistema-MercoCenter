@@ -12,22 +12,32 @@ import modelo.User;
 public class UserControler {
 
    public String logar(String user, String senha){
-       String result=" ";
+       String result="";
        try {
            User p1 = new User();
            UserDao pd1 = new UserDao();
            ResultSet rs = pd1.dBusca(user,senha);
  
                while(rs.next()){
-                p1.setId(rs.getInt("id"));
+                p1.setCpf(rs.getString("cpf"));
+                p1.setNome(rs.getString("nome"));
                 p1.setUser(rs.getString("usuario"));
                 p1.setPassword(rs.getString("senha"));
-                if((p1.getUser().equals(user))&&(p1.getPassword().equals(senha))){
+                p1.setTipo(rs.getString("tipo"));
+                if((p1.getUser().equals(user))&&(p1.getPassword().equals(senha))&&(p1.getTipo().equals("adm"))){
                   
-                     result =  "deu certo";
+                     result =  "adm";
+               }else if((p1.getUser().equals(user))&&(p1.getPassword().equals(senha))&&(p1.getTipo().equals("caixa"))){
+                  
+                     result =  "caixa";
+               }else if((p1.getUser().equals(user))&&(p1.getPassword().equals(senha))&&(p1.getTipo().equals("gerente"))){
+                  
+                     result =  "gerente";
+               }else if((p1.getUser().equals(user))&&(p1.getPassword().equals(senha))&&(p1.getTipo().equals("almoxarife"))){
+                  
+                     result =  "almoxarife";
                }else{
-                     result = "deu errado";
-                
+                    System.out.println("usuario invalido");
                }
                
                
@@ -38,10 +48,21 @@ public class UserControler {
            
             
        } catch (SQLException e) {
-           return "ouve um erro no controle "+e;
+           System.out.println("erro "+e);
+           return "usuario invalido";
+           
        }
        }
+   public boolean redefinirSenha(String cpf,String usuario,String senha){
+        boolean result=false;
+        
+        User p1 = new User();
+        UserDao pd1 = new UserDao();
+        result = pd1.dUpdate(cpf, usuario, senha);
+        System.out.println(result);
+        return result;
        
+   }
    }
 
 

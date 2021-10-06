@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,7 +20,7 @@ public class UserDao {
     
     
     public ResultSet dBusca(String user,String senha) throws SQLException{
-        String sql = "select * from usuario where usuario ='"+user+"' and senha='"+senha+"'";
+        String sql = "select usuario.cpf, usuario.nome, log.usuario,log.senha ,log.tipo\n from usuario\n inner join log\n on log.user_cpf=usuario.cpf where log.usuario=\'"+user+"';";
         try {
             this.conexao= con.abricConecxao();
             
@@ -36,5 +37,21 @@ public class UserDao {
       
     
          
+    }
+    public boolean dUpdate(String cpf,String usuario,String senha){
+        String sql = "UPDATE log SET usuario='"+usuario+"', senha='"+senha+"' WHERE user_cpf = '"+cpf+"';";
+        
+        try {
+            conexao = con.abricConecxao();
+          Statement preparo = conexao.createStatement();
+        // Prepare a statement to insert a record
+        // Execute the insert statement
+            System.out.println(preparo.executeUpdate(sql));
+        return true;
+    } catch (Exception e) {
+            System.out.println("erro"+e);
+        return false;
+    }
+        
     }
 }
