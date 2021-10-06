@@ -1,6 +1,6 @@
 package controle;
 
-import DAO.PessoaDao;
+import Dao.PessoaDao;
 import modelo.Pessoa;
 import java.sql.SQLException;
 /*
