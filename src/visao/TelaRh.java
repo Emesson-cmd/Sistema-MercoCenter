@@ -5,7 +5,6 @@
  */
 package visao;
 
-import Dao.Conecxao;
 import java.sql.*;
 
 
@@ -14,21 +13,14 @@ import java.sql.*;
  * @author emesson
  */
 public class TelaRh extends javax.swing.JInternalFrame {
-    Conecxao conn = new Conecxao();
-    
-    // Abre conexão
-    Connection conexao = null;
-    // Prepara a query
-    PreparedStatement pst = null;
-    // Exibe resultado da conexão feita com o banco
-    ResultSet rs = null;
+
+
 
     /**
      * Creates new form TelaRh
      */
     public TelaRh() throws SQLException {
         initComponents();
-        conexao = conn.abricConecxao();
 
     }
 
@@ -207,11 +199,6 @@ public class TelaRh extends javax.swing.JInternalFrame {
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
         // TODO add your handling code here:
         this.txtBuscaNome.setText("Hello world!");
-        
-        
-        // Quando O BOTÃO de busca for pressionado
-        Connection conexao = null;
-        
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
