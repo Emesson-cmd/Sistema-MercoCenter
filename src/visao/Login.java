@@ -425,6 +425,9 @@ public class Login extends javax.swing.JFrame {
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
         // TODO add your handling code here:
+        
+        TelaPrincipal telaPrincipal = new TelaPrincipal();
+        
         String tipo=this.us.logar(enUserLog.getText(),enSenhaLog.getText());
         switch (tipo){
 //            case "adm":
@@ -440,9 +443,10 @@ public class Login extends javax.swing.JFrame {
 ////                this.dispose();
 //            break;
             case "gerente":
-                new TelaPrincipalCaixa().setVisible(true);
+//                new TelaPrincipalCaixa().setVisible(true);
                 this.dispose();
-            break;
+                telaPrincipal.menRh.setEnabled(true);
+            break;                
             default:
                 JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
                 break;

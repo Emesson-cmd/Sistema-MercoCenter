@@ -175,6 +175,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtBuscaNome">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtBuscaNomeActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="selBuscaCargo">
           <Properties>
@@ -199,6 +202,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Pesquisar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPesquisarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="selBuscaStatus">
           <Properties>

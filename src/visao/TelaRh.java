@@ -5,17 +5,23 @@
  */
 package visao;
 
+import java.sql.*;
+
+
 /**
  *
  * @author emesson
  */
 public class TelaRh extends javax.swing.JInternalFrame {
 
+
+
     /**
      * Creates new form TelaRh
      */
-    public TelaRh() {
+    public TelaRh() throws SQLException {
         initComponents();
+
     }
 
     /**
@@ -69,6 +75,12 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Status");
 
+        txtBuscaNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscaNomeActionPerformed(evt);
+            }
+        });
+
         selBuscaCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administradores", "Caixa", "Gerentes", "Almoxarifes", "Recursos Humanos" }));
         selBuscaCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +89,11 @@ public class TelaRh extends javax.swing.JInternalFrame {
         });
 
         btnPesquisar.setText("Pesquisar");
+        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarActionPerformed(evt);
+            }
+        });
 
         selBuscaStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo", "Férias", "Despedido" }));
 
@@ -175,6 +192,14 @@ public class TelaRh extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_selBuscaCargoActionPerformed
 
+    private void txtBuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaNomeActionPerformed
+        // TODO add your handling code here:        
+    }//GEN-LAST:event_txtBuscaNomeActionPerformed
+
+    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+        // TODO add your handling code here:
+        this.txtBuscaNome.setText("Hello world!");
+    }//GEN-LAST:event_btnPesquisarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPesquisar;
