@@ -17,10 +17,9 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     /** Creates new form Login */
-     private UserControler us = new UserControler();
+    private UserControler us = new UserControler();
     public Login() {
         initComponents();
-       
     }
 
     /** This method is called from within the constructor to
@@ -71,6 +70,7 @@ public class Login extends javax.swing.JFrame {
 
         log.setBackground(new java.awt.Color(255, 255, 255));
         log.setForeground(new java.awt.Color(51, 153, 255));
+        log.setPreferredSize(new java.awt.Dimension(850, 500));
 
         SubPainelLog.setBackground(new java.awt.Color(51, 153, 255));
         SubPainelLog.setPreferredSize(new java.awt.Dimension(377, 465));
@@ -164,7 +164,7 @@ public class Login extends javax.swing.JFrame {
         );
         logLayout.setVerticalGroup(
             logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(logLayout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -175,7 +175,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(enSenhaLog, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
@@ -278,7 +278,7 @@ public class Login extends javax.swing.JFrame {
         );
         RedefinirLayout.setVerticalGroup(
             RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
@@ -377,7 +377,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(enAdmUser)
-                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 360, Short.MAX_VALUE)
                     .addComponent(enAdmSenha)
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -385,7 +385,7 @@ public class Login extends javax.swing.JFrame {
         );
         AdmLogLayout.setVerticalGroup(
             AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 494, Short.MAX_VALUE)
+            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 496, Short.MAX_VALUE)
             .addGroup(AdmLogLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
                 .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
@@ -424,27 +424,33 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_enUserLogActionPerformed
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-        // TODO add your handling code here:
-        
+
         TelaPrincipal telaPrincipal = new TelaPrincipal();
         
         String tipo=this.us.logar(enUserLog.getText(),enSenhaLog.getText());
         switch (tipo){
-//            case "adm":
-////                new Adm().setVisible(true);
-////                this.dispose();
-//            break;
-            case "caixa":
-                new TelaCaixa().setVisible(true);
+            case "adm":
                 this.dispose();
+                telaPrincipal.setVisible(true);
+                telaPrincipal.menCaixa.setEnabled(true);
+                telaPrincipal.menEstoque.setEnabled(true);
+                telaPrincipal.menRh.setEnabled(true);
             break;
-//            case "almoxarife":
-////                new Almoxarife().setVisible(true);
-////                this.dispose();
-//            break;
-            case "gerente":
-//                new TelaPrincipalCaixa().setVisible(true);
+            case "caixa":
                 this.dispose();
+                telaPrincipal.setVisible(true);
+                telaPrincipal.menCaixa.setEnabled(true);
+            break;
+            case "almoxarife":
+                this.dispose();
+                telaPrincipal.setVisible(true);
+                telaPrincipal.menEstoque.setEnabled(true);
+            break;
+            case "gerente":
+                this.dispose();
+                telaPrincipal.setVisible(true);
+                telaPrincipal.menCaixa.setEnabled(true);
+                telaPrincipal.menEstoque.setEnabled(true);
                 telaPrincipal.menRh.setEnabled(true);
             break;                
             default:

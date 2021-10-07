@@ -9,6 +9,11 @@ import java.sql.SQLException;
  */
 public class PessoaControle {
 
+    /*
+        Esse método busca você pode passar como parâmetro um usuário e senha.
+        Caso a busca feita tenha um registro correspondente no banco de dados
+        será retornado a mensagem "deu certo"
+    */
    public String busca(String user, String senha){
        try {
            PessoaDao pd1 = new PessoaDao();
@@ -24,9 +29,8 @@ public class PessoaControle {
        } catch (SQLException e) {
            return "ouve um erro no controle "+e;
        }
-       }
-       
-   }
+    }
+}
 
 
 

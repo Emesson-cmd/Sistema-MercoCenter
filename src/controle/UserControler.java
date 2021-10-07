@@ -39,20 +39,15 @@ public class UserControler {
                }else{
                     System.out.println("usuario invalido");
                }
-               
-               
            }
            
            return result;
-           
-           
-            
        } catch (SQLException e) {
            System.out.println("erro "+e);
            return "usuario invalido";
-           
        }
-       }
+   }
+   
    public boolean redefinirSenha(String cpf,String usuario,String senha){
         boolean result=false;
         
@@ -63,7 +58,7 @@ public class UserControler {
         return result;
        
    }
-   }
+}
 
 
 

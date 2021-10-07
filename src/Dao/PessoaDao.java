@@ -30,6 +30,7 @@ public class PessoaDao {
         }
         
     }
+    
     public boolean dBusca(String use,String senha) throws SQLException{
         String user = "";
         String pass = "";
@@ -39,6 +40,10 @@ public class PessoaDao {
             PreparedStatement preparo= conexao.prepareStatement(sql);
             ResultSet resultado = preparo.executeQuery();
             
+            // Esse next é utilizado para saber se a consulta no banco de dados 
+            // foi bem sucedida, ou seja, existe pelo menos um registro com os 
+            // parâmetros indicado, ou seja, se existe um usuário e senha 
+            // correspondente no banco de dados
             if(resultado.next()){
                 return true;
             }else{
@@ -47,12 +52,9 @@ public class PessoaDao {
             }
             
         } catch (SQLException e) {
-            System.out.println("o resultado foi false por conta do erro "+e);
+            System.out.println("Erro ao tentar executar o dBusca: \n"+e);
             return false;        
         }
-      
-    
-            
     }
 }
 

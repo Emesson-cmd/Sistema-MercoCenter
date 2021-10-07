@@ -50,6 +50,9 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="33" type="rgb"/>
             </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[850, 500]"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
@@ -61,7 +64,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="SubPainelLog" pref="394" max="32767" attributes="0"/>
+                      <Component id="SubPainelLog" pref="395" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblRedefinir" alignment="0" max="32767" attributes="0"/>
@@ -78,7 +81,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="SubPainelLog" alignment="0" pref="496" max="32767" attributes="0"/>
+                  <Component id="SubPainelLog" alignment="0" pref="500" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Component id="lblLogoUser" max="32767" attributes="0"/>
@@ -252,7 +255,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="SubPainelRedefinir" pref="388" max="32767" attributes="0"/>
+                      <Component id="SubPainelRedefinir" pref="389" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btRedefinir" alignment="1" max="32767" attributes="0"/>
@@ -270,7 +273,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="SubPainelRedefinir" alignment="0" pref="496" max="32767" attributes="0"/>
+                  <Component id="SubPainelRedefinir" alignment="0" pref="500" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                       <Component id="lblLogoRedefinir" pref="123" max="32767" attributes="0"/>
@@ -455,7 +458,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="SubPainelAdmLog" pref="395" max="32767" attributes="0"/>
+                      <Component id="SubPainelAdmLog" pref="396" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btAutenticar" alignment="1" max="32767" attributes="0"/>
@@ -471,7 +474,7 @@
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="SubPainelAdmLog" alignment="0" pref="496" max="32767" attributes="0"/>
+                  <Component id="SubPainelAdmLog" alignment="0" pref="500" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                       <Component id="lblLogoAdm" pref="126" max="32767" attributes="0"/>
