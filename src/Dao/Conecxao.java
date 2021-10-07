@@ -12,33 +12,36 @@ import java.sql.*;
  * @author sulis
  */
 public class Conecxao {
-public Connection abricConecxao() throws SQLException{
-    Connection conexao;
-    try {
-            final String url="jdbc:mysql://localhost:3306/mercocenter";
-            final String user="root";
-            final String password="";
-            final String Driver="com.mysql.jdbc.Driver";
-            
-            Class.forName(Driver);
-            conexao = DriverManager.getConnection(url, user, password);
+
+    // Esse método fará a conexão com o banco de dados
+    public Connection abricConecxao() throws SQLException{
+        Connection conexao;
+        try {
+                final String url="jdbc:mysql://localhost:3306/mercocenter";
+                final String user="root";
+                final String password="";
+                final String Driver="com.mysql.jdbc.Driver";
+
+                Class.forName(Driver);
+                conexao = DriverManager.getConnection(url, user, password);
+
+            } catch (ClassNotFoundException e) {
+                System.out.println("O driver expecificado nao foi encontrado.");
+                return null;
+            }
+        return  conexao;
+
+    } 
     
-        } catch (ClassNotFoundException e) {
-            System.out.println("O driver expecificado nao foi encontrado.");
-            return null;
+    public boolean fecharConecxao(Connection con){
+        try {
+            con.close();
+            System.out.println("Conexão fechada");
+            return true;
+        } catch (Exception erro) {
+            System.out.println("Não foi possivel fechar conexão "+erro);
+            return false;
         }
-    return  conexao;
-    
-} 
-public boolean fecharConecxao(Connection con){
-    try {
-        con.close();
-        System.out.println("Conexão fechada");
-        return true;
-    } catch (Exception erro) {
-        System.out.println("Não foi possivel fechar conexão "+erro);
-        return false;
     }
-}
 
 }

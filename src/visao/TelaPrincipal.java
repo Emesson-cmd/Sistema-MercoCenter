@@ -21,6 +21,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        TelaHome th = null;
+        th = new TelaHome();
+        th.setVisible(true);
+        desktop.add(th);
     }
 
     /**
@@ -36,15 +40,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        menHome = new javax.swing.JMenu();
+        abrMenHome = new javax.swing.JMenuItem();
+        menCaixa = new javax.swing.JMenu();
+        abrMenCaixa = new javax.swing.JMenuItem();
         menRh = new javax.swing.JMenu();
         abrRecHum = new javax.swing.JMenuItem();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
+        menEstoque = new javax.swing.JMenu();
+        abrMenEstoque = new javax.swing.JMenuItem();
+        menOpcoes = new javax.swing.JMenu();
+        abrMenOpcoes = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         menSair = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
+        menSobre = new javax.swing.JMenu();
+        abrMenSobre = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -59,11 +68,25 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jMenu3.setText("Home");
-        jMenuBar1.add(jMenu3);
+        menHome.setText("Home");
 
-        jMenu4.setText("Caixa");
-        jMenuBar1.add(jMenu4);
+        abrMenHome.setText("Abrir Home");
+        abrMenHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrMenHomeActionPerformed(evt);
+            }
+        });
+        menHome.add(abrMenHome);
+
+        jMenuBar1.add(menHome);
+
+        menCaixa.setText("Caixa");
+        menCaixa.setEnabled(false);
+
+        abrMenCaixa.setText("Abrir Caixa");
+        menCaixa.add(abrMenCaixa);
+
+        jMenuBar1.add(menCaixa);
 
         menRh.setText("RH");
         menRh.setEnabled(false);
@@ -83,11 +106,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menRh);
 
-        jMenu6.setText("Estoque");
-        jMenuBar1.add(jMenu6);
+        menEstoque.setText("Estoque");
+        menEstoque.setEnabled(false);
 
-        jMenu7.setText("Opções");
-        jMenuBar1.add(jMenu7);
+        abrMenEstoque.setText("Abrir Estoque");
+        menEstoque.add(abrMenEstoque);
+
+        jMenuBar1.add(menEstoque);
+
+        menOpcoes.setText("Opções");
+
+        abrMenOpcoes.setText("Abrir Opções");
+        menOpcoes.add(abrMenOpcoes);
+
+        jMenuBar1.add(menOpcoes);
 
         jMenu8.setText("Sair");
 
@@ -101,8 +133,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu8);
 
-        jMenu9.setText("Sobre");
-        jMenuBar1.add(jMenu9);
+        menSobre.setText("Sobre");
+
+        abrMenSobre.setText("Abrir sobre");
+        menSobre.add(abrMenSobre);
+
+        jMenuBar1.add(menSobre);
 
         setJMenuBar(jMenuBar1);
 
@@ -158,6 +194,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop.add(rh);
     }//GEN-LAST:event_abrRecHumActionPerformed
 
+    private void abrMenHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenHomeActionPerformed
+       TelaHome th = null;
+       th = new TelaHome();
+       th.setVisible(true);
+       desktop.add(th);
+    }//GEN-LAST:event_abrMenHomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -197,18 +240,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem abrMenCaixa;
+    private javax.swing.JMenuItem abrMenEstoque;
+    private javax.swing.JMenuItem abrMenHome;
+    private javax.swing.JMenuItem abrMenOpcoes;
+    private javax.swing.JMenuItem abrMenSobre;
     private javax.swing.JMenuItem abrRecHum;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
+    public javax.swing.JMenu menCaixa;
+    public javax.swing.JMenu menEstoque;
+    private javax.swing.JMenu menHome;
+    private javax.swing.JMenu menOpcoes;
     public javax.swing.JMenu menRh;
     private javax.swing.JMenuItem menSair;
+    private javax.swing.JMenu menSobre;
     // End of variables declaration//GEN-END:variables
 }
