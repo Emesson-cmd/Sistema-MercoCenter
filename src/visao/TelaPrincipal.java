@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class TelaPrincipal extends javax.swing.JFrame {
     
     TelaHome th = new TelaHome();
-    TelaRh rh;
+    TelaRh trh;
 
     /**
      * Creates new form TelaPrincipal
@@ -185,42 +185,63 @@ public class TelaPrincipal extends javax.swing.JFrame {
             // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
             // Será aberto o form de Recursos Humanos dentro do desktop pane
         
+            if (th.isVisible()){
+                th.setVisible(false);
+                desktop.remove(th);
+            }
+            
+            
         try {
-            if (rh.isVisible()){
+            if (trh.isVisible()){
                 System.out.println("Está visível");
             } else {
-                System.out.println("Não está visível");
-            }
-        } catch (Exception e)  {
-            
-            try {
-                    this.rh = new TelaRh();
+                try {
+                   this.trh = new TelaRh();
                 } catch (SQLException ex) {
                     Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                th.setVisible(false);
-                desktop.remove(th);
-                rh.setVisible(true);
-                desktop.add(rh);
-
-            if (rh.isVisible()){
-                System.out.println("essa tela está visível.");
-                System.out.println(rh.getClass());
-            } else {
-
-                System.out.println("Essa tela não está visível.");
+                
+                trh.setVisible(true);
+                desktop.add(trh);
             }
+        } catch (Exception e)  {
+            
+            try {
+                   this.trh = new TelaRh();
+                } catch (SQLException ex) {
+                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                
+                trh.setVisible(true);
+                desktop.add(trh);
             
         }
 
     }//GEN-LAST:event_abrRecHumActionPerformed
 
     private void abrMenHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenHomeActionPerformed
-        rh.setVisible(false);
-        desktop.remove(rh);
-        th.setVisible(true);
-        desktop.add(th);
+        
+        
+        try {
+            if (trh.isVisible()){
+                trh.setVisible(false);
+                desktop.remove(trh);
+            }
+            
+            if (th.isVisible()){
+                System.out.println("Está visível");
+            } else {
+                System.out.println("Não está visível");
+                th.setVisible(true);
+                desktop.add(th);
+            }
+        } catch (Exception e) {
+            
+        }
+        
+        
     }//GEN-LAST:event_abrMenHomeActionPerformed
 
     /**
