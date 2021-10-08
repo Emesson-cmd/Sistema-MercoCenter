@@ -5,7 +5,10 @@
  */
 package visao;
 
+import Dao.UserDao;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -42,7 +45,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         txtBuscaNome = new javax.swing.JTextField();
         selBuscaCargo = new javax.swing.JComboBox<>();
-        btnPesquisar = new javax.swing.JButton();
+        btnPesquisarUsuario = new javax.swing.JButton();
         selBuscaStatus = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
@@ -88,10 +91,10 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
-        btnPesquisar.setText("Pesquisar");
-        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisarUsuario.setText("Pesquisar");
+        btnPesquisarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisarActionPerformed(evt);
+                btnPesquisarUsuarioActionPerformed(evt);
             }
         });
 
@@ -103,7 +106,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnPesquisar)
+                    .addComponent(btnPesquisarUsuario)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -138,7 +141,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                     .addComponent(selBuscaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPesquisar)
+                .addComponent(btnPesquisarUsuario)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -196,13 +199,22 @@ public class TelaRh extends javax.swing.JInternalFrame {
         // TODO add your handling code here:        
     }//GEN-LAST:event_txtBuscaNomeActionPerformed
 
-    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
-        // TODO add your handling code here:
-        this.txtBuscaNome.setText("Hello world!");
-    }//GEN-LAST:event_btnPesquisarActionPerformed
+    private void btnPesquisarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarUsuarioActionPerformed
+        String nomeUsuario = txtBuscaNome.getText();
+        
+        UserDao userDao = new UserDao();
+        
+        try {
+            userDao.dBuscaUsuario(nomeUsuario);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaRh.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_btnPesquisarUsuarioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPesquisar;
+    private javax.swing.JButton btnPesquisarUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
