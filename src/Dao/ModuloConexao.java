@@ -15,14 +15,14 @@ import java.sql.DriverManager;
 public class ModuloConexao {
     // método responsável por estabelecer conexão com o banco
     public static Connection conector() {
-        // estou indicando que a conexão ainda não existe
+        // estou indicando que a conexão ainda não existe ou se existe eu a estou 
+        // fechando para nao haver varias conexões abertas
         java.sql.Connection conexao = null;
 
         // a linha abaixo chama o driver importado na biblioteca
         String driver = "com.mysql.jdbc.Driver";
 
         // armazenando informações refentes ao banco
-//        String url = "jdbc:mysql//localhost:3306/dbinfox"; 
         String url = "jdbc:mysql://localhost:3306/mercocenter";
         String user = "root";
         String password = "";

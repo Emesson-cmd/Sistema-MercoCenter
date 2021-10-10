@@ -198,11 +198,11 @@
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="6">
                 <StringItem index="0" value="Selecione"/>
-                <StringItem index="1" value="Administradores"/>
-                <StringItem index="2" value="Caixa"/>
-                <StringItem index="3" value="Gerentes"/>
-                <StringItem index="4" value="Almoxarifes"/>
-                <StringItem index="5" value="Recursos Humanos"/>
+                <StringItem index="1" value="adm"/>
+                <StringItem index="2" value="caixa"/>
+                <StringItem index="3" value="gerente"/>
+                <StringItem index="4" value="almoxarife"/>
+                <StringItem index="5" value="recursos humanos"/>
               </StringArray>
             </Property>
           </Properties>
@@ -224,11 +224,12 @@
         <Component class="javax.swing.JComboBox" name="selBuscaStatus">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Ativo"/>
-                <StringItem index="1" value="Inativo"/>
-                <StringItem index="2" value="F&#xe9;rias"/>
-                <StringItem index="3" value="Despedido"/>
+              <StringArray count="5">
+                <StringItem index="0" value="Selecione"/>
+                <StringItem index="1" value="ativo"/>
+                <StringItem index="2" value="inativo"/>
+                <StringItem index="3" value="f&#xe9;rias"/>
+                <StringItem index="4" value="despedido"/>
               </StringArray>
             </Property>
           </Properties>

@@ -89,7 +89,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
-        selBuscaCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Administradores", "Caixa", "Gerentes", "Almoxarifes", "Recursos Humanos" }));
+        selBuscaCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "adm", "caixa", "gerente", "almoxarife", "recursos humanos" }));
         selBuscaCargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selBuscaCargoActionPerformed(evt);
@@ -103,7 +103,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
-        selBuscaStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ativo", "Inativo", "Férias", "Despedido" }));
+        selBuscaStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "ativo", "inativo", "férias", "despedido" }));
 
         jLabel5.setText("Id");
 
@@ -241,9 +241,12 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
     private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
         // Esse botão resetará as opções dos campos.
-        
+
         txtIdUsuario.setText("");
         txtBuscaNome.setText("");
+        txtUsuarioCpf.setText("");
+        selBuscaCargo.setSelectedItem("Selecione");
+        selBuscaStatus.setSelectedItem("Selecione");
     }//GEN-LAST:event_btnLimparCamposActionPerformed
 
     private void txtUsuarioCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioCpfActionPerformed
@@ -252,16 +255,17 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
     private void consultar() {
         String sql = "select * from log inner join usuario on usuario.cpf = log.user_cpf where id =?";
-        
         try {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtIdUsuario.getText());
-            rs=pst.executeQuery();
+            rs = pst.executeQuery();
             if (rs.next()) {
                 txtBuscaNome.setText(rs.getString("usuario.nome"));
                 txtUsuarioCpf.setText(rs.getString("usuario.cpf"));
+                selBuscaCargo.setSelectedItem(rs.getString("log.tipo"));
+                selBuscaStatus.setSelectedItem(rs.getString("usuario.status"));
             } else {
-                
+
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
