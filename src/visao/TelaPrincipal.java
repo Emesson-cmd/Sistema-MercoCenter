@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author sulis
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-    
+
     TelaHome th = new TelaHome();
     TelaRh trh;
 
@@ -171,7 +171,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void menSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSairActionPerformed
         // exibe uma caixa de diálogo pra confirmar se quer sair sim ou nao
         int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
-        if (sair == JOptionPane.YES_OPTION){
+        if (sair == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }//GEN-LAST:event_menSairActionPerformed
@@ -182,55 +182,44 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menRhActionPerformed
 
     private void abrRecHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRecHumActionPerformed
-            // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
-            // Será aberto o form de Recursos Humanos dentro do desktop pane
-        
-            if (th.isVisible()){
-                th.setVisible(false);
-                desktop.remove(th);
-            }
-            
-            
+        // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
+        // Será aberto o form de Recursos Humanos dentro do desktop pane
+
+        if (th.isVisible()) {
+            th.setVisible(false);
+            desktop.remove(th);
+        }
+
         try {
-            if (trh.isVisible()){
+            if (trh.isVisible()) {
                 System.out.println("Está visível");
             } else {
-                try {
-                   this.trh = new TelaRh();
-                } catch (SQLException ex) {
-                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                }
 
-                
+                this.trh = new TelaRh();
+
                 trh.setVisible(true);
                 desktop.add(trh);
             }
-        } catch (Exception e)  {
-            
-            try {
-                   this.trh = new TelaRh();
-                } catch (SQLException ex) {
-                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        } catch (Exception e) {
 
-                
-                trh.setVisible(true);
-                desktop.add(trh);
-            
+            this.trh = new TelaRh();
+
+            trh.setVisible(true);
+            desktop.add(trh);
+
         }
 
     }//GEN-LAST:event_abrRecHumActionPerformed
 
     private void abrMenHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenHomeActionPerformed
-        
-        
+
         try {
-            if (trh.isVisible()){
+            if (trh.isVisible()) {
                 trh.setVisible(false);
                 desktop.remove(trh);
             }
-            
-            if (th.isVisible()){
+
+            if (th.isVisible()) {
                 System.out.println("Está visível");
             } else {
                 System.out.println("Não está visível");
@@ -238,10 +227,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 desktop.add(th);
             }
         } catch (Exception e) {
-            
+
         }
-        
-        
+
+
     }//GEN-LAST:event_abrMenHomeActionPerformed
 
     /**
