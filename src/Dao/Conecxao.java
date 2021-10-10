@@ -14,32 +14,31 @@ import java.sql.*;
 public class Conecxao {
 
     // Esse método fará a conexão com o banco de dados
-    public Connection abricConecxao() throws SQLException{
+    public Connection abricConecxao() {
         Connection conexao;
+
         try {
-                final String url="jdbc:mysql://localhost:3306/mercocenter";
-                final String user="root";
-                final String password="";
-                final String Driver="com.mysql.jdbc.Driver";
+            final String url = "jdbc:mysql://localhost:3306/mercocenter";
+            final String user = "root";
+            final String password = "";
+            final String Driver = "com.mysql.jdbc.Driver";
 
-                Class.forName(Driver);
-                conexao = DriverManager.getConnection(url, user, password);
+            Class.forName(Driver);
+            conexao = DriverManager.getConnection(url, user, password);
+            return conexao;
+        } catch (Exception e) {
+            System.out.println("O driver expecificado nao foi encontrado. Erro: " + e);
+            return null;
+        }
+    }
 
-            } catch (ClassNotFoundException e) {
-                System.out.println("O driver expecificado nao foi encontrado.");
-                return null;
-            }
-        return  conexao;
-
-    } 
-    
-    public boolean fecharConecxao(Connection con){
+    public boolean fecharConecxao(Connection con) {
         try {
             con.close();
             System.out.println("Conexão fechada");
             return true;
         } catch (Exception erro) {
-            System.out.println("Não foi possivel fechar conexão "+erro);
+            System.out.println("Não foi possivel fechar conexão " + erro);
             return false;
         }
     }

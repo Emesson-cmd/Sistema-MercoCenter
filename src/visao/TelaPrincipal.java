@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
  * @author sulis
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-    
+
     TelaHome th = new TelaHome();
-    TelaRh rh;
+    TelaRh trh;
 
     /**
      * Creates new form TelaPrincipal
@@ -171,7 +171,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void menSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSairActionPerformed
         // exibe uma caixa de diálogo pra confirmar se quer sair sim ou nao
         int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
-        if (sair == JOptionPane.YES_OPTION){
+        if (sair == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }//GEN-LAST:event_menSairActionPerformed
@@ -182,45 +182,55 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_menRhActionPerformed
 
     private void abrRecHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRecHumActionPerformed
-            // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
-            // Será aberto o form de Recursos Humanos dentro do desktop pane
-        
+        // As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
+        // Será aberto o form de Recursos Humanos dentro do desktop pane
+
+        if (th.isVisible()) {
+            th.setVisible(false);
+            desktop.remove(th);
+        }
+
         try {
-            if (rh.isVisible()){
+            if (trh.isVisible()) {
                 System.out.println("Está visível");
             } else {
-                System.out.println("Não está visível");
+
+                this.trh = new TelaRh();
+
+                trh.setVisible(true);
+                desktop.add(trh);
             }
-        } catch (Exception e)  {
-            
-            try {
-                    this.rh = new TelaRh();
-                } catch (SQLException ex) {
-                    Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-                }
+        } catch (Exception e) {
 
-                th.setVisible(false);
-                desktop.remove(th);
-                rh.setVisible(true);
-                desktop.add(rh);
+            this.trh = new TelaRh();
 
-            if (rh.isVisible()){
-                System.out.println("essa tela está visível.");
-                System.out.println(rh.getClass());
-            } else {
+            trh.setVisible(true);
+            desktop.add(trh);
 
-                System.out.println("Essa tela não está visível.");
-            }
-            
         }
 
     }//GEN-LAST:event_abrRecHumActionPerformed
 
     private void abrMenHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenHomeActionPerformed
-        rh.setVisible(false);
-        desktop.remove(rh);
-        th.setVisible(true);
-        desktop.add(th);
+
+        try {
+            if (trh.isVisible()) {
+                trh.setVisible(false);
+                desktop.remove(trh);
+            }
+
+            if (th.isVisible()) {
+                System.out.println("Está visível");
+            } else {
+                System.out.println("Não está visível");
+                th.setVisible(true);
+                desktop.add(th);
+            }
+        } catch (Exception e) {
+
+        }
+
+
     }//GEN-LAST:event_abrMenHomeActionPerformed
 
     /**

@@ -27,9 +27,6 @@ public class TelaHome extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setIconifiable(true);
-        setMaximizable(true);
-        setResizable(true);
         setTitle("Página Inicial");
         setPreferredSize(new java.awt.Dimension(650, 415));
 
