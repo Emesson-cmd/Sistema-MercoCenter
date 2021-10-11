@@ -205,7 +205,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             trh.setVisible(true);
             desktop.add(trh);
-
         }
 
     }//GEN-LAST:event_abrRecHumActionPerformed
