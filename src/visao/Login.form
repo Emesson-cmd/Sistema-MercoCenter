@@ -67,13 +67,13 @@
                       <Component id="SubPainelLog" pref="396" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblRedefinir" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btLogin" alignment="1" max="32767" attributes="0"/>
-                          <Component id="lblLogoUser" alignment="0" pref="361" max="32767" attributes="0"/>
+                          <Component id="lblRedefinir" alignment="0" pref="362" max="32767" attributes="0"/>
+                          <Component id="btLogin" alignment="1" pref="362" max="32767" attributes="0"/>
+                          <Component id="lblLogoUser" alignment="0" pref="362" max="32767" attributes="0"/>
                           <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                           <Component id="enUserLog" alignment="1" max="32767" attributes="0"/>
                           <Component id="jSeparator2" alignment="1" max="32767" attributes="0"/>
-                          <Component id="enSenhaLog" alignment="0" max="32767" attributes="0"/>
+                          <Component id="enSenhaLog" alignment="0" pref="362" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
@@ -84,19 +84,19 @@
                   <Component id="SubPainelLog" alignment="0" pref="500" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="lblLogoUser" max="32767" attributes="0"/>
+                      <Component id="lblLogoUser" pref="65" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="enUserLog" min="-2" pref="46" max="-2" attributes="0"/>
+                      <Component id="enUserLog" pref="56" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jSeparator1" max="32767" attributes="0"/>
+                      <Component id="jSeparator1" pref="25" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="enSenhaLog" min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="enSenhaLog" pref="58" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="jSeparator2" pref="0" max="32767" attributes="0"/>
+                      <Component id="jSeparator2" pref="25" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-                      <Component id="btLogin" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btLogin" pref="43" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="lblRedefinir" max="32767" attributes="0"/>
+                      <Component id="lblRedefinir" pref="38" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -118,7 +118,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                          <Component id="jLabel4" pref="276" max="32767" attributes="0"/>
+                          <Component id="jLabel4" pref="278" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -127,7 +127,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="176" max="-2" attributes="0"/>
-                          <Component id="jLabel4" pref="92" max="32767" attributes="0"/>
+                          <Component id="jLabel4" pref="98" max="32767" attributes="0"/>
                           <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
                       </Group>
                   </Group>

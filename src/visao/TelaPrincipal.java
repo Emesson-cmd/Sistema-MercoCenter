@@ -24,6 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+//        setExtendedState(MAXIMIZED_BOTH);
         th.setVisible(true);
         desktop.add(th);
     }
@@ -62,7 +63,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MercoCenter System");
-        setResizable(false);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
@@ -90,7 +90,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menCaixa);
 
         menRh.setText("RH");
-        menRh.setEnabled(false);
         menRh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menRhActionPerformed(evt);
