@@ -56,7 +56,6 @@
         <Menu class="javax.swing.JMenu" name="menRh">
           <Properties>
             <Property name="text" type="java.lang.String" value="RH"/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menRhActionPerformed"/>
@@ -136,7 +135,6 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value="MercoCenter System"/>
-    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
@@ -180,6 +178,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JDesktopPane" name="desktop">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="TelaPrincipal_desktop"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

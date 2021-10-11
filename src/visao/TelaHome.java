@@ -5,6 +5,8 @@
  */
 package visao;
 
+import java.beans.PropertyVetoException;
+
 /**
  *
  * @author emesson
@@ -16,6 +18,12 @@ public class TelaHome extends javax.swing.JInternalFrame {
      */
     public TelaHome() {
         initComponents();
+        try {
+            setMaximum(true);
+        } catch (Exception e) {
+            System.out.println("Erro na tela home: " + e);
+        }
+
     }
 
     /**
@@ -28,6 +36,8 @@ public class TelaHome extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         setTitle("Página Inicial");
+        setComponentPopupMenu(null);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setPreferredSize(new java.awt.Dimension(650, 415));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
