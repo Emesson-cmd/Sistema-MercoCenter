@@ -148,7 +148,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel3" pref="51" max="32767" attributes="0"/>
+                                          <Component id="jLabel3" pref="54" max="32767" attributes="0"/>
                                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel4" alignment="1" max="32767" attributes="0"/>
@@ -157,7 +157,7 @@
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtUsuarioLogin" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="selBuscaCargo" alignment="1" pref="173" max="32767" attributes="0"/>
+                                      <Component id="selBuscaCargo" alignment="1" pref="163" max="32767" attributes="0"/>
                                       <Component id="selBuscaStatus" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -181,7 +181,7 @@
                               <Component id="jButton2" alignment="1" max="32767" attributes="0"/>
                               <Component id="btnLimparCampos" max="32767" attributes="0"/>
                               <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jButton3" alignment="1" pref="168" max="32767" attributes="0"/>
+                              <Component id="jButton3" alignment="1" pref="175" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -194,52 +194,52 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Group type="102" alignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel5" pref="23" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="txtIdUsuario" alignment="3" max="32767" attributes="0"/>
+                              <Component id="txtIdUsuario" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Group type="102" alignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel2" pref="23" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="txtBuscaNome" alignment="3" max="32767" attributes="0"/>
+                              <Component id="txtBuscaNome" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtUsuarioCpf" alignment="3" max="32767" attributes="0"/>
-                              <Group type="102" alignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="lblCpf" pref="23" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="txtUsuarioCpf" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="selBuscaCargo" alignment="3" max="32767" attributes="0"/>
-                              <Group type="102" alignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel3" pref="23" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="selBuscaCargo" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="selBuscaStatus" alignment="3" max="32767" attributes="0"/>
-                              <Group type="102" alignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel4" pref="23" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="selBuscaStatus" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtUsuarioLogin" alignment="3" max="32767" attributes="0"/>
-                              <Group type="102" alignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                   <Component id="jLabel6" pref="20" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="txtUsuarioLogin" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
@@ -369,8 +369,14 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="15" green="42" red="9" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Adicionar funcion&#xe1;rio"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
