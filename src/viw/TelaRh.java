@@ -541,6 +541,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
         Funcionario_Dao funcionarioDao = new Funcionario_Dao();
         funcionarioDao.atualizarFuncionario(funcionario);
+        limparCampos();
     }//GEN-LAST:event_btnUsuAtualizarActionPerformed
 
     private void btnUsuPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuPesquisarActionPerformed
@@ -575,6 +576,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
         Funcionario_Dao funcionarioDao = new Funcionario_Dao();
         funcionarioDao.adicionarFuncionario(funcionario);
+        limparCampos();
     }//GEN-LAST:event_btnUsuAdicionarActionPerformed
 
     private void btnCampoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampoLimparActionPerformed
@@ -595,9 +597,11 @@ public class TelaRh extends javax.swing.JInternalFrame {
             Funcionario_modelo funcionario = new Funcionario_modelo();
             funcionario.setCod(Integer.parseInt(txtIdUsuario.getText()));
             funcionario.setSituacao("inativo");
-            
+
             Funcionario_Dao funcionarioDao = new Funcionario_Dao();
             funcionarioDao.desativarFuncionario(funcionario);
+            
+            limparCampos();
         }
 
     }//GEN-LAST:event_btnUsuArquivarActionPerformed
@@ -638,16 +642,30 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
         if (flag == false) {
             JOptionPane.showMessageDialog(null, "Funcionário não identificado por ID.");
+            limparCampos();
         }
     }
 
     private void limparCampos() {
-//        txtIdUsuario.setText(null);
-//        txtBuscaNome.setText(null);
-//        txtUsuarioCpf.setText(null);
-//        selBuscaCargo.setSelectedItem("Selecione");
-//        selBuscaStatus.setSelectedItem("Selecione");
-//        txtUsuarioLogin.setText(null);
+        txtIdUsuario.setText(null);
+        txtBuscaNome.setText(null);
+        txtUsuarioCpf.setText(null);
+        txtUsuDataNasc.setText(null);
+        txtUsuEmail.setText(null);
+        txtUsuEndereco.setText(null);
+        txtUsuDataCad.setText(null);
+        txtUsuHoraCad.setText(null);
+        txtUsuNumCasa.setText(null);
+        txtUsuRg.setText(null);
+        txtUsuSexo.setText(null);
+        txtUsuTelefone.setText(null);
+        txtUsuUf.setText(null);
+        txtUsuBairro.setText(null);
+        txtUsuCidade.setText(null);
+        txtUsuCep.setText(null);
+        txtUsuCelular.setText(null);
+        selBuscaCargo.setSelectedItem(null);
+        selBuscaStatus.setSelectedItem(null);
     }
 
     // Verifica Campos obrigatório

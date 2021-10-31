@@ -17,11 +17,16 @@ import javax.swing.JOptionPane;
  * @author emesson
  */
 public class TelaCriarLogin extends javax.swing.JInternalFrame {
-
-    Connection con = null;
-    Conexao conexao = null;
+    
+    Connection conexao = null;
+    Conexao con;
     PreparedStatement pst = null;
     ResultSet rs = null;
+
+//    Connection con = null;
+//    Conexao conexao = null;
+//    PreparedStatement pst = null;
+//    ResultSet rs = null;
 
     /**
      * Creates new form TelaCriarLogin
@@ -39,20 +44,23 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txtUsuId = new javax.swing.JTextField();
+        btnUsuPesquisar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        txtUsuNome = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        selUsuPermissao = new javax.swing.JComboBox<>();
+        selUsuAtivo = new javax.swing.JComboBox<>();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUsuLogin = new javax.swing.JTextField();
         txtUsuSenha = new javax.swing.JPasswordField();
         btnUsuCadastrar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        txtUsuNome = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtUsuCpf = new javax.swing.JTextField();
-        btnPesqNome = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        selUsuCargo = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        txtUsuId = new javax.swing.JTextField();
         btnVerSenha = new javax.swing.JButton();
         btnOcultarSenha = new javax.swing.JButton();
         btnUsuAtualizar = new javax.swing.JButton();
@@ -60,16 +68,45 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         setTitle("Criar Login");
         setPreferredSize(new java.awt.Dimension(650, 415));
 
-        jLabel1.setText("Login");
+        jLabel6.setText("Código");
 
-        jLabel2.setText("Senha");
-
-        btnUsuCadastrar.setText("Cadastrar");
-        btnUsuCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuCadastrarActionPerformed(evt);
+                txtUsuIdActionPerformed(evt);
             }
         });
+
+        btnUsuPesquisar.setText("Pesquisar");
+        btnUsuPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUsuPesquisarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnUsuPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(90, 90, 90))
+                    .addComponent(txtUsuId))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtUsuId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(btnUsuPesquisar)
+                .addGap(24, 24, 24))
+        );
 
         jLabel3.setText("Nome");
 
@@ -80,31 +117,60 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel4.setText("CPF");
+        jLabel4.setText("Ativo");
 
-        txtUsuCpf.setEditable(false);
+        jLabel5.setText("Permissão");
 
-        btnPesqNome.setText("Pesquisar");
-        btnPesqNome.addActionListener(new java.awt.event.ActionListener() {
+        selUsuPermissao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "adm", "caixa", "almoxarife" }));
+        selUsuPermissao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesqNomeActionPerformed(evt);
+                selUsuPermissaoActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("Cargo");
+        selUsuAtivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "ativo", "inativo" }));
 
-        selUsuCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "adm", "caixa", "gerente", "almoxarife", "recursos humanos" }));
-        selUsuCargo.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3)
+                    .addComponent(txtUsuNome)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(selUsuAtivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(selUsuPermissao, 0, 152, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUsuNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(selUsuAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(selUsuPermissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
+        );
+
+        jLabel1.setText("Login");
+
+        jLabel2.setText("Senha");
+
+        btnUsuCadastrar.setText("Cadastrar");
+        btnUsuCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selUsuCargoActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Id");
-
-        txtUsuId.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtUsuIdActionPerformed(evt);
+                btnUsuCadastrarActionPerformed(evt);
             }
         });
 
@@ -129,132 +195,120 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(btnVerSenha)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtUsuLogin, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtUsuSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnOcultarSenha)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(btnUsuCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUsuLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUsuSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnVerSenha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnOcultarSenha)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnUsuCadastrar)
+                    .addComponent(btnUsuAtualizar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnPesqNome)
-                            .addComponent(txtUsuId, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(18, 18, 18)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtUsuNome, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(selUsuCargo, 0, 143, Short.MAX_VALUE)
-                                        .addComponent(txtUsuCpf))))
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)))
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUsuSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                            .addComponent(txtUsuLogin)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnUsuCadastrar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnVerSenha)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOcultarSenha)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtUsuLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtUsuSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnVerSenha)
-                            .addComponent(btnOcultarSenha))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnUsuCadastrar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtUsuId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnPesqNome)
-                        .addGap(29, 29, 29)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(txtUsuNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnUsuAtualizar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(txtUsuCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(selUsuCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(144, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selUsuCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selUsuCargoActionPerformed
+    private void selUsuPermissaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selUsuPermissaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_selUsuCargoActionPerformed
+    }//GEN-LAST:event_selUsuPermissaoActionPerformed
 
-    private void btnPesqNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesqNomeActionPerformed
+    private void btnUsuPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuPesquisarActionPerformed
         // Aqui você pode pesquisar por um usuário que quer criar um login novo para ele.
-        String sql = "select * from usuario inner join log on usuario.id = log.id_usuario where usuario.id =?";
+        String sql = "select * from usuario where usuario.cod_usuario=?";
 
         try {
-            con = conexao.abricConecxao();
-            pst = con.prepareStatement(sql);
+            con = new Conexao();
+            conexao = con.abricConecxao();
+            pst = conexao.prepareStatement(sql);
             pst.setString(1, txtUsuId.getText());
             rs = pst.executeQuery();
 
             if (rs.next()) {
                 txtUsuNome.setText(rs.getString("usuario.nome"));
-                txtUsuCpf.setText(rs.getString("usuario.cpf"));
-                selUsuCargo.setSelectedItem(rs.getString("usuario.tipo"));
                 
-                txtUsuLogin.setText(rs.getString("log.usuario"));
-                txtUsuSenha.setText(rs.getString("log.senha"));
+//                int indexSelecionado = 0;
+//                
+//                if (rs.getInt("usuario.ativo") == 0){
+//                    indexSelecionado = 2;
+//                } else {
+//                    indexSelecionado = 1;
+//                }
+                
+                selUsuAtivo.setSelectedIndex(rs.getInt("usuario.ativo"));
+                selUsuPermissao.setSelectedItem(rs.getString("usuario.permissao"));
+                txtUsuLogin.setText(rs.getString("usuario.nome"));
+                txtUsuSenha.setText(rs.getString("usuario.senha"));
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não encontrado!");
 
                 txtUsuId.setText(null);
                 txtUsuNome.setText(null);
-                txtUsuCpf.setText(null);
-                selUsuCargo.setSelectedItem("Selecione");
+                selUsuAtivo.setSelectedItem(null);
+                selUsuPermissao.setSelectedItem("Selecione");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
+            JOptionPane.showMessageDialog(null, "Houve um erro.");
+            System.out.println("Erro ao tentar fazer busca por id de um usuário na tela criar usuário: " + e);
         }
-    }//GEN-LAST:event_btnPesqNomeActionPerformed
+    }//GEN-LAST:event_btnUsuPesquisarActionPerformed
 
     private void txtUsuIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuIdActionPerformed
         // TODO add your handling code here:
@@ -262,30 +316,30 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
     private void btnUsuCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuCadastrarActionPerformed
         // TODO add your handling code here:
-        String sql = "insert into log (usuario, senha, id_usuario) value (?, ?, ?)";
-
-        try {
-            con = conexao.abricConecxao();
-            pst = con.prepareStatement(sql);
-            pst.setString(1, txtUsuLogin.getText());
-            pst.setString(2, txtUsuSenha.getText());
-            pst.setString(3, txtUsuId.getText());
-
-            int confirmacao = pst.executeUpdate();
-
-            if (confirmacao > 0) {
-                JOptionPane.showMessageDialog(null, "Login adicionado com sucesso!");
-                
-                txtUsuId.setText(null);
-                txtUsuNome.setText(null);
-                txtUsuCpf.setText(null);
-                selUsuCargo.setSelectedItem("Selecione");
-                txtUsuLogin.setText(null);
-                txtUsuSenha.setText(null);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        String sql = "insert into log (usuario, senha, id_usuario) value (?, ?, ?)";
+//
+//        try {
+//            con = conexao.abricConecxao();
+//            pst = con.prepareStatement(sql);
+//            pst.setString(1, txtUsuLogin.getText());
+//            pst.setString(2, txtUsuSenha.getText());
+//            pst.setString(3, txtUsuId.getText());
+//
+//            int confirmacao = pst.executeUpdate();
+//
+//            if (confirmacao > 0) {
+//                JOptionPane.showMessageDialog(null, "Login adicionado com sucesso!");
+//                
+//                txtUsuId.setText(null);
+//                txtUsuNome.setText(null);
+//                txtUsuAtivo.setText(null);
+//                selUsuPermissao.setSelectedItem("Selecione");
+//                txtUsuLogin.setText(null);
+//                txtUsuSenha.setText(null);
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
     }//GEN-LAST:event_btnUsuCadastrarActionPerformed
 
     private void txtUsuNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuNomeActionPerformed
@@ -302,39 +356,39 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnOcultarSenhaActionPerformed
 
     private void btnUsuAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAtualizarActionPerformed
-        // TODO add your handling code here:
-        String sql = "update log set log.usuario = ?, log.senha = ? where log.id_usuario = ?";
-        
-        try {
-            con = conexao.abricConecxao();
-            pst = con.prepareStatement(sql);
-            pst.setString(1, txtUsuLogin.getText());
-            pst.setString(2, txtUsuSenha.getText());
-            pst.setString(3, txtUsuId.getText());
-
-            int confirmacao = pst.executeUpdate();
-
-            if (confirmacao > 0) {
-                JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!");
-                
-                txtUsuId.setText(null);
-                txtUsuNome.setText(null);
-                txtUsuCpf.setText(null);
-                selUsuCargo.setSelectedItem("Selecione");
-                txtUsuLogin.setText(null);
-                txtUsuSenha.setText(null);
-            }
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
+//        // TODO add your handling code here:
+//        String sql = "update log set log.usuario = ?, log.senha = ? where log.id_usuario = ?";
+//        
+//        try {
+//            con = conexao.abricConecxao();
+//            pst = con.prepareStatement(sql);
+//            pst.setString(1, txtUsuLogin.getText());
+//            pst.setString(2, txtUsuSenha.getText());
+//            pst.setString(3, txtUsuId.getText());
+//
+//            int confirmacao = pst.executeUpdate();
+//
+//            if (confirmacao > 0) {
+//                JOptionPane.showMessageDialog(null, "Informações atualizadas com sucesso!");
+//                
+//                txtUsuId.setText(null);
+//                txtUsuNome.setText(null);
+//                txtUsuAtivo.setText(null);
+//                selUsuPermissao.setSelectedItem("Selecione");
+//                txtUsuLogin.setText(null);
+//                txtUsuSenha.setText(null);
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(null, e);
+//        }
     }//GEN-LAST:event_btnUsuAtualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOcultarSenha;
-    private javax.swing.JButton btnPesqNome;
     private javax.swing.JButton btnUsuAtualizar;
     private javax.swing.JButton btnUsuCadastrar;
+    private javax.swing.JButton btnUsuPesquisar;
     private javax.swing.JButton btnVerSenha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -342,8 +396,11 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JComboBox<String> selUsuCargo;
-    private javax.swing.JTextField txtUsuCpf;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JComboBox<String> selUsuAtivo;
+    private javax.swing.JComboBox<String> selUsuPermissao;
     private javax.swing.JTextField txtUsuId;
     private javax.swing.JTextField txtUsuLogin;
     private javax.swing.JTextField txtUsuNome;
