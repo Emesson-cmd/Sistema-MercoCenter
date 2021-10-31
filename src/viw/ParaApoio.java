@@ -5,42 +5,17 @@
  */
 package viw;
 
-//import Dao.Conecxao;
-//import Dao.ModuloConexao;
-//import Dao.UserDao;
-import controle.Funcionario_controle;
-import dao.Conexao;
-import dao.Funcionario_Dao;
-import java.sql.*;
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import model.Funcionario_modelo;
-//import modelo.ModeloTabela;
-
 /**
  *
  * @author emesson
  */
-public class TelaRh extends javax.swing.JInternalFrame {
-
-    Connection conexao = null;
-    Conexao con = new Conexao();
-    PreparedStatement pst = null;
-    ResultSet rs = null;
-    ArrayList<Funcionario_modelo> funcionarios = new ArrayList();
+public class ParaApoio extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaRh
+     * Creates new form ParaApoio
      */
-    public TelaRh() {
+    public ParaApoio() {
         initComponents();
-        try {
-            conexao = con.abricConecxao();
-        } catch (SQLException e) {
-            System.out.println("Houve um erro ao iniciar a TelaRh: " + e);
-        }
-        this.funcionarios = new Funcionario_controle().buscarFuncionarios();
     }
 
     /**
@@ -95,17 +70,15 @@ public class TelaRh extends javax.swing.JInternalFrame {
         jLabel19 = new javax.swing.JLabel();
         txtUsuCidade = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
-        btnUsuAtualizar = new javax.swing.JButton();
-        btnUsuPesquisar = new javax.swing.JButton();
-        btnUsuAdicionar = new javax.swing.JButton();
-        btnUsuArquivar = new javax.swing.JButton();
-        btnCampoLimpar = new javax.swing.JButton();
+        btnUsuarioAtualiza = new javax.swing.JButton();
+        btnPesquisarUsuario = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        btnLimparCampos = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        setTitle("RH");
-        setPreferredSize(new java.awt.Dimension(751, 390));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("Nome");
+        jLabel2.setText("* Nome");
 
         txtBuscaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,7 +86,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
-        lblCpf.setText("CPF");
+        lblCpf.setText("* CPF");
 
         txtUsuarioCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,12 +121,13 @@ public class TelaRh extends javax.swing.JInternalFrame {
                         .addComponent(lblCpf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(654, 654, 654))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtUsuRg, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                            .addComponent(txtUsuarioCpf)
-                            .addComponent(txtBuscaNome, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtUsuRg, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                                .addComponent(txtUsuarioCpf, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(txtBuscaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(txtIdUsuario))
+                            .addComponent(txtIdUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -173,7 +147,8 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtUsuRg, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(txtUsuRg, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Celular");
@@ -205,20 +180,21 @@ public class TelaRh extends javax.swing.JInternalFrame {
                                 .addGap(8, 8, 8)))
                         .addGap(255, 255, 255))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel14)
-                        .addGap(586, 586, 586))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtUsuDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtUsuSexo))
                             .addComponent(txtUsuTelefone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                             .addComponent(txtUsuEmail, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtUsuCelular, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtUsuSexo)
+                        .addGap(610, 610, 610))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(648, 648, 648))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtUsuDataNasc)
+                        .addGap(610, 610, 610))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,20 +211,21 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtUsuTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUsuDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUsuSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(txtUsuDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtUsuSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jLabel10.setText("Data de cadastros");
 
         jLabel11.setText("Hora de cadastro");
 
-        jLabel3.setText("Cargo");
+        jLabel3.setText("* Cargo");
 
         selBuscaCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "adm", "caixa", "gerente", "almoxarife", "recursos humanos" }));
         selBuscaCargo.addActionListener(new java.awt.event.ActionListener() {
@@ -265,7 +242,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel4.setText("Situação");
+        jLabel4.setText("* Status");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -297,11 +274,11 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selBuscaCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(selBuscaCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selBuscaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selBuscaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -333,22 +310,21 @@ public class TelaRh extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtUsuCidade)
+                    .addComponent(txtUsuCep)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtUsuUf, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsuCidade, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUsuCep, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel19)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txtUsuBairro, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtUsuEndereco, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtUsuNumCasa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
-                                    .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addComponent(jLabel18)))
-                        .addGap(0, 4, Short.MAX_VALUE))))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel19)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(txtUsuBairro, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtUsuEndereco, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtUsuNumCasa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtUsuUf, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel18))
+                        .addGap(0, 13, Short.MAX_VALUE))))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -379,39 +355,34 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnUsuAtualizar.setText("Atualizar");
-        btnUsuAtualizar.addActionListener(new java.awt.event.ActionListener() {
+        btnUsuarioAtualiza.setText("Atualizar");
+        btnUsuarioAtualiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuAtualizarActionPerformed(evt);
+                btnUsuarioAtualizaActionPerformed(evt);
             }
         });
 
-        btnUsuPesquisar.setText("Pesquisar");
-        btnUsuPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        btnPesquisarUsuario.setText("Pesquisar");
+        btnPesquisarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuPesquisarActionPerformed(evt);
+                btnPesquisarUsuarioActionPerformed(evt);
             }
         });
 
-        btnUsuAdicionar.setBackground(java.awt.Color.white);
-        btnUsuAdicionar.setText("Adicionar");
-        btnUsuAdicionar.addActionListener(new java.awt.event.ActionListener() {
+        jButton3.setBackground(java.awt.Color.white);
+        jButton3.setText("Adicionar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuAdicionarActionPerformed(evt);
+                jButton3ActionPerformed(evt);
             }
         });
 
-        btnUsuArquivar.setText("Arquivar");
-        btnUsuArquivar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUsuArquivarActionPerformed(evt);
-            }
-        });
+        jButton2.setText("Arquivar");
 
-        btnCampoLimpar.setText("Limpar campos");
-        btnCampoLimpar.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparCampos.setText("Limpar campos");
+        btnLimparCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCampoLimparActionPerformed(evt);
+                btnLimparCamposActionPerformed(evt);
             }
         });
 
@@ -422,15 +393,15 @@ public class TelaRh extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnCampoLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLimparCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                        .addComponent(btnUsuarioAtualiza, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUsuPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
+                        .addComponent(btnPesquisarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                        .addComponent(btnUsuArquivar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(16, 16, 16))
         );
         jPanel6Layout.setVerticalGroup(
@@ -438,14 +409,14 @@ public class TelaRh extends javax.swing.JInternalFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuAtualizar)
-                    .addComponent(btnUsuPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnUsuarioAtualiza)
+                    .addComponent(btnPesquisarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuArquivar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnUsuAdicionar))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCampoLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -453,17 +424,20 @@ public class TelaRh extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(12, 12, 12)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -471,22 +445,21 @@ public class TelaRh extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(6, 6, 6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(4, 4, 4)))
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(10, 10, 10)))
-                .addGap(68, 68, 68))
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtBuscaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscaNomeActionPerformed
@@ -497,181 +470,83 @@ public class TelaRh extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsuarioCpfActionPerformed
 
-    private void txtIdUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdUsuarioActionPerformed
+    private void txtUsuEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuEnderecoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdUsuarioActionPerformed
-
-    private void selBuscaCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selBuscaCargoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_selBuscaCargoActionPerformed
+    }//GEN-LAST:event_txtUsuEnderecoActionPerformed
 
     private void selBuscaStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selBuscaStatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_selBuscaStatusActionPerformed
 
-    private void txtUsuEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuEnderecoActionPerformed
+    private void selBuscaCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selBuscaCargoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsuEnderecoActionPerformed
+    }//GEN-LAST:event_selBuscaCargoActionPerformed
 
-    private void btnUsuAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAtualizarActionPerformed
+    private void btnUsuarioAtualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuarioAtualizaActionPerformed
         // Atualizar os dados
 //        atualizar();
+    }//GEN-LAST:event_btnUsuarioAtualizaActionPerformed
 
-        Funcionario_modelo funcionario = new Funcionario_modelo(
-                (Integer.parseInt(txtIdUsuario.getText())),
-                (txtUsuCelular.getText()),
-                (txtUsuarioCpf.getText()),
-                (txtUsuDataNasc.getText()),
-                (txtUsuEmail.getText()),
-                (txtUsuEndereco.getText()),
-                (txtBuscaNome.getText()),
-                (txtUsuDataCad.getText()),
-                (txtUsuHoraCad.getText()),
-                (txtUsuNumCasa.getText()),
-                (txtUsuRg.getText()),
-                (txtUsuSexo.getText()),
-                (txtUsuTelefone.getText()),
-                (txtUsuUf.getText()),
-                (txtUsuBairro.getText()),
-                (txtUsuCidade.getText()),
-                (txtUsuCep.getText()),
-                (String.valueOf(selBuscaCargo.getSelectedItem())),
-                (String.valueOf(selBuscaStatus.getSelectedItem()))
-        );
-
-        Funcionario_Dao funcionarioDao = new Funcionario_Dao();
-        funcionarioDao.atualizarFuncionario(funcionario);
-    }//GEN-LAST:event_btnUsuAtualizarActionPerformed
-
-    private void btnUsuPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuPesquisarActionPerformed
+    private void btnPesquisarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarUsuarioActionPerformed
         // Chamando o método consultar.
-        consultar();
-    }//GEN-LAST:event_btnUsuPesquisarActionPerformed
+//        consultar();
+    }//GEN-LAST:event_btnPesquisarUsuarioActionPerformed
 
-    private void btnUsuAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAdicionarActionPerformed
-        int id = 0;
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // chama o método de adicionar usuario
+//        adicionar();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
-        Funcionario_modelo funcionario = new Funcionario_modelo(
-                (id),
-                (txtUsuCelular.getText()),
-                (txtUsuarioCpf.getText()),
-                (txtUsuDataNasc.getText()),
-                (txtUsuEmail.getText()),
-                (txtUsuEndereco.getText()),
-                (txtBuscaNome.getText()),
-                (txtUsuDataCad.getText()),
-                (txtUsuHoraCad.getText()),
-                (txtUsuNumCasa.getText()),
-                (txtUsuRg.getText()),
-                (txtUsuSexo.getText()),
-                (txtUsuTelefone.getText()),
-                (txtUsuUf.getText()),
-                (txtUsuBairro.getText()),
-                (txtUsuCidade.getText()),
-                (txtUsuCep.getText()),
-                (String.valueOf(selBuscaCargo.getSelectedItem())),
-                (String.valueOf(selBuscaStatus.getSelectedItem()))
-        );
-
-        Funcionario_Dao funcionarioDao = new Funcionario_Dao();
-        funcionarioDao.adicionarFuncionario(funcionario);
-    }//GEN-LAST:event_btnUsuAdicionarActionPerformed
-
-    private void btnCampoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampoLimparActionPerformed
+    private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
         // Esse botão resetará as opções dos campos.
-        limparCampos();
-    }//GEN-LAST:event_btnCampoLimparActionPerformed
+//        limparCampos();
+    }//GEN-LAST:event_btnLimparCamposActionPerformed
 
-    private void btnUsuArquivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuArquivarActionPerformed
+    private void txtIdUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdUsuarioActionPerformed
         // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdUsuarioActionPerformed
 
-        int resposta = JOptionPane.showConfirmDialog(null, "Deseja inativar esse funcionário?"
-                + "\nOBS.: Isso não o excluirá da lista de funcionários.");
-
-        if (resposta == 0) {
-            // esse método tem como principal objetivo arquivar um funcionário. 
-            // Ou seja, ele será inativado.
-            // Mas ele também poderá ficar com a cor vermelha na lista de funcionários.
-            Funcionario_modelo funcionario = new Funcionario_modelo();
-            funcionario.setCod(Integer.parseInt(txtIdUsuario.getText()));
-            funcionario.setSituacao("inativo");
-            
-            Funcionario_Dao funcionarioDao = new Funcionario_Dao();
-            funcionarioDao.desativarFuncionario(funcionario);
-        }
-
-    }//GEN-LAST:event_btnUsuArquivarActionPerformed
-
-    // método para consultar usuário
-    private void consultar() {
-        // Flag para verificar se o usuário existe.
-        boolean flag = false;
-
-        for (int i = 0; i < this.funcionarios.size(); i++) {
-            Integer getCodToString = funcionarios.get(i).getCod();
-            String stringConvertida = String.valueOf(getCodToString);
-
-            if (txtIdUsuario.getText().equals(stringConvertida)) {
-
-                txtBuscaNome.setText(funcionarios.get(i).getNome());
-                txtUsuarioCpf.setText(funcionarios.get(i).getCpf());
-                txtUsuDataNasc.setText(funcionarios.get(i).getDatanasc());
-                txtUsuEmail.setText(funcionarios.get(i).getEmail());
-                txtUsuEndereco.setText(funcionarios.get(i).getEndereco());
-                txtUsuDataCad.setText(funcionarios.get(i).getDatacad());
-                txtUsuHoraCad.setText(funcionarios.get(i).getHoracad());
-                txtUsuNumCasa.setText(funcionarios.get(i).getNume());
-                txtUsuRg.setText(funcionarios.get(i).getRg());
-                txtUsuSexo.setText(funcionarios.get(i).getSexo());
-                txtUsuTelefone.setText(funcionarios.get(i).getTelefone());
-                txtUsuUf.setText(funcionarios.get(i).getUf());
-                txtUsuBairro.setText(funcionarios.get(i).getBairro());
-                txtUsuCidade.setText(funcionarios.get(i).getCidade());
-                txtUsuCep.setText(funcionarios.get(i).getCep());
-                txtUsuCelular.setText(funcionarios.get(i).getCelular());
-                selBuscaCargo.setSelectedItem(funcionarios.get(i).getCargo());
-                selBuscaStatus.setSelectedItem(funcionarios.get(i).getSituacao());
-
-                flag = true;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
 
-        if (flag == false) {
-            JOptionPane.showMessageDialog(null, "Funcionário não identificado por ID.");
-        }
-    }
-
-    private void limparCampos() {
-//        txtIdUsuario.setText(null);
-//        txtBuscaNome.setText(null);
-//        txtUsuarioCpf.setText(null);
-//        selBuscaCargo.setSelectedItem("Selecione");
-//        selBuscaStatus.setSelectedItem("Selecione");
-//        txtUsuarioLogin.setText(null);
-    }
-
-    // Verifica Campos obrigatório
-    private boolean validarCampos() {
-        //Validação dos campos obrigatórios
-//        if (txtBuscaNome.getText().isEmpty() // O Campo nome é obrigatório
-//                || txtUsuarioCpf.getText().isEmpty() // O Campo CPF é obrigatório
-//                || selBuscaCargo.getSelectedItem().toString().isEmpty() // O Campo CARGO é obrigatório
-//                || selBuscaCargo.getSelectedItem().toString().equals("Selecione") // O Campo CARGO é obrigatório
-//                || selBuscaStatus.getSelectedItem().toString().isEmpty() // O Campo STATUS é obrigatório
-//                || selBuscaStatus.getSelectedItem().toString().equals("Selecione") // O STATUS é obrigatório
-//                ) {
-//            return true;
-//        } else {
-        return false;
-//        }
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ParaApoio().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCampoLimpar;
-    private javax.swing.JButton btnUsuAdicionar;
-    private javax.swing.JButton btnUsuArquivar;
-    private javax.swing.JButton btnUsuAtualizar;
-    private javax.swing.JButton btnUsuPesquisar;
+    private javax.swing.JButton btnLimparCampos;
+    private javax.swing.JButton btnPesquisarUsuario;
+    private javax.swing.JButton btnUsuarioAtualiza;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

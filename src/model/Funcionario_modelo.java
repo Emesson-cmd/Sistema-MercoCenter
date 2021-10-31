@@ -30,8 +30,10 @@ public class Funcionario_modelo {
     String bairro;
     String cidade;
     String cep;
+    String cargo;
+    String situacao;
 
-    public Funcionario_modelo(int cod, String celular, String cpf, String datanasc, String email, String endereco, String nome, String datacad, String horacad, String nume, String rg, String sexo, String telefone, String uf, String bairro, String cidade, String cep) {
+    public Funcionario_modelo(int cod, String celular, String cpf, String datanasc, String email, String endereco, String nome, String datacad, String horacad, String nume, String rg, String sexo, String telefone, String uf, String bairro, String cidade, String cep, String cargo, String situacao) {
         this.cod = cod;
         this.celular = celular;
         this.cpf = cpf;
@@ -49,6 +51,8 @@ public class Funcionario_modelo {
         this.bairro = bairro;
         this.cidade = cidade;
         this.cep = cep;
+        this.cargo = cargo;
+        this.situacao = situacao;
     }
     
     
@@ -190,6 +194,22 @@ public class Funcionario_modelo {
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+    
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
+    }
+    
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
     
     public ArrayList<Funcionario_modelo> listarFuncionarios(){

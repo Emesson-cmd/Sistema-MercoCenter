@@ -592,7 +592,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_abrRelatorioVendasActionPerformed
     private void fecharOutrasTelas() {
-
+        // Fecha tela relatorio
+        if (this.trv != null) {
+            this.trv.setVisible(false);
+            desktop.remove(this.trv);
+            this.trv = null;
+        }
         // Fecha Página Inicial
         if (this.th != null) {
             this.th.setVisible(false);

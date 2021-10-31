@@ -67,10 +67,10 @@ public class Login extends javax.swing.JFrame {
         root.setLayout(new java.awt.CardLayout());
 
         log.setBackground(new java.awt.Color(255, 255, 255));
-        log.setForeground(new java.awt.Color(51, 153, 255));
+        log.setForeground(new java.awt.Color(0, 0, 153));
         log.setPreferredSize(new java.awt.Dimension(850, 500));
 
-        SubPainelLog.setBackground(new java.awt.Color(51, 153, 255));
+        SubPainelLog.setBackground(new java.awt.Color(0, 0, 153));
         SubPainelLog.setPreferredSize(new java.awt.Dimension(377, 465));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -103,8 +103,8 @@ public class Login extends javax.swing.JFrame {
         );
 
         enUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enUserLog.setForeground(new java.awt.Color(51, 153, 255));
-        enUserLog.setText("Username");
+        enUserLog.setForeground(new java.awt.Color(0, 0, 153));
+        enUserLog.setText("2021");
         enUserLog.setBorder(null);
         enUserLog.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,8 +118,8 @@ public class Login extends javax.swing.JFrame {
         });
 
         enSenhaLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enSenhaLog.setForeground(new java.awt.Color(51, 102, 255));
-        enSenhaLog.setText("password");
+        enSenhaLog.setForeground(new java.awt.Color(0, 0, 153));
+        enSenhaLog.setText("3532");
         enSenhaLog.setBorder(null);
         enSenhaLog.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -132,7 +132,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        lblRedefinir.setForeground(new java.awt.Color(0, 153, 255));
+        lblRedefinir.setForeground(new java.awt.Color(0, 0, 153));
         lblRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblRedefinir.setText("ESqueceu a senha?");
         lblRedefinir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,7 +141,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btLogin.setBackground(new java.awt.Color(51, 153, 255));
+        btLogin.setBackground(new java.awt.Color(0, 0, 153));
         btLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btLogin.setForeground(new java.awt.Color(255, 255, 255));
         btLogin.setText("Login");
@@ -152,13 +152,13 @@ public class Login extends javax.swing.JFrame {
         });
 
         lblLogoUser.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblLogoUser.setForeground(new java.awt.Color(51, 153, 255));
+        lblLogoUser.setForeground(new java.awt.Color(0, 0, 153));
         lblLogoUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoUser.setText("Login");
 
-        jSeparator1.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 153));
 
-        jSeparator2.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 153));
 
         javax.swing.GroupLayout logLayout = new javax.swing.GroupLayout(log);
         log.setLayout(logLayout);
