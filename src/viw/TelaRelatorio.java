@@ -36,12 +36,12 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnGerarRelatorio = new javax.swing.JToggleButton();
         cmbAnos = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         cmbMeses = new javax.swing.JComboBox<>();
-        btnAplicarFiltro1 = new javax.swing.JToggleButton();
+        btnLimparCampos = new javax.swing.JButton();
+        btnGerarRelatorio = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableRelatorio = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
@@ -59,13 +59,6 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Filtro de pesquisa", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
 
-        btnGerarRelatorio.setText("Gerar relatorio");
-        btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarRelatorioActionPerformed(evt);
-            }
-        });
-
         cmbAnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "escolha uma ano"}));
 
         jLabel1.setText("Ano:");
@@ -74,10 +67,17 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
 
         cmbMeses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionae o mês","janeiro", "fevereiro", "março", "abril","maio", "junho", "julho", "agosto","setembro", "outubro", "novembro", "dezembro" }));
 
-        btnAplicarFiltro1.setText("Limpar");
-        btnAplicarFiltro1.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparCampos.setText("Limpar");
+        btnLimparCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAplicarFiltro1ActionPerformed(evt);
+                btnLimparCamposActionPerformed(evt);
+            }
+        });
+
+        btnGerarRelatorio.setText("Gerar relatorio");
+        btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerarRelatorioActionPerformed(evt);
             }
         });
 
@@ -89,18 +89,20 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(cmbAnos, 0, 254, Short.MAX_VALUE))
+                    .addComponent(cmbAnos, 0, 260, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnGerarRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                        .addGap(29, 29, 29)
-                        .addComponent(btnAplicarFiltro1, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE))
+                        .addComponent(cmbMeses, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(26, 26, 26))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(cmbMeses, 0, 254, Short.MAX_VALUE)
-                        .addGap(12, 12, 12))
-                    .addComponent(jLabel2))
-                .addGap(14, 14, 14))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnGerarRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,10 +118,10 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
                         .addGap(4, 4, 4)
                         .addComponent(cmbMeses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGerarRelatorio)
-                    .addComponent(btnAplicarFiltro1))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnLimparCampos)
+                    .addComponent(btnGerarRelatorio))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         tableRelatorio.setModel(new javax.swing.table.DefaultTableModel(
@@ -195,17 +197,17 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
                                 .addComponent(txtFaturamentoTotalData))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNomeProdutoMenos)
+                            .addComponent(txtNomeProdutoMenos, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtFaturamentoProdutoMenos)
+                            .addComponent(txtFaturamentoProdutoMenos, javax.swing.GroupLayout.DEFAULT_SIZE, 187, Short.MAX_VALUE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 8, Short.MAX_VALUE))
                             .addComponent(txtInvestimentoTotalData))))
                 .addContainerGap())
         );
@@ -244,37 +246,51 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtFaturamentoProdutoMenos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtInvestimentoTotalData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
-         // TODO add your handling code here:
-         tableRelatorio.setModel(new Relatorio_controle().buscar_relatorio(cmbMeses.getSelectedItem()+"", cmbAnos.getSelectedItem()+"", (DefaultTableModel)tableRelatorio.getModel()));
-         maximasProdutos();
-    }//GEN-LAST:event_btnGerarRelatorioActionPerformed
-
-    private void btnAplicarFiltro1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAplicarFiltro1ActionPerformed
+    private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAplicarFiltro1ActionPerformed
-public void prencherCbmAnos(){
-    String ano = LocalDate.now()+"";
-    int ano_frormatado = Integer.parseInt(ano.substring(0,4));
-    ArrayList<String> anos = new ArrayList<String>();
-    if(ano_frormatado==2021){
-        anos.add(ano_frormatado+"");
-    }else if(ano_frormatado>2021){
-        for(int i=2021;i<ano_frormatado;i++){
-            anos.add(i+"");
+        //remover linhas antigas da tabela
+        DefaultTableModel dtm = new DefaultTableModel();
+        dtm = (DefaultTableModel) tableRelatorio.getModel();
+        while(dtm.getRowCount()!=0){
+            dtm.removeRow(0);
         }
-    }
-    for(int i=0;i<anos.size();i++){
-        cmbAnos.addItem(anos.get(i));
-    }
-    
-    
+        txtFaturamentoProdutoMais.setText("");
+        txtFaturamentoProdutoMenos.setText("");
+        txtFaturamentoTotalData.setText("");
+        txtInvestimentoTotalData.setText("");
+        txtNomeProdutoMais.setText("");
+        txtNomeProdutoMenos.setText("");
+        cmbAnos.setSelectedItem(1);
+        cmbMeses.setSelectedItem(1);
+    }//GEN-LAST:event_btnLimparCamposActionPerformed
+
+    private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
+        // TODO add your handling code here:
+        new Relatorio_controle().buscar_relatorio(cmbMeses.getSelectedItem()+"", cmbAnos.getSelectedItem()+"", (DefaultTableModel)tableRelatorio.getModel());
+        maximasProdutos();
+    }//GEN-LAST:event_btnGerarRelatorioActionPerformed
+    public void prencherCbmAnos() {
+        String ano = LocalDate.now() + "";
+        int ano_frormatado = Integer.parseInt(ano.substring(0, 4));
+        ArrayList<String> anos = new ArrayList<String>();
+        if (ano_frormatado == 2021) {
+            anos.add(ano_frormatado + "");
+        } else if (ano_frormatado > 2021) {
+            for (int i = 2021; i < ano_frormatado; i++) {
+                anos.add(i + "");
+            }
+        }
+        for (int i = 0; i < anos.size(); i++) {
+            cmbAnos.addItem(anos.get(i));
+        }
+
+
     
 } 
 public void maximasProdutos(){
@@ -314,8 +330,8 @@ public void maximasProdutos(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnAplicarFiltro1;
-    private javax.swing.JToggleButton btnGerarRelatorio;
+    private javax.swing.JButton btnGerarRelatorio;
+    private javax.swing.JButton btnLimparCampos;
     private javax.swing.JComboBox<String> cmbAnos;
     private javax.swing.JComboBox<String> cmbMeses;
     private javax.swing.JLabel jLabel1;
