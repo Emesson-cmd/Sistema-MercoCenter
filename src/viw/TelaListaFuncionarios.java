@@ -44,11 +44,11 @@ public class TelaListaFuncionarios extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Código", "Celular"
+                "Código", "Nome", "Celular", "CPF", "Cargo", "Situação"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -63,14 +63,14 @@ public class TelaListaFuncionarios extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 937, Short.MAX_VALUE)
+                .addGap(17, 17, 17))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -86,7 +86,14 @@ public class TelaListaFuncionarios extends javax.swing.JInternalFrame {
 
         for (int i = 0; i < this.funcionarios.size(); i++) {
 
-            Object[] dadosFuncionarios = {funcionarios.get(i).getCod(), funcionarios.get(i).getCelular()};
+            Object[] dadosFuncionarios = {
+                funcionarios.get(i).getCod(), 
+                funcionarios.get(i).getNome(),
+                funcionarios.get(i).getCelular(),
+                funcionarios.get(i).getCpf(),
+                funcionarios.get(i).getCargo(),
+                funcionarios.get(i).getSituacao()                
+            };
             dtmFuncionario.addRow(dadosFuncionarios);            
         }
     }
