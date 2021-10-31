@@ -71,8 +71,8 @@ public class Relatorio_modelo {
         this.Faturamento_final = Faturamento_final;
     }
     
-    public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatemino){
-        return new Relatorio_Dao().buscar_relatorio(diainicio, diatemino);
+    public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatermino){
+        return new Relatorio_Dao().buscar_relatorio(diainicio, diatermino);
     }
      
     

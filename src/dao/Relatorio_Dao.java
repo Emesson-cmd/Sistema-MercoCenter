@@ -20,13 +20,13 @@ public class Relatorio_Dao {
     private Connection conexao = null;
     private String sql="";
     private Conexao con = new Conexao();
+    
+    
+    //Metodo utilizado para buscar orelatorio que é feita com inner join da tabela produto e da item venda
     public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatemino){
-              sql= "\"SELECT  produto.nome,sum(itemvenda.quantidade) as Quantidade_total_vendido,sum(produto.valor_compra*itemvenda.quantidade) as valor_investido,sum(itemvenda.valor_total) as faturamento_geral,(sum(itemvenda.valor_total)-sum(produto.valor_compra*itemvenda.quantidade)) as Lucro_sobre_investimento\\n\"\n" +
-"            + \"FROM  itemvenda\\n\"\n" +
-"            + \"  INNER JOIN  produto\\n\"\n" +
-"            + \"  ON itemvenda.produto_cod_produto=produto.cod_produto    \\n\"\n" +
-"            + \"Where itemvenda.datacad BETWEEN '"+diainicio+"' AND '"+diatemino+"' group by produto.nome;\";";
-        
+        System.out.println("o dia inicio"+diainicio +" e o dia termino "+diatemino);
+              sql= "SELECT  produto.nome,sum(itemvenda.quantidade) as Quantidade_total_vendido,sum(produto.valor_compra*itemvenda.quantidade) as valor_investido,sum(itemvenda.valor_total) as faturamento_geral,(sum(itemvenda.valor_total)-sum(produto.valor_compra*itemvenda.quantidade)) as Lucro_sobre_investimento FROM  itemvenda INNER JOIN  produto ON itemvenda.produto_cod_produto=produto.cod_produto Where itemvenda.datacad BETWEEN '"+diainicio+"' AND '"+diatemino+"' group by produto.nome";
+        System.out.println(sql);
          try {
             this.conexao = con.abricConecxao();
             
@@ -35,14 +35,19 @@ public class Relatorio_Dao {
           
             while (resultado.next()) {
                 Relatorio_modelo relatorio = new Relatorio_modelo();
-                
+                relatorio.setNome_produto(resultado.getString(1));
+                relatorio.setQuantidade_total_vendida(resultado.getInt(2));
+                relatorio.setValor_investido(resultado.getFloat(3));
+                relatorio.setFaturamento_geral(resultado.getFloat(4));
+                relatorio.setFaturamento_final(resultado.getFloat(5));
                 this.relatorios.add(relatorio);
                 
             }
+            //aqui e retornado um array list de relatorio_Modelo 
             return relatorios;
 
         } catch (Exception e) {
-            System.out.println("Erro itemvenda_dao buscar item: " + e);
+            System.out.println("Erro Relatorio_dao buscar item: " + e);
             return null;
         }
          

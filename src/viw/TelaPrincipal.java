@@ -26,6 +26,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private Buscar_Notas bcn;
     private TelaCriarLogin tcl;
     private TelaListaFuncionarios tlf;
+    private TelaRelatorio trv;
 
     /**
      * Creates new form TelaPrincipal
@@ -71,6 +72,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menEstoque = new javax.swing.JMenu();
         abrMenEstoque = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        abrRelatorioVendas = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
         abrMenOpcoes = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
@@ -178,6 +180,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menEstoque);
 
         jMenu3.setText("Relatorios");
+
+        abrRelatorioVendas.setText("Relatorio de vedas");
+        abrRelatorioVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrRelatorioVendasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(abrRelatorioVendas);
+
         jMenuBar1.add(jMenu3);
 
         menOpcoes.setText("Opções");
@@ -560,6 +571,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_abrCriarLoginActionPerformed
+
+    private void abrRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRelatorioVendasActionPerformed
+        // TODO add your handling code here:
+        if (this.trv == null) {
+            fecharOutrasTelas();
+
+            this.trv = new TelaRelatorio();
+            trv.setVisible(true);
+
+            desktop.add(trv);
+            try {
+                trv.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            System.out.println("O tela já está aparecendo!");
+        }
+        
+    }//GEN-LAST:event_abrRelatorioVendasActionPerformed
     private void fecharOutrasTelas() {
 
         // Fecha Página Inicial
@@ -667,6 +698,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem abrMenOpcoes;
     private javax.swing.JMenuItem abrMenSobre;
     private javax.swing.JMenuItem abrRecHum;
+    private javax.swing.JMenuItem abrRelatorioVendas;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
