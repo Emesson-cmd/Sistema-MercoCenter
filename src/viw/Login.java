@@ -104,7 +104,7 @@ public class Login extends javax.swing.JFrame {
 
         enUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enUserLog.setForeground(new java.awt.Color(51, 153, 255));
-        enUserLog.setText("Username");
+        enUserLog.setText("2021");
         enUserLog.setBorder(null);
         enUserLog.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,7 +119,7 @@ public class Login extends javax.swing.JFrame {
 
         enSenhaLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         enSenhaLog.setForeground(new java.awt.Color(51, 102, 255));
-        enSenhaLog.setText("password");
+        enSenhaLog.setText("3532");
         enSenhaLog.setBorder(null);
         enSenhaLog.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -417,7 +417,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(enAdmUser)
-                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 360, Short.MAX_VALUE)
                     .addComponent(enAdmSenha)
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))

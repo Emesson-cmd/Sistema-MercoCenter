@@ -34,14 +34,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         initComponents();
 
 //      COLOCANDO A TELA PRINCIPAL E A TELA HOME EM TAMANHO MAXIMO
-        try {
+//        try {
             this.setExtendedState(MAXIMIZED_BOTH);
             this.th = new TelaHome();
             this.th.setVisible(true);
             this.desktop.add(this.th);
-            this.th.setMaximum(true);
-        } catch (Exception e) {
-        }
+            maximizador(th);
+//        } catch (Exception e) {
+//        }
         this.cod_usuario = cod_usuario;
 //        setExtendedState(MAXIMIZED_BOTH);
     }
@@ -60,7 +60,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menHome = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        abrTelaHome = new javax.swing.JMenuItem();
         menCaixa = new javax.swing.JMenu();
         abrMenCaixa = new javax.swing.JMenuItem();
         abrBusca = new javax.swing.JMenuItem();
@@ -71,6 +71,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menEstoque = new javax.swing.JMenu();
         abrMenEstoque = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        abrRelatorio = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
         abrMenOpcoes = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
@@ -98,14 +99,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/botao-home.png"))); // NOI18N
-        jMenuItem1.setText("Abrir tela Home");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        abrTelaHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/botao-home.png"))); // NOI18N
+        abrTelaHome.setText("Abrir tela Home");
+        abrTelaHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                abrTelaHomeActionPerformed(evt);
             }
         });
-        menHome.add(jMenuItem1);
+        menHome.add(abrTelaHome);
 
         jMenuBar1.add(menHome);
 
@@ -177,7 +178,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menEstoque);
 
-        jMenu3.setText("Relatorios");
+        jMenu3.setText("Relatórios");
+
+        abrRelatorio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
+        abrRelatorio.setText("Abrir tela de relatórios");
+        jMenu3.add(abrRelatorio);
+
         jMenuBar1.add(jMenu3);
 
         menOpcoes.setText("Opções");
@@ -247,6 +253,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_menRhActionPerformed
+
 //METODO PARA ABERTURA DA TELA DE RECURSOS HUMANOS QUE ESTA SENDO TRATADA COM TRY CATCH
     private void abrRecHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRecHumActionPerformed
 
@@ -255,45 +262,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             trh = new TelaRh();
             trh.setVisible(true);
-
             desktop.add(trh);
             
-            try {
-                
-                trh.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            maximizador(trh);
         } else {
             System.out.println("A tela já está aparecendo!");
         }
-        //        try {
-//            if (this.th != null) {
-//                this.th.setVisible(false);
-//                this.desktop.remove(this.th);
-//                this.desktop.add(trh);
-//                this.trh = new TelaRh();
-//                this.trh.setVisible(true);
-//                this.trh.setMaximum(true);
-//                this.th = null;
-//            }
-//            if (this.tcv != null) {
-//                this.tcv.setVisible(false);
-//                this.desktop.remove(this.tcv);
-//                this.trh = new TelaRh();
-//                this.trh.setVisible(true);
-//                this.desktop.add(this.trh);
-//                this.tcv = null;
-//
-//            }
-//        } catch (Exception e) {
-//            System.out.println("Erro ao abrir tela rh" + e);
-//        }
-
-// As linhas abaixo se referem ao o que vai acontecer quando eu apertar em abrRecHum no RH
-        // Será aberto o form de Recursos Humanos dentro do desktop pane
-
     }//GEN-LAST:event_abrRecHumActionPerformed
+
 //NESSE METODO ESTASENDO VERIFICADO SE EXISTE ALGUMA TELA ABERTA E FECHANDOO ELA PARA ABERTURA 
     private void abrMenCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenCaixaActionPerformed
 
@@ -361,7 +337,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_abrMenCaixaActionPerformed
-
+ 
     private void abrBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrBuscaActionPerformed
         if (bcn == null) {
             fecharOutrasTelas();
@@ -370,103 +346,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
             bcn.setVisible(true);
 
             desktop.add(bcn);
-            try {
-                bcn.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+            maximizador(bcn);
         } else {
             System.out.println("A tela já está aparecendo!");
         }
-//        try {
-//            if (this.th != null) {
-//                this.th.setVisible(false);
-//                desktop.remove(this.th);
-//                this.bcn = new Buscar_Notas();
-//                this.bcn.setVisible(true);
-//                desktop.add(this.bcn);
-//                this.bcn.setMaximum(true);
-//                this.th = null;
-//            }
-//            if (this.trh != null) {
-//                this.trh.setVisible(false);
-//                desktop.remove(this.trh);
-//                this.bcn = new Buscar_Notas();
-//                this.bcn.setVisible(true);
-//                desktop.add(this.bcn);
-//                this.bcn.setMaximum(true);
-//                this.trh = null;
-//
-//            }
-//            if (this.tcv != null) {
-//                this.tcv.setVisible(false);
-//                desktop.remove(this.tcv);
-//                this.bcn = new Buscar_Notas();
-//                this.bcn.setVisible(true);
-//                desktop.add(this.bcn);
-//                this.bcn.setMaximum(true);
-//                this.tcv = null;
-//            }
-//            if (this.bcn != null) {
-//
-//            }
-//        } catch (Exception e) {
-//            System.out.println("Erro ao abrir tela caixa" + e);
-//        }
     }//GEN-LAST:event_abrBuscaActionPerformed
 
     private void menHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menHomeActionPerformed
         // TODO add your handling code here:
-
-
     }//GEN-LAST:event_menHomeActionPerformed
-    private void navegacao(JInternalFrame telaSolicitada) {
-        try {
-            if (this.th != null) {
-                this.th.setVisible(false);
-                desktop.remove(this.th);
-                tcv = new TelaCaixaVenda(this.cod_usuario);
-                this.tcv.setVisible(true);
-                desktop.add(this.tcv);
-                this.tcv.setMaximum(true);
-                this.th = null;
-            }
-            if (this.trh != null) {
-                this.trh.setVisible(false);
-                desktop.remove(this.trh);
-                tcv = new TelaCaixaVenda(this.cod_usuario);
-                this.tcv.setVisible(true);
-                desktop.add(this.tcv);
-                this.tcv.setMaximum(true);
-                this.trh = null;
-            }
-            if (this.bcn != null) {
-                this.bcn.setVisible(false);
-                desktop.remove(this.bcn);
-                tcv = new TelaCaixaVenda(this.cod_usuario);
-                this.tcv.setVisible(true);
-                desktop.add(this.tcv);
-                this.tcv.setMaximum(true);
-                this.bcn = null;
-            }
-            if (this.tcv != null) {
-                if (this.tcv.isVisible() == false) {
-                    desktop.remove(this.tcv);
-                    this.tcv = new TelaCaixaVenda(cod_usuario);
-                    this.tcv.setVisible(true);
-                    this.desktop.add(this.tcv);
-                    this.tcv.setMaximum(true);
-                } else {
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Erro ao abrir tela caixa" + e);
-        }
-
-    }
 
 //ESSE METODO ABRE A CLASSE HOME FAZENDO TESTES PARA SABER SE HA MAIS ALGUMA TELA ABERTA
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void abrTelaHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrTelaHomeActionPerformed
         // TODO add your handling code here:
         if (this.th == null) {
             fecharOutrasTelas();
@@ -475,50 +367,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             th.setVisible(true);
 
             desktop.add(th);
-            try {
-                th.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+            maximizador(th);
         } else {
             System.out.println("A tela já está aparecendo!");
         }
-//        try {
-//            if (this.trh != null) {
-//                this.trh.setVisible(false);
-//                this.desktop.remove(this.trh);
-//                this.th = new TelaHome();
-//                this.th.setVisible(true);
-//                this.desktop.add(this.th);
-//                this.th.setMaximum(true);
-//                this.trh = null;
-//            }
-//            if (this.tcv != null) {
-//                this.tcv.setVisible(false);
-//                this.desktop.remove(this.tcv);
-//                this.th = new TelaHome();
-//                this.th.setVisible(true);
-//                this.desktop.add(this.th);
-//                this.th.setMaximum(true);
-//                this.th = null;
-//
-//            }
-//            if (this.bcn != null) {
-//                this.bcn.setVisible(false);
-//                this.desktop.remove(this.bcn);
-//                this.th = new TelaHome();
-//                this.th.setVisible(true);
-//                this.desktop.add(this.th);
-//                this.th.setMaximum(true);
-//                this.th = null;
-//            }
-//            if (this.th != null) {
-//
-//            }
-//        } catch (Exception e) {
-//
-//        }
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_abrTelaHomeActionPerformed
 
     private void abrListaFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrListaFuncionariosActionPerformed
         // TODO add your handling code here:
@@ -529,11 +383,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tlf.setVisible(true);
 
             desktop.add(tlf);
-            try {
-                tlf.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            
+            maximizador(tlf);
         } else {
             System.out.println("O tela já está aparecendo!");
         }
@@ -549,17 +400,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             desktop.add(this.tcl);
             
-            try {
-                this.tcl.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
+            maximizador(tcl);
         } else {
             System.out.println("A tela já está aparecendo.");
 
         }
     }//GEN-LAST:event_abrCriarLoginActionPerformed
+   
+    // Método responsável por fechar todas as telas JInternalFrame.
     private void fecharOutrasTelas() {
 
         // Fecha Página Inicial
@@ -575,6 +423,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             desktop.remove(this.tcv);
             this.tcv = null;
         }
+        
         // Fecha Buscar nota
         if (this.bcn != null) {
             this.bcn.setVisible(false);
@@ -603,9 +452,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
             this.tlf = null;
         }
     }
-
     
-
+    // Esse método será responsável por maximizar as telas JInternalFrame
+    private void maximizador(JInternalFrame tela){
+        try {
+            tela.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -667,13 +523,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem abrMenOpcoes;
     private javax.swing.JMenuItem abrMenSobre;
     private javax.swing.JMenuItem abrRecHum;
+    private javax.swing.JMenuItem abrRelatorio;
+    private javax.swing.JMenuItem abrTelaHome;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     public javax.swing.JMenu menCaixa;
     public javax.swing.JMenu menEstoque;
     private javax.swing.JMenu menHome;
