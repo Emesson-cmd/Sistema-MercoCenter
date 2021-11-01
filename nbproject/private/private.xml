@@ -3,6 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<!--             Essa parte está tendo conflito com a parte de baixo. Eu vou somente comenta-la. Essa parte funciona no pc de Emesson (Linux) -->
+<!--             <file>file:/home/emesson/NetBeansProjects/Sitema%20MercoCenter%2004/src/viw/TelaPrincipal.java</file> -->
+<!--             <file>file:/home/emesson/NetBeansProjects/Sitema%20MercoCenter%2004/src/viw/TelaCriarLogin.java</file> -->
+<!--             <file>file:/home/emesson/NetBeansProjects/Sitema%20MercoCenter%2004/src/viw/TelaRh.java</file> -->
+
+<!--        Essa parte tá conflitando com a parte de cima. Então eu vou somente deixar a de cima comentada. Essa parte funciona no PC de Ulisses (Windows)     -->
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter/src/viw/TelaRelatorio.java</file>
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter/src/dao/NotaVenda_Dao.java</file>
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter/src/dao/Relatorio_Dao.java</file>
@@ -10,6 +16,7 @@
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter/src/controle/Relatorio_controle.java</file>
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter/src/viw/Login.java</file>
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter/src/viw/TelaHome.java</file>
+
         </group>
     </open-files>
 </project-private>
