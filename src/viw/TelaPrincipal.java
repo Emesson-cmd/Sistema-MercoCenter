@@ -134,7 +134,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menCaixa);
 
         menRh.setText("RH");
-        menRh.setEnabled(false);
         menRh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menRhActionPerformed(evt);
@@ -181,7 +180,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu3.setText("Relatorios");
 
-        abrRelatorioVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
         abrRelatorioVendas.setText("Relatorio de vedas");
         abrRelatorioVendas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,15 +226,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addContainerGap()
+                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 488, Short.MAX_VALUE))
         );
 
         pack();

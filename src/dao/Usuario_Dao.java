@@ -21,6 +21,37 @@ public class Usuario_Dao {
     private Conexao con = new Conexao();
     private Connection conexao = null;
 
+    public ArrayList<Usuario_Modelo> buscarUsuarios() {
+
+        ArrayList<Usuario_Modelo> usuarios = new ArrayList();
+
+        try {
+            this.conexao = con.abricConecxao();
+            String sql = "select * from usuario";
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+            ResultSet resultado = preparo.executeQuery();
+
+            while (resultado.next()) {
+                Usuario_Modelo usuario = new Usuario_Modelo();
+
+                usuario.setCod_usuario(resultado.getInt("usuario.cod_usuario"));
+                usuario.setSenha(resultado.getString("usuario.senha"));
+                usuario.setPermissao(resultado.getString("usuario.permissao"));
+                usuario.setFuncionario_cod_funcionario(resultado.getInt("usuario.funcionario_cod_funcionario"));
+                usuario.setNome(resultado.getString("usuario.nome"));
+                usuario.setAtivo(resultado.getInt("usuario.ativo"));
+
+                usuarios.add(usuario);
+            }
+
+            return usuarios;
+        } catch (Exception e) {
+            System.out.println("Erro no DAO ao tentar alimentar o array de usuários: " + e);
+//            return null;
+            return usuarios;
+        }
+    }
+
 //METODO QUE REALIZA A BUSCA DOS DADOS NO BANCO E RETORNA UM ARRAY LIST DE USUARIO MODELO COM OS DADOS
     public ArrayList<Usuario_Modelo> buscar(int user, String senha) {
 
@@ -69,6 +100,68 @@ public class Usuario_Dao {
             return false;
         }
 
+    }
+
+    public void adicionarUsuario(Usuario_Modelo usuario) {
+        String sql = "insert into usuario (cod_usuario, senha, permissao, funcionario_cod_funcionario, nome, ativo)"
+                + "values"
+                + "(?, ?, ?, ?, ?, ?)";
+
+        try {
+            this.conexao = con.abricConecxao();
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+
+            preparo.setInt(1, usuario.getCod_usuario());
+            preparo.setString(2, usuario.getSenha());
+            preparo.setString(3, usuario.getPermissao());
+            preparo.setInt(4, usuario.getFuncionario_cod_funcionario());
+            preparo.setString(5, usuario.getNome());
+            preparo.setInt(6, usuario.getAtivo());
+
+            int confirmacaoDeInsercap = preparo.executeUpdate();
+
+            if (confirmacaoDeInsercap < 0) {
+                JOptionPane.showMessageDialog(null, "Houve um erro ao tentar aicionar um novo usuário!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso!");
+            }
+        } catch (Exception e) {
+            System.out.println("Houve um erro ao  tentar executar método de adicionar usuário no banco de dados: \n" + e);
+        }
+    }
+
+    public void atualizarUsuario(Usuario_Modelo usuario) {
+        String sql = "update usuario set "
+                + "cod_usuario = ?, "
+                + "senha = ?, "
+                + "permissao = ?," 
+                + "nome = ?, "
+                + "ativo = ? "
+                + "where funcionario_cod_funcionario = ?";
+
+        try {
+            this.conexao = con.abricConecxao();
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+
+            preparo.setInt(1, usuario.getCod_usuario());
+            preparo.setString(2, usuario.getSenha());
+            preparo.setString(3, usuario.getPermissao());
+            preparo.setString(4, usuario.getNome());
+            preparo.setInt(5, usuario.getAtivo());
+            preparo.setInt(6, usuario.getFuncionario_cod_funcionario());
+
+            
+            int confirmacaoDeAtualizacao = preparo.executeUpdate();
+            System.out.println("Numero da confirmação de atualização: " + confirmacaoDeAtualizacao);
+            
+            if (confirmacaoDeAtualizacao < 0) {
+                JOptionPane.showMessageDialog(null, "Houve um erro ao tentar atualizar um usuário!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário atualizado com sucesso!");
+            }
+        } catch (Exception e) {
+            System.out.println("Houve um erro ao  tentar executar método de atualizar usuário no banco de dados: \n" + e);
+        }
     }
 }
 //   

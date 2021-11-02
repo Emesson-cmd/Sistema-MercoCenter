@@ -23,8 +23,8 @@ public class Usuario_Modelo {
     private int funcionario_cod_funcionario;
     private String nome;
     private int ativo;
-//CONSTRUTOR PARA INSERÇÃ DE DADOS NA INSTANCIOA DA CLASSE
 
+//CONSTRUTOR PARA INSERÇÃ DE DADOS NA INSTANCIOA DA CLASSE
     public Usuario_Modelo(int cod_usuario, String senha, String permissao, int funcionario_cod_funcionario, String nome, int ativo) {
         this.cod_usuario = cod_usuario;
         this.senha = senha;
@@ -33,8 +33,8 @@ public class Usuario_Modelo {
         this.nome = nome;
         this.ativo = ativo;
     }
-//CONSTRUTOR VAZIO
 
+//CONSTRUTOR VAZIO
     public Usuario_Modelo() {
     }
 
@@ -97,5 +97,9 @@ public class Usuario_Modelo {
 
     public boolean Redefinirsenha(int usuario, String senha, int cod_funcionario) {
         return new Usuario_Dao().Update(usuario, senha, cod_funcionario);
+    }
+
+    public ArrayList<Usuario_Modelo> listarUsuarios() {
+        return new Usuario_Dao().buscarUsuarios();
     }
 }

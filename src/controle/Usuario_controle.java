@@ -5,6 +5,7 @@
  */
 package controle;
 
+import dao.Usuario_Dao;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Usuario_Modelo;
@@ -14,7 +15,7 @@ import model.Usuario_Modelo;
  * @author T.I
  */
 public class Usuario_controle {
-
+    
 //    NESSE METODO ELE RECEBE COMO PARAMETRO O USUARIO E A SENHA DA CAMADA VIW E O RETORNA UM OBJETO
 //    DE MODELO DE PRODUTO COM OS DADOS QUE VINHERAM DA CAMADA DAO E FORMAR REPASSADOS DA CAMADA MODEL 
     public Usuario_Modelo efetuarLogin(int user, String senha) {
@@ -66,4 +67,17 @@ public class Usuario_controle {
 
     }
 
+    public ArrayList<Usuario_Modelo> buscarUsuarios() {
+        return new Usuario_Modelo().listarUsuarios();
+    }
+    
+    public void adicionarUsuario(Usuario_Modelo usuario_modelo){
+        Usuario_Dao usuario_dao = new Usuario_Dao();
+        usuario_dao.adicionarUsuario(usuario_modelo);
+    }
+    
+    public void atualizarUsuario(Usuario_Modelo usuario_modelo){
+        Usuario_Dao usuario_dao = new Usuario_Dao();
+        usuario_dao.atualizarUsuario(usuario_modelo);
+    }
 }
