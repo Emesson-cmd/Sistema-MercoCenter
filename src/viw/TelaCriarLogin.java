@@ -474,7 +474,6 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     // e do usuário (se este houver)
     private void btnFunConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFunConsultarActionPerformed
         String codFunInserido = txtFunCod.getText();
-        limparCampos();
         boolean funNaoEncontrado = true;
 
         // Verifica se o campo de funcionário é um código válido. Caso seja, é
@@ -615,6 +614,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
     // Verifica se um funcionário já tem login (usuário)
     public boolean funcionarioJaTemLogin() {
+        
         for (int j = 0; j < usuarios.size(); j++) {
             if (Integer.parseInt(txtFunCod.getText()) == usuarios.get(j).getFuncionario_cod_funcionario()) {
                 System.out.println("Funcionário já tem login");
@@ -622,6 +622,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             }
         }
         return false;
+        
     }
 
     // Esse método valida os campos de texto que podem somente receber número
