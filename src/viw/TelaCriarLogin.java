@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 import dao.Conexao;
 import controle.Funcionario_controle;
 import controle.Usuario_controle;
+import dao.Usuario_Dao;
 import model.Funcionario_modelo;
 import model.Usuario_Modelo;
 
@@ -606,10 +607,18 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnUsuAtualizarActionPerformed
 
-    // Excluir um usuário
+    // Excluir um usuário através do cod_usuario
     private void btnUsuExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuExcluirActionPerformed
-        // TODO add your handling code here:
-
+        int colunaSelecionada = tabelaUsuarios.getSelectedRow();
+        String usuNome = usuarios.get(colunaSelecionada).getNome();
+        int usuCod = usuarios.get(colunaSelecionada).getCod_usuario();
+        int decisao = JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir o usuário " + usuNome + "?"
+                + "\nAlerta: essa ação não poderá ser desfeita!");
+        
+        if (decisao == 0){
+            Usuario_controle usuario_controle = new Usuario_controle();
+            usuario_controle.deletarUsuario(usuCod);
+        }
     }//GEN-LAST:event_btnUsuExcluirActionPerformed
 
     // Verifica se um funcionário já tem login (usuário)

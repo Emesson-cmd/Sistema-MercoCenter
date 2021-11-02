@@ -16,11 +16,12 @@ import model.Usuario_Modelo;
  * @author JOSÉ ULISSES DA SILVA
  */
 public class Usuario_Dao {
-//    DOIS OBJETOS QUE SERVEM PARA ABRIR E FECHAR A CONEXÃO
 
+//    DOIS OBJETOS QUE SERVEM PARA ABRIR E FECHAR A CONEXÃO
     private Conexao con = new Conexao();
     private Connection conexao = null;
 
+    // Retorna uma lista de todos os usuários do banco de dados
     public ArrayList<Usuario_Modelo> buscarUsuarios() {
 
         ArrayList<Usuario_Modelo> usuarios = new ArrayList();
@@ -85,8 +86,8 @@ public class Usuario_Dao {
         }
 
     }
+    
 //    METODO UTILIZADO PARA ATUALIZAR OS DADOS DE USUARIO
-
     public boolean Update(int usuario, String senha, int cod_funcionario) {
         try {
             this.conexao = con.abricConecxao();
@@ -102,6 +103,7 @@ public class Usuario_Dao {
 
     }
 
+    // Adiciona um novo usuário no banco de dados
     public void adicionarUsuario(Usuario_Modelo usuario) {
         String sql = "insert into usuario (cod_usuario, senha, permissao, funcionario_cod_funcionario, nome, ativo)"
                 + "values"
@@ -130,11 +132,12 @@ public class Usuario_Dao {
         }
     }
 
+    // Atualiza um usuário no banco de dados
     public void atualizarUsuario(Usuario_Modelo usuario) {
         String sql = "update usuario set "
                 + "cod_usuario = ?, "
                 + "senha = ?, "
-                + "permissao = ?," 
+                + "permissao = ?,"
                 + "nome = ?, "
                 + "ativo = ? "
                 + "where funcionario_cod_funcionario = ?";
@@ -150,10 +153,9 @@ public class Usuario_Dao {
             preparo.setInt(5, usuario.getAtivo());
             preparo.setInt(6, usuario.getFuncionario_cod_funcionario());
 
-            
             int confirmacaoDeAtualizacao = preparo.executeUpdate();
             System.out.println("Numero da confirmação de atualização: " + confirmacaoDeAtualizacao);
-            
+
             if (confirmacaoDeAtualizacao < 0) {
                 JOptionPane.showMessageDialog(null, "Houve um erro ao tentar atualizar um usuário!");
             } else {
@@ -163,6 +165,24 @@ public class Usuario_Dao {
             System.out.println("Houve um erro ao  tentar executar método de atualizar usuário no banco de dados: \n" + e);
         }
     }
-}
-//   
 
+    // Deleta um usuário no banco de dados usando como parâmetro o cod_usuario
+    public void deletarUsuario(int cod_usuario) {
+        String sql = "delete from usuario where cod_usuario = " + cod_usuario;
+
+        try {
+            conexao = con.abricConecxao();
+            PreparedStatement pst = conexao.prepareStatement(sql);
+            int confirmacao = pst.executeUpdate();
+
+            if (confirmacao < 0) {
+                JOptionPane.showMessageDialog(null, "Houve um erro ao tentar excluir um usuário no banco de dados");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");
+            System.out.println("Houve um erro ao  tentar executar método de excluir usuário no banco de dados: \n" + e);
+        }
+    }
+}
