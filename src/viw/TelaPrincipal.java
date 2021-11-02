@@ -7,6 +7,7 @@ package viw;
 
 import java.beans.PropertyVetoException;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JInternalFrame;
@@ -27,6 +28,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaCriarLogin tcl;
     private TelaListaFuncionarios tlf;
     private TelaRelatorio trv;
+    private TelaEstoque tes;
 
     /**
      * Creates new form TelaPrincipal
@@ -71,8 +73,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         abrListaFuncionarios = new javax.swing.JMenuItem();
         menEstoque = new javax.swing.JMenu();
         abrMenEstoque = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        abrRelatorioVendas = new javax.swing.JMenuItem();
+        menRelatorio = new javax.swing.JMenu();
+        menRelatorioVenda = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
         abrMenOpcoes = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
@@ -112,6 +114,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menHome);
 
         menCaixa.setText("Caixa");
+        menCaixa.setEnabled(false);
 
         abrMenCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/apenas-a-dinheiro.png"))); // NOI18N
         abrMenCaixa.setText("Abrir Caixa");
@@ -175,22 +178,29 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         abrMenEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/estoque.png"))); // NOI18N
         abrMenEstoque.setText("Abrir Estoque");
+        abrMenEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrMenEstoqueActionPerformed(evt);
+            }
+        });
         menEstoque.add(abrMenEstoque);
 
         jMenuBar1.add(menEstoque);
 
-        jMenu3.setText("Relatorios");
+        menRelatorio.setText("Relatorio");
+        menRelatorio.setEnabled(false);
 
-        abrRelatorioVendas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
-        abrRelatorioVendas.setText("Relatorio de vedas");
-        abrRelatorioVendas.addActionListener(new java.awt.event.ActionListener() {
+        menRelatorioVenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        menRelatorioVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
+        menRelatorioVenda.setText("Abrir relatorio de venda");
+        menRelatorioVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abrRelatorioVendasActionPerformed(evt);
+                menRelatorioVendaActionPerformed(evt);
             }
         });
-        jMenu3.add(abrRelatorioVendas);
+        menRelatorio.add(menRelatorioVenda);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(menRelatorio);
 
         menOpcoes.setText("Opções");
 
@@ -234,9 +244,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE))
+            .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
         );
 
         pack();
@@ -269,9 +277,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
             trh.setVisible(true);
 
             desktop.add(trh);
-            
+
             try {
-                
+
                 trh.setMaximum(true);
             } catch (PropertyVetoException ex) {
                 Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
@@ -560,7 +568,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tcl.setVisible(true);
 
             desktop.add(this.tcl);
-            
+
             try {
                 this.tcl.setMaximum(true);
             } catch (PropertyVetoException ex) {
@@ -573,7 +581,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_abrCriarLoginActionPerformed
 
-    private void abrRelatorioVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRelatorioVendasActionPerformed
+    private void abrMenEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenEstoqueActionPerformed
+        // TODO add your handling code here:
+        if (this.tes == null) {
+            fecharOutrasTelas();
+
+            try {
+                this.tes = new TelaEstoque();
+            } catch (ParseException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            tes.setVisible(true);
+
+            desktop.add(tes);
+            try {
+                tes.setMaximum(true);
+            } catch (PropertyVetoException ex) {System.out.println(ex);
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            System.out.println("O tela já está aparecendo!");
+        }
+    }//GEN-LAST:event_abrMenEstoqueActionPerformed
+
+    private void menRelatorioVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRelatorioVendaActionPerformed
         // TODO add your handling code here:
         if (this.trv == null) {
             fecharOutrasTelas();
@@ -590,8 +621,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } else {
             System.out.println("O tela já está aparecendo!");
         }
-        
-    }//GEN-LAST:event_abrRelatorioVendasActionPerformed
+    }//GEN-LAST:event_menRelatorioVendaActionPerformed
     private void fecharOutrasTelas() {
         // Fecha tela relatorio
         if (this.trv != null) {
@@ -604,6 +634,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
             this.th.setVisible(false);
             desktop.remove(this.th);
             this.th = null;
+        }
+        // Fecha Página Inicial
+        if (this.th != null) {
+            this.th.setVisible(false);
+            desktop.remove(this.th);
+            this.th = null;
+        }
+        // Fecha tela Produto
+        if (this.tes != null) {
+            this.tes.setVisible(false);
+            desktop.remove(this.tes);
+            this.tes = null;
         }
 
         // Fecha tela Caixa Vendas
@@ -640,8 +682,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             this.tlf = null;
         }
     }
-
-    
 
     /**
      * @param args the command line arguments
@@ -704,11 +744,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem abrMenOpcoes;
     private javax.swing.JMenuItem abrMenSobre;
     private javax.swing.JMenuItem abrRecHum;
-    private javax.swing.JMenuItem abrRelatorioVendas;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -716,6 +754,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     public javax.swing.JMenu menEstoque;
     private javax.swing.JMenu menHome;
     private javax.swing.JMenu menOpcoes;
+    public javax.swing.JMenu menRelatorio;
+    private javax.swing.JMenuItem menRelatorioVenda;
     public javax.swing.JMenu menRh;
     private javax.swing.JMenuItem menSair;
     private javax.swing.JMenu menSobre;

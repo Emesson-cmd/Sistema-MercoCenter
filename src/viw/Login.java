@@ -516,6 +516,7 @@ public class Login extends javax.swing.JFrame {
                     TelaPrincipal.menCaixa.setEnabled(true);
                     TelaPrincipal.menEstoque.setEnabled(true);
                     TelaPrincipal.menRh.setEnabled(true);
+                    TelaPrincipal.menRelatorio.setEnabled(true);
 
                     break;
                 case "caixa":
@@ -535,6 +536,9 @@ public class Login extends javax.swing.JFrame {
                     TelaPrincipal.menCaixa.setEnabled(true);
                     TelaPrincipal.menEstoque.setEnabled(true);
                     TelaPrincipal.menRh.setEnabled(true);
+                    TelaPrincipal.menRelatorio.setEnabled(true);
+
+                    
                     break;
                 default:
                     JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
