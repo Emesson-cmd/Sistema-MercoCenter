@@ -124,7 +124,6 @@
         <Menu class="javax.swing.JMenu" name="menEstoque">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estoque"/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -137,6 +136,17 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Abrir Estoque"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrMenEstoqueActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="abrListaProdutos">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lista de produtos"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrListaProdutosActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

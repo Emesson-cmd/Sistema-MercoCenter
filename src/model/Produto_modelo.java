@@ -25,8 +25,9 @@ public class Produto_modelo {
     private String tipo;
     private Date datacad;
     private Date horacad;
+    private int quantidadeMin;
 
-    public Produto_modelo(int cod_produto, String nome, String descrição, double valor_compra, double valor_venda, int quantidade, String tipo, Date datacad, Date horacad) {
+    public Produto_modelo(int cod_produto, String nome, String descrição, double valor_compra, double valor_venda, int quantidade, String tipo, Date datacad, Date horacad, int quantidadeMin) {
         this.cod_produto = cod_produto;
         this.nome = nome;
         this.descrição = descrição;
@@ -36,6 +37,7 @@ public class Produto_modelo {
         this.tipo = tipo;
         this.datacad = datacad;
         this.horacad = horacad;
+        this.quantidadeMin = quantidadeMin;
     }
 
     public Produto_modelo() {
@@ -112,10 +114,21 @@ public class Produto_modelo {
     public void setHoracad(Date horacad) {
         this.horacad = horacad;
     }
+    
+    public int getquantidadeMin() {
+        return quantidadeMin;
+    }
+
+    public void setQuantidadeMin(int quantidadeMin) {
+        this.quantidadeMin = quantidadeMin;
+    }
+    
     public  ArrayList<Produto_modelo> listarprodutos(){
         return new Produto_Dao().buscarprodutos();
     }
     
-    
-    
+    public Produto_modelo buscarProdutoPorCod(int cod_produto){
+        Produto_Dao produto_Dao = new Produto_Dao();
+        return produto_Dao.buscarProdutoPorCod(cod_produto);
+    }
 }
