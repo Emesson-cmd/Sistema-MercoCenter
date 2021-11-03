@@ -18,4 +18,8 @@ public class Produto_controle {
         return new Produto_Dao().buscarprodutos();
     }
     
+    public Produto_modelo buscarProdutoPorCod(int cod_produto){
+        Produto_modelo produto_modelo = new Produto_modelo();
+        return produto_modelo.buscarProdutoPorCod(cod_produto);
+    }    
 }
