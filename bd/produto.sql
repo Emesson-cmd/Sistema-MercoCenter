@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Out-2021 às 21:07
+-- Tempo de geração: 02-Nov-2021 às 23:47
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -37,16 +37,17 @@ CREATE TABLE `produto` (
   `tipo` varchar(50) DEFAULT NULL,
   `datacad` date DEFAULT NULL,
   `horacad` time DEFAULT NULL,
-  `quantidade_minima` int(11) DEFAULT NULL
+  `quantidade_minima` int(11) DEFAULT NULL,
+  `datavalidade` date DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produto`
 --
 
-INSERT INTO `produto` (`cod_produto`, `nome`, `descricao`, `valor_compra`, `valor_venda`, `quantidade`, `tipo`, `datacad`, `horacad`, `quantidade_minima`) VALUES
-(1, 'café', 'produto da marca santa clara', '12.40', '15.00', -1, 'perecivel', '2021-10-15', '12:00:00', 10),
-(2, 'Leite', 'produto da marca santa clara', '12.40', '15.00', -1, 'perecivel', '2021-10-15', '12:00:00', NULL);
+INSERT INTO `produto` (`cod_produto`, `nome`, `descricao`, `valor_compra`, `valor_venda`, `quantidade`, `tipo`, `datacad`, `horacad`, `quantidade_minima`, `datavalidade`) VALUES
+(2, 'Leite', 'produto da marca santa clara', '8.40', '16.00', -1, 'perecivel', '2021-10-15', '12:00:00', 6, '2021-12-12'),
+(3, 'feijão', 'produto da marca santa clara', '10.40', '12.00', -1, 'perecivel', '2021-10-15', '12:00:00', 10, '2021-12-12');
 
 --
 -- Índices para tabelas despejadas
