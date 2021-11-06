@@ -16,28 +16,47 @@ import model.Produto_modelo;
  * @author T.I
  */
 public class Produto_modelo {
+
     private int cod_produto;
     private String nome;
-    private String descrição;
+    private String descricao;
     private double valor_compra;
     private double valor_venda;
     private int quantidade;
-    private String tipo;
-    private Date datacad;
-    private Date horacad;
-    private int quantidadeMin;
+    private String data_validade;
+    private int quantidademinima;
 
-    public Produto_modelo(int cod_produto, String nome, String descrição, double valor_compra, double valor_venda, int quantidade, String tipo, Date datacad, Date horacad, int quantidadeMin) {
+    public int getQuantidademinima() {
+        return quantidademinima;
+    }
+
+    public void setQuantidademinima(int quantidademinima) {
+        this.quantidademinima = quantidademinima;
+    }
+    private String tipo;
+    private String datacad;
+    private String horacad;
+
+    public Produto_modelo(String d_validade, int cod_produto, String nome, String descrição, double valor_compra, double valor_venda, int quantidade, int quantidademin, String tipo, String datacad, String horacad) {
         this.cod_produto = cod_produto;
         this.nome = nome;
-        this.descrição = descrição;
+        this.descricao = descrição;
         this.valor_compra = valor_compra;
         this.valor_venda = valor_venda;
+        this.quantidademinima = quantidademin;
         this.quantidade = quantidade;
         this.tipo = tipo;
         this.datacad = datacad;
         this.horacad = horacad;
-        this.quantidadeMin = quantidadeMin;
+        this.data_validade = d_validade;
+    }
+
+    public String getData_validade() {
+        return data_validade;
+    }
+
+    public void setData_validade(String data_validade) {
+        this.data_validade = data_validade;
     }
 
     public Produto_modelo() {
@@ -59,12 +78,12 @@ public class Produto_modelo {
         this.nome = nome;
     }
 
-    public String getDescrição() {
-        return descrição;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescrição(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descrição) {
+        this.descricao = descrição;
     }
 
     public double getValor_compra() {
@@ -99,36 +118,36 @@ public class Produto_modelo {
         this.tipo = tipo;
     }
 
-    public Date getDatacad() {
+    public String getDatacad() {
         return datacad;
     }
 
-    public void setDatacad(Date datacad) {
+    public void setDatacad(String datacad) {
         this.datacad = datacad;
     }
 
-    public Date getHoracad() {
+    public String getHoracad() {
         return horacad;
     }
 
-    public void setHoracad(Date horacad) {
+    public void setHoracad(String horacad) {
         this.horacad = horacad;
     }
-    
-    public int getquantidadeMin() {
-        return quantidadeMin;
-    }
 
-    public void setQuantidadeMin(int quantidadeMin) {
-        this.quantidadeMin = quantidadeMin;
-    }
-    
-    public  ArrayList<Produto_modelo> listarprodutos(){
+    public ArrayList<Produto_modelo> listarprodutos() {
         return new Produto_Dao().buscarprodutos();
     }
-    
-    public Produto_modelo buscarProdutoPorCod(int cod_produto){
-        Produto_Dao produto_Dao = new Produto_Dao();
-        return produto_Dao.buscarProdutoPorCod(cod_produto);
+
+    public boolean remover_Produto(int id) {
+        return new Produto_Dao().remover_Produto(id);
     }
+
+    public boolean atualizar_Produto(Produto_modelo produto) {
+        return new Produto_Dao().atualizar_Produto(produto);
+    }
+    public boolean inserir_Produto(Produto_modelo produto) {
+        return new Produto_Dao().inserir_Produto(produto);
+    }
+
+   
 }

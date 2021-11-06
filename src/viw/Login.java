@@ -43,6 +43,7 @@ public class Login extends javax.swing.JFrame {
         Redefinir = new javax.swing.JPanel();
         SubPainelRedefinir = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        btnVoltarAdmAutenticacao1 = new javax.swing.JButton();
         enRedefinirid = new javax.swing.JTextField();
         btRedefinir = new javax.swing.JToggleButton();
         lblLogoRedefinir = new javax.swing.JLabel();
@@ -54,6 +55,7 @@ public class Login extends javax.swing.JFrame {
         AdmLog = new javax.swing.JPanel();
         SubPainelAdmLog = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        btnVoltarAdmAutenticacao = new javax.swing.JButton();
         enAdmUser = new javax.swing.JTextField();
         enAdmSenha = new javax.swing.JPasswordField();
         btAutenticar = new javax.swing.JToggleButton();
@@ -95,11 +97,11 @@ public class Login extends javax.swing.JFrame {
         SubPainelLogLayout.setVerticalGroup(
             SubPainelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelLogLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
+                .addGap(137, 137, 137)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         enUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -202,7 +204,7 @@ public class Login extends javax.swing.JFrame {
 
         Redefinir.setBackground(new java.awt.Color(255, 255, 255));
 
-        SubPainelRedefinir.setBackground(new java.awt.Color(51, 153, 255));
+        SubPainelRedefinir.setBackground(new java.awt.Color(0, 0, 153));
         SubPainelRedefinir.setPreferredSize(new java.awt.Dimension(377, 465));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -210,25 +212,42 @@ public class Login extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("MercoCenter");
 
+        btnVoltarAdmAutenticacao1.setBackground(new java.awt.Color(255, 255, 255));
+        btnVoltarAdmAutenticacao1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/voltar.png"))); // NOI18N
+        btnVoltarAdmAutenticacao1.setText("Voltar");
+        btnVoltarAdmAutenticacao1.setBorder(null);
+        btnVoltarAdmAutenticacao1.setBorderPainted(false);
+        btnVoltarAdmAutenticacao1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarAdmAutenticacao1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SubPainelRedefinirLayout = new javax.swing.GroupLayout(SubPainelRedefinir);
         SubPainelRedefinir.setLayout(SubPainelRedefinirLayout);
         SubPainelRedefinirLayout.setHorizontalGroup(
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                 .addGap(63, 63, 63))
+            .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SubPainelRedefinirLayout.setVerticalGroup(
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
-                .addGap(176, 176, 176)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(129, 129, 129)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
         enRedefinirid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirid.setForeground(new java.awt.Color(51, 153, 255));
+        enRedefinirid.setForeground(new java.awt.Color(0, 0, 153));
         enRedefinirid.setText("Cod do funcionario");
         enRedefinirid.setBorder(null);
         enRedefinirid.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -242,10 +261,11 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btRedefinir.setBackground(new java.awt.Color(51, 153, 255));
+        btRedefinir.setBackground(new java.awt.Color(0, 0, 153));
         btRedefinir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btRedefinir.setForeground(new java.awt.Color(255, 255, 255));
         btRedefinir.setText("Redefinir");
+        btRedefinir.setMaximumSize(new java.awt.Dimension(93, 10));
         btRedefinir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btRedefinirActionPerformed(evt);
@@ -253,12 +273,12 @@ public class Login extends javax.swing.JFrame {
         });
 
         lblLogoRedefinir.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblLogoRedefinir.setForeground(new java.awt.Color(51, 153, 255));
+        lblLogoRedefinir.setForeground(new java.awt.Color(0, 0, 153));
         lblLogoRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoRedefinir.setText("Redefinir");
 
         enRedefinirSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirSenha.setForeground(new java.awt.Color(51, 153, 255));
+        enRedefinirSenha.setForeground(new java.awt.Color(0, 0, 153));
         enRedefinirSenha.setText("passwrd");
         enRedefinirSenha.setBorder(null);
         enRedefinirSenha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -267,14 +287,14 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        jSeparator3.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 153));
 
-        jSeparator5.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 153));
 
-        jSeparator8.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator8.setForeground(new java.awt.Color(0, 0, 153));
 
         enRedefinirUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirUser.setForeground(new java.awt.Color(51, 153, 255));
+        enRedefinirUser.setForeground(new java.awt.Color(0, 0, 153));
         enRedefinirUser.setText("Username");
         enRedefinirUser.setBorder(null);
         enRedefinirUser.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -297,7 +317,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btRedefinir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 367, Short.MAX_VALUE)
+                    .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                     .addComponent(enRedefinirSenha, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(enRedefinirid)
@@ -311,21 +331,21 @@ public class Login extends javax.swing.JFrame {
             .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(enRedefinirid, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator3)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
                 .addGap(35, 35, 35)
                 .addComponent(enRedefinirUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator8)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(enRedefinirSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator5)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
                 .addGap(25, 25, 25)
-                .addComponent(btRedefinir, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btRedefinir, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
@@ -333,7 +353,7 @@ public class Login extends javax.swing.JFrame {
 
         AdmLog.setBackground(new java.awt.Color(255, 255, 255));
 
-        SubPainelAdmLog.setBackground(new java.awt.Color(51, 153, 255));
+        SubPainelAdmLog.setBackground(new java.awt.Color(0, 0, 153));
         SubPainelAdmLog.setPreferredSize(new java.awt.Dimension(377, 465));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -341,26 +361,42 @@ public class Login extends javax.swing.JFrame {
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setText("MercoCenter");
 
+        btnVoltarAdmAutenticacao.setBackground(new java.awt.Color(255, 255, 255));
+        btnVoltarAdmAutenticacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/voltar.png"))); // NOI18N
+        btnVoltarAdmAutenticacao.setText("Voltar");
+        btnVoltarAdmAutenticacao.setBorder(null);
+        btnVoltarAdmAutenticacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarAdmAutenticacaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout SubPainelAdmLogLayout = new javax.swing.GroupLayout(SubPainelAdmLog);
         SubPainelAdmLog.setLayout(SubPainelAdmLogLayout);
         SubPainelAdmLogLayout.setHorizontalGroup(
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                 .addGap(62, 62, 62))
+            .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnVoltarAdmAutenticacao, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SubPainelAdmLogLayout.setVerticalGroup(
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
-                .addGap(169, 169, 169)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(btnVoltarAdmAutenticacao, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(122, 122, 122)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                 .addGap(233, 233, 233))
         );
 
         enAdmUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enAdmUser.setForeground(new java.awt.Color(51, 153, 255));
-        enAdmUser.setText("3512");
+        enAdmUser.setForeground(new java.awt.Color(0, 0, 153));
+        enAdmUser.setText("Usuario");
         enAdmUser.setBorder(null);
         enAdmUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -374,7 +410,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         enAdmSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enAdmSenha.setForeground(new java.awt.Color(51, 153, 255));
+        enAdmSenha.setForeground(new java.awt.Color(0, 0, 153));
         enAdmSenha.setText("password");
         enAdmSenha.setBorder(null);
         enAdmSenha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -388,7 +424,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        btAutenticar.setBackground(new java.awt.Color(51, 153, 255));
+        btAutenticar.setBackground(new java.awt.Color(0, 0, 153));
         btAutenticar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btAutenticar.setForeground(new java.awt.Color(255, 255, 255));
         btAutenticar.setText("Altenticar");
@@ -399,13 +435,13 @@ public class Login extends javax.swing.JFrame {
         });
 
         lblLogoAdm.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblLogoAdm.setForeground(new java.awt.Color(51, 153, 255));
+        lblLogoAdm.setForeground(new java.awt.Color(0, 0, 153));
         lblLogoAdm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoAdm.setText("Altenticação ADM ");
 
-        jSeparator6.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 153));
 
-        jSeparator7.setForeground(new java.awt.Color(51, 153, 255));
+        jSeparator7.setForeground(new java.awt.Color(0, 0, 153));
 
         javax.swing.GroupLayout AdmLogLayout = new javax.swing.GroupLayout(AdmLog);
         AdmLog.setLayout(AdmLogLayout);
@@ -417,7 +453,7 @@ public class Login extends javax.swing.JFrame {
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(enAdmUser)
-                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
                     .addComponent(enAdmSenha)
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -470,43 +506,66 @@ public class Login extends javax.swing.JFrame {
         try {
             Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(enUserLog.getText()), enSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
-            System.out.println(tipo);
             TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());;
             switch (tipo) {
                 case "adm":
-                    this.dispose();
-                    System.out.println(tipo);
-                    TelaPrincipal.setVisible(true);
-                    TelaPrincipal.menCaixa.setEnabled(true);
-                    TelaPrincipal.menEstoque.setEnabled(true);
-                    TelaPrincipal.menRh.setEnabled(true);
+                    if (modelo_user_para_login.getAtivo() == 1) {
+                        this.dispose();
+                        System.out.println(tipo);
+                        TelaPrincipal.setVisible(true);
+                        TelaPrincipal.menCaixa.setEnabled(true);
+                        TelaPrincipal.menEstoque.setEnabled(true);
+                        TelaPrincipal.menRh.setEnabled(true);
+                        TelaPrincipal.menRelatorio.setEnabled(true);
 
-                    break;
+                        break;
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                    }
+
                 case "caixa":
-                    this.dispose();
-                    TelaPrincipal.setVisible(true);
-                    TelaPrincipal.menCaixa.setEnabled(true);
+                    if (modelo_user_para_login.getAtivo() == 1) {
+                        this.dispose();
+                        TelaPrincipal.setVisible(true);
+                        TelaPrincipal.menCaixa.setEnabled(true);
 
-                    break;
+                        break;
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                    }
+                    
+
                 case "almoxarife":
-                    this.dispose();
-                    TelaPrincipal.setVisible(true);
-                    TelaPrincipal.menEstoque.setEnabled(true);
-                    break;
+                    if (modelo_user_para_login.getAtivo() == 1) {
+                        this.dispose();
+                        TelaPrincipal.setVisible(true);
+                        TelaPrincipal.menEstoque.setEnabled(true);
+
+                        break;
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                    }
+                    
                 case "gerente":
-                    this.dispose();
-                    TelaPrincipal.setVisible(true);
-                    TelaPrincipal.menCaixa.setEnabled(true);
-                    TelaPrincipal.menEstoque.setEnabled(true);
-                    TelaPrincipal.menRh.setEnabled(true);
-                    break;
+                    if (modelo_user_para_login.getAtivo() == 1) {
+                        this.dispose();
+                        TelaPrincipal.setVisible(true);
+                        TelaPrincipal.menCaixa.setEnabled(true);
+                        TelaPrincipal.menEstoque.setEnabled(true);
+                        TelaPrincipal.menRh.setEnabled(true);
+                        TelaPrincipal.menRelatorio.setEnabled(true);
+
+                        break;
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                    }
                 default:
                     JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
                     break;
 
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "acesso negado. Tente Novamente!"+e);
+            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
         }
 
     }//GEN-LAST:event_btLoginActionPerformed
@@ -627,6 +686,19 @@ public class Login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_enAdmSenhaMouseClicked
 
+    private void btnVoltarAdmAutenticacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAdmAutenticacaoActionPerformed
+        // TODO add your handling code here:
+        Login lo = new Login();
+        lo.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarAdmAutenticacaoActionPerformed
+
+    private void btnVoltarAdmAutenticacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAdmAutenticacao1ActionPerformed
+        // TODO add your handling code here:
+        CardLayout card = (CardLayout) root.getLayout();
+        card.show(root, "AdmLog");
+    }//GEN-LAST:event_btnVoltarAdmAutenticacao1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -672,6 +744,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JToggleButton btAutenticar;
     private javax.swing.JToggleButton btLogin;
     private javax.swing.JToggleButton btRedefinir;
+    private javax.swing.JButton btnVoltarAdmAutenticacao;
+    private javax.swing.JButton btnVoltarAdmAutenticacao1;
     private javax.swing.JPasswordField enAdmSenha;
     private javax.swing.JTextField enAdmUser;
     private javax.swing.JPasswordField enRedefinirSenha;

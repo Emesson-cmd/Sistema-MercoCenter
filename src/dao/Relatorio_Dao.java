@@ -8,7 +8,9 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.Relatorio_modelo;
 
 /**
@@ -44,10 +46,17 @@ public class Relatorio_Dao {
                 
             }
             //aqui e retornado um array list de relatorio_Modelo 
+             System.out.println("oq tem"+relatorios.get(0).getNome_produto().equals(""));
+            if(relatorios.get(0).getNome_produto().equals("")){
+                JOptionPane.showMessageDialog(null, "Não Existem dados na data selecionada escolha outra data.");
+            }
             return relatorios;
 
-        } catch (Exception e) {
-            System.out.println("Erro Relatorio_dao buscar item: " + e);
+        } catch (IndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(null, "Não Existem dados na data selecionada escolha outra data.");
+            return null;
+        }catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "erro no sql."+e);
             return null;
         }
          

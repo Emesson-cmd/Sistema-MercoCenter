@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import model.Produto_modelo;
 import dao.Conexao;
+import java.sql.SQLException;
 
 /**
  *
@@ -35,49 +36,72 @@ public class Produto_Dao {
                 Produto_modelo produto = new Produto_modelo();
                 produto.setCod_produto(resultado.getInt("cod_produto"));
                 produto.setNome(resultado.getString("nome"));
-                produto.setDescrição(resultado.getString("descricao"));
+                produto.setDescricao(resultado.getString("descricao"));
                 produto.setValor_compra(resultado.getDouble("valor_compra"));
                 produto.setValor_venda(resultado.getDouble("valor_venda"));
                 produto.setQuantidade(resultado.getInt("quantidade"));
+                produto.setQuantidademinima(resultado.getInt("quantidade_minima"));
                 produto.setTipo(resultado.getString("tipo"));
-                produto.setDatacad(resultado.getDate("datacad"));
-                produto.setHoracad(resultado.getDate("horacad"));
+                produto.setDatacad(resultado.getDate("datacad") + "");
+                produto.setData_validade(resultado.getDate("datavalidade") + "");
+                produto.setHoracad(resultado.getTime("horacad") + "");
+                System.out.println("hora n bd" + resultado.getDate("horacad") + "");
 
                 produtos.add(produto);
             }
 
             return produtos;
         } catch (Exception e) {
-            System.out.println("erro " + e);
+            System.out.println("erro no dao " + e);
             return null;
         }
     }
 
-    public Produto_modelo buscarProdutoPorCod(int cod_produto) {
-        String sql = "select * from produto where cod_produto = " + cod_produto;
-        Produto_modelo produto = new Produto_modelo();
-
+    public boolean remover_Produto(int id) {
+        boolean result = false;
         try {
-            conexao = con.abricConecxao();
-            PreparedStatement pst = conexao.prepareStatement(sql);
-            ResultSet rs = pst.executeQuery();
+            this.conexao = con.abricConecxao();
+            String sql = "delete  from produto  where cod_produto=" + id + ";";
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+            result = preparo.execute();
 
-            while (rs.next()) {
-                produto.setCod_produto(rs.getInt("produto.cod_produto"));
-                produto.setNome(rs.getString("produto.nome"));
-                produto.setDescrição(rs.getString("produto.descricao"));
-                produto.setValor_compra(rs.getDouble("produto.valor_compra"));
-                produto.setValor_venda(rs.getDouble("produto.valor_venda"));
-                produto.setQuantidade(rs.getInt("produto.quantidade"));
-                produto.setTipo(rs.getString("produto.tipo"));
-                produto.setDatacad(rs.getDate("produto.datacad"));
-                produto.setHoracad(rs.getDate("produto.horacad"));
-                produto.setQuantidadeMin(rs.getInt("produto.quantidade_minima"));
-            }
-            return produto;
-        } catch (Exception e) {
-            System.out.println("Houve um erro ao tentar executar método que busca produto no banco de dados por cod_produto: " + e);
-            return null;
+        } catch (SQLException e) {
+            System.out.println("errono sql" + e);
+            return false;
         }
+        return result;
     }
+
+    public boolean atualizar_Produto(Produto_modelo produto) {
+        boolean result = false;
+        try {
+            this.conexao = con.abricConecxao();
+            String sql = "update produto set nome = '" + produto.getNome() + "' ,descricao = '" + produto.getDescricao() + "',valor_compra = " + produto.getValor_compra() + ",valor_venda =" + produto.getValor_venda() + ",quantidade=" + produto.getQuantidade() + ",tipo='" + produto.getTipo() + "',datacad='" +produto.getDatacad()+"',horacad='"+produto.getHoracad()+"',quantidade_minima="+produto.getQuantidademinima()+",datavalidade='"+produto.getData_validade()+"'where cod_produto = "+produto.getCod_produto()+ ";";
+            System.out.println(sql);
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+            result = preparo.execute();
+
+        } catch (SQLException e) {
+            System.out.println("errono sqlatualizar" + e);
+            return false;
+        }
+        return result;
+    }
+     public boolean inserir_Produto(Produto_modelo produto) {
+        boolean result = false;
+        try {
+            this.conexao = con.abricConecxao();
+            String sql = "INSERT INTO `produto` ( `nome`, `descricao`, `valor_compra`, `valor_venda`, `quantidade`, `tipo`, `datacad`, `horacad`, `quantidade_minima`,`datavalidade`)VALUES( '"+produto.getNome()+"', '"+produto.getDescricao()+"', "+produto.getValor_compra()+", "+produto.getValor_venda()+", "+produto.getQuantidade()+", '"+produto.getTipo()+"', '"+produto.getDatacad()+"', '"+produto.getHoracad()+"', "+produto.getQuantidademinima()+",'"+produto.getData_validade()+"');";
+            System.out.println(sql);
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+            result = preparo.execute();
+
+        } catch (SQLException e) {
+            System.out.println("errono sql inserir" + e);
+            return false;
+        }
+        return result;
+    }
+
+   
 }
