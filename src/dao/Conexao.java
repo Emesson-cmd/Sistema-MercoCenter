@@ -25,8 +25,8 @@ public class Conexao {
                 Class.forName(Driver);
                 conexao = DriverManager.getConnection(url, user, password);
 
-            } catch (ClassNotFoundException e) {
-                System.out.println("O driver expecificado nao foi encontrado.");
+            } catch (Exception e) {
+                System.out.println("O driver expecificado nao foi encontrado." + e);
                 return null;
             }
         return  conexao;
