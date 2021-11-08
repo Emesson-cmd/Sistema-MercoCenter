@@ -29,6 +29,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaListaFuncionarios tlf;
     private TelaRelatorio trv;
     private TelaEstoque tes;
+    private ParaApoio paraApoio;
 
     /**
      * Creates new form TelaPrincipal
@@ -77,10 +78,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menRelatorioVenda = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
         abrMenOpcoes = new javax.swing.JMenuItem();
-        jMenu8 = new javax.swing.JMenu();
-        menSair = new javax.swing.JMenuItem();
         menSobre = new javax.swing.JMenu();
         abrMenSobre = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        abrTelaApoio = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        abrTrocarUsuario = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        menSair = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -210,6 +217,45 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menOpcoes);
 
+        menSobre.setText("Sobre");
+
+        abrMenSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
+        abrMenSobre.setText("Abrir sobre");
+        menSobre.add(abrMenSobre);
+
+        jMenuBar1.add(menSobre);
+
+        jMenu3.setText("Tela de apoio");
+
+        abrTelaApoio.setText("Abrir");
+        abrTelaApoio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrTelaApoioActionPerformed(evt);
+            }
+        });
+        jMenu3.add(abrTelaApoio);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Ajuda");
+
+        jMenuItem2.setText("Abrir ajuda");
+        jMenu4.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Logout");
+
+        abrTrocarUsuario.setText("Trocar de usuário");
+        abrTrocarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrTrocarUsuarioActionPerformed(evt);
+            }
+        });
+        jMenu5.add(abrTrocarUsuario);
+
+        jMenuBar1.add(jMenu5);
+
         jMenu8.setText("Sair");
 
         menSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sair.png"))); // NOI18N
@@ -222,14 +268,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu8.add(menSair);
 
         jMenuBar1.add(jMenu8);
-
-        menSobre.setText("Sobre");
-
-        abrMenSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
-        abrMenSobre.setText("Abrir sobre");
-        menSobre.add(abrMenSobre);
-
-        jMenuBar1.add(menSobre);
 
         setJMenuBar(jMenuBar1);
 
@@ -622,6 +660,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
             System.out.println("O tela já está aparecendo!");
         }
     }//GEN-LAST:event_menRelatorioVendaActionPerformed
+
+    private void abrTelaApoioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrTelaApoioActionPerformed
+        // TODO add your handling code here:
+        if (this.paraApoio == null) {
+            fecharOutrasTelas();
+
+            this.paraApoio = new ParaApoio();
+            paraApoio.setVisible(true);
+
+            desktop.add(paraApoio);
+//            try {
+//                paraApoio.setMaximum(true);
+//            } catch (PropertyVetoException ex) {
+//                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+        } else {
+            System.out.println("O tela já está aparecendo!");
+        }
+        
+    }//GEN-LAST:event_abrTelaApoioActionPerformed
+
+    private void abrTrocarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrTrocarUsuarioActionPerformed
+        // TODO add your handling code here:
+        int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fazer logout?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (sair == JOptionPane.YES_OPTION) {
+            this.dispose();
+            Login login = new Login();
+            login.setVisible(true);
+        }
+    }//GEN-LAST:event_abrTrocarUsuarioActionPerformed
+    
     private void fecharOutrasTelas() {
         // Fecha tela relatorio
         if (this.trv != null) {
@@ -680,6 +749,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
             this.tlf.setVisible(false);
             desktop.remove(this.tlf);
             this.tlf = null;
+        }
+        
+        // Fecha tela ParaApoio
+        if (this.paraApoio != null) {
+            this.paraApoio.setVisible(false);
+            desktop.remove(this.paraApoio);
+            this.paraApoio = null;
         }
     }
 
@@ -744,12 +820,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem abrMenOpcoes;
     private javax.swing.JMenuItem abrMenSobre;
     private javax.swing.JMenuItem abrRecHum;
+    private javax.swing.JMenuItem abrTelaApoio;
+    private javax.swing.JMenuItem abrTrocarUsuario;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     public javax.swing.JMenu menCaixa;
     public javax.swing.JMenu menEstoque;
     private javax.swing.JMenu menHome;
