@@ -78,7 +78,7 @@ public class Relatorio_controle {
             }
             //adicionando anovas linhas a tabela
             for (int i = 0; i < relatorios.size(); i++) {
-                Object[] relatorio = {relatorios.get(i).getNome_produto(), relatorios.get(i).getQuantidade_total_vendida(), relatorios.get(i).getValor_investido(), relatorios.get(i).getFaturamento_geral(), relatorios.get(i).getFaturamento_final()};
+                Object[] relatorio = {relatorios.get(i).getNome_produto(), relatorios.get(i).getQuantidade_total_vendida(), relatorios.get(i).getFaturamento_geral()};
                 tabelar.addRow(relatorio);
             }
             return tabelar;

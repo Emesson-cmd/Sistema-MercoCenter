@@ -27,7 +27,7 @@ public class Relatorio_Dao {
     //Metodo utilizado para buscar orelatorio que é feita com inner join da tabela produto e da item venda
     public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatemino){
         System.out.println("o dia inicio"+diainicio +" e o dia termino "+diatemino);
-              sql= "SELECT  produto.nome,sum(itemvenda.quantidade) as Quantidade_total_vendido,sum(produto.valor_compra*itemvenda.quantidade) as valor_investido,sum(itemvenda.valor_total) as faturamento_geral,(sum(itemvenda.valor_total)-sum(produto.valor_compra*itemvenda.quantidade)) as Lucro_sobre_investimento FROM  itemvenda INNER JOIN  produto ON itemvenda.produto_cod_produto=produto.cod_produto Where itemvenda.datacad BETWEEN '"+diainicio+"' AND '"+diatemino+"' group by produto.nome";
+              sql= "SELECT  produto.nome,sum(itemvenda.quantidade) as Quantidade_total_vendido,sum(itemvenda.valor_total) as faturamento_geral FROM  itemvenda INNER JOIN  produto ON itemvenda.produto_cod_produto=produto.cod_produto Where itemvenda.datacad BETWEEN '"+diainicio+"' AND '"+diatemino+"' group by produto.nome";
         System.out.println(sql);
          try {
             this.conexao = con.abricConecxao();
@@ -39,9 +39,7 @@ public class Relatorio_Dao {
                 Relatorio_modelo relatorio = new Relatorio_modelo();
                 relatorio.setNome_produto(resultado.getString(1));
                 relatorio.setQuantidade_total_vendida(resultado.getInt(2));
-                relatorio.setValor_investido(resultado.getFloat(3));
-                relatorio.setFaturamento_geral(resultado.getFloat(4));
-                relatorio.setFaturamento_final(resultado.getFloat(5));
+                relatorio.setFaturamento_geral(resultado.getFloat(3));
                 this.relatorios.add(relatorio);
                 
             }

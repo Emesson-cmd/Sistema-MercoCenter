@@ -501,13 +501,14 @@ public class Login extends javax.swing.JFrame {
 //FUNCIONALIDADE DE LOGIN DO SISTEMA
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
 //DENTRO DESSE TRATAMENTO DE ECEÇÃO E REALIZADO UMA REQUISIÇÃO AO BANCO OS DADOS SÃO AUTENTICADOS
-//E SE FOR CONDIZENTE COM OS DADOS DO BANCO O ACESSO E DADO DE ACORDO COM O NIVEL DE PERMIÇÃO DOS 
+//E SE FOR CONDIZENTE COM OS DADOS DO BANCO E O USUARIO ETIVER ATIVO O ACESSO É DADO DE ACORDO COM O NIVEL DE PERMIÇÃO DOS 
 //DADOS DE LOGIN INSERIDOS
         try {
             Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(enUserLog.getText()), enSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
             TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());;
             switch (tipo) {
+//                O SWITCH CASE ABAIXO SERVE PARA IDENTIFICAR TIPO DE USUARIO E O IF UTILIZADO PARA TESTAR SE OUSUARIO SE ENCONTA ATIVO
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
@@ -564,6 +565,7 @@ public class Login extends javax.swing.JFrame {
                     break;
 
             }
+            //O CATCH FAZ RETORNO DE UMA MENSAGEN DE USUARIO INVALIDO EM CASO DE ERRO 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
         }
@@ -580,7 +582,6 @@ public class Login extends javax.swing.JFrame {
 //    DE REDEFINIÇÃO QUE SOLICITA O CODIGO DO FUNCIONARIO E O NOVO USUARIO E SENHA
     private void btRedefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRedefinirActionPerformed
         // ESSE TRY FAZ O TRATAMENTO DOS DADOS QUE VEM DO CARD DE REDEFINIÇÃO DE SENHA:
-
         try {
             int id = Integer.parseInt(enRedefinirid.getText());
             int user = Integer.parseInt(enRedefinirUser.getText());
@@ -687,14 +688,14 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_enAdmSenhaMouseClicked
 
     private void btnVoltarAdmAutenticacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAdmAutenticacaoActionPerformed
-        // TODO add your handling code here:
+        // FUNÇÃO PARA RETORNAR PARA A PAGINA LOGIN 
         Login lo = new Login();
         lo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarAdmAutenticacaoActionPerformed
 
     private void btnVoltarAdmAutenticacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAdmAutenticacao1ActionPerformed
-        // TODO add your handling code here:
+        // FUNÇÃO PARA RETORNAR PARA A TELALOGIN DE ADM
         CardLayout card = (CardLayout) root.getLayout();
         card.show(root, "AdmLog");
     }//GEN-LAST:event_btnVoltarAdmAutenticacao1ActionPerformed
