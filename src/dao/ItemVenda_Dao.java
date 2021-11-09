@@ -39,6 +39,8 @@ public class ItemVenda_Dao {
         } catch (Exception e) {
             System.out.println("Erro itemvenda_dao inserir item: " + e);
             return false;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
     // METODO RESPONASAVEL POR BUSCAR UM ITEM ATRAVES DE SEU ID NO BANCO DE DADOS
@@ -70,6 +72,8 @@ public class ItemVenda_Dao {
         } catch (Exception e) {
             System.out.println("Erro itemvenda_dao buscar item: " + e);
             return null;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 

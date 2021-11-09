@@ -48,6 +48,8 @@ public class NotaVenda_Dao {
             
         } catch (Exception e) {
             return null;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 // METODO RESPONASAVEL POR INSERIR UMA NOVA NOTA NO BANCO DE DADOS
@@ -78,7 +80,9 @@ public class NotaVenda_Dao {
             } catch (Exception e) {
                 System.out.println("Erro notavenda_dao listar nota a: "+e);
                 
-            }
+            }finally{
+            con.fecharConecxao(conexao);
+        }
         }
         System.out.println(numero);
         return numero;

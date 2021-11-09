@@ -56,6 +56,8 @@ public class Relatorio_Dao {
         }catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "erro no sql."+e);
             return null;
+        }finally{
+            con.fecharConecxao(conexao);
         }
          
     }

@@ -40,6 +40,8 @@ public class Funcionario_Dao {
 
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar desativar o funcionário: " + e);
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 
@@ -94,6 +96,8 @@ public class Funcionario_Dao {
 
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar atualizar o funcionário: " + e);
+        }finally{
+            con.fecharConecxao(conexao);
         }
 
     }
@@ -137,6 +141,8 @@ public class Funcionario_Dao {
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar alimentar o array de funcionários: " + e);
             return null;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 
@@ -186,6 +192,8 @@ public class Funcionario_Dao {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
             System.out.println(e);
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 }

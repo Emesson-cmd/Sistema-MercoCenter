@@ -88,6 +88,8 @@ public class Produto_Dao {
         } catch (SQLException e) {
             System.out.println("errono sqlatualizar" + e);
             return false;
+        }finally{
+            con.fecharConecxao(conexao);
         }
         return result;
     }
@@ -105,6 +107,8 @@ public class Produto_Dao {
         } catch (SQLException e) {
             System.out.println("errono sql inserir" + e);
             return false;
+        }finally{
+            con.fecharConecxao(conexao);
         }
         return result;
     }
