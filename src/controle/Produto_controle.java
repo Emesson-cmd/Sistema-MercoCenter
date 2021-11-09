@@ -164,5 +164,20 @@ public class Produto_controle {
         }
 
     }
+    
+    public ArrayList<String> verificarBaixaEstoque(){
+        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<Produto_modelo> produtos = new Produto_modelo().listarprodutos();
+        
+        for (int i = 0; i < produtos.size(); i++){
+            int qtde = produtos.get(i).getQuantidade();
+            int qtdeMin = produtos.get(i).getQuantidademinima();
+            
+            if (qtdeMin >= qtde){
+                lista.add(produtos.get(i).getNome());
+            }
+        }
+        return lista;
+    }
 
 }
