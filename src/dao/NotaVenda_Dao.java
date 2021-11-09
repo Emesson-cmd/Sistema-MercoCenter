@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package dao;
-
+//O CODIGO ABAIXO FAZ AS IMPORTAÇÕES NECESSARIAS
 import java.util.ArrayList;
 import model.NotaVenda_modelo;
 import java.sql.ResultSet;
@@ -15,12 +15,12 @@ import java.util.Random;
 
 /**
  *
- * @author sulis
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
 public class NotaVenda_Dao {
     Connection conexao = null;
     Conexao con = new Conexao();
-    
+// METODO RESPONASAVEL POR BUSCAR UMA NOTA NO BANCO DE DADOS
        public ArrayList<NotaVenda_modelo> listarNotas(){
             ArrayList<NotaVenda_modelo> notas = new ArrayList<NotaVenda_modelo>();
 
@@ -50,6 +50,7 @@ public class NotaVenda_Dao {
             return null;
         }
     }
+// METODO RESPONASAVEL POR INSERIR UMA NOVA NOTA NO BANCO DE DADOS
     public int inserirNota(NotaVenda_modelo nota) throws SQLException{
         
         Random numeronota = new Random();

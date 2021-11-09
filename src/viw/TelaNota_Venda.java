@@ -11,7 +11,7 @@ import model.NotaVenda_modelo;
  *
  * @author sulis
  */
-public class Nota_Venda extends javax.swing.JFrame {
+public class TelaNota_Venda extends javax.swing.JFrame {
     private NotaVenda_modelo nota_local ;
     private JTable tabela;
     private int sinal;
@@ -19,7 +19,7 @@ public class Nota_Venda extends javax.swing.JFrame {
      * Creates new form notavendaex
      */
     
-    public Nota_Venda(JTable tabela,NotaVenda_modelo nota,int sinal) {
+    public TelaNota_Venda(JTable tabela,NotaVenda_modelo nota,int sinal) {
         initComponents();
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE); 
         this.sinal = sinal;
@@ -47,7 +47,7 @@ public class Nota_Venda extends javax.swing.JFrame {
         
     }
 
-    private Nota_Venda() {
+    private TelaNota_Venda() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -190,14 +190,16 @@ public class Nota_Venda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Nota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaNota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Nota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaNota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Nota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaNota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Nota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaNota_Venda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -208,7 +210,7 @@ public class Nota_Venda extends javax.swing.JFrame {
             int sinal = this.sinal;
 
             public void run() { 
-                new Nota_Venda(tabela,this.nota_local,sinal).setVisible(true);
+                new TelaNota_Venda(tabela,this.nota_local,sinal).setVisible(true);
             }
         });
     }

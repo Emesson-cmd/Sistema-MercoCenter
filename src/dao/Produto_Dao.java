@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package dao;
+//O CODIGO ABAIXO FAZ AS IMPORTAÇÕES NECESSARIAS
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,12 +16,13 @@ import java.sql.SQLException;
 
 /**
  *
- * @author T.I
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
 public class Produto_Dao {
 
     Connection conexao = null;
     Conexao con = new Conexao();
+// METODO RESPONASAVEL POR BUSCAR OS PRODUTOS NO BANCO DE DADOS
 
     public ArrayList<Produto_modelo> buscarprodutos() {
 
@@ -56,6 +58,7 @@ public class Produto_Dao {
             return null;
         }
     }
+// METODO RESPONASAVEL POR REMOVER PRODUTOS NO BANCO DE DADOS
 
     public boolean remover_Produto(int id) {
         boolean result = false;
@@ -71,12 +74,13 @@ public class Produto_Dao {
         }
         return result;
     }
+// METODO RESPONASAVEL POR ATUALIZAR PRODUTOS NO BANCO DE DADOS
 
     public boolean atualizar_Produto(Produto_modelo produto) {
         boolean result = false;
         try {
             this.conexao = con.abricConecxao();
-            String sql = "update produto set nome = '" + produto.getNome() + "' ,descricao = '" + produto.getDescricao() + "',valor_compra = " + produto.getValor_compra() + ",valor_venda =" + produto.getValor_venda() + ",quantidade=" + produto.getQuantidade() + ",tipo='" + produto.getTipo() + "',datacad='" +produto.getDatacad()+"',horacad='"+produto.getHoracad()+"',quantidade_minima="+produto.getQuantidademinima()+",datavalidade='"+produto.getData_validade()+"'where cod_produto = "+produto.getCod_produto()+ ";";
+            String sql = "update produto set nome = '" + produto.getNome() + "' ,descricao = '" + produto.getDescricao() + "',valor_compra = " + produto.getValor_compra() + ",valor_venda =" + produto.getValor_venda() + ",quantidade=" + produto.getQuantidade() + ",tipo='" + produto.getTipo() + "',datacad='" + produto.getDatacad() + "',horacad='" + produto.getHoracad() + "',quantidade_minima=" + produto.getQuantidademinima() + ",datavalidade='" + produto.getData_validade() + "'where cod_produto = " + produto.getCod_produto() + ";";
             System.out.println(sql);
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             result = preparo.execute();
@@ -87,11 +91,13 @@ public class Produto_Dao {
         }
         return result;
     }
-     public boolean inserir_Produto(Produto_modelo produto) {
+
+    // METODO RESPONASAVEL POR INSERIR UMA NOVO PRODUTO NO BANCO DE DADOS
+    public boolean inserir_Produto(Produto_modelo produto) {
         boolean result = false;
         try {
             this.conexao = con.abricConecxao();
-            String sql = "INSERT INTO `produto` ( `nome`, `descricao`, `valor_compra`, `valor_venda`, `quantidade`, `tipo`, `datacad`, `horacad`, `quantidade_minima`,`datavalidade`)VALUES( '"+produto.getNome()+"', '"+produto.getDescricao()+"', "+produto.getValor_compra()+", "+produto.getValor_venda()+", "+produto.getQuantidade()+", '"+produto.getTipo()+"', '"+produto.getDatacad()+"', '"+produto.getHoracad()+"', "+produto.getQuantidademinima()+",'"+produto.getData_validade()+"');";
+            String sql = "INSERT INTO `produto` ( `nome`, `descricao`, `valor_compra`, `valor_venda`, `quantidade`, `tipo`, `datacad`, `horacad`, `quantidade_minima`,`datavalidade`)VALUES( '" + produto.getNome() + "', '" + produto.getDescricao() + "', " + produto.getValor_compra() + ", " + produto.getValor_venda() + ", " + produto.getQuantidade() + ", '" + produto.getTipo() + "', '" + produto.getDatacad() + "', '" + produto.getHoracad() + "', " + produto.getQuantidademinima() + ",'" + produto.getData_validade() + "');";
             System.out.println(sql);
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             result = preparo.execute();
@@ -103,5 +109,4 @@ public class Produto_Dao {
         return result;
     }
 
-   
 }

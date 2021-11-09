@@ -15,7 +15,7 @@ import model.Relatorio_modelo;
 
 /**
  *
- * @author sulis
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
 public class Relatorio_Dao {
    private ArrayList<Relatorio_modelo> relatorios = new ArrayList<Relatorio_modelo>();

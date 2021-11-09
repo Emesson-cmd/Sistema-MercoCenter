@@ -4,28 +4,24 @@
  * and open the template in the editor.
  */
 package viw;
-
+//IMPORTAÇÕES NECESSARIAS
 import controle.Produto_controle;
 import java.text.ParseException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.MaskFormatter;
 import model.Produto_modelo;
 
 /**
  *
- * @author sulis
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
 public class TelaEstoque extends javax.swing.JInternalFrame {
 
     private Produto_controle pc = new Produto_controle();
 
     /**
-     * Creates new form TelaEstoque
+     * O CODIGO ABAIXO CRIA UMA FORMULARIO TelaEstoque
      */
     public TelaEstoque() throws ParseException {
         initComponents();
@@ -101,7 +97,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
 
         btnSalvar.setBackground(new java.awt.Color(0, 51, 153));
         btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setText("Salvar Produto");
+        btnSalvar.setText("Salvar Alterações");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSalvarActionPerformed(evt);
@@ -333,11 +329,11 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
-
+// O CODIGO ABAIXO FAZ UMA BUSCA DE UM PRODUTO ATRAVES DO SEU ID LIMPANDO A TABELA PRODUTOS
+// E PREENCHE ELA COM O PRODUTO QUE FOI REQUISITADO NA BUSCA
     private void btnBuscarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProdutosActionPerformed
-        // TODO add your handling code here:
         DefaultTableModel tbm = (DefaultTableModel) tabelaProdutos.getModel();
-
+//O TRI CATCH FAZ A BUSCA DO PRODUTO E TRATA AS EXCESSÕES
         try {
             int id_formatado = Integer.parseInt(txtId.getText());
 
@@ -370,9 +366,8 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         }
 
     }//GEN-LAST:event_btnBuscarProdutosActionPerformed
-
+// O CODIGO ABAIXO ADICIONA UM PRODUTO AO BANCO DE DADOS E ADICIONA TABEM A TABELA
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-        // TODO add your handling code here:
         boolean result = new Produto_controle().inserir_Produto(txtIdEdit.getText(), txtNomeEdit.getText(), txaDescricao.getText(), txtValorCompra.getText(), txtValorVendido.getText(), txtQuantidade.getText(), txtQuantidadeMin.getText(), txtTipo.getText(), txtValidade.getText());
         if (result == true) {
             JOptionPane.showMessageDialog(null, "Erro na atualização");
@@ -381,9 +376,10 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             new Produto_controle().prencherTabela((DefaultTableModel) tabelaProdutos.getModel());
         }
     }//GEN-LAST:event_btnAdicionarActionPerformed
-
+//AO CODIGO ABAIXO FAZ UM TESTE PARA IDENTIFICAR SE O LOCAL CLICADO FOI REMOVER E SE FOR SERA EXIBIDA UMA MENSAGEM DE CONFIRMAÇÃO
+    // E CASO SEJA CONFIRMADA A REMOÇÃO O PRODUTO SERÁ REMOVIDO CASO NÃO SEJA CLICADO EM REMOVER AS ENTRADAS DE DADOS SERÃO PRENCHIDAS PARA 
+    // ATUALIZAÇÃODOS DADOS
     private void tabelaProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaProdutosMouseClicked
-        // TODO add your handling code here:
         DefaultTableModel tbm = (DefaultTableModel) tabelaProdutos.getModel();
         JTable source = (JTable) evt.getSource();
         int row = source.rowAtPoint(evt.getPoint());
@@ -400,6 +396,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             }
 
         } else {
+            // O CODIGO ABAIXO PRENCHE OS CAMPOS DE DADOS DE ACORDO COM O PRODUTO SELECIONADO NA TABELA
 
             txtNomeEdit.setText(source.getModel().getValueAt(row, 1) + "");
             txaDescricao.setText(source.getModel().getValueAt(row, 2) + "");;
@@ -413,7 +410,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
 
         }
     }//GEN-LAST:event_tabelaProdutosMouseClicked
-
+// O CODIGO ABAIXO SALVA AS ALTERAÇÕES FEITAS NOS PRODUTOS SELECIONADOS
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
         boolean result = new Produto_controle().atualizar_Produto(txtIdEdit.getText(), txtNomeEdit.getText(), txaDescricao.getText(), txtValorCompra.getText(), txtValorVendido.getText(), txtQuantidade.getText(), txtQuantidadeMin.getText(), txtTipo.getText(), txtValidade.getText());

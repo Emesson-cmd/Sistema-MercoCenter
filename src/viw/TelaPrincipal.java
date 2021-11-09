@@ -24,7 +24,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaRh trh;
     private int cod_usuario;
     private TelaCaixaVenda tcv;
-    private Buscar_Notas bcn;
+    private TelaBuscar_Notas bcn;
     private TelaCriarLogin tcl;
     private TelaListaFuncionarios tlf;
     private TelaRelatorio trv;
@@ -321,7 +321,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         if (bcn == null) {
             fecharOutrasTelas();
 
-            bcn = new Buscar_Notas();
+            bcn = new TelaBuscar_Notas();
             bcn.setVisible(true);
 
             desktop.add(bcn);

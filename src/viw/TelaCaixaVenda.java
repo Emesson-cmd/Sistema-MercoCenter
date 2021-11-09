@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package viw;
-//IMPORTAÇÕES NECESSARIAS
 
+//IMPORTAÇÕES NECESSARIAS
 import controle.ItemVenda_controle;
 import controle.NotaVenda_controle;
 import controle.Produto_controle;
@@ -575,11 +575,11 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
                 NotaVenda_modelo notaob = new NotaVenda_modelo(cod_usuario, 0, numeronota, vt, dataformatada, dataformatada, horaformatada, this.qtdt, vt);
                 if (numeronota != 0) {
                     this.setVisible(false);
-                    Nota_Venda nota = new Nota_Venda(tabelaCarrinhoCompra, notaob, 1);
+                    TelaNota_Venda nota = new TelaNota_Venda(tabelaCarrinhoCompra, notaob, 1);
                     nota.setVisible(true);
 
                 } else {
-                    Nota_Venda nota = new Nota_Venda(tabelaCarrinhoCompra, notaob, 2);
+                    TelaNota_Venda nota = new TelaNota_Venda(tabelaCarrinhoCompra, notaob, 2);
                     nota.setVisible(true);
 
                 }

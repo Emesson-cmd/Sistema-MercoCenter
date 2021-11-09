@@ -4,22 +4,20 @@
  * and open the template in the editor.
  */
 package viw;
-
+//IMPORTAÇÕES NECESSARIAS
 import controle.Relatorio_controle;
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sulis
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
 public class TelaRelatorio extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form TelaRelatorio
+     * O CODIGO ABAIXO CRIA OFORMULARIO TelaRelatorio
      */
     public TelaRelatorio() {
         initComponents();
@@ -274,7 +272,7 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+// O CODIGO ABAIXO E RESPONSAVEL POR LIMPARA OS CAMPOS DE RELATORIO
     private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
         // TODO add your handling code here:
         //remover linhas antigas da tabela
@@ -292,12 +290,12 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
         cmbAnos.setSelectedItem(1);
         cmbMeses.setSelectedItem(1);
     }//GEN-LAST:event_btnLimparCamposActionPerformed
-
+// O CODIGO ABAIXO GERA O RELATORIO DE VENDAS
     private void btnGerarRelatorioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarRelatorioActionPerformed
-        // TODO add your handling code here:
         new Relatorio_controle().buscar_relatorio(cmbMeses.getSelectedItem()+"", cmbAnos.getSelectedItem()+"", (DefaultTableModel)tableRelatorio.getModel());
-        maximasProdutos();
+        PrencheCamposProdutos();
     }//GEN-LAST:event_btnGerarRelatorioActionPerformed
+ // O CODIGO ABAIXO PRENCHE A CAIXA DE COMBINAÇÃO COM ANOS DES DE A DATA DE FABRICAÇÃO DO SOFTWARE ATÉ A DATA ATUAL
     public void prencherCbmAnos() {
         String ano = LocalDate.now() + "";
         int ano_frormatado = Integer.parseInt(ano.substring(0, 4));
@@ -316,7 +314,8 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
 
     
 } 
-public void maximasProdutos(){
+    // O CODIGO ABAIXO ENCONTRA NA TABELA O PRODUTO MAIS VENDIDO E MENOS VENDIDO SEUS VALORES E O FATURAMNTO TOTAL E PRENCHE OS CAMPOS COMESSES VALORES
+public void PrencheCamposProdutos(){
 
         float investimento=0;
         float faturamento = 0;

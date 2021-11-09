@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package dao;
-
+//O CODIGO ABAIXO FAZ AS IMPORTAÇÕES NECESSARIAS
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
@@ -19,7 +19,7 @@ public class ItemVenda_Dao {
     private ArrayList<ItemVenda_modelo> itens = new ArrayList<ItemVenda_modelo>();
     private Connection conexao = null;
     private Conexao con = new Conexao();
-
+// METODO RESPONASAVEL POR INSERIR UMA NOVO ITEM VENDA NO BANCO DE DADOS
     public boolean insert(ArrayList<ItemVenda_modelo> itens, int cod_nota) {
         String sql_formatando = "insert into itemvenda(notavenda_cod_venda,valor,datacad,horacad,quantidade,valor_total,produto_cod_produto) values";
 
@@ -41,6 +41,8 @@ public class ItemVenda_Dao {
             return false;
         }
     }
+    // METODO RESPONASAVEL POR BUSCAR UM ITEM ATRAVES DE SEU ID NO BANCO DE DADOS
+
     public ArrayList<ItemVenda_modelo> buscar(int codNota) {
         String sql_formatando = "select * from itemVenda where notavenda_cod_venda = "+codNota+"";
 
