@@ -16,11 +16,12 @@ public class TelaNota_Venda extends javax.swing.JFrame {
     private JTable tabela;
     private int sinal;
     /**
-     * Creates new form notavendaex
+     * O CODIGO ABAIXO CRIA UM NOVO FORMULARIO TELA NOTA VENDA
      */
     
     public TelaNota_Venda(JTable tabela,NotaVenda_modelo nota,int sinal) {
         initComponents();
+        //O CODIGO ABAIXO INSERE AS INFORMAÇÕES NA TELA NOTA E MOSTRA O STATUS DA NOTA SE FOI OU NÃO SALVA NO BANCO
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE); 
         this.sinal = sinal;
         this.nota_local = nota;
