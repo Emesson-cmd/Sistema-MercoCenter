@@ -466,6 +466,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
 
             new Produto_controle().prencherTabela((DefaultTableModel) tabelaProdutos.getModel());
         }
+        notificarBaixaEstoque();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
@@ -477,6 +478,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
 
             new Produto_controle().prencherTabela((DefaultTableModel) tabelaProdutos.getModel());
         }
+        notificarBaixaEstoque();
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void tabelaProdutosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaProdutosMouseClicked
@@ -494,7 +496,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
                 new Produto_controle().remover_Produto(id_formatado);
                 tbm.removeRow(row);
             }
-
+            notificarBaixaEstoque();
         } else {
 
             txtNomeEdit.setText(source.getModel().getValueAt(row, 1) + "");
@@ -511,22 +513,29 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tabelaProdutosMouseClicked
 
     // Retornas uma lista com os nomes dos produtos que têm baixa no estoque
-    private void notificarBaixaEstoque(){
+    private void notificarBaixaEstoque() {
+        lblEstoqueInformacao.setText("");
+        lblProdutosBaixaEstoque.setText("");
         Produto_controle produto_controle = new Produto_controle();
         ArrayList<String> lista = produto_controle.verificarBaixaEstoque();
         String produtosFaltantes = "";
-        for (int i = 0; i < lista.size(); i++){
-            System.out.println((String) lista.get(i));
-            produtosFaltantes += ((String) lista.get(i));
-            if (i != lista.size()) {
-                produtosFaltantes += ", ";
-            } else {
-                produtosFaltantes += ".";
-            }
-        }
-        
-        if (lista.isEmpty()){            
+
+        if (lista.isEmpty()) {
+            lblEstoqueInformacao.setText("Sem notificações");
+            lblEstoqueInformacao.setIcon(null);
+            lblProdutosBaixaEstoque.setText("");
         } else {
+
+            for (int i = 0; i < lista.size(); i++) {
+                System.out.println((String) lista.get(i));
+                produtosFaltantes += ((String) lista.get(i));
+                if (i != lista.size()) {
+                    produtosFaltantes += ", ";
+                } else {
+                    produtosFaltantes += ".";
+                }
+            }
+
             lblEstoqueInformacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/estoque-baixo-32px.png")));
             lblEstoqueInformacao.setText("Produto(s) com baixa no estoque: ");
             lblProdutosBaixaEstoque.setText(produtosFaltantes);
