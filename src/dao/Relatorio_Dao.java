@@ -26,9 +26,7 @@ public class Relatorio_Dao {
     
     //Metodo utilizado para buscar orelatorio que é feita com inner join da tabela produto e da item venda
     public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatemino){
-        System.out.println("o dia inicio"+diainicio +" e o dia termino "+diatemino);
               sql= "SELECT  produto.nome,sum(itemvenda.quantidade) as Quantidade_total_vendido,sum(itemvenda.valor_total) as faturamento_geral FROM  itemvenda INNER JOIN  produto ON itemvenda.produto_cod_produto=produto.cod_produto Where itemvenda.datacad BETWEEN '"+diainicio+"' AND '"+diatemino+"' group by produto.nome";
-        System.out.println(sql);
          try {
             this.conexao = con.abricConecxao();
             
@@ -44,7 +42,6 @@ public class Relatorio_Dao {
                 
             }
             //aqui e retornado um array list de relatorio_Modelo 
-             System.out.println("oq tem"+relatorios.get(0).getNome_produto().equals(""));
             if(relatorios.get(0).getNome_produto().equals("")){
                 JOptionPane.showMessageDialog(null, "Não Existem dados na data selecionada escolha outra data.");
             }

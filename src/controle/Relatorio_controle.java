@@ -59,7 +59,6 @@ public class Relatorio_controle {
                     break;
                 case "outubro":
                     relatorios = new Relatorio_modelo().buscar_relatorio(ano_formatado + "/10/00", ano_formatado + "/11/00");
-                    System.out.println("outubro" + ano_formatado + "/10/00");
                     break;
                 case "novembro":
                     relatorios = new Relatorio_modelo().buscar_relatorio(ano_formatado + "/10/00", ano_formatado + "/11/00");

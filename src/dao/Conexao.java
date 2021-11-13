@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class Conexao {
 // O CODIGO ABAIIXO ABRE A CONEXÃO COM O BANCO DE DADOS SQL E RETORNA ESSA CONEXÃO
     public Connection abricConecxao() throws SQLException {
-        Connection conexao;
+        Connection conexao = null ;
         try {
             final String url = "jdbc:mysql://localhost:3306/bancomercado";
             final String user = "root";

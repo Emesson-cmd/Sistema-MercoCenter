@@ -51,9 +51,8 @@ public class Produto_controle {
                 Object[] linhas = {this.produtos.get(i).getCod_produto(), this.produtos.get(i).getNome(), this.produtos.get(i).getDescricao(), this.produtos.get(i).getValor_compra(), this.produtos.get(i).getValor_venda(), this.produtos.get(i).getQuantidade(), this.produtos.get(i).getQuantidademinima(), this.produtos.get(i).getTipo(), this.produtos.get(i).getDatacad(), this.produtos.get(i).getData_validade(), this.produtos.get(i).getHoracad(), "Remover"};
                 tabela.addRow(linhas);
             }
-            System.out.println("Executado prencher tabela");
         } catch (Exception e) {
-            System.out.println("e");
+            System.out.println(e);
         }
 
         return tabela;
@@ -95,7 +94,6 @@ public class Produto_controle {
             
 
         }
-        System.out.println("o codigo do produto :"+produto.getCod_produto());
         return produto;
 
     }
@@ -163,6 +161,21 @@ public class Produto_controle {
             return true;
         }
 
+    }
+    
+    public ArrayList<String> verificarBaixaEstoque(){
+        ArrayList<String> lista = new ArrayList<>();
+        ArrayList<Produto_modelo> produtos = new Produto_modelo().listarprodutos();
+        
+        for (int i = 0; i < produtos.size(); i++){
+            int qtde = produtos.get(i).getQuantidade();
+            int qtdeMin = produtos.get(i).getQuantidademinima();
+            
+            if (qtdeMin >= qtde){
+                lista.add(produtos.get(i).getNome());
+            }
+        }
+        return lista;
     }
 
 }

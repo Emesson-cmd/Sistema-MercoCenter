@@ -18,10 +18,10 @@ import model.Funcionario_modelo;
  */
 public class Funcionario_Dao {
 
-    Connection conexao = null;
-    Conexao con = new Conexao();
-    PreparedStatement pst = null;
-    ResultSet rs = null;
+    private Connection conexao = null;
+    private Conexao con = new Conexao();
+    private PreparedStatement pst = null;
+    private ResultSet rs = null;
     
     public void desativarFuncionario(Funcionario_modelo funcionario){
         String sql = "update funcionario set situacao = \"inativo\" where cod = ?";

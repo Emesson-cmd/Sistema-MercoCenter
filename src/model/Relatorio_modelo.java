@@ -10,24 +10,25 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sulis
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
+//CRIAÇÃO DA CLASSE RELATORIO MODELO
 public class Relatorio_modelo {
 
     private String nome_produto;
     private int quantidade_total_vendida;
     private float Faturamento_geral;
-
+//CONSTRUTOR DE RELLATORIO MODELO QUE PREENCHE OS ATRIBUTOS DA CLASSE NA INICIALIZAÇÃO
     public Relatorio_modelo(String nome_produto, int quantidade_total_vendida, float Valor_investido, float Faturamento_geral, float Faturamento_final) {
         this.nome_produto = nome_produto;
         this.quantidade_total_vendida = quantidade_total_vendida;
         this.Faturamento_geral = Faturamento_geral;
      
     }
-
+//CONSTRUTOR VAZIO
     public Relatorio_modelo() {
     }
-
+//GETTERS E SETTERS
     public String getNome_produto() {
         return nome_produto;
     }
@@ -55,7 +56,7 @@ public class Relatorio_modelo {
     }
 
    
-    
+    //O METODO ABAIXO EXECUTA UM METODO BUSCAR RELATORIO NO DAO E RETORNA ORESULTADO
     public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatermino){
         return new Relatorio_Dao().buscar_relatorio(diainicio, diatermino);
     }

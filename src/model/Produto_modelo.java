@@ -13,9 +13,11 @@ import model.Produto_modelo;
 
 /**
  *
- * @author T.I
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
+//CRIAÇÃODA CLASSE MODELO DE PRODUTO
 public class Produto_modelo {
+//ATRIBUTOSPRIVADOS
 
     private int cod_produto;
     private String nome;
@@ -25,18 +27,10 @@ public class Produto_modelo {
     private int quantidade;
     private String data_validade;
     private int quantidademinima;
-
-    public int getQuantidademinima() {
-        return quantidademinima;
-    }
-
-    public void setQuantidademinima(int quantidademinima) {
-        this.quantidademinima = quantidademinima;
-    }
     private String tipo;
     private String datacad;
     private String horacad;
-
+//CONSTRUTOR QUE PREENCHE OS ATRIBUTOS NA INICIALIZAÇÃO DA CLASSE
     public Produto_modelo(String d_validade, int cod_produto, String nome, String descrição, double valor_compra, double valor_venda, int quantidade, int quantidademin, String tipo, String datacad, String horacad) {
         this.cod_produto = cod_produto;
         this.nome = nome;
@@ -50,6 +44,20 @@ public class Produto_modelo {
         this.horacad = horacad;
         this.data_validade = d_validade;
     }
+    //CONSTRUTOR VAZIO
+    public Produto_modelo() {
+    }
+
+    
+    //GETTERS E SETTERS
+
+    public int getQuantidademinima() {
+        return quantidademinima;
+    }
+
+    public void setQuantidademinima(int quantidademinima) {
+        this.quantidademinima = quantidademinima;
+    }
 
     public String getData_validade() {
         return data_validade;
@@ -59,9 +67,7 @@ public class Produto_modelo {
         this.data_validade = data_validade;
     }
 
-    public Produto_modelo() {
-    }
-
+    
     public int getCod_produto() {
         return cod_produto;
     }
@@ -133,21 +139,21 @@ public class Produto_modelo {
     public void setHoracad(String horacad) {
         this.horacad = horacad;
     }
-
+// O METODO ABAIXO EXECUTA O METSO DE BUSCAPRODUTOS DO DAO E REPASA O RESULTADO PARA O CONTROLER
     public ArrayList<Produto_modelo> listarprodutos() {
         return new Produto_Dao().buscarprodutos();
     }
-
+// O METODO ABAIXO EXECUTA O METSO DE REMOVERPRODUTO DO DAO E REPASA O RESULTADO PARA O CONTROLER
     public boolean remover_Produto(int id) {
         return new Produto_Dao().remover_Produto(id);
     }
-
+// O METODO ABAIXO EXECUTA O METSO DE ATUALIZARPRODUTOS DO DAO E REPASA O RESULTADO PARA O CONTROLER
     public boolean atualizar_Produto(Produto_modelo produto) {
         return new Produto_Dao().atualizar_Produto(produto);
     }
+// O METODO ABAIXO EXECUTA O METSO DE INSERIRPRODUTOS DO DAO E REPASA O RESULTADO PARA O CONTROLER
     public boolean inserir_Produto(Produto_modelo produto) {
         return new Produto_Dao().inserir_Produto(produto);
     }
 
-   
 }

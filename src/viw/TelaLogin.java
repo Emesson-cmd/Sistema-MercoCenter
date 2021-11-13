@@ -8,6 +8,7 @@ package viw;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import controle.Usuario_controle;
+import java.awt.Desktop;
 import model.Usuario_Modelo;
 
 /**
@@ -32,10 +33,10 @@ public class TelaLogin extends javax.swing.JFrame {
         SubPainelLog = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        enUserLog = new javax.swing.JTextField();
-        enSenhaLog = new javax.swing.JPasswordField();
+        txtUserLog = new javax.swing.JTextField();
+        txtSenhaLog = new javax.swing.JPasswordField();
         lblRedefinir = new javax.swing.JLabel();
-        btLogin = new javax.swing.JToggleButton();
+        btnLogin = new javax.swing.JToggleButton();
         lblLogoUser = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -43,21 +44,21 @@ public class TelaLogin extends javax.swing.JFrame {
         SubPainelRedefinir = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         btnVoltarAdmAutenticacao1 = new javax.swing.JButton();
-        enRedefinirid = new javax.swing.JTextField();
-        btRedefinir = new javax.swing.JToggleButton();
+        txtRedefinirid = new javax.swing.JTextField();
+        btnRedefinir = new javax.swing.JToggleButton();
         lblLogoRedefinir = new javax.swing.JLabel();
-        enRedefinirSenha = new javax.swing.JPasswordField();
+        txtRedefinirSenha = new javax.swing.JPasswordField();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
-        enRedefinirUser = new javax.swing.JTextField();
+        txtRedefinirUser = new javax.swing.JTextField();
         AdmLog = new javax.swing.JPanel();
         SubPainelAdmLog = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         btnVoltarAdmAutenticacao = new javax.swing.JButton();
-        enAdmUser = new javax.swing.JTextField();
-        enAdmSenha = new javax.swing.JPasswordField();
-        btAutenticar = new javax.swing.JToggleButton();
+        txtAdmUser = new javax.swing.JTextField();
+        txtAdmSenha = new javax.swing.JPasswordField();
+        btnAutenticar = new javax.swing.JToggleButton();
         lblLogoAdm = new javax.swing.JLabel();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
@@ -68,10 +69,10 @@ public class TelaLogin extends javax.swing.JFrame {
         root.setLayout(new java.awt.CardLayout());
 
         log.setBackground(new java.awt.Color(255, 255, 255));
-        log.setForeground(new java.awt.Color(0, 0, 153));
+        log.setForeground(new java.awt.Color(0, 8, 90));
         log.setPreferredSize(new java.awt.Dimension(850, 500));
 
-        SubPainelLog.setBackground(new java.awt.Color(0, 0, 153));
+        SubPainelLog.setBackground(new java.awt.Color(0, 8, 90));
         SubPainelLog.setPreferredSize(new java.awt.Dimension(377, 465));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -89,47 +90,47 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(SubPainelLogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(SubPainelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
                 .addContainerGap())
         );
         SubPainelLogLayout.setVerticalGroup(
             SubPainelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelLogLayout.createSequentialGroup()
-                .addGap(137, 137, 137)
+                .addGap(145, 145, 145)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        enUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enUserLog.setForeground(new java.awt.Color(0, 0, 153));
-        enUserLog.setText("2021");
-        enUserLog.setBorder(null);
-        enUserLog.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtUserLog.setForeground(new java.awt.Color(0, 8, 90));
+        txtUserLog.setText("2122");
+        txtUserLog.setBorder(null);
+        txtUserLog.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enUserLogMouseClicked(evt);
+                txtUserLogMouseClicked(evt);
             }
         });
-        enUserLog.addActionListener(new java.awt.event.ActionListener() {
+        txtUserLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enUserLogActionPerformed(evt);
+                txtUserLogActionPerformed(evt);
             }
         });
 
-        enSenhaLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enSenhaLog.setForeground(new java.awt.Color(0, 0, 153));
-        enSenhaLog.setText("3532");
-        enSenhaLog.setBorder(null);
-        enSenhaLog.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtSenhaLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtSenhaLog.setForeground(new java.awt.Color(0, 8, 90));
+        txtSenhaLog.setText("3532");
+        txtSenhaLog.setBorder(null);
+        txtSenhaLog.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enSenhaLogMouseClicked(evt);
+                txtSenhaLogMouseClicked(evt);
             }
         });
-        enSenhaLog.addActionListener(new java.awt.event.ActionListener() {
+        txtSenhaLog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enSenhaLogActionPerformed(evt);
+                txtSenhaLogActionPerformed(evt);
             }
         });
 
@@ -142,24 +143,24 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        btLogin.setBackground(new java.awt.Color(0, 0, 153));
-        btLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btLogin.setText("Login");
-        btLogin.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setBackground(new java.awt.Color(0, 8, 90));
+        btnLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btLoginActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
 
         lblLogoUser.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblLogoUser.setForeground(new java.awt.Color(0, 0, 153));
+        lblLogoUser.setForeground(new java.awt.Color(0, 8, 90));
         lblLogoUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoUser.setText("Login");
 
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator1.setForeground(new java.awt.Color(0, 8, 90));
 
-        jSeparator2.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator2.setForeground(new java.awt.Color(0, 8, 90));
 
         javax.swing.GroupLayout logLayout = new javax.swing.GroupLayout(log);
         log.setLayout(logLayout);
@@ -170,12 +171,12 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(45, 45, 45)
                 .addGroup(logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
                     .addComponent(jSeparator1)
-                    .addComponent(enUserLog, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtUserLog, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(enSenhaLog))
+                    .addComponent(txtSenhaLog))
                 .addGap(47, 47, 47))
         );
         logLayout.setVerticalGroup(
@@ -185,17 +186,17 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(lblLogoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(enUserLog, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtUserLog, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addGap(34, 34, 34)
-                .addComponent(enSenhaLog, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtSenhaLog, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(lblRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                .addComponent(lblRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -203,7 +204,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         Redefinir.setBackground(new java.awt.Color(255, 255, 255));
 
-        SubPainelRedefinir.setBackground(new java.awt.Color(0, 0, 153));
+        SubPainelRedefinir.setBackground(new java.awt.Color(0, 8, 90));
         SubPainelRedefinir.setPreferredSize(new java.awt.Dimension(377, 465));
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -212,6 +213,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel8.setText("MercoCenter");
 
         btnVoltarAdmAutenticacao1.setBackground(new java.awt.Color(255, 255, 255));
+        btnVoltarAdmAutenticacao1.setForeground(new java.awt.Color(0, 8, 90));
         btnVoltarAdmAutenticacao1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/voltar.png"))); // NOI18N
         btnVoltarAdmAutenticacao1.setText("Voltar");
         btnVoltarAdmAutenticacao1.setBorder(null);
@@ -232,78 +234,78 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(63, 63, 63))
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SubPainelRedefinirLayout.setVerticalGroup(
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(129, 129, 129)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(226, 226, 226))
         );
 
-        enRedefinirid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirid.setForeground(new java.awt.Color(0, 0, 153));
-        enRedefinirid.setText("Cod do funcionario");
-        enRedefinirid.setBorder(null);
-        enRedefinirid.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtRedefinirid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtRedefinirid.setForeground(new java.awt.Color(0, 8, 90));
+        txtRedefinirid.setText("Cod do funcionario");
+        txtRedefinirid.setBorder(null);
+        txtRedefinirid.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enRedefiniridMouseClicked(evt);
+                txtRedefiniridMouseClicked(evt);
             }
         });
-        enRedefinirid.addActionListener(new java.awt.event.ActionListener() {
+        txtRedefinirid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enRedefiniridActionPerformed(evt);
+                txtRedefiniridActionPerformed(evt);
             }
         });
 
-        btRedefinir.setBackground(new java.awt.Color(0, 0, 153));
-        btRedefinir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btRedefinir.setForeground(new java.awt.Color(255, 255, 255));
-        btRedefinir.setText("Redefinir");
-        btRedefinir.setMaximumSize(new java.awt.Dimension(93, 10));
-        btRedefinir.addActionListener(new java.awt.event.ActionListener() {
+        btnRedefinir.setBackground(new java.awt.Color(0, 8, 90));
+        btnRedefinir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnRedefinir.setForeground(new java.awt.Color(255, 255, 255));
+        btnRedefinir.setText("Redefinir");
+        btnRedefinir.setMaximumSize(new java.awt.Dimension(93, 10));
+        btnRedefinir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btRedefinirActionPerformed(evt);
+                btnRedefinirActionPerformed(evt);
             }
         });
 
         lblLogoRedefinir.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblLogoRedefinir.setForeground(new java.awt.Color(0, 0, 153));
+        lblLogoRedefinir.setForeground(new java.awt.Color(0, 8, 90));
         lblLogoRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoRedefinir.setText("Redefinir");
 
-        enRedefinirSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirSenha.setForeground(new java.awt.Color(0, 0, 153));
-        enRedefinirSenha.setText("passwrd");
-        enRedefinirSenha.setBorder(null);
-        enRedefinirSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtRedefinirSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtRedefinirSenha.setForeground(new java.awt.Color(0, 8, 90));
+        txtRedefinirSenha.setText("passwrd");
+        txtRedefinirSenha.setBorder(null);
+        txtRedefinirSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enRedefinirSenhaMouseClicked(evt);
+                txtRedefinirSenhaMouseClicked(evt);
             }
         });
 
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator3.setForeground(new java.awt.Color(0, 8, 90));
 
-        jSeparator5.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator5.setForeground(new java.awt.Color(0, 8, 90));
 
-        jSeparator8.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator8.setForeground(new java.awt.Color(0, 8, 90));
 
-        enRedefinirUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enRedefinirUser.setForeground(new java.awt.Color(0, 0, 153));
-        enRedefinirUser.setText("Username");
-        enRedefinirUser.setBorder(null);
-        enRedefinirUser.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtRedefinirUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtRedefinirUser.setForeground(new java.awt.Color(0, 8, 90));
+        txtRedefinirUser.setText("Username");
+        txtRedefinirUser.setBorder(null);
+        txtRedefinirUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enRedefinirUserMouseClicked(evt);
+                txtRedefinirUserMouseClicked(evt);
             }
         });
-        enRedefinirUser.addActionListener(new java.awt.event.ActionListener() {
+        txtRedefinirUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enRedefinirUserActionPerformed(evt);
+                txtRedefinirUserActionPerformed(evt);
             }
         });
 
@@ -315,14 +317,14 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE)
                 .addGap(45, 45, 45)
                 .addGroup(RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btRedefinir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRedefinir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                    .addComponent(enRedefinirSenha, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtRedefinirSenha, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(enRedefinirid)
+                    .addComponent(txtRedefinirid)
                     .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(enRedefinirUser))
+                    .addComponent(txtRedefinirUser))
                 .addGap(47, 47, 47))
         );
         RedefinirLayout.setVerticalGroup(
@@ -330,21 +332,21 @@ public class TelaLogin extends javax.swing.JFrame {
             .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(enRedefinirid, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRedefinirid, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
                 .addGap(35, 35, 35)
-                .addComponent(enRedefinirUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRedefinirUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(enRedefinirSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtRedefinirSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 8, Short.MAX_VALUE)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
                 .addGap(25, 25, 25)
-                .addComponent(btRedefinir, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRedefinir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
         );
 
@@ -352,7 +354,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         AdmLog.setBackground(new java.awt.Color(255, 255, 255));
 
-        SubPainelAdmLog.setBackground(new java.awt.Color(0, 0, 153));
+        SubPainelAdmLog.setBackground(new java.awt.Color(0, 8, 90));
         SubPainelAdmLog.setPreferredSize(new java.awt.Dimension(377, 465));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -361,6 +363,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jLabel9.setText("MercoCenter");
 
         btnVoltarAdmAutenticacao.setBackground(new java.awt.Color(255, 255, 255));
+        btnVoltarAdmAutenticacao.setForeground(new java.awt.Color(0, 8, 90));
         btnVoltarAdmAutenticacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/voltar.png"))); // NOI18N
         btnVoltarAdmAutenticacao.setText("Voltar");
         btnVoltarAdmAutenticacao.setBorder(null);
@@ -387,60 +390,60 @@ public class TelaLogin extends javax.swing.JFrame {
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnVoltarAdmAutenticacao, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnVoltarAdmAutenticacao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(122, 122, 122)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(233, 233, 233))
         );
 
-        enAdmUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enAdmUser.setForeground(new java.awt.Color(0, 0, 153));
-        enAdmUser.setText("Usuario");
-        enAdmUser.setBorder(null);
-        enAdmUser.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtAdmUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtAdmUser.setForeground(new java.awt.Color(0, 8, 90));
+        txtAdmUser.setText("Usuario");
+        txtAdmUser.setBorder(null);
+        txtAdmUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enAdmUserMouseClicked(evt);
+                txtAdmUserMouseClicked(evt);
             }
         });
-        enAdmUser.addActionListener(new java.awt.event.ActionListener() {
+        txtAdmUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enAdmUserActionPerformed(evt);
+                txtAdmUserActionPerformed(evt);
             }
         });
 
-        enAdmSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        enAdmSenha.setForeground(new java.awt.Color(0, 0, 153));
-        enAdmSenha.setText("password");
-        enAdmSenha.setBorder(null);
-        enAdmSenha.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtAdmSenha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtAdmSenha.setForeground(new java.awt.Color(0, 8, 90));
+        txtAdmSenha.setText("password");
+        txtAdmSenha.setBorder(null);
+        txtAdmSenha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enAdmSenhaMouseClicked(evt);
+                txtAdmSenhaMouseClicked(evt);
             }
         });
-        enAdmSenha.addActionListener(new java.awt.event.ActionListener() {
+        txtAdmSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enAdmSenhaActionPerformed(evt);
+                txtAdmSenhaActionPerformed(evt);
             }
         });
 
-        btAutenticar.setBackground(new java.awt.Color(0, 0, 153));
-        btAutenticar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btAutenticar.setForeground(new java.awt.Color(255, 255, 255));
-        btAutenticar.setText("Altenticar");
-        btAutenticar.addActionListener(new java.awt.event.ActionListener() {
+        btnAutenticar.setBackground(new java.awt.Color(0, 8, 90));
+        btnAutenticar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnAutenticar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAutenticar.setText("Altenticar");
+        btnAutenticar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btAutenticarActionPerformed(evt);
+                btnAutenticarActionPerformed(evt);
             }
         });
 
         lblLogoAdm.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lblLogoAdm.setForeground(new java.awt.Color(0, 0, 153));
+        lblLogoAdm.setForeground(new java.awt.Color(0, 8, 90));
         lblLogoAdm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogoAdm.setText("Altenticação ADM ");
 
-        jSeparator6.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator6.setForeground(new java.awt.Color(0, 8, 90));
 
-        jSeparator7.setForeground(new java.awt.Color(0, 0, 153));
+        jSeparator7.setForeground(new java.awt.Color(0, 8, 90));
 
         javax.swing.GroupLayout AdmLogLayout = new javax.swing.GroupLayout(AdmLog);
         AdmLog.setLayout(AdmLogLayout);
@@ -450,10 +453,10 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
                 .addGap(45, 45, 45)
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(enAdmUser)
+                    .addComponent(btnAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAdmUser)
                     .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
-                    .addComponent(enAdmSenha)
+                    .addComponent(txtAdmSenha)
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(47, 47, 47))
@@ -463,17 +466,17 @@ public class TelaLogin extends javax.swing.JFrame {
             .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(AdmLogLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(enAdmUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdmUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(enAdmSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAdmSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(btAutenticar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAutenticar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
         );
 
@@ -494,24 +497,22 @@ public class TelaLogin extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void enUserLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enUserLogActionPerformed
+    private void txtUserLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserLogActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enUserLogActionPerformed
+    }//GEN-LAST:event_txtUserLogActionPerformed
 //FUNCIONALIDADE DE LOGIN DO SISTEMA
-    private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 //DENTRO DESSE TRATAMENTO DE ECEÇÃO E REALIZADO UMA REQUISIÇÃO AO BANCO OS DADOS SÃO AUTENTICADOS
-//E SE FOR CONDIZENTE COM OS DADOS DO BANCO E O USUARIO ETIVER ATIVO O ACESSO É DADO DE ACORDO COM O NIVEL DE PERMIÇÃO DOS 
+//E SE FOR CONDIZENTE COM OS DADOS DO BANCO O ACESSO E DADO DE ACORDO COM O NIVEL DE PERMIÇÃO DOS 
 //DADOS DE LOGIN INSERIDOS
         try {
-            Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(enUserLog.getText()), enSenhaLog.getText());
+            Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(txtUserLog.getText()), txtSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
             TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());;
             switch (tipo) {
-//                O SWITCH CASE ABAIXO SERVE PARA IDENTIFICAR TIPO DE USUARIO E O IF UTILIZADO PARA TESTAR SE OUSUARIO SE ENCONTA ATIVO
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
-                        System.out.println(tipo);
                         TelaPrincipal.setVisible(true);
                         TelaPrincipal.menCaixa.setEnabled(true);
                         TelaPrincipal.menEstoque.setEnabled(true);
@@ -519,7 +520,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
                         break;
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
 
@@ -530,10 +531,9 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menCaixa.setEnabled(true);
 
                         break;
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
-                    
 
                 case "almoxarife":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -542,10 +542,10 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menEstoque.setEnabled(true);
 
                         break;
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
-                    
+
                 case "gerente":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
@@ -556,7 +556,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
                         break;
-                    }else{
+                    } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
                 default:
@@ -564,27 +564,27 @@ public class TelaLogin extends javax.swing.JFrame {
                     break;
 
             }
-            //O CATCH FAZ RETORNO DE UMA MENSAGEN DE USUARIO INVALIDO EM CASO DE ERRO 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
         }
 
-    }//GEN-LAST:event_btLoginActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
 
-    private void enRedefiniridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enRedefiniridActionPerformed
+    private void txtRedefiniridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRedefiniridActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enRedefiniridActionPerformed
+    }//GEN-LAST:event_txtRedefiniridActionPerformed
 
 //    O METODO ABAIXO REALIZA A REDEFINIÇÃO DE SENHA ATIVADO PELO LABEL LBLREDEFINIR
 //    NO QUAL SOLICITA DADOS DE LOGIN DO ADM E CASO SEJAM COERENTES DA ACESSO A FUNCIONALIDADE
 //    DE REDEFINIÇÃO QUE SOLICITA O CODIGO DO FUNCIONARIO E O NOVO USUARIO E SENHA
-    private void btRedefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btRedefinirActionPerformed
+    private void btnRedefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedefinirActionPerformed
         // ESSE TRY FAZ O TRATAMENTO DOS DADOS QUE VEM DO CARD DE REDEFINIÇÃO DE SENHA:
+
         try {
-            int id = Integer.parseInt(enRedefinirid.getText());
-            int user = Integer.parseInt(enRedefinirUser.getText());
-            String senha = enRedefinirSenha.getText();
+            int id = Integer.parseInt(txtRedefinirid.getText());
+            int user = Integer.parseInt(txtRedefinirUser.getText());
+            String senha = txtRedefinirSenha.getText();
             boolean result = new Usuario_controle().RedefinirUsuario(user, senha, id);
             if (result == true) {
                 JOptionPane.showMessageDialog(null, "Dados de usuario e senha alterados com sucesso");
@@ -598,19 +598,19 @@ public class TelaLogin extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_btRedefinirActionPerformed
+    }//GEN-LAST:event_btnRedefinirActionPerformed
 
-    private void enAdmUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enAdmUserActionPerformed
+    private void txtAdmUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdmUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enAdmUserActionPerformed
+    }//GEN-LAST:event_txtAdmUserActionPerformed
 
-    private void btAutenticarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAutenticarActionPerformed
+    private void btnAutenticarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutenticarActionPerformed
         // ESSE TRY FAZ A AUTENTICAÇÃO DOS DADOS DO ADM E CASO SEJAM VERIDICOS E DADO O ACESSO
 //        PARA TELA DE REDEFINIÇÃO:
         try {
 
-            int user = Integer.parseInt(enAdmUser.getText());
-            if (new Usuario_controle().efetuarLoginAdm(user, enAdmSenha.getText()) == true) {
+            int user = Integer.parseInt(txtAdmUser.getText());
+            if (new Usuario_controle().efetuarLoginAdm(user, txtAdmSenha.getText()) == true) {
                 CardLayout card = (CardLayout) root.getLayout();
                 card.show(root, "Redefinir");
             } else {
@@ -624,7 +624,7 @@ public class TelaLogin extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_btAutenticarActionPerformed
+    }//GEN-LAST:event_btnAutenticarActionPerformed
 
     private void lblRedefinirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRedefinirMouseClicked
         // FUNÇÃO DISPARADA PEO CLICK DO MOUSE SOBRE REDEFINIR SENHA QUE REDIRECIONA PARA A 
@@ -633,68 +633,68 @@ public class TelaLogin extends javax.swing.JFrame {
         card.show(root, "AdmLog");
     }//GEN-LAST:event_lblRedefinirMouseClicked
 
-    private void enSenhaLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enSenhaLogActionPerformed
+    private void txtSenhaLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaLogActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enSenhaLogActionPerformed
+    }//GEN-LAST:event_txtSenhaLogActionPerformed
 
-    private void enAdmSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enAdmSenhaActionPerformed
+    private void txtAdmSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdmSenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enAdmSenhaActionPerformed
+    }//GEN-LAST:event_txtAdmSenhaActionPerformed
 
-    private void enRedefinirUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enRedefinirUserActionPerformed
+    private void txtRedefinirUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRedefinirUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_enRedefinirUserActionPerformed
+    }//GEN-LAST:event_txtRedefinirUserActionPerformed
 
-    private void enUserLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enUserLogMouseClicked
+    private void txtUserLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserLogMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enUserLog.setText("");
-    }//GEN-LAST:event_enUserLogMouseClicked
+        txtUserLog.setText("");
+    }//GEN-LAST:event_txtUserLogMouseClicked
 
-    private void enSenhaLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enSenhaLogMouseClicked
+    private void txtSenhaLogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtSenhaLogMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enSenhaLog.setText("");
+        txtSenhaLog.setText("");
 
-    }//GEN-LAST:event_enSenhaLogMouseClicked
+    }//GEN-LAST:event_txtSenhaLogMouseClicked
 
-    private void enRedefiniridMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enRedefiniridMouseClicked
+    private void txtRedefiniridMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRedefiniridMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enRedefinirid.setText("");
+        txtRedefinirid.setText("");
 
-    }//GEN-LAST:event_enRedefiniridMouseClicked
+    }//GEN-LAST:event_txtRedefiniridMouseClicked
 
-    private void enRedefinirUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enRedefinirUserMouseClicked
+    private void txtRedefinirUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRedefinirUserMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enRedefinirUser.setText("");
+        txtRedefinirUser.setText("");
 
-    }//GEN-LAST:event_enRedefinirUserMouseClicked
+    }//GEN-LAST:event_txtRedefinirUserMouseClicked
 
-    private void enRedefinirSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enRedefinirSenhaMouseClicked
+    private void txtRedefinirSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRedefinirSenhaMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enRedefinirSenha.setText("");
+        txtRedefinirSenha.setText("");
 
-    }//GEN-LAST:event_enRedefinirSenhaMouseClicked
+    }//GEN-LAST:event_txtRedefinirSenhaMouseClicked
 
-    private void enAdmUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enAdmUserMouseClicked
+    private void txtAdmUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAdmUserMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enAdmUser.setText("");
+        txtAdmUser.setText("");
 
-    }//GEN-LAST:event_enAdmUserMouseClicked
+    }//GEN-LAST:event_txtAdmUserMouseClicked
 
-    private void enAdmSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enAdmSenhaMouseClicked
+    private void txtAdmSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAdmSenhaMouseClicked
         // FUNCIONALIDADE USADA PARA LIMPAR O CAPO QUANDO FOR CLICADO SOBRE ELE:
-        enAdmSenha.setText("");
+        txtAdmSenha.setText("");
 
-    }//GEN-LAST:event_enAdmSenhaMouseClicked
+    }//GEN-LAST:event_txtAdmSenhaMouseClicked
 
     private void btnVoltarAdmAutenticacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAdmAutenticacaoActionPerformed
-        // FUNÇÃO PARA RETORNAR PARA A PAGINA LOGIN 
+        // TODO add your handling code here:
         TelaLogin lo = new TelaLogin();
         lo.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnVoltarAdmAutenticacaoActionPerformed
 
     private void btnVoltarAdmAutenticacao1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarAdmAutenticacao1ActionPerformed
-        // FUNÇÃO PARA RETORNAR PARA A TELALOGIN DE ADM
+        // TODO add your handling code here:
         CardLayout card = (CardLayout) root.getLayout();
         card.show(root, "AdmLog");
     }//GEN-LAST:event_btnVoltarAdmAutenticacao1ActionPerformed
@@ -743,18 +743,11 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JPanel SubPainelAdmLog;
     private javax.swing.JPanel SubPainelLog;
     private javax.swing.JPanel SubPainelRedefinir;
-    private javax.swing.JToggleButton btAutenticar;
-    private javax.swing.JToggleButton btLogin;
-    private javax.swing.JToggleButton btRedefinir;
+    private javax.swing.JToggleButton btnAutenticar;
+    private javax.swing.JToggleButton btnLogin;
+    private javax.swing.JToggleButton btnRedefinir;
     private javax.swing.JButton btnVoltarAdmAutenticacao;
     private javax.swing.JButton btnVoltarAdmAutenticacao1;
-    private javax.swing.JPasswordField enAdmSenha;
-    private javax.swing.JTextField enAdmUser;
-    private javax.swing.JPasswordField enRedefinirSenha;
-    private javax.swing.JTextField enRedefinirUser;
-    private javax.swing.JTextField enRedefinirid;
-    private javax.swing.JPasswordField enSenhaLog;
-    private javax.swing.JTextField enUserLog;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
@@ -772,6 +765,13 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel lblRedefinir;
     private javax.swing.JPanel log;
     private javax.swing.JPanel root;
+    private javax.swing.JPasswordField txtAdmSenha;
+    private javax.swing.JTextField txtAdmUser;
+    private javax.swing.JPasswordField txtRedefinirSenha;
+    private javax.swing.JTextField txtRedefinirUser;
+    private javax.swing.JTextField txtRedefinirid;
+    private javax.swing.JPasswordField txtSenhaLog;
+    private javax.swing.JTextField txtUserLog;
     // End of variables declaration//GEN-END:variables
 
 }

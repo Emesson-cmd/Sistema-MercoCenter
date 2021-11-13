@@ -6,7 +6,6 @@
 package viw;
 
 import java.beans.PropertyVetoException;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,7 +14,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author JOSÉ ULISSES DA SILVA FILHO / EMESSON CAVALCANTE
+  * @author JOSÉ ULISSES DA SILVA FILHO / EMESSON CAVALCANTE
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 //    INICIALIZAÇÃO DAS TELAS
@@ -29,6 +28,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaListaFuncionarios tlf;
     private TelaRelatorio trv;
     private TelaEstoque tes;
+    private ParaApoio paraApoio;
 
     /**
      * CRIAÇÃO DE UMNOVO FORMULARIOS TelaPrincipal
@@ -42,11 +42,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             this.th = new TelaHome();
             this.th.setVisible(true);
             this.desktop.add(this.th);
-            telaCheia(th);
+            this.th.setMaximum(true);
         } catch (Exception e) {
         }
         this.cod_usuario = cod_usuario;
-
     }
 
     /**
@@ -63,24 +62,30 @@ public class TelaPrincipal extends javax.swing.JFrame {
         desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menHome = new javax.swing.JMenu();
-        menAbrirTelaHome = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         menCaixa = new javax.swing.JMenu();
-        menAbrirCaixa = new javax.swing.JMenuItem();
-        menAbrirBuscaNota = new javax.swing.JMenuItem();
+        abrMenCaixa = new javax.swing.JMenuItem();
+        abrBusca = new javax.swing.JMenuItem();
         menRh = new javax.swing.JMenu();
-        menAbrirRH = new javax.swing.JMenuItem();
-        menAbrirCriarLog = new javax.swing.JMenuItem();
-        menAbrListaFuncionarios = new javax.swing.JMenuItem();
+        abrRecHum = new javax.swing.JMenuItem();
+        abrCriarLogin = new javax.swing.JMenuItem();
+        abrListaFuncionarios = new javax.swing.JMenuItem();
         menEstoque = new javax.swing.JMenu();
-        menAbrEstoque = new javax.swing.JMenuItem();
+        abrMenEstoque = new javax.swing.JMenuItem();
         menRelatorio = new javax.swing.JMenu();
-        menAbrirRelatorioVenda = new javax.swing.JMenuItem();
+        menRelatorioVenda = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
-        menAbrirOpcoes = new javax.swing.JMenuItem();
+        abrMenOpcoes = new javax.swing.JMenuItem();
+        menSobre = new javax.swing.JMenu();
+        abrMenSobre = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        abrTelaApoio = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        abrTrocarUsuario = new javax.swing.JMenuItem();
         jMenu8 = new javax.swing.JMenu();
         menSair = new javax.swing.JMenuItem();
-        menSobre = new javax.swing.JMenu();
-        menAbrirSobre = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -102,40 +107,40 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        menAbrirTelaHome.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirTelaHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/botao-home.png"))); // NOI18N
-        menAbrirTelaHome.setText("Abrir tela Home");
-        menAbrirTelaHome.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/botao-home.png"))); // NOI18N
+        jMenuItem1.setText("Abrir tela Home");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrirTelaHomeActionPerformed(evt);
+                jMenuItem1ActionPerformed(evt);
             }
         });
-        menHome.add(menAbrirTelaHome);
+        menHome.add(jMenuItem1);
 
         jMenuBar1.add(menHome);
 
         menCaixa.setText("Caixa");
         menCaixa.setEnabled(false);
 
-        menAbrirCaixa.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/apenas-a-dinheiro.png"))); // NOI18N
-        menAbrirCaixa.setText("Abrir Caixa");
-        menAbrirCaixa.addActionListener(new java.awt.event.ActionListener() {
+        abrMenCaixa.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        abrMenCaixa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/apenas-a-dinheiro.png"))); // NOI18N
+        abrMenCaixa.setText("Abrir Caixa");
+        abrMenCaixa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrirCaixaActionPerformed(evt);
+                abrMenCaixaActionPerformed(evt);
             }
         });
-        menCaixa.add(menAbrirCaixa);
+        menCaixa.add(abrMenCaixa);
 
-        menAbrirBuscaNota.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirBuscaNota.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/busca-de-conhecimento.png"))); // NOI18N
-        menAbrirBuscaNota.setText("Abrir Busca de Nota");
-        menAbrirBuscaNota.addActionListener(new java.awt.event.ActionListener() {
+        abrBusca.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
+        abrBusca.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/busca-de-conhecimento.png"))); // NOI18N
+        abrBusca.setText("Abrir Busca");
+        abrBusca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrirBuscaNotaActionPerformed(evt);
+                abrBuscaActionPerformed(evt);
             }
         });
-        menCaixa.add(menAbrirBuscaNota);
+        menCaixa.add(abrBusca);
 
         jMenuBar1.add(menCaixa);
 
@@ -147,82 +152,126 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        menAbrirRH.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirRH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/recursos-humanos.png"))); // NOI18N
-        menAbrirRH.setText("Abrir Recursos Humanos");
-        menAbrirRH.addActionListener(new java.awt.event.ActionListener() {
+        abrRecHum.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
+        abrRecHum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/recursos-humanos.png"))); // NOI18N
+        abrRecHum.setText("Abrir Recursos Humanos");
+        abrRecHum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrirRHActionPerformed(evt);
+                abrRecHumActionPerformed(evt);
             }
         });
-        menRh.add(menAbrirRH);
+        menRh.add(abrRecHum);
 
-        menAbrirCriarLog.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirCriarLog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/adicionar-usuario.png"))); // NOI18N
-        menAbrirCriarLog.setText("Criar login");
-        menAbrirCriarLog.addActionListener(new java.awt.event.ActionListener() {
+        abrCriarLogin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        abrCriarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/adicionar-usuario.png"))); // NOI18N
+        abrCriarLogin.setText("Criar login");
+        abrCriarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrirCriarLogActionPerformed(evt);
+                abrCriarLoginActionPerformed(evt);
             }
         });
-        menRh.add(menAbrirCriarLog);
+        menRh.add(abrCriarLogin);
 
-        menAbrListaFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        menAbrListaFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/listafuncionario.png"))); // NOI18N
-        menAbrListaFuncionarios.setText("Listar Funcionario");
-        menAbrListaFuncionarios.addActionListener(new java.awt.event.ActionListener() {
+        abrListaFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
+        abrListaFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/listafuncionario.png"))); // NOI18N
+        abrListaFuncionarios.setText("Listar Funcionario");
+        abrListaFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrListaFuncionariosActionPerformed(evt);
+                abrListaFuncionariosActionPerformed(evt);
             }
         });
-        menRh.add(menAbrListaFuncionarios);
+        menRh.add(abrListaFuncionarios);
 
         jMenuBar1.add(menRh);
 
         menEstoque.setText("Estoque");
         menEstoque.setEnabled(false);
 
-        menAbrEstoque.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        menAbrEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/estoque.png"))); // NOI18N
-        menAbrEstoque.setText("Abrir Estoque");
-        menAbrEstoque.addActionListener(new java.awt.event.ActionListener() {
+        abrMenEstoque.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        abrMenEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/estoque.png"))); // NOI18N
+        abrMenEstoque.setText("Abrir Estoque");
+        abrMenEstoque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrEstoqueActionPerformed(evt);
+                abrMenEstoqueActionPerformed(evt);
             }
         });
-        menEstoque.add(menAbrEstoque);
+        menEstoque.add(abrMenEstoque);
 
         jMenuBar1.add(menEstoque);
 
         menRelatorio.setText("Relatorio");
         menRelatorio.setEnabled(false);
 
-        menAbrirRelatorioVenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirRelatorioVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
-        menAbrirRelatorioVenda.setText("Abrir relatorio de venda");
-        menAbrirRelatorioVenda.addActionListener(new java.awt.event.ActionListener() {
+        menRelatorioVenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        menRelatorioVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
+        menRelatorioVenda.setText("Abrir relatorio de venda");
+        menRelatorioVenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menAbrirRelatorioVendaActionPerformed(evt);
+                menRelatorioVendaActionPerformed(evt);
             }
         });
-        menRelatorio.add(menAbrirRelatorioVenda);
+        menRelatorio.add(menRelatorioVenda);
 
         jMenuBar1.add(menRelatorio);
 
         menOpcoes.setText("Opções");
 
-        menAbrirOpcoes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
-        menAbrirOpcoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/opcoes.png"))); // NOI18N
-        menAbrirOpcoes.setText("Abrir Opções");
-        menOpcoes.add(menAbrirOpcoes);
+        abrMenOpcoes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        abrMenOpcoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/opcoes.png"))); // NOI18N
+        abrMenOpcoes.setText("Abrir Opções");
+        menOpcoes.add(abrMenOpcoes);
 
         jMenuBar1.add(menOpcoes);
 
-        jMenu8.setText("Sair");
+        menSobre.setText("Sobre");
 
-        menSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        menSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sair.png"))); // NOI18N
-        menSair.setText("Sair");
+        abrMenSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        abrMenSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
+        abrMenSobre.setText("Abrir sobre");
+        menSobre.add(abrMenSobre);
+
+        jMenuBar1.add(menSobre);
+
+        jMenu3.setText("Tela de apoio");
+
+        abrTelaApoio.setText("Abrir");
+        abrTelaApoio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrTelaApoioActionPerformed(evt);
+            }
+        });
+        jMenu3.add(abrTelaApoio);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Ajuda");
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/central-de-ajuda.png"))); // NOI18N
+        jMenuItem2.setText("Abrir ajuda");
+        jMenu4.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Logout");
+
+        abrTrocarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
+        abrTrocarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sair.png"))); // NOI18N
+        abrTrocarUsuario.setText("Trocar de usuário");
+        abrTrocarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrTrocarUsuarioActionPerformed(evt);
+            }
+        });
+        jMenu5.add(abrTrocarUsuario);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu8.setText("fechar");
+
+        menSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, java.awt.event.InputEvent.CTRL_MASK));
+        menSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/cancel.png"))); // NOI18N
+        menSair.setText("Fechar sistema");
         menSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menSairActionPerformed(evt);
@@ -231,15 +280,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenu8.add(menSair);
 
         jMenuBar1.add(jMenu8);
-
-        menSobre.setText("Sobre");
-
-        menAbrirSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
-        menAbrirSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
-        menAbrirSobre.setText("Abrir sobre");
-        menSobre.add(menAbrirSobre);
-
-        jMenuBar1.add(menSobre);
 
         setJMenuBar(jMenuBar1);
 
@@ -262,9 +302,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-       
+        // As ações a seguir serão executadas quando a TelaPrincipal for iniciada
     }//GEN-LAST:event_formWindowActivated
-    
+
     private void menSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menSairActionPerformed
         // exibe uma caixa de diálogo pra confirmar se quer sair sim ou nao
         int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja sair?", "Atenção", JOptionPane.YES_NO_OPTION);
@@ -278,7 +318,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menRhActionPerformed
 //METODO PARA ABERTURA DA TELA DE RECURSOS HUMANOS
-    private void menAbrirRHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrirRHActionPerformed
+    private void abrRecHumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrRecHumActionPerformed
 
         if (trh == null) {
             fecharOutrasTelas();
@@ -288,14 +328,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             desktop.add(trh);
 
-            telaCheia(trh);
+            try {
+
+                trh.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             System.out.println("A tela já está aparecendo!");
         }
+ 
 
-    }//GEN-LAST:event_menAbrirRHActionPerformed
-//METODO PARA ABERTURA DA TELA CAIXA
-    private void menAbrirCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrirCaixaActionPerformed
+    }//GEN-LAST:event_abrRecHumActionPerformed
+//NESSE METODO ESTASENDO VERIFICADO SE EXISTE ALGUMA TELA ABERTA E FECHANDOO ELA PARA ABERTURA 
+    private void abrMenCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenCaixaActionPerformed
 
         if (tcv == null) {
             fecharOutrasTelas();
@@ -303,7 +349,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tcv = new TelaCaixaVenda(cod_usuario);
             tcv.setVisible(true);
             desktop.add(tcv);
-            telaCheia(tcv);
+            try {
+                tcv.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             if (tcv.isVisible() == false) {
                 tcv = new TelaCaixaVenda(cod_usuario);
@@ -315,9 +365,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         }
 
 
-    }//GEN-LAST:event_menAbrirCaixaActionPerformed
-//METODO PARA ABERTURA DA TELA DE BUSCAR NOTA
-    private void menAbrirBuscaNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrirBuscaNotaActionPerformed
+    }//GEN-LAST:event_abrMenCaixaActionPerformed
+
+    private void abrBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrBuscaActionPerformed
         if (bcn == null) {
             fecharOutrasTelas();
 
@@ -325,20 +375,69 @@ public class TelaPrincipal extends javax.swing.JFrame {
             bcn.setVisible(true);
 
             desktop.add(bcn);
-            telaCheia(bcn);
+            try {
+                bcn.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             System.out.println("A tela já está aparecendo!");
         }
 
-    }//GEN-LAST:event_menAbrirBuscaNotaActionPerformed
+    }//GEN-LAST:event_abrBuscaActionPerformed
 
     private void menHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menHomeActionPerformed
+        // TODO add your handling code here:
+
 
     }//GEN-LAST:event_menHomeActionPerformed
+    private void navegacao(JInternalFrame telaSolicitada) {
+        try {
+            if (this.th != null) {
+                this.th.setVisible(false);
+                desktop.remove(this.th);
+                tcv = new TelaCaixaVenda(this.cod_usuario);
+                this.tcv.setVisible(true);
+                desktop.add(this.tcv);
+                this.tcv.setMaximum(true);
+                this.th = null;
+            }
+            if (this.trh != null) {
+                this.trh.setVisible(false);
+                desktop.remove(this.trh);
+                tcv = new TelaCaixaVenda(this.cod_usuario);
+                this.tcv.setVisible(true);
+                desktop.add(this.tcv);
+                this.tcv.setMaximum(true);
+                this.trh = null;
+            }
+            if (this.bcn != null) {
+                this.bcn.setVisible(false);
+                desktop.remove(this.bcn);
+                tcv = new TelaCaixaVenda(this.cod_usuario);
+                this.tcv.setVisible(true);
+                desktop.add(this.tcv);
+                this.tcv.setMaximum(true);
+                this.bcn = null;
+            }
+            if (this.tcv != null) {
+                if (this.tcv.isVisible() == false) {
+                    desktop.remove(this.tcv);
+                    this.tcv = new TelaCaixaVenda(cod_usuario);
+                    this.tcv.setVisible(true);
+                    this.desktop.add(this.tcv);
+                    this.tcv.setMaximum(true);
+                } else {
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao abrir tela caixa" + e);
+        }
 
+    }
 
-//METODO PARA ABERTURA DA TELA HOME
-    private void menAbrirTelaHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrirTelaHomeActionPerformed
+//ESSE METODO ABRE A CLASSE HOME FAZENDO TESTES PARA SABER SE HA MAIS ALGUMA TELA ABERTA
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         if (this.th == null) {
             fecharOutrasTelas();
@@ -347,14 +446,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
             th.setVisible(true);
 
             desktop.add(th);
-            telaCheia(th);
+            try {
+                th.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             System.out.println("A tela já está aparecendo!");
         }
 
-    }//GEN-LAST:event_menAbrirTelaHomeActionPerformed
-//METODO PARA ABERTURA DA TELA LISTA DE FUNCIONARIOS
-    private void menAbrListaFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrListaFuncionariosActionPerformed
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void abrListaFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrListaFuncionariosActionPerformed
         // TODO add your handling code here:
         if (this.tlf == null) {
             fecharOutrasTelas();
@@ -363,13 +466,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tlf.setVisible(true);
 
             desktop.add(tlf);
-            telaCheia(tlf);
+            try {
+                tlf.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             System.out.println("O tela já está aparecendo!");
         }
-    }//GEN-LAST:event_menAbrListaFuncionariosActionPerformed
-//METODO PARA ABERTURA DA TELA PARA CRIAR O LOGIN PARA FUNCIONARIOS
-    private void menAbrirCriarLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrirCriarLogActionPerformed
+    }//GEN-LAST:event_abrListaFuncionariosActionPerformed
+
+    private void abrCriarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrCriarLoginActionPerformed
         // TODO add your handling code here:
         if (tcl == null) {
             fecharOutrasTelas();
@@ -379,15 +486,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
             desktop.add(this.tcl);
 
-            telaCheia(tcl);
+            try {
+                this.tcl.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
         } else {
             System.out.println("A tela já está aparecendo.");
 
         }
-    }//GEN-LAST:event_menAbrirCriarLogActionPerformed
-//METODO PARA ABERTURA DA TELA DE ESTOQUE
-    private void menAbrEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrEstoqueActionPerformed
+    }//GEN-LAST:event_abrCriarLoginActionPerformed
+
+    private void abrMenEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrMenEstoqueActionPerformed
         // TODO add your handling code here:
         if (this.tes == null) {
             fecharOutrasTelas();
@@ -400,13 +511,17 @@ public class TelaPrincipal extends javax.swing.JFrame {
             tes.setVisible(true);
 
             desktop.add(tes);
-            telaCheia(tes);
+            try {
+                tes.setMaximum(true);
+            } catch (PropertyVetoException ex) {System.out.println(ex);
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             System.out.println("O tela já está aparecendo!");
         }
-    }//GEN-LAST:event_menAbrEstoqueActionPerformed
-//METODO PARA ABERTURA DA TELA DE RELATORIO DE VENDAS
-    private void menAbrirRelatorioVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menAbrirRelatorioVendaActionPerformed
+    }//GEN-LAST:event_abrMenEstoqueActionPerformed
+
+    private void menRelatorioVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menRelatorioVendaActionPerformed
         // TODO add your handling code here:
         if (this.trv == null) {
             fecharOutrasTelas();
@@ -415,12 +530,46 @@ public class TelaPrincipal extends javax.swing.JFrame {
             trv.setVisible(true);
 
             desktop.add(trv);
-           telaCheia(trv);
+            try {
+                trv.setMaximum(true);
+            } catch (PropertyVetoException ex) {
+                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else {
             System.out.println("O tela já está aparecendo!");
         }
-    }//GEN-LAST:event_menAbrirRelatorioVendaActionPerformed
-//METODO PARA FECHAR TODAS AS TELAS ABERTAS 
+    }//GEN-LAST:event_menRelatorioVendaActionPerformed
+
+    private void abrTelaApoioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrTelaApoioActionPerformed
+        // TODO add your handling code here:
+        if (this.paraApoio == null) {
+            fecharOutrasTelas();
+
+            this.paraApoio = new ParaApoio();
+            paraApoio.setVisible(true);
+
+            desktop.add(paraApoio);
+//            try {
+//                paraApoio.setMaximum(true);
+//            } catch (PropertyVetoException ex) {
+//                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+        } else {
+            System.out.println("O tela já está aparecendo!");
+        }
+        
+    }//GEN-LAST:event_abrTelaApoioActionPerformed
+
+    private void abrTrocarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrTrocarUsuarioActionPerformed
+        // TODO add your handling code here:
+        int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fazer logout?", "Atenção", JOptionPane.YES_NO_OPTION);
+        if (sair == JOptionPane.YES_OPTION) {
+            this.dispose();
+            TelaLogin login = new TelaLogin();
+            login.setVisible(true);
+        }
+    }//GEN-LAST:event_abrTrocarUsuarioActionPerformed
+    
     private void fecharOutrasTelas() {
         // Fecha tela relatorio
         if (this.trv != null) {
@@ -480,13 +629,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
             desktop.remove(this.tlf);
             this.tlf = null;
         }
-    }
-    //METODO PARA COLOCAR UM JINTERNALFRAME QUE ESTA SENDO RECEBIDO COMO PARAMETRO EM TAMANHO MAXIMO DA TELA
-    private void telaCheia(JInternalFrame tela) {
-        try {
-            tela.setMaximum(true);
-        } catch (PropertyVetoException ex) {
-            Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        
+        // Fecha tela ParaApoio
+        if (this.paraApoio != null) {
+            this.paraApoio.setVisible(false);
+            desktop.remove(this.paraApoio);
+            this.paraApoio = null;
         }
     }
 
@@ -532,8 +680,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
 
-        //NO CODIGO ABAIXO ESTA SENDO CRIADA UMA VARIAVEL LOCAL COD_USUARIO QUE RECEBE O VALOR DE OUTRA VARIAVELDE MESMO NOME NO ESCOPO GLOBAL
-        //E ESSA VARIAVEL ÉPASSADA COMO PARAMETRO PARA TELA PRINCIPAL
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             private int cod_usuario = this.cod_usuario;
 
@@ -544,26 +691,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem abrBusca;
+    private javax.swing.JMenuItem abrCriarLogin;
+    private javax.swing.JMenuItem abrListaFuncionarios;
+    private javax.swing.JMenuItem abrMenCaixa;
+    private javax.swing.JMenuItem abrMenEstoque;
+    private javax.swing.JMenuItem abrMenOpcoes;
+    private javax.swing.JMenuItem abrMenSobre;
+    private javax.swing.JMenuItem abrRecHum;
+    private javax.swing.JMenuItem abrTelaApoio;
+    private javax.swing.JMenuItem abrTrocarUsuario;
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem menAbrEstoque;
-    private javax.swing.JMenuItem menAbrListaFuncionarios;
-    private javax.swing.JMenuItem menAbrirBuscaNota;
-    private javax.swing.JMenuItem menAbrirCaixa;
-    private javax.swing.JMenuItem menAbrirCriarLog;
-    private javax.swing.JMenuItem menAbrirOpcoes;
-    private javax.swing.JMenuItem menAbrirRH;
-    private javax.swing.JMenuItem menAbrirRelatorioVenda;
-    private javax.swing.JMenuItem menAbrirSobre;
-    private javax.swing.JMenuItem menAbrirTelaHome;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     public javax.swing.JMenu menCaixa;
     public javax.swing.JMenu menEstoque;
     private javax.swing.JMenu menHome;
     private javax.swing.JMenu menOpcoes;
     public javax.swing.JMenu menRelatorio;
+    private javax.swing.JMenuItem menRelatorioVenda;
     public javax.swing.JMenu menRh;
     private javax.swing.JMenuItem menSair;
     private javax.swing.JMenu menSobre;

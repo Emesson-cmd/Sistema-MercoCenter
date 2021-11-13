@@ -5,7 +5,6 @@
  */
 package controle;
 
-import dao.*;
 import java.util.ArrayList;
 import model.ItemVenda_modelo;
 

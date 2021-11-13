@@ -503,7 +503,6 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                     // Caso positivo, as informações do usuário são preenchidas.
                     for (int j = 0; j < usuarios.size(); j++) {
                         if (funcionarios.get(i).getCod() == usuarios.get(j).getFuncionario_cod_funcionario()) {
-                            System.out.println("O cod. fun " + funcionarios.get(i).getCod());
                             txtUsuCod.setText(String.valueOf(usuarios.get(j).getCod_usuario()));
                             txtUsuNome.setText((usuarios.get(j).getNome()));
                             txtUsuSenha.setText((usuarios.get(j).getSenha()));
