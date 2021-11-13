@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package dao;
+//O CODIGO ABAIXO FAZ AS IMPORTAÇÕES NECESSARIAS
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,9 +17,11 @@ import java.sql.ResultSet;
  * @author JOSÉ ULISSES DA SILVA
  */
 public class ItemVenda_Dao {
+
     private ArrayList<ItemVenda_modelo> itens = new ArrayList<ItemVenda_modelo>();
     private Connection conexao = null;
     private Conexao con = new Conexao();
+// METODO RESPONASAVEL POR INSERIR UMA NOVO ITEM VENDA NO BANCO DE DADOS
 
     public boolean insert(ArrayList<ItemVenda_modelo> itens, int cod_nota) {
         String sql_formatando = "insert into itemvenda(notavenda_cod_venda,valor,datacad,horacad,quantidade,valor_total,produto_cod_produto) values";
@@ -39,17 +42,21 @@ public class ItemVenda_Dao {
         } catch (Exception e) {
             System.out.println("Erro itemvenda_dao inserir item: " + e);
             return false;
+        } finally {
+            con.fecharConecxao(conexao);
         }
     }
+    // METODO RESPONASAVEL POR BUSCAR UM ITEM ATRAVES DE SEU ID NO BANCO DE DADOS
+
     public ArrayList<ItemVenda_modelo> buscar(int codNota) {
-        String sql_formatando = "select * from itemVenda where notavenda_cod_venda = "+codNota+"";
+        String sql_formatando = "select * from itemVenda where notavenda_cod_venda = " + codNota + "";
 
         try {
             this.conexao = con.abricConecxao();
-            
+
             PreparedStatement preparo = this.conexao.prepareStatement(sql_formatando);
             ResultSet resultado = preparo.executeQuery();
-          
+
             while (resultado.next()) {
                 ItemVenda_modelo item = new ItemVenda_modelo();
                 item.setCod_item_venda(resultado.getInt(1));
@@ -61,13 +68,15 @@ public class ItemVenda_Dao {
                 item.setValor(resultado.getFloat(3));
                 item.setValor_total(resultado.getFloat(7));
                 itens.add(item);
-                
+
             }
             return itens;
 
         } catch (Exception e) {
             System.out.println("Erro itemvenda_dao buscar item: " + e);
             return null;
+        } finally {
+            con.fecharConecxao(conexao);
         }
     }
 

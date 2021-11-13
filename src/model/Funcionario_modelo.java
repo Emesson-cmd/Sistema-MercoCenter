@@ -13,25 +13,25 @@ import java.util.ArrayList;
  * @author emesson
  */
 public class Funcionario_modelo {
-    int cod;
-    String celular;
-    String cpf;
-    String datanasc;
-    String email;
-    String endereco; 
-    String nome;
-    String datacad;
-    String horacad;
-    String nume; // numero da casa?
-    String rg;
-    String sexo;
-    String telefone;
-    String uf;
-    String bairro;
-    String cidade;
-    String cep;
-    String cargo;
-    String situacao;
+    private int cod;
+    private String celular;
+    private String cpf;
+    private String datanasc;
+    private String email;
+    private String endereco; 
+    private String nome;
+    private String datacad;
+    private String horacad;
+    private String nume; // numero da casa?
+    private String rg;
+    private String sexo;
+    private String telefone;
+    private String uf;
+    private String bairro;
+    private String cidade;
+    private String cep;
+    private String cargo;
+    private String situacao;
 
     public Funcionario_modelo(int cod, String celular, String cpf, String datanasc, String email, String endereco, String nome, String datacad, String horacad, String nume, String rg, String sexo, String telefone, String uf, String bairro, String cidade, String cep, String cargo, String situacao) {
         this.cod = cod;

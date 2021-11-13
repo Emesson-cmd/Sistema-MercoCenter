@@ -5,7 +5,6 @@
  */
 package controle;
 
-import dao.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import model.NotaVenda_modelo;
@@ -39,7 +38,6 @@ public class NotaVenda_controle {
          
     }
     public int inserirNotas(NotaVenda_modelo nota) throws SQLException{
-        System.out.println("ta cendo repetido");
         return new NotaVenda_modelo().inserirNotas(nota);
      }
     

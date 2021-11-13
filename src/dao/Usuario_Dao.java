@@ -50,6 +50,8 @@ public class Usuario_Dao {
             System.out.println("Erro no DAO ao tentar alimentar o array de usuários: " + e);
 //            return null;
             return usuarios;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 
@@ -83,6 +85,8 @@ public class Usuario_Dao {
             Usuario_Modelo usuario = new Usuario_Modelo(0, "2", "a", 1, "aaa", 1);
             usuarios.add(usuario);
             return usuarios;
+        }finally{
+            con.fecharConecxao(conexao);
         }
 
     }
@@ -99,6 +103,8 @@ public class Usuario_Dao {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "acesso negado");
             return false;
+        }finally{
+            con.fecharConecxao(conexao);
         }
 
     }
@@ -129,6 +135,8 @@ public class Usuario_Dao {
             }
         } catch (Exception e) {
             System.out.println("Houve um erro ao  tentar executar método de adicionar usuário no banco de dados: \n" + e);
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 
@@ -163,6 +171,8 @@ public class Usuario_Dao {
             }
         } catch (Exception e) {
             System.out.println("Houve um erro ao  tentar executar método de atualizar usuário no banco de dados: \n" + e);
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 
@@ -183,6 +193,8 @@ public class Usuario_Dao {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");
             System.out.println("Houve um erro ao  tentar executar método de excluir usuário no banco de dados: \n" + e);
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 }
