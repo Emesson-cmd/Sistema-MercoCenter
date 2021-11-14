@@ -71,7 +71,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menRh = new javax.swing.JMenu();
         abrRecHum = new javax.swing.JMenuItem();
         abrCriarLogin = new javax.swing.JMenuItem();
-        abrListaFuncionarios = new javax.swing.JMenuItem();
         menEstoque = new javax.swing.JMenu();
         abrMenEstoque = new javax.swing.JMenuItem();
         menRelatorio = new javax.swing.JMenu();
@@ -144,7 +143,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menCaixa);
 
         menRh.setText("RH");
-        menRh.setEnabled(false);
         menRh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menRhActionPerformed(evt);
@@ -168,15 +166,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         menRh.add(abrCriarLogin);
-
-        abrListaFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/listafuncionario.png"))); // NOI18N
-        abrListaFuncionarios.setText("Listar Funcionario");
-        abrListaFuncionarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                abrListaFuncionariosActionPerformed(evt);
-            }
-        });
-        menRh.add(abrListaFuncionarios);
 
         jMenuBar1.add(menRh);
 
@@ -578,25 +567,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 //        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void abrListaFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrListaFuncionariosActionPerformed
-        // TODO add your handling code here:
-        if (this.tlf == null) {
-            fecharOutrasTelas();
-
-            this.tlf = new TelaListaFuncionarios();
-            tlf.setVisible(true);
-
-            desktop.add(tlf);
-            try {
-                tlf.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            System.out.println("O tela já está aparecendo!");
-        }
-    }//GEN-LAST:event_abrListaFuncionariosActionPerformed
-
     private void abrCriarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrCriarLoginActionPerformed
         // TODO add your handling code here:
         if (tcl == null) {
@@ -814,7 +784,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem abrBusca;
     private javax.swing.JMenuItem abrCriarLogin;
-    private javax.swing.JMenuItem abrListaFuncionarios;
     private javax.swing.JMenuItem abrMenCaixa;
     private javax.swing.JMenuItem abrMenEstoque;
     private javax.swing.JMenuItem abrMenOpcoes;
