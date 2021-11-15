@@ -77,7 +77,9 @@ public class TelaNota_Venda extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        btOk.setBackground(new java.awt.Color(0, 8, 90));
         btOk.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btOk.setForeground(new java.awt.Color(255, 255, 255));
         btOk.setText("OK");
         btOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,23 +88,29 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         });
 
         lbltitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lbltitulo.setForeground(new java.awt.Color(0, 8, 90));
         lbltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbltitulo.setText("Nota");
 
         lbstatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbstatus.setForeground(new java.awt.Color(0, 8, 90));
         lbstatus.setText("Status");
 
         lbtotalitem.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbtotalitem.setForeground(new java.awt.Color(0, 8, 90));
         lbtotalitem.setText("N° de itens:");
 
         lbDatanota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbDatanota.setForeground(new java.awt.Color(0, 8, 90));
         lbDatanota.setText("Data:");
 
         lbItemNota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbItemNota.setForeground(new java.awt.Color(0, 8, 90));
         lbItemNota.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbItemNota.setText("Itens");
 
         lbNumeronota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbNumeronota.setForeground(new java.awt.Color(0, 8, 90));
         lbNumeronota.setText("Numer:");
 
         jTprodutosnota.setModel(new javax.swing.table.DefaultTableModel(
@@ -119,6 +127,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTprodutosnota);
 
         lbvalortotal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbvalortotal.setForeground(new java.awt.Color(0, 8, 90));
         lbvalortotal.setText("Valor Total:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
