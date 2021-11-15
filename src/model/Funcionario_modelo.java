@@ -24,7 +24,6 @@ public class Funcionario_modelo {
     String horacad;
     String nume; // numero da casa?
     String rg;
-    String sexo;
     String telefone;
     String uf;
     String bairro;
@@ -33,7 +32,7 @@ public class Funcionario_modelo {
     String cargo;
     String situacao;
 
-    public Funcionario_modelo(int cod, String celular, String cpf, String datanasc, String email, String endereco, String nome, String datacad, String horacad, String nume, String rg, String sexo, String telefone, String uf, String bairro, String cidade, String cep, String cargo, String situacao) {
+    public Funcionario_modelo(int cod, String celular, String cpf, String datanasc, String email, String endereco, String nome, String datacad, String horacad, String nume, String rg, String telefone, String uf, String bairro, String cidade, String cep, String cargo, String situacao) {
         this.cod = cod;
         this.celular = celular;
         this.cpf = cpf;
@@ -45,7 +44,6 @@ public class Funcionario_modelo {
         this.horacad = horacad;
         this.nume = nume;
         this.rg = rg;
-        this.sexo = sexo;
         this.telefone = telefone;
         this.uf = uf;
         this.bairro = bairro;
@@ -146,14 +144,6 @@ public class Funcionario_modelo {
 
     public void setRg(String rg) {
         this.rg = rg;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
     }
 
     public String getTelefone() {
