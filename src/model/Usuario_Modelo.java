@@ -102,9 +102,16 @@ public class Usuario_Modelo {
     public boolean Redefinirsenha(int usuario, String senha, int cod_funcionario) {
         return new Usuario_Dao().Update(usuario, senha, cod_funcionario);
     }
+<<<<<<< HEAD
 //O METODO ABAIXO E RESPONSAVEL POR REDIRECIONAR O RESULTADO VINDODO DO METODO LISTAR USUARIO EM DAO PARA O CONROLER   
+=======
+>>>>>>> origin/main
 
     public ArrayList<Usuario_Modelo> listarUsuarios() {
         return new Usuario_Dao().buscarUsuarios();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

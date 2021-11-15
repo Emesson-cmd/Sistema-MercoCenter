@@ -6,6 +6,10 @@
 package viw;
 
 import java.beans.PropertyVetoException;
+<<<<<<< HEAD
+=======
+import java.sql.SQLException;
+>>>>>>> origin/main
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -69,19 +73,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menRh = new javax.swing.JMenu();
         abrRecHum = new javax.swing.JMenuItem();
         abrCriarLogin = new javax.swing.JMenuItem();
-        abrListaFuncionarios = new javax.swing.JMenuItem();
         menEstoque = new javax.swing.JMenu();
         abrMenEstoque = new javax.swing.JMenuItem();
         menRelatorio = new javax.swing.JMenu();
         menRelatorioVenda = new javax.swing.JMenuItem();
+<<<<<<< HEAD
         jMenu3 = new javax.swing.JMenu();
         abrTelaApoio = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         abrTrocarUsuario = new javax.swing.JMenuItem();
         menSair = new javax.swing.JMenuItem();
+=======
+        menOpcoes = new javax.swing.JMenu();
+        abrMenOpcoes = new javax.swing.JMenuItem();
+>>>>>>> origin/main
         menSobre = new javax.swing.JMenu();
         abrMenSobre = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        abrTelaApoio = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        abrTrocarUsuario = new javax.swing.JMenuItem();
+        jMenu8 = new javax.swing.JMenu();
+        menSair = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -141,7 +157,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menCaixa);
 
         menRh.setText("RH");
-        menRh.setEnabled(false);
         menRh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menRhActionPerformed(evt);
@@ -168,6 +183,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menRh.add(abrCriarLogin);
 
+<<<<<<< HEAD
         abrListaFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK));
         abrListaFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/listafuncionario.png"))); // NOI18N
         abrListaFuncionarios.setText("Listar Funcionario");
@@ -178,6 +194,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         });
         menRh.add(abrListaFuncionarios);
 
+=======
+>>>>>>> origin/main
         jMenuBar1.add(menRh);
 
         menEstoque.setText("Estoque");
@@ -197,6 +215,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menRelatorio.setText("Relatorio");
         menRelatorio.setEnabled(false);
+<<<<<<< HEAD
 
         menRelatorioVenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         menRelatorioVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
@@ -219,8 +238,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(abrTelaApoio);
+=======
 
-        jMenuBar1.add(jMenu3);
+        menRelatorioVenda.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        menRelatorioVenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/relatorio-32px.png"))); // NOI18N
+        menRelatorioVenda.setText("Abrir relatorio de venda");
+        menRelatorioVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menRelatorioVendaActionPerformed(evt);
+            }
+        });
+        menRelatorio.add(menRelatorioVenda);
+>>>>>>> origin/main
+
+        jMenuBar1.add(menRelatorio);
 
         menOpcoes.setText("Opções");
 
@@ -229,15 +260,57 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuItem2.setText("Abrir ajuda");
         menOpcoes.add(jMenuItem2);
 
+<<<<<<< HEAD
         abrTrocarUsuario.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         abrTrocarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sair.png"))); // NOI18N
+=======
+        jMenuBar1.add(menOpcoes);
+
+        menSobre.setText("Sobre");
+
+        abrMenSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
+        abrMenSobre.setText("Abrir sobre");
+        menSobre.add(abrMenSobre);
+
+        jMenuBar1.add(menSobre);
+
+        jMenu3.setText("Tela de apoio");
+
+        abrTelaApoio.setText("Abrir");
+        abrTelaApoio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                abrTelaApoioActionPerformed(evt);
+            }
+        });
+        jMenu3.add(abrTelaApoio);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Ajuda");
+
+        jMenuItem2.setText("Abrir ajuda");
+        jMenu4.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Logout");
+
+>>>>>>> origin/main
         abrTrocarUsuario.setText("Trocar de usuário");
         abrTrocarUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abrTrocarUsuarioActionPerformed(evt);
             }
         });
+<<<<<<< HEAD
         menOpcoes.add(abrTrocarUsuario);
+=======
+        jMenu5.add(abrTrocarUsuario);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu8.setText("Sair");
+>>>>>>> origin/main
 
         menSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, java.awt.event.InputEvent.CTRL_MASK));
         menSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/cancel.png"))); // NOI18N
@@ -251,6 +324,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menOpcoes);
 
+<<<<<<< HEAD
         menSobre.setText("Sobre");
 
         abrMenSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
@@ -260,6 +334,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menSobre);
 
+=======
+>>>>>>> origin/main
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -273,7 +349,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE)
+=======
+            .addComponent(desktop, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
+>>>>>>> origin/main
         );
 
         pack();
@@ -436,25 +516,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
-    private void abrListaFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrListaFuncionariosActionPerformed
-        // TODO add your handling code here:
-        if (this.tlf == null) {
-            fecharOutrasTelas();
-
-            this.tlf = new TelaListaFuncionarios();
-            tlf.setVisible(true);
-
-            desktop.add(tlf);
-            try {
-                tlf.setMaximum(true);
-            } catch (PropertyVetoException ex) {
-                Logger.getLogger(TelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } else {
-            System.out.println("O tela já está aparecendo!");
-        }
-    }//GEN-LAST:event_abrListaFuncionariosActionPerformed
-
     private void abrCriarLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrCriarLoginActionPerformed
         // TODO add your handling code here:
         if (tcl == null) {
@@ -544,7 +605,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         int sair = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja fazer logout?", "Atenção", JOptionPane.YES_NO_OPTION);
         if (sair == JOptionPane.YES_OPTION) {
             this.dispose();
+<<<<<<< HEAD
             TelaLogin login = new TelaLogin();
+=======
+            Login login = new Login();
+>>>>>>> origin/main
             login.setVisible(true);
         }
     }//GEN-LAST:event_abrTrocarUsuarioActionPerformed
@@ -672,7 +737,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem abrBusca;
     private javax.swing.JMenuItem abrCriarLogin;
-    private javax.swing.JMenuItem abrListaFuncionarios;
     private javax.swing.JMenuItem abrMenCaixa;
     private javax.swing.JMenuItem abrMenEstoque;
     private javax.swing.JMenuItem abrMenSobre;
@@ -683,6 +747,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+<<<<<<< HEAD
+=======
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu8;
+>>>>>>> origin/main
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

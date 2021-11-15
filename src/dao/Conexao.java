@@ -7,7 +7,9 @@ package dao;
 // O CODIGOA ABAIXO FAZ AS IMPORTAÇÕES NECESSARIAS
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,8 +25,16 @@ public class Conexao {
             final String password = "";
             final String Driver = "com.mysql.cj.jdbc.Driver";
 
+<<<<<<< HEAD
             Class.forName(Driver);
             conexao = DriverManager.getConnection(url, user, password);
+=======
+            } catch (Exception e) {
+                System.out.println("O driver expecificado nao foi encontrado." + e);
+                return null;
+            }
+        return  conexao;
+>>>>>>> origin/main
 
         } catch (ClassNotFoundException e) {
             System.out.println("O driver expecificado nao foi encontrado.");
@@ -49,4 +59,11 @@ public class Conexao {
             }
           return  retorno;
     }
+<<<<<<< HEAD
 }
+=======
+    
+     
+    
+}
+>>>>>>> origin/main

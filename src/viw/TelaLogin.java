@@ -104,11 +104,19 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+<<<<<<< HEAD:src/viw/TelaLogin.java
         txtUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtUserLog.setForeground(new java.awt.Color(0, 8, 90));
         txtUserLog.setText("2122");
         txtUserLog.setBorder(null);
         txtUserLog.addMouseListener(new java.awt.event.MouseAdapter() {
+=======
+        enUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        enUserLog.setForeground(new java.awt.Color(0, 0, 153));
+        enUserLog.setText("2122");
+        enUserLog.setBorder(null);
+        enUserLog.addMouseListener(new java.awt.event.MouseAdapter() {
+>>>>>>> origin/main:src/viw/Login.java
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtUserLogMouseClicked(evt);
             }
@@ -453,10 +461,17 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
                 .addGap(45, 45, 45)
                 .addGroup(AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD:src/viw/TelaLogin.java
                     .addComponent(btnAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtAdmUser)
                     .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
                     .addComponent(txtAdmSenha)
+=======
+                    .addComponent(btAutenticar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(enAdmUser)
+                    .addComponent(lblLogoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 361, Short.MAX_VALUE)
+                    .addComponent(enAdmSenha)
+>>>>>>> origin/main:src/viw/Login.java
                     .addComponent(jSeparator6)
                     .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(47, 47, 47))
@@ -513,6 +528,10 @@ public class TelaLogin extends javax.swing.JFrame {
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
+<<<<<<< HEAD:src/viw/TelaLogin.java
+=======
+                        System.out.println(tipo);
+>>>>>>> origin/main:src/viw/Login.java
                         TelaPrincipal.setVisible(true);
                         TelaPrincipal.menCaixa.setEnabled(true);
                         TelaPrincipal.menEstoque.setEnabled(true);
@@ -520,7 +539,11 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
                         break;
+<<<<<<< HEAD:src/viw/TelaLogin.java
                     } else {
+=======
+                    }else{
+>>>>>>> origin/main:src/viw/Login.java
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
 
@@ -531,9 +554,16 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menCaixa.setEnabled(true);
 
                         break;
+<<<<<<< HEAD:src/viw/TelaLogin.java
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
+=======
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                    }
+                    
+>>>>>>> origin/main:src/viw/Login.java
 
                 case "almoxarife":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -542,10 +572,17 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menEstoque.setEnabled(true);
 
                         break;
+<<<<<<< HEAD:src/viw/TelaLogin.java
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
 
+=======
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                    }
+                    
+>>>>>>> origin/main:src/viw/Login.java
                 case "gerente":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
@@ -556,7 +593,11 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
                         break;
+<<<<<<< HEAD:src/viw/TelaLogin.java
                     } else {
+=======
+                    }else{
+>>>>>>> origin/main:src/viw/Login.java
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
                 default:

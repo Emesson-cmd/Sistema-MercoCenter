@@ -51,8 +51,14 @@ public class Produto_controle {
                 Object[] linhas = {this.produtos.get(i).getCod_produto(), this.produtos.get(i).getNome(), this.produtos.get(i).getDescricao(), this.produtos.get(i).getValor_compra(), this.produtos.get(i).getValor_venda(), this.produtos.get(i).getQuantidade(), this.produtos.get(i).getQuantidademinima(), this.produtos.get(i).getTipo(), this.produtos.get(i).getDatacad(), this.produtos.get(i).getData_validade(), this.produtos.get(i).getHoracad(), "Remover"};
                 tabela.addRow(linhas);
             }
+<<<<<<< HEAD
         } catch (Exception e) {
             System.out.println(e);
+=======
+            System.out.println("Executado prencher tabela");
+        } catch (Exception e) {
+            System.out.println("e");
+>>>>>>> origin/main
         }
 
         return tabela;
@@ -94,6 +100,10 @@ public class Produto_controle {
             
 
         }
+<<<<<<< HEAD
+=======
+        System.out.println("o codigo do produto :"+produto.getCod_produto());
+>>>>>>> origin/main
         return produto;
 
     }

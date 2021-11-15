@@ -88,7 +88,6 @@
         <Menu class="javax.swing.JMenu" name="menRh">
           <Properties>
             <Property name="text" type="java.lang.String" value="RH"/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menRhActionPerformed"/>
@@ -125,6 +124,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrCriarLoginActionPerformed"/>
               </Events>
             </MenuItem>
+<<<<<<< HEAD
             <MenuItem class="javax.swing.JMenuItem" name="abrListaFuncionarios">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
@@ -139,6 +139,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrListaFuncionariosActionPerformed"/>
               </Events>
             </MenuItem>
+=======
+>>>>>>> origin/main
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menEstoque">
@@ -178,7 +180,11 @@
             <MenuItem class="javax.swing.JMenuItem" name="menRelatorioVenda">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+<<<<<<< HEAD
                   <KeyStroke key="Ctrl+Alt+R"/>
+=======
+                  <KeyStroke key="Ctrl+E"/>
+>>>>>>> origin/main
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/viw/img/telaPrincipal/relatorio-32px.png"/>
@@ -206,6 +212,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+<<<<<<< HEAD
         <Menu class="javax.swing.JMenu" name="menOpcoes">
           <Properties>
             <Property name="text" type="java.lang.String" value="Op&#xe7;&#xf5;es"/>
@@ -223,13 +230,22 @@
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="abrTrocarUsuario">
+=======
+        <Menu class="javax.swing.JMenu" name="menSobre">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sobre"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="abrMenSobre">
+>>>>>>> origin/main
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Shift+Ctrl+X"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/viw/img/telaPrincipal/sair.png"/>
+                  <Image iconType="3" name="/viw/img/telaPrincipal/sobre.png"/>
                 </Property>
+<<<<<<< HEAD
                 <Property name="text" type="java.lang.String" value="Trocar de usu&#xe1;rio"/>
               </Properties>
               <Events>
@@ -245,28 +261,73 @@
                   <Image iconType="3" name="/viw/img/telaPrincipal/cancel.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fechar sistema"/>
+=======
+                <Property name="text" type="java.lang.String" value="Abrir sobre"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tela de apoio"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="abrTelaApoio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Abrir"/>
+>>>>>>> origin/main
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menSairActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrTelaApoioActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="menSobre">
+        <Menu class="javax.swing.JMenu" name="jMenu4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Sobre"/>
+            <Property name="text" type="java.lang.String" value="Ajuda"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="abrMenSobre">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Abrir ajuda"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Logout"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="abrTrocarUsuario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Trocar de usu&#xe1;rio"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrTrocarUsuarioActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sair"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menSair">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+S"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/viw/img/telaPrincipal/sobre.png"/>
+                  <Image iconType="3" name="/viw/img/telaPrincipal/sair.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Abrir sobre"/>
+                <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menSairActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -312,7 +373,11 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
           <Component id="desktop" alignment="1" pref="503" max="32767" attributes="0"/>
+=======
+          <Component id="desktop" alignment="1" pref="501" max="32767" attributes="0"/>
+>>>>>>> origin/main
       </Group>
     </DimensionLayout>
   </Layout>
