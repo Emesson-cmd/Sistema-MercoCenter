@@ -18,10 +18,10 @@ import model.Funcionario_modelo;
  */
 public class Funcionario_Dao {
 
-    Connection conexao = null;
-    Conexao con = new Conexao();
-    PreparedStatement pst = null;
-    ResultSet rs = null;
+    private Connection conexao = null;
+    private Conexao con = new Conexao();
+    private PreparedStatement pst = null;
+    private ResultSet rs = null;
     
     public boolean desativarFuncionario(Funcionario_modelo funcionario){
         String sql = "update funcionario set situacao = \"inativo\" where cod = ?";
@@ -42,7 +42,9 @@ public class Funcionario_Dao {
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar desativar o funcionário: " + e);
             return false;
-        }
+        }finally{
+            con.fecharConecxao(conexao);
+        }     
     }
 
     // método responsavel por alterar dados do usuario
@@ -97,8 +99,9 @@ public class Funcionario_Dao {
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar atualizar o funcionário: " + e);
             return false;
+        }finally{
+            con.fecharConecxao(conexao);
         }
-
     }
 
     public ArrayList<Funcionario_modelo> buscarFuncionarios() {
@@ -139,6 +142,8 @@ public class Funcionario_Dao {
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar alimentar o array de funcionários: " + e);
             return null;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 
@@ -189,6 +194,8 @@ public class Funcionario_Dao {
             JOptionPane.showMessageDialog(null, e);
             System.out.println(e);
             return false;
+        }finally{
+            con.fecharConecxao(conexao);
         }
     }
 }

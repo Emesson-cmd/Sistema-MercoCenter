@@ -12,9 +12,11 @@ import java.util.ArrayList;
 
 /**F
  *
- * @author sulis
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
+//CRIAÇÃO DA CLASSE NOTA VENDA MODELO
 public class NotaVenda_modelo {
+    //METODOS PRIVADOS
     private int funcionaio_cod_funcionario;
     private int cliente_cod_cliente;
     private int cod_venda;
@@ -24,6 +26,8 @@ public class NotaVenda_modelo {
     private String horacad;
     private int quantidade;
     private float valor_total;
+    
+    //CONSTRUTOR QUE RECEBE OS VALORES DOS ATRIBUTOS E OS PREENCHE NA INICIALIZAÇÃO DA CLASSE
     public NotaVenda_modelo(int funcionaio_cod_funcionario, int cliente_cod_cliente, int cod_venda, float valor, String data, String datacad, String horacad, int quantidade, float valor_total) {
         this.funcionaio_cod_funcionario = funcionaio_cod_funcionario;
         this.cliente_cod_cliente = cliente_cod_cliente;
@@ -35,10 +39,11 @@ public class NotaVenda_modelo {
         this.quantidade = quantidade;
         this.valor_total = valor_total;
     }
-
+    //CONTRUTOR VAZIO
     public NotaVenda_modelo() {
     }
 
+    //GETTERS E SETTERS
     public int getFuncionaio_cod_funcionario() {
         return funcionaio_cod_funcionario;
     }
@@ -110,9 +115,12 @@ public class NotaVenda_modelo {
     public void setValor_total(float valor_total) {
         this.valor_total = valor_total;
     }
+    
+    //METODO QUE FAZ A BUSCA DAS NOTAS E RETORNA O RESULT PARA O CONTROLER
      public ArrayList<NotaVenda_modelo> listarNotas(){
         return new NotaVenda_Dao().listarNotas();
      }
+    //METODO QUE FAZ A INSERÇÃO DAS NOTAS E RETORNA O RESULT PARA O CONTROLER
      public int inserirNotas(NotaVenda_modelo nota) throws SQLException{
         return new NotaVenda_Dao().inserirNota(nota);
      }

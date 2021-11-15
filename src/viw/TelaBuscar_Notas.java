@@ -4,43 +4,39 @@
  * and open the template in the editor.
  */
 package viw;
-
-import com.sun.xml.internal.ws.api.streaming.XMLStreamWriterFactory;
+//IMPORTAÇÕES NECESSARIAS
 import controle.ItemVenda_controle;
 import controle.NotaVenda_controle;
 import controle.Produto_controle;
-import controle.Usuario_controle;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import model.ItemVenda_modelo;
 import model.NotaVenda_modelo;
 import model.Produto_modelo;
 
 /**
  *
- * @author sulis
+ * @author JOSÉ ULISSES DASILVA FILHO
  */
-public class Buscar_Notas extends javax.swing.JInternalFrame {
-
+public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
+//VARIAVEIS  COD NOTA QUE RECEBE O CODIGO DA NOTA SELECIONADA E NO METODO BUSCAR NOTA É UTILIZADO PARA COMPOR O COMANDO SQL 
     private String codgonotaSelecionada = "";
+    //UM ARRAY LIST DE NOTA VENDA MODELO QUE RECEBE OS DADOS VINDOS DE CONTROLER ASSIM QUE A TELA INICIA E SERVE PARA REDUZIR O NUMERO DE REQUISIÇÕES 
+    //QUE SÃO FEITOS AO BANCO DE DADOS
     private ArrayList<NotaVenda_modelo> notas = new ArrayList<NotaVenda_modelo>();
 
     /**
-     * Creates new form Buscar_Notas
+     * CrIAÇÃO DO FORMULARIO Buscar_Notas
      */
-    public Buscar_Notas() {
+    public TelaBuscar_Notas() {
         initComponents();
+        // O CODIGO ABAIXO FAZ A BUSCA DE TODOS AS NOTAS E COLOCA TODAS EM UMA TABELA E ALIMENTA O ARRAY LIST
         this.notas = new NotaVenda_controle().listarnotas();
-        System.out.println("tamanho:" + notas.size());
         DefaultTableModel tbm = (DefaultTableModel) jTNotasVenda.getModel();
         for (int i = 0; i < notas.size(); i++) {
-            System.out.println(notas.get(i).getHoracad());
-
             tbm.addRow(new Object[]{notas.get(i).getCod_venda(), notas.get(i).getDatacad(), notas.get(i).getValor_total(), notas.get(i).getHoracad(), notas.get(i).getQuantidade(), notas.get(i).getFuncionaio_cod_funcionario()});
-
         }
     }
 
@@ -118,17 +114,18 @@ public class Buscar_Notas extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbVendasReaizadas)
+                        .addGap(213, 213, 213))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbVendasReaizadas1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(enCodigoNota, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                .addComponent(enCodigoNota, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btPesquisarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbVendasReaizadas))
-                        .addGap(213, 213, 213))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
+                                .addComponent(btPesquisarNota, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                .addGap(42, 42, 42))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -142,7 +139,7 @@ public class Buscar_Notas extends javax.swing.JInternalFrame {
                 .addGap(16, 16, 16)
                 .addComponent(lbVendasReaizadas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(26, 26, 26))
         );
 
@@ -201,16 +198,17 @@ public class Buscar_Notas extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+// METODO DISPARADO  ATRAVES DO BOTÃO BUSCAR O CODIGO ABAIXO  REALIZA UMA BUSCA NO ARRAY LIST DE PRODUTOS COM INTUITO DE REDUZIR 
+    //O NUMERO DE REQUISIÇÕES AO BANCO DE DADOS
     private void btPesquisarNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisarNotaActionPerformed
-        // TODO add your handling code here:
+        // O CODIGO ABAIXO CAPTURA O CODIGO DO PRODUTO  E CONVERTE PARA INTEIRO:
         int cod_nota_busca = 0;
         try {
             cod_nota_busca = Integer.parseInt(enCodigoNota.getText());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "codigo não numerico inserido");
         }
-
+// O CODIGO ABAIXO LIMPA TODOS OS DADOS DA TABELA E FAZ UMA BUSCA PELO PRODUTO CO MESMO ID COLOCADO NO CAMPO E INSERE ESSE PRODUTO NA TABELA
         DefaultTableModel tbm = (DefaultTableModel) jTNotasVenda.getModel();
         int nota = 0;
         for (int i = 0; i < notas.size(); i++) {
@@ -232,17 +230,14 @@ public class Buscar_Notas extends javax.swing.JInternalFrame {
         }
         if (nota == 0) {
             for (int i = 0; i < notas.size(); i++) {
-                System.out.println(notas.get(i).getHoracad());
-
                 tbm.addRow(new Object[]{notas.get(i).getCod_venda(), notas.get(i).getDatacad(), notas.get(i).getValor_total(), notas.get(i).getHoracad(), notas.get(i).getQuantidade(), notas.get(i).getFuncionaio_cod_funcionario()});
-
             }
             JOptionPane.showMessageDialog(null, "Nota nãoexiste");
         }
 
 
     }//GEN-LAST:event_btPesquisarNotaActionPerformed
-
+//O CODIGO ABAIXO PREENCHE OS CAMPOS COM OS DADOS DO PRODUTO SELECIONADO NA TABELA
     private void jTNotasVendaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTNotasVendaMouseClicked
         // TODO add your handling code here:
         JTable source = (JTable) evt.getSource();
@@ -267,7 +262,6 @@ public class Buscar_Notas extends javax.swing.JInternalFrame {
 
                         if (produtos.get(a).getCod_produto() == itens.get(i).getProduto_cod_produto()) {
                             nome_produto = produtos.get(a).getNome();
-                            System.out.println("nome do pproduto "+itens.size()+"Qual ponto "+i + produtos.get(a).getNome()+"com codigo"+codgonotaSelecionada);
                         } else {
 
                         }
@@ -287,13 +281,11 @@ public class Buscar_Notas extends javax.swing.JInternalFrame {
 
                         if (produtos.get(a).getCod_produto() == itens.get(i).getProduto_cod_produto()) {
                             nome_produto = produtos.get(a).getNome();
-                            System.out.println("nome do pproduto" + produtos.get(a).getNome());
                         } else {
 
                         }
 
                     }
-                    System.out.println(itens.get(i).getValor());
                     tbmDetalhe.addRow(new Object[]{itens.get(i).getCod_item_venda(), nome_produto, itens.get(i).getValor(), itens.get(i).getQuantidade(), itens.get(i).getValor_total()});
 
                 }

@@ -5,7 +5,6 @@
  */
 package controle;
 
-import dao.Funcionario_Dao;
 import java.util.ArrayList;
 import model.Funcionario_modelo;
 

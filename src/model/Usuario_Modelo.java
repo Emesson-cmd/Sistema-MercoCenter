@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -86,20 +87,31 @@ public class Usuario_Modelo {
     public void setAtivo(int ativo) {
         this.ativo = ativo;
     }
+//O METODO ABAIXO E RESPONSAVEL POR REDIRECIONAR O RESULTADO VINDODO DO METODO LOGAR EM DAO PARA O CONROLER   
 
     public ArrayList<Usuario_Modelo> logar(int user, String senha) {
         return new Usuario_Dao().buscar(user, senha);
     }
+//O METODO ABAIXO E RESPONSAVEL POR REDIRECIONAR O RESULTADO VINDODO DO METODO LOGAR DO ADMINISTRADOR EM DAO PARA O CONROLER   
 
     public ArrayList<Usuario_Modelo> logarAdm(int user, String senha) {
         return new Usuario_Dao().buscar(user, senha);
     }
+//O METODO ABAIXO E RESPONSAVEL POR REDIRECIONAR O RESULTADO VINDODO DO METODO REDEFINIR SENHA EM DAO PARA O CONROLER   
 
     public boolean Redefinirsenha(int usuario, String senha, int cod_funcionario) {
         return new Usuario_Dao().Update(usuario, senha, cod_funcionario);
     }
+<<<<<<< HEAD
+//O METODO ABAIXO E RESPONSAVEL POR REDIRECIONAR O RESULTADO VINDODO DO METODO LISTAR USUARIO EM DAO PARA O CONROLER   
+=======
+>>>>>>> origin/main
 
     public ArrayList<Usuario_Modelo> listarUsuarios() {
         return new Usuario_Dao().buscarUsuarios();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

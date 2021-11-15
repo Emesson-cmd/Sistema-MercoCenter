@@ -13,9 +13,14 @@ import model.Produto_modelo;
 
 /**
  *
- * @author T.I
+ * @author JOSÉ ULISSES DA SILVA FILHO
  */
+//CRIAÇÃODA CLASSE MODELO DE PRODUTO
 public class Produto_modelo {
+<<<<<<< HEAD
+//ATRIBUTOSPRIVADOS
+=======
+>>>>>>> origin/main
 
     private int cod_produto;
     private String nome;
@@ -25,6 +30,12 @@ public class Produto_modelo {
     private int quantidade;
     private String data_validade;
     private int quantidademinima;
+<<<<<<< HEAD
+    private String tipo;
+    private String datacad;
+    private String horacad;
+//CONSTRUTOR QUE PREENCHE OS ATRIBUTOS NA INICIALIZAÇÃO DA CLASSE
+=======
 
     public int getQuantidademinima() {
         return quantidademinima;
@@ -37,6 +48,7 @@ public class Produto_modelo {
     private String datacad;
     private String horacad;
 
+>>>>>>> origin/main
     public Produto_modelo(String d_validade, int cod_produto, String nome, String descrição, double valor_compra, double valor_venda, int quantidade, int quantidademin, String tipo, String datacad, String horacad) {
         this.cod_produto = cod_produto;
         this.nome = nome;
@@ -49,6 +61,31 @@ public class Produto_modelo {
         this.datacad = datacad;
         this.horacad = horacad;
         this.data_validade = d_validade;
+<<<<<<< HEAD
+=======
+    }
+
+    public String getData_validade() {
+        return data_validade;
+    }
+
+    public void setData_validade(String data_validade) {
+        this.data_validade = data_validade;
+>>>>>>> origin/main
+    }
+    //CONSTRUTOR VAZIO
+    public Produto_modelo() {
+    }
+
+    
+    //GETTERS E SETTERS
+
+    public int getQuantidademinima() {
+        return quantidademinima;
+    }
+
+    public void setQuantidademinima(int quantidademinima) {
+        this.quantidademinima = quantidademinima;
     }
 
     public String getData_validade() {
@@ -59,9 +96,7 @@ public class Produto_modelo {
         this.data_validade = data_validade;
     }
 
-    public Produto_modelo() {
-    }
-
+    
     public int getCod_produto() {
         return cod_produto;
     }
@@ -133,6 +168,21 @@ public class Produto_modelo {
     public void setHoracad(String horacad) {
         this.horacad = horacad;
     }
+<<<<<<< HEAD
+// O METODO ABAIXO EXECUTA O METSO DE BUSCAPRODUTOS DO DAO E REPASA O RESULTADO PARA O CONTROLER
+    public ArrayList<Produto_modelo> listarprodutos() {
+        return new Produto_Dao().buscarprodutos();
+    }
+// O METODO ABAIXO EXECUTA O METSO DE REMOVERPRODUTO DO DAO E REPASA O RESULTADO PARA O CONTROLER
+    public boolean remover_Produto(int id) {
+        return new Produto_Dao().remover_Produto(id);
+    }
+// O METODO ABAIXO EXECUTA O METSO DE ATUALIZARPRODUTOS DO DAO E REPASA O RESULTADO PARA O CONTROLER
+    public boolean atualizar_Produto(Produto_modelo produto) {
+        return new Produto_Dao().atualizar_Produto(produto);
+    }
+// O METODO ABAIXO EXECUTA O METSO DE INSERIRPRODUTOS DO DAO E REPASA O RESULTADO PARA O CONTROLER
+=======
 
     public ArrayList<Produto_modelo> listarprodutos() {
         return new Produto_Dao().buscarprodutos();
@@ -145,9 +195,13 @@ public class Produto_modelo {
     public boolean atualizar_Produto(Produto_modelo produto) {
         return new Produto_Dao().atualizar_Produto(produto);
     }
+>>>>>>> origin/main
     public boolean inserir_Produto(Produto_modelo produto) {
         return new Produto_Dao().inserir_Produto(produto);
     }
 
+<<<<<<< HEAD
+=======
    
+>>>>>>> origin/main
 }
