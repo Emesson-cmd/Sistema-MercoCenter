@@ -112,10 +112,14 @@ public class TelaRh extends javax.swing.JInternalFrame {
         tabelaUsuarios = new javax.swing.JTable();
         btnUsuVer = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("RH");
         setPreferredSize(new java.awt.Dimension(930, 462));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(220, 269));
 
         btnFunInformation.setText("?");
@@ -189,7 +193,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(137, 137, 137)
-                    .addComponent(btnFunInformation, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(btnFunInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE)
                     .addGap(553, 553, 553)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -215,6 +219,8 @@ public class TelaRh extends javax.swing.JInternalFrame {
                     .addComponent(btnFunInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(216, Short.MAX_VALUE)))
         );
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Celular");
 
@@ -255,7 +261,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(19, 19, 19))
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -286,6 +292,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setPreferredSize(new java.awt.Dimension(220, 269));
 
         jLabel10.setText("Data de cadastros");
@@ -323,7 +330,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addGap(13, 13, 13)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                         .addGap(148, 148, 148))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -359,6 +366,8 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selBuscaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setText("Endereço");
 
@@ -449,6 +458,11 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        btnUsuAtualizar.setBackground(new java.awt.Color(0, 8, 90));
+        btnUsuAtualizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnUsuAtualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuAtualizar.setText("Atualizar");
         btnUsuAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -456,6 +470,9 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
+        btnUsuPesquisar.setBackground(new java.awt.Color(0, 8, 90));
+        btnUsuPesquisar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnUsuPesquisar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuPesquisar.setText("Pesquisar");
         btnUsuPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -463,7 +480,9 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
-        btnUsuAdicionar.setBackground(java.awt.Color.white);
+        btnUsuAdicionar.setBackground(new java.awt.Color(0, 8, 90));
+        btnUsuAdicionar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnUsuAdicionar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuAdicionar.setText("Adicionar");
         btnUsuAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -471,6 +490,9 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
+        btnUsuArquivar.setBackground(new java.awt.Color(0, 8, 90));
+        btnUsuArquivar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnUsuArquivar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuArquivar.setText("Arquivar");
         btnUsuArquivar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -478,6 +500,9 @@ public class TelaRh extends javax.swing.JInternalFrame {
             }
         });
 
+        btnCampoLimpar.setBackground(new java.awt.Color(0, 8, 90));
+        btnCampoLimpar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnCampoLimpar.setForeground(new java.awt.Color(255, 255, 255));
         btnCampoLimpar.setText("Limpar campos");
         btnCampoLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -530,7 +555,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -572,6 +597,9 @@ public class TelaRh extends javax.swing.JInternalFrame {
         tabelaUsuarios.setPreferredSize(new java.awt.Dimension(450, 100000));
         jScrollPane3.setViewportView(tabelaUsuarios);
 
+        btnUsuVer.setBackground(new java.awt.Color(0, 8, 90));
+        btnUsuVer.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnUsuVer.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuVer.setText("Ver");
         btnUsuVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

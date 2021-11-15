@@ -184,6 +184,9 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
 
         cmbMeses.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionae o mês","janeiro", "fevereiro", "março", "abril","maio", "junho", "julho", "agosto","setembro", "outubro", "novembro", "dezembro" }));
 
+        btnLimparCampos.setBackground(new java.awt.Color(0, 8, 90));
+        btnLimparCampos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnLimparCampos.setForeground(new java.awt.Color(255, 255, 255));
         btnLimparCampos.setText("Limpar");
         btnLimparCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,6 +194,9 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
             }
         });
 
+        btnGerarRelatorio.setBackground(new java.awt.Color(0, 8, 90));
+        btnGerarRelatorio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnGerarRelatorio.setForeground(new java.awt.Color(255, 255, 255));
         btnGerarRelatorio.setText("Gerar relatorio");
         btnGerarRelatorio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
