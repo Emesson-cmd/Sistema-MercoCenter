@@ -136,7 +136,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lblRedefinir.setForeground(new java.awt.Color(0, 0, 153));
         lblRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblRedefinir.setText("ESqueceu a senha?");
+        lblRedefinir.setText("Esqueceu a senha?");
         lblRedefinir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblRedefinirMouseClicked(evt);

@@ -197,7 +197,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
             }
         });
 
-        btnCancelarCarrinho.setBackground(new java.awt.Color(255, 0, 0));
+        btnCancelarCarrinho.setBackground(new java.awt.Color(172, 0, 0));
         btnCancelarCarrinho.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCancelarCarrinho.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelarCarrinho.setText("Cancelar compras");
@@ -487,7 +487,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
