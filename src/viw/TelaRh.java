@@ -34,11 +34,13 @@ public class TelaRh extends javax.swing.JInternalFrame {
      */
     public TelaRh() {
         initComponents();
+        
         try {
             conexao = con.abricConecxao();
         } catch (SQLException e) {
             System.out.println("Houve um erro ao iniciar a TelaRh: " + e);
         }
+        
         this.funcionarios = new Funcionario_controle().buscarFuncionarios();
 
         txtIdUsuario.setDocument(new viw.LimitJTextField(4));
@@ -694,14 +696,10 @@ public class TelaRh extends javax.swing.JInternalFrame {
         java.util.Date hora = Calendar.getInstance().getTime(); // Ou qualquer outra forma que tem
         String dataFormatada = sdf.format(hora);
         txtUsuHoraCad.setText(dataFormatada);
-
-        // Converter data para inserir no banco
-//        /*
-        int id = 0;
-
+        
         if (validarCampos()) {
             Funcionario_modelo funcionario = new Funcionario_modelo(
-                    (id),
+                    0,
                     (txtUsuCelular.getText()),
                     (txtUsuarioCpf.getText()),
                     (txtUsuDataNasc.getText()),
@@ -722,6 +720,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             );
 
             Funcionario_Dao funcionarioDao = new Funcionario_Dao();
+            
             boolean deuCerto = funcionarioDao.adicionarFuncionario(funcionario);
             if (deuCerto == true) {
                 limparCampos();
@@ -730,62 +729,11 @@ public class TelaRh extends javax.swing.JInternalFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");
         }
-//        */
     }//GEN-LAST:event_btnUsuAdicionarActionPerformed
-
-    // Método que converte a data de nascimento de dd/mm/yyyy para yyyy-mm-dd
-    private String converterDataNasc() {
-        String dataNasc = txtUsuDataNasc.getText();
-        System.out.println(dataNasc);
-
-        StringBuffer sb = new StringBuffer();
-
-        String dia = dataNasc;
-        System.out.println(dia);
-        dia = dia.substring(0, 2);
-        System.out.println(dia);
-
-        String mes = dataNasc;
-        mes = mes.substring(3, 5);
-        System.out.println(mes);
-
-        String ano = dataNasc;
-        ano = ano.substring(6, 10);
-        System.out.println(ano);
-
-        String dataNascInvertida = ano + "-" + mes + "-" + dia;
-        System.out.println(dataNascInvertida);
-        return dataNascInvertida;
-    }
-
-    private String converterDataCad() {
-        String dataCad = txtUsuDataCad.getText();
-        System.out.println(dataCad);
-
-        StringBuffer sb = new StringBuffer();
-
-        String dia = dataCad;
-        System.out.println(dia);
-        dia = dia.substring(0, 2);
-        System.out.println(dia);
-
-        String mes = dataCad;
-        mes = mes.substring(3, 5);
-        System.out.println(mes);
-
-        String ano = dataCad;
-        ano = ano.substring(6, 10);
-        System.out.println(ano);
-
-        String dataNascInvertida = ano + "-" + mes + "-" + dia;
-        System.out.println(dataNascInvertida);
-        return dataNascInvertida;
-    }
 
     // Inicia a tabela
     private void iniciarTabela() {
         DefaultTableModel dtmFuncionario = (DefaultTableModel) tabelaUsuarios.getModel();
-        
         dtmFuncionario.setRowCount(0);
         
         // Retorna um arrayList de funcionarios
@@ -812,6 +760,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 + "\nOBS.: Isso não o excluirá da lista de funcionários.");
 
         if (resposta == 0) {
+            
             // esse método tem como principal objetivo arquivar um funcionário.
             // Ou seja, ele será inativado.
             // Mas ele também poderá ficar com a cor vermelha na lista de funcionários.
@@ -859,20 +808,6 @@ public class TelaRh extends javax.swing.JInternalFrame {
         txtUsuCelular.setText(funcionarios.get(colunaSelecionada).getCelular());
         selBuscaCargo.setSelectedItem(funcionarios.get(colunaSelecionada).getCargo());
         selBuscaStatus.setSelectedItem(funcionarios.get(colunaSelecionada).getSituacao());
-
-        // Verifica se existe um funcionário relacionado à um usuário. Caso exista os campos
-        // referentes á funcionário serão preenchidos
-//        int funcionario_cod_funcionario = usuarios.get(colunaSelecionada).getFuncionario_cod_funcionario();
-//        this.funcionarios = new Funcionario_controle().buscarFuncionarios();
-//        for (int i = 0; i < funcionarios.size(); i++) {
-//            if (funcionarios.get(i).getCod() == funcionario_cod_funcionario) {
-//                txtFunCod.setText(String.valueOf(funcionario_cod_funcionario));
-//                txtFunNome.setText(funcionarios.get(i).getNome());
-//                txtFunCpf.setText(funcionarios.get(i).getCpf());
-//                selFunCargo.setSelectedItem(funcionarios.get(i).getCargo());
-//                selFunSituacao.setSelectedItem(funcionarios.get(i).getSituacao());
-//            }
-//        }
     }//GEN-LAST:event_btnUsuVerActionPerformed
 
     // método para consultar funcionários
