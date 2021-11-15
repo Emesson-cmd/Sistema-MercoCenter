@@ -70,6 +70,9 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btPesquisarNota.setBackground(new java.awt.Color(0, 8, 90));
+        btPesquisarNota.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btPesquisarNota.setForeground(new java.awt.Color(255, 255, 255));
         btPesquisarNota.setText("Buscar");
         btPesquisarNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,9 +103,11 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTNotasVenda);
 
+        lbVendasReaizadas.setBackground(new java.awt.Color(0, 8, 90));
         lbVendasReaizadas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbVendasReaizadas.setText("Vendas Reaizadas");
 
+        lbVendasReaizadas1.setBackground(new java.awt.Color(0, 8, 90));
         lbVendasReaizadas1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbVendasReaizadas1.setText("Digite o Codigo Da Venda");
 
@@ -143,6 +148,7 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
                 .addGap(26, 26, 26))
         );
 
+        lbDetalheVendas.setBackground(new java.awt.Color(0, 8, 90));
         lbDetalheVendas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbDetalheVendas.setText("Detalhes da venda");
 
