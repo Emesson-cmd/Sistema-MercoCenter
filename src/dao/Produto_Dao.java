@@ -29,7 +29,7 @@ public class Produto_Dao {
 
         try {
             this.conexao = con.abricConecxao();
-            String sql = "select * from produto";
+            String sql = "select * from produto order by nome";
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             ResultSet resultado = preparo.executeQuery();
 

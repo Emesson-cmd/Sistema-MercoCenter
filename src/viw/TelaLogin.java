@@ -136,7 +136,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lblRedefinir.setForeground(new java.awt.Color(0, 0, 153));
         lblRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblRedefinir.setText("ESqueceu a senha?");
+        lblRedefinir.setText("Esqueceu a senha?");
         lblRedefinir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblRedefinirMouseClicked(evt);
@@ -184,11 +184,11 @@ public class TelaLogin extends javax.swing.JFrame {
             .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(logLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(lblLogoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(txtUserLog, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(txtSenhaLog, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
@@ -508,7 +508,9 @@ public class TelaLogin extends javax.swing.JFrame {
         try {
             Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(txtUserLog.getText()), txtSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
-            TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());;
+            TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());
+            System.out.println("o tipo é" + tipo);
+
             switch (tipo) {
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -519,10 +521,10 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRh.setEnabled(true);
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
+                    break;
 
                 case "caixa":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -530,21 +532,20 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.setVisible(true);
                         TelaPrincipal.menCaixa.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
-
+                    break;
                 case "almoxarife":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
                         TelaPrincipal.setVisible(true);
                         TelaPrincipal.menEstoque.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
+                    break;
 
                 case "gerente":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -555,17 +556,18 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRh.setEnabled(true);
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
-                default:
-                    JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
                     break;
+               
 
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
+            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Os dados inseridos devem ser numericos");
         }
 
     }//GEN-LAST:event_btnLoginActionPerformed

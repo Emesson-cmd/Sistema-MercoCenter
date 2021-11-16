@@ -61,21 +61,57 @@ public class TelaNota_Venda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbvalortotal = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTprodutosnota = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        btOk = new javax.swing.JToggleButton();
+        lbltitulo = new javax.swing.JLabel();
+        lbstatus = new javax.swing.JLabel();
+        lbtotalitem = new javax.swing.JLabel();
         lbDatanota = new javax.swing.JLabel();
         lbItemNota = new javax.swing.JLabel();
         lbNumeronota = new javax.swing.JLabel();
-        lbltitulo = new javax.swing.JLabel();
-        lbstatus = new javax.swing.JLabel();
-        btOk = new javax.swing.JToggleButton();
-        lbtotalitem = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTprodutosnota = new javax.swing.JTable();
+        lbvalortotal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbvalortotal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbvalortotal.setText("Valor Total:");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        btOk.setBackground(new java.awt.Color(0, 8, 90));
+        btOk.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btOk.setForeground(new java.awt.Color(255, 255, 255));
+        btOk.setText("OK");
+        btOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btOkActionPerformed(evt);
+            }
+        });
+
+        lbltitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lbltitulo.setForeground(new java.awt.Color(0, 8, 90));
+        lbltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbltitulo.setText("Nota");
+
+        lbstatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbstatus.setForeground(new java.awt.Color(0, 8, 90));
+        lbstatus.setText("Status");
+
+        lbtotalitem.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbtotalitem.setForeground(new java.awt.Color(0, 8, 90));
+        lbtotalitem.setText("N° de itens:");
+
+        lbDatanota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbDatanota.setForeground(new java.awt.Color(0, 8, 90));
+        lbDatanota.setText("Data:");
+
+        lbItemNota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbItemNota.setForeground(new java.awt.Color(0, 8, 90));
+        lbItemNota.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbItemNota.setText("Itens");
+
+        lbNumeronota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbNumeronota.setForeground(new java.awt.Color(0, 8, 90));
+        lbNumeronota.setText("Numer:");
 
         jTprodutosnota.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -90,80 +126,75 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTprodutosnota);
 
-        lbDatanota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbDatanota.setText("Data:");
+        lbvalortotal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lbvalortotal.setForeground(new java.awt.Color(0, 8, 90));
+        lbvalortotal.setText("Valor Total:");
 
-        lbItemNota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbItemNota.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbItemNota.setText("Itens");
-
-        lbNumeronota.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbNumeronota.setText("Numer:");
-
-        lbltitulo.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        lbltitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbltitulo.setText("Nota");
-
-        lbstatus.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbstatus.setText("Status");
-
-        btOk.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btOk.setText("OK");
-        btOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btOkActionPerformed(evt);
-            }
-        });
-
-        lbtotalitem.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbtotalitem.setText("N° de itens:");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 653, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbDatanota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(104, 104, 104))
+                        .addComponent(lbItemNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbNumeronota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
+                        .addComponent(lbltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(lbvalortotal, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lbtotalitem, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(lbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
+                    .addContainerGap()))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 490, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(lbltitulo)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(lbNumeronota, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(lbDatanota)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(lbItemNota)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbvalortotal, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                        .addComponent(lbstatus)
+                        .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbtotalitem))
+                    .addContainerGap()))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbDatanota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lbItemNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbNumeronota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1)
-                            .addComponent(lbltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbvalortotal, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lbtotalitem, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
-                        .addGap(10, 10, 10))))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbltitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbNumeronota)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbDatanota)
-                .addGap(4, 4, 4)
-                .addComponent(lbItemNota)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbvalortotal, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(lbstatus)
-                    .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbtotalitem)))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -218,6 +249,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btOk;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTprodutosnota;
     private javax.swing.JLabel lbDatanota;

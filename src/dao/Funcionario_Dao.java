@@ -18,35 +18,31 @@ import model.Funcionario_modelo;
  */
 public class Funcionario_Dao {
 
-    private Connection conexao = null;
-    private Conexao con = new Conexao();
-    private PreparedStatement pst = null;
-    private ResultSet rs = null;
+    Connection conexao = null;
+    Conexao con = new Conexao();
+    PreparedStatement pst = null;
+    ResultSet rs = null;
     
-    public void desativarFuncionario(Funcionario_modelo funcionario){
+    // Desativa funcionário tendo como parâmetro seu código
+    public boolean desativarFuncionario(int id){
         String sql = "update funcionario set situacao = \"inativo\" where cod = ?";
         
         try {
             conexao = con.abricConecxao();
             
             PreparedStatement pst = conexao.prepareStatement(sql);
-            pst.setInt(1, funcionario.getCod());
-            
-            int atualizaremFuncionario = pst.executeUpdate();
-            
-            if (atualizaremFuncionario > 0) {
-                JOptionPane.showMessageDialog(null, "Funcionário desativado com sucesso!");
-            }
-
+            pst.setInt(1, id);
+           
+            pst.executeUpdate();
+    
+            return true;
         } catch (Exception e) {
-            System.out.println("Erro no DAO ao tentar desativar o funcionário: " + e);
-        }finally{
-            con.fecharConecxao(conexao);
+            return false;
         }
     }
 
     // método responsavel por alterar dados do usuario
-    public void atualizarFuncionario(Funcionario_modelo funcionario) {
+    public boolean atualizarFuncionario(Funcionario_modelo funcionario) {
 
         try {
             this.conexao = con.abricConecxao();
@@ -55,7 +51,7 @@ public class Funcionario_Dao {
                     + "celular=?, cpf=?, datanasc=?, "
                     + "email=?, endereco=?, nome=?, "
                     + "datacad=?, horacad=?, nume=?, "
-                    + "rg=?, sexo=?, telefone=?, "
+                    + "rg=?, telefone=?, "
                     + "uf=?, bairro=?, cidade=?, "
                     + "cep=?, cargo=?, situacao=? "
                     + "where cod = ?";
@@ -65,39 +61,32 @@ public class Funcionario_Dao {
             pst.setString(1, funcionario.getCelular());
             pst.setString(2, funcionario.getCpf());
             pst.setString(3, funcionario.getDatanasc());
-            
             pst.setString(4, funcionario.getEmail());
             pst.setString(5, funcionario.getEndereco());
             pst.setString(6, funcionario.getNome());
-            
             pst.setString(7, funcionario.getDatacad());
             pst.setString(8, funcionario.getHoracad());
             pst.setString(9, funcionario.getNume());
-            
             pst.setString(10, funcionario.getRg());
-            pst.setString(11, funcionario.getSexo());
-            pst.setString(12, funcionario.getTelefone());
-            
-            pst.setString(13, funcionario.getUf());
-            pst.setString(14, funcionario.getBairro());
-            pst.setString(15, funcionario.getCidade());
-            
-            pst.setString(16, funcionario.getCep());
-            pst.setString(17, funcionario.getCargo());
-            pst.setString(18, funcionario.getSituacao());
-            
-            pst.setInt(19, funcionario.getCod());
+            pst.setString(11, funcionario.getTelefone());
+            pst.setString(12, funcionario.getUf());
+            pst.setString(13, funcionario.getBairro());
+            pst.setString(14, funcionario.getCidade());
+            pst.setString(15, funcionario.getCep());
+            pst.setString(16, funcionario.getCargo());
+            pst.setString(17, funcionario.getSituacao());
+            pst.setInt(18, funcionario.getCod());
 
             int atualizaremFuncionario = pst.executeUpdate();
 
             if (atualizaremFuncionario > 0) {
-                JOptionPane.showMessageDialog(null, "Funcionário atualizado com sucesso!");
+                return true;
             }
 
+            return true;
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar atualizar o funcionário: " + e);
-        }finally{
-            con.fecharConecxao(conexao);
+            return false;
         }
 
     }
@@ -125,7 +114,6 @@ public class Funcionario_Dao {
                 funcionario.setHoracad(resultado.getString(9));
                 funcionario.setNume(resultado.getString(10));
                 funcionario.setRg(resultado.getString(11));
-                funcionario.setSexo(resultado.getString(12));
                 funcionario.setTelefone(resultado.getString(13));
                 funcionario.setUf(resultado.getString(14));
                 funcionario.setBairro(resultado.getString(15));
@@ -141,18 +129,16 @@ public class Funcionario_Dao {
         } catch (Exception e) {
             System.out.println("Erro no DAO ao tentar alimentar o array de funcionários: " + e);
             return null;
-        }finally{
-            con.fecharConecxao(conexao);
         }
     }
 
     // método para adicionar usuários
-    public void adicionarFuncionario(Funcionario_modelo funcionario) {
+    public boolean adicionarFuncionario(Funcionario_modelo funcionario) {
         String sqlFuncionario = "INSERT INTO `funcionario` (`celular`, `cpf`, "
                 + "`datanasc`, `email`, `endereco`, `nome`, `datacad`, `horacad`, `nume`, "
-                + "`rg`, `sexo`, `telefone`, `uf`, `bairro`, `cidade`, `cep`, `cargo`, `situacao`) "
+                + "`rg`, `telefone`, `uf`, `bairro`, `cidade`, `cep`, `cargo`, `situacao`) "
                 + "VALUES "
-                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+                + "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
         try {
             this.conexao = con.abricConecxao();
@@ -169,31 +155,21 @@ public class Funcionario_Dao {
             pst.setString(8, funcionario.getHoracad());
             pst.setString(9, funcionario.getNume());
             pst.setString(10, funcionario.getRg());
-            pst.setString(11, funcionario.getSexo());
-            pst.setString(12, funcionario.getTelefone());
-            pst.setString(13, funcionario.getUf());
-            pst.setString(14, funcionario.getBairro());
-            pst.setString(15, funcionario.getCidade());
-            pst.setString(16, funcionario.getCep());
-            pst.setString(17, funcionario.getCargo());
-            pst.setString(18, funcionario.getSituacao());
+            pst.setString(11, funcionario.getTelefone());
+            pst.setString(12, funcionario.getUf());
+            pst.setString(13, funcionario.getBairro());
+            pst.setString(14, funcionario.getCidade());
+            pst.setString(15, funcionario.getCep());
+            pst.setString(16, funcionario.getCargo());
+            pst.setString(17, funcionario.getSituacao());
 
             // a linha abaixo executa uma atualização do banco de dados com os dados do formulário
-            int adicionarEmUsuario = pst.executeUpdate();
+            pst.executeUpdate();
 
-            // A linha abaixo serve para ver qual o valor de adicionar após executar executeUpdate
-            // System.out.println("Valor de adicionar: " + adicionarEmUsuario);
-            // a linha abaixo mostra uma confirmação de usuário cadastrado no sistema
-            if (adicionarEmUsuario > 0) {
-                JOptionPane.showMessageDialog(null, "Funcionário adicionado com sucesso!");
-            } else {
-                JOptionPane.showMessageDialog(null, "Houve um erro!");
-            }
+            return true;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
             System.out.println(e);
-        }finally{
-            con.fecharConecxao(conexao);
+            return false;
         }
     }
 }

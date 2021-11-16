@@ -1,29 +1,34 @@
--- MySQL dump 10.13  Distrib 8.0.26, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.1.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: bancomercado
--- ------------------------------------------------------
--- Server version	8.0.26-0ubuntu0.20.04.2
+-- Host: 127.0.0.1
+-- Tempo de geração: 15-Nov-2021 às 01:57
+-- Versão do servidor: 10.4.18-MariaDB
+-- versão do PHP: 8.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Table structure for table `funcionario`
+-- Banco de dados: `bancomercado`
 --
 
-DROP TABLE IF EXISTS `funcionario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `funcionario`
+--
+
 CREATE TABLE `funcionario` (
-  `cod` int NOT NULL AUTO_INCREMENT,
+  `cod` int(11) NOT NULL,
   `celular` varchar(50) DEFAULT NULL,
   `cpf` varchar(50) DEFAULT NULL,
   `datanasc` date DEFAULT NULL,
@@ -33,7 +38,7 @@ CREATE TABLE `funcionario` (
   `datacad` date DEFAULT NULL,
   `horacad` time DEFAULT NULL,
   `nume` varchar(20) DEFAULT NULL,
-  `rg` int DEFAULT NULL,
+  `rg` varchar(15) DEFAULT NULL,
   `sexo` varchar(9) DEFAULT NULL,
   `telefone` varchar(50) DEFAULT NULL,
   `uf` varchar(3) DEFAULT NULL,
@@ -41,18 +46,38 @@ CREATE TABLE `funcionario` (
   `cidade` varchar(100) DEFAULT NULL,
   `cep` varchar(11) DEFAULT NULL,
   `cargo` varchar(20) DEFAULT NULL,
-  `situacao` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`cod`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+  `situacao` varchar(20) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Extraindo dados da tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`cod`, `celular`, `cpf`, `datanasc`, `email`, `endereco`, `nome`, `datacad`, `horacad`, `nume`, `rg`, `sexo`, `telefone`, `uf`, `bairro`, `cidade`, `cep`, `cargo`, `situacao`) VALUES
+(8, '(88)99999-9999', '028.030.678-09', '2000-10-01', 'alassss@gmail.com', 'sdhsgdhsgdjhsd', 'Emanuel da Lima', '2021-10-01', '20:21:00', '234', '7878787878-7', 'feminino', '(88)88888-8888', 'SP', 'sfasgfhsg', 'alameda', '68189-000', 'almoxarife', 'inativo'),
+(9, '(88)99999-9999', '028.030.678-09', '2000-10-01', 'alassss@gmail.com', 'sdhsgdhsgdjhsd', 'Emanuel da Lima', '2021-11-14', '21:50:50', '234', '7878787878-7', NULL, '(88)88888-8888', 'SP', 'sfasgfhsg', 'alameda', '68189-000', 'almoxarife', 'inativo');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `funcionario`
+--
+ALTER TABLE `funcionario`
+  ADD PRIMARY KEY (`cod`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `funcionario`
+--
+ALTER TABLE `funcionario`
+  MODIFY `cod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2021-10-31 12:34:56

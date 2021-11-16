@@ -70,6 +70,9 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        btPesquisarNota.setBackground(new java.awt.Color(0, 8, 90));
+        btPesquisarNota.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btPesquisarNota.setForeground(new java.awt.Color(255, 255, 255));
         btPesquisarNota.setText("Buscar");
         btPesquisarNota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,9 +103,11 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(jTNotasVenda);
 
+        lbVendasReaizadas.setBackground(new java.awt.Color(0, 8, 90));
         lbVendasReaizadas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbVendasReaizadas.setText("Vendas Reaizadas");
 
+        lbVendasReaizadas1.setBackground(new java.awt.Color(0, 8, 90));
         lbVendasReaizadas1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbVendasReaizadas1.setText("Digite o Codigo Da Venda");
 
@@ -114,17 +119,18 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lbVendasReaizadas)
+                        .addGap(213, 213, 213))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lbVendasReaizadas1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(enCodigoNota, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                .addComponent(enCodigoNota, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btPesquisarNota, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lbVendasReaizadas))
-                        .addGap(213, 213, 213))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1)
+                                .addComponent(btPesquisarNota, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+                                .addGap(42, 42, 42))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
@@ -138,10 +144,11 @@ public class TelaBuscar_Notas extends javax.swing.JInternalFrame {
                 .addGap(16, 16, 16)
                 .addComponent(lbVendasReaizadas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                 .addGap(26, 26, 26))
         );
 
+        lbDetalheVendas.setBackground(new java.awt.Color(0, 8, 90));
         lbDetalheVendas.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbDetalheVendas.setText("Detalhes da venda");
 
