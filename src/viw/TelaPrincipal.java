@@ -137,7 +137,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menCaixa);
 
         menRh.setText("RH");
-        menRh.setEnabled(false);
         menRh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menRhActionPerformed(evt);

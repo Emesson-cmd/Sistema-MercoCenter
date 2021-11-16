@@ -27,27 +27,27 @@ public class TelaRh extends javax.swing.JInternalFrame {
     Conexao con = new Conexao();
     PreparedStatement pst = null;
     ResultSet rs = null;
-    ArrayList<Funcionario_modelo> funcionarios = new ArrayList();
 
     /**
      * Creates new form TelaRh
      */
     public TelaRh() {
         initComponents();
-        
+
+        // Abri conexão com o banco de dados.
         try {
             conexao = con.abricConecxao();
         } catch (SQLException e) {
-            System.out.println("Houve um erro ao iniciar a TelaRh: " + e);
+            JOptionPane.showMessageDialog(null, "Houve um erro ao iniciar a tela de Recursos Humanos. \nPor favor, verifique sua conexão com o banco de dados.");
         }
-        
-        this.funcionarios = new Funcionario_controle().buscarFuncionarios();
 
+        // Limita o número de caracteres nos campos
         txtIdUsuario.setDocument(new viw.LimitJTextField(4));
         txtBuscaNome.setDocument(new viw.LimitJTextField(50));
         txtUsuUf.setDocument(new viw.LimitJTextField(2));
-        iniciarTabela();
 
+        // Inicia a tabela de funcionários
+        iniciarTabela();
     }
 
     /**
@@ -608,7 +608,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // Botão para ver uma informação
+    // Botão para ver uma informação específica
     private void btnFunInformationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFunInformationActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Esse código pode ser encontrado na janela Lista de Funcionários");
@@ -646,8 +646,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
     // Atualiza as informações do funcionário
     private void btnUsuAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAtualizarActionPerformed
 
-        // Cria um modelo de funcionário com as informações dos campos
-        Funcionario_modelo funcionario = new Funcionario_modelo(
+        boolean deuCerto = new Funcionario_controle().atualizarFuncionario(
                 (Integer.parseInt(txtIdUsuario.getText())),
                 (txtUsuCelular.getText()),
                 (txtUsuarioCpf.getText()),
@@ -665,23 +664,55 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 (txtUsuCidade.getText()),
                 (txtUsuCep.getText()),
                 (String.valueOf(selBuscaCargo.getSelectedItem())),
-                (String.valueOf(selBuscaStatus.getSelectedItem()))
-        );
+                (String.valueOf(selBuscaStatus.getSelectedItem())));
 
-        Funcionario_Dao funcionarioDao = new Funcionario_Dao();
-        boolean deuCerto = funcionarioDao.atualizarFuncionario(funcionario);
-        
-        if (deuCerto){
+        if (deuCerto) {
+            JOptionPane.showMessageDialog(null, "Funcionário atualizado com sucesso!");
             limparCampos();
             iniciarTabela();
+        } else {
+            JOptionPane.showMessageDialog(null, "Houve um erro ao atualziar funcionário! \nPor favor, tente novamente. \nVerique se todos os campos estão preenchidos corretamente!");
         }
-        
+
     }//GEN-LAST:event_btnUsuAtualizarActionPerformed
 
-    // Pesquisa usuário no banco de dados
+    // Pesquisa funcionário
     private void btnUsuPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuPesquisarActionPerformed
-        // Chamando o método consultar.
-        consultar();
+
+        // Flag para verificar se o usuário existe.
+        boolean flag = false;
+        ArrayList<Funcionario_modelo> lista_funcionarios = new Funcionario_controle().buscarFuncionarios();
+
+        for (int i = 0; i < lista_funcionarios.size(); i++) {
+            Integer getCodToString = lista_funcionarios.get(i).getCod();
+            String stringConvertida = String.valueOf(getCodToString);
+
+            if (txtIdUsuario.getText().equals(stringConvertida)) {
+                txtBuscaNome.setText(lista_funcionarios.get(i).getNome());
+                txtUsuarioCpf.setText(lista_funcionarios.get(i).getCpf());
+                txtUsuEmail.setText(lista_funcionarios.get(i).getEmail());
+                txtUsuEndereco.setText(lista_funcionarios.get(i).getEndereco());
+                txtUsuDataCad.setText(lista_funcionarios.get(i).getDatacad());
+                txtUsuHoraCad.setText(lista_funcionarios.get(i).getHoracad());
+                txtUsuNumCasa.setText(lista_funcionarios.get(i).getNume());
+                txtUsuRg.setText(lista_funcionarios.get(i).getRg());
+                txtUsuDataNasc.setText(lista_funcionarios.get(i).getDatanasc());
+                txtUsuTelefone.setText(lista_funcionarios.get(i).getTelefone());
+                txtUsuUf.setText(lista_funcionarios.get(i).getUf());
+                txtUsuBairro.setText(lista_funcionarios.get(i).getBairro());
+                txtUsuCidade.setText(lista_funcionarios.get(i).getCidade());
+                txtUsuCep.setText(lista_funcionarios.get(i).getCep());
+                txtUsuCelular.setText(lista_funcionarios.get(i).getCelular());
+                selBuscaCargo.setSelectedItem(lista_funcionarios.get(i).getCargo());
+                selBuscaStatus.setSelectedItem(lista_funcionarios.get(i).getSituacao());
+                flag = true;
+            }
+        }
+
+        if (flag == false) {
+            JOptionPane.showMessageDialog(null, "Funcionário não identificado por ID.");
+            limparCampos();
+        }
     }//GEN-LAST:event_btnUsuPesquisarActionPerformed
 
     // Adiciona novo usuário
@@ -696,9 +727,10 @@ public class TelaRh extends javax.swing.JInternalFrame {
         java.util.Date hora = Calendar.getInstance().getTime(); // Ou qualquer outra forma que tem
         String dataFormatada = sdf.format(hora);
         txtUsuHoraCad.setText(dataFormatada);
-        
+
+        // Verifica primeiro se todos os campos estão preenchidos
         if (validarCampos()) {
-            Funcionario_modelo funcionario = new Funcionario_modelo(
+            boolean deuCerto = new Funcionario_controle().adicionarFuncionario(
                     0,
                     (txtUsuCelular.getText()),
                     (txtUsuarioCpf.getText()),
@@ -719,12 +751,12 @@ public class TelaRh extends javax.swing.JInternalFrame {
                     (String.valueOf(selBuscaStatus.getSelectedItem()))
             );
 
-            Funcionario_Dao funcionarioDao = new Funcionario_Dao();
-            
-            boolean deuCerto = funcionarioDao.adicionarFuncionario(funcionario);
-            if (deuCerto == true) {
+            if (deuCerto) {
+                JOptionPane.showMessageDialog(null, "Funcionário adicionado com sucesso!");
                 limparCampos();
                 iniciarTabela();
+            } else {
+                JOptionPane.showMessageDialog(null, "Houve um erro ao adicionar um novo funcionário. \nPor favor, verifique se todos os campos estão corretamente preenchidos. \nEx.: A data de nascimento deve estar no formato de ANO-MÊS-DIA.");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Preencha todos os campos");
@@ -735,12 +767,14 @@ public class TelaRh extends javax.swing.JInternalFrame {
     private void iniciarTabela() {
         DefaultTableModel dtmFuncionario = (DefaultTableModel) tabelaUsuarios.getModel();
         dtmFuncionario.setRowCount(0);
-        
+
         // Retorna um arrayList de funcionarios
-        this.funcionarios = new Funcionario_controle().buscarFuncionarios();
+        ArrayList<Funcionario_modelo> funcionarios = new Funcionario_controle().buscarFuncionarios();
 
-        for (int i = 0; i < this.funcionarios.size(); i++) {
+        // Preenche a linhas da tabela
+        for (int i = 0; i < funcionarios.size(); i++) {
 
+            // Define os campos a serem preenchidos
             Object[] dadosFuncionarios = {
                 funcionarios.get(i).getCod(),
                 funcionarios.get(i).getNome(),
@@ -756,36 +790,37 @@ public class TelaRh extends javax.swing.JInternalFrame {
     private void btnUsuArquivarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuArquivarActionPerformed
         // TODO add your handling code here:
 
+        // Mensagem de confirmação
         int resposta = JOptionPane.showConfirmDialog(null, "Deseja inativar esse funcionário?"
                 + "\nOBS.: Isso não o excluirá da lista de funcionários.");
 
+        // 0 significa sim
         if (resposta == 0) {
-            
+
             // esse método tem como principal objetivo arquivar um funcionário.
             // Ou seja, ele será inativado.
-            // Mas ele também poderá ficar com a cor vermelha na lista de funcionários.
-            Funcionario_modelo funcionario = new Funcionario_modelo();
-            funcionario.setCod(Integer.parseInt(txtIdUsuario.getText()));
-            funcionario.setSituacao("inativo");
+            boolean deuCerto = new Funcionario_controle().arquivarFuncionario(Integer.parseInt(txtIdUsuario.getText()));
 
-            Funcionario_Dao funcionarioDao = new Funcionario_Dao();
-            boolean deuCerto = funcionarioDao.desativarFuncionario(funcionario);
-
-            if (deuCerto){
+            if (deuCerto) {
+                JOptionPane.showMessageDialog(null, "Funcionário desativado com sucesso!");
                 limparCampos();
                 iniciarTabela();
+            } else {
+                JOptionPane.showMessageDialog(null, "Houve um erro ao inativar o funcionário! \nPor favor, tente novamente.");
             }
         }
     }//GEN-LAST:event_btnUsuArquivarActionPerformed
 
+    // Esse botão resetará as opções dos campos.
     private void btnCampoLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampoLimparActionPerformed
-        // Esse botão resetará as opções dos campos.
         limparCampos();
     }//GEN-LAST:event_btnCampoLimparActionPerformed
 
     private void btnUsuVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuVerActionPerformed
         // TODO add your handling code here:
         limparCampos();
+
+        ArrayList<Funcionario_modelo> funcionarios = new Funcionario_controle().buscarFuncionarios();
 
         int colunaSelecionada = tabelaUsuarios.getSelectedRow();
 
@@ -809,45 +844,6 @@ public class TelaRh extends javax.swing.JInternalFrame {
         selBuscaCargo.setSelectedItem(funcionarios.get(colunaSelecionada).getCargo());
         selBuscaStatus.setSelectedItem(funcionarios.get(colunaSelecionada).getSituacao());
     }//GEN-LAST:event_btnUsuVerActionPerformed
-
-    // método para consultar funcionários
-    private void consultar() {
-        // Flag para verificar se o usuário existe.
-        boolean flag = false;
-
-        for (int i = 0; i < this.funcionarios.size(); i++) {
-            Integer getCodToString = funcionarios.get(i).getCod();
-            String stringConvertida = String.valueOf(getCodToString);
-
-            if (txtIdUsuario.getText().equals(stringConvertida)) {
-
-                txtBuscaNome.setText(funcionarios.get(i).getNome());
-                txtUsuarioCpf.setText(funcionarios.get(i).getCpf());
-                txtUsuEmail.setText(funcionarios.get(i).getEmail());
-                txtUsuEndereco.setText(funcionarios.get(i).getEndereco());
-                txtUsuDataCad.setText(funcionarios.get(i).getDatacad());
-                txtUsuHoraCad.setText(funcionarios.get(i).getHoracad());
-                txtUsuNumCasa.setText(funcionarios.get(i).getNume());
-                txtUsuRg.setText(funcionarios.get(i).getRg());
-                txtUsuDataNasc.setText(funcionarios.get(i).getDatanasc());
-                txtUsuTelefone.setText(funcionarios.get(i).getTelefone());
-                txtUsuUf.setText(funcionarios.get(i).getUf());
-                txtUsuBairro.setText(funcionarios.get(i).getBairro());
-                txtUsuCidade.setText(funcionarios.get(i).getCidade());
-                txtUsuCep.setText(funcionarios.get(i).getCep());
-                txtUsuCelular.setText(funcionarios.get(i).getCelular());
-                selBuscaCargo.setSelectedItem(funcionarios.get(i).getCargo());
-                selBuscaStatus.setSelectedItem(funcionarios.get(i).getSituacao());
-
-                flag = true;
-            }
-        }
-
-        if (flag == false) {
-            JOptionPane.showMessageDialog(null, "Funcionário não identificado por ID.");
-            limparCampos();
-        }
-    }
 
     // Método para limpar todos os campos
     private void limparCampos() {
