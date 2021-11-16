@@ -8,13 +8,9 @@ package viw;
 import controle.Produto_controle;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.text.MaskFormatter;
 import model.Produto_modelo;
 
 /**
@@ -193,7 +189,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             }
         });
 
-        btnBuscarProdutos.setBackground(new java.awt.Color(0, 51, 153));
+        btnBuscarProdutos.setBackground(new java.awt.Color(0, 8, 90));
         btnBuscarProdutos.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarProdutos.setText("Buscar Produto");
         btnBuscarProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +255,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         txaDescricao.setRows(5);
         jScrollPane2.setViewportView(txaDescricao);
 
-        btnSalvar.setBackground(new java.awt.Color(0, 51, 153));
+        btnSalvar.setBackground(new java.awt.Color(0, 8, 90));
         btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
         btnSalvar.setText("Salvar Produto");
         btnSalvar.setPreferredSize(new java.awt.Dimension(155, 30));
@@ -269,7 +265,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             }
         });
 
-        btnAdicionar.setBackground(new java.awt.Color(0, 51, 153));
+        btnAdicionar.setBackground(new java.awt.Color(0, 8, 90));
         btnAdicionar.setForeground(new java.awt.Color(255, 255, 255));
         btnAdicionar.setText("Adicionar Produto");
         btnAdicionar.setPreferredSize(new java.awt.Dimension(155, 30));
@@ -397,23 +393,23 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 654, Short.MAX_VALUE)
+            .addGap(0, 815, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 441, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)))
+                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
         jPanel5Layout.setVerticalGroup(

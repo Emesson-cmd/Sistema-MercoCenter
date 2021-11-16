@@ -206,4 +206,19 @@ public class Funcionario_modelo {
         return new Funcionario_Dao().buscarFuncionarios();
     }
     
+    public boolean atualizarFuncionario(Funcionario_modelo funcionario_modelo){
+        boolean deuCerto = new Funcionario_Dao().atualizarFuncionario(funcionario_modelo);
+        return deuCerto;
+    }
+    
+    public boolean adicionarFuncionario(Funcionario_modelo funcionario_modelo){
+        boolean deuCerto = new Funcionario_Dao().adicionarFuncionario(funcionario_modelo);
+        return deuCerto;
+    }
+    
+    public boolean inativarFuncionario(int id){
+        boolean deuCerto = new Funcionario_Dao().desativarFuncionario(id);
+        return deuCerto;
+    }
+    
 }

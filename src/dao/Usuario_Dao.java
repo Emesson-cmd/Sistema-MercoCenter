@@ -4,9 +4,11 @@ CLASSE UTILIZADA PARA ACESSO AO DADOS REFERENTE AO LOGIN DE USUARIO
  */
 package dao;
 
+import com.mysql.cj.jdbc.exceptions.CommunicationsException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Usuario_Modelo;
@@ -46,11 +48,13 @@ public class Usuario_Dao {
             }
 
             return usuarios;
-        } catch (Exception e) {
-            System.out.println("Erro no DAO ao tentar alimentar o array de usuários: " + e);
-//            return null;
+        } catch (CommunicationsException e) {
+            JOptionPane.showMessageDialog(null, "o servidor não foi iniciado");
             return usuarios;
-        }finally{
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "erro no sql");
+            return usuarios;
+        } finally {
             con.fecharConecxao(conexao);
         }
     }
@@ -62,7 +66,7 @@ public class Usuario_Dao {
 
         try {
             this.conexao = con.abricConecxao();
-            String sql = "select * from usuario where cod_usuario=" + user + " and senha=" + senha + "";
+            String sql = "select * from usuario where cod_usuario=" + user + " and senha='" + senha + "'";
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             ResultSet resultado = preparo.executeQuery();
 
@@ -80,17 +84,23 @@ public class Usuario_Dao {
             }
 
             return usuarios;
-        } catch (Exception e) {
-            System.out.println("erro ba busca " + e);
+        }catch (CommunicationsException e) {
             Usuario_Modelo usuario = new Usuario_Modelo(0, "2", "a", 1, "aaa", 1);
             usuarios.add(usuario);
+            JOptionPane.showMessageDialog(null, "o servidor não foi iniciado");
             return usuarios;
-        }finally{
+        } catch (SQLException e) {
+            Usuario_Modelo usuario = new Usuario_Modelo(0, "2", "a", 1, "aaa", 1);
+            usuarios.add(usuario);
+            System.out.println( "erro no sql"+e);
+            return usuarios;
+      
+        } finally {
             con.fecharConecxao(conexao);
         }
 
     }
-    
+
 //    METODO UTILIZADO PARA ATUALIZAR OS DADOS DE USUARIO
     public boolean Update(int usuario, String senha, int cod_funcionario) {
         try {
@@ -103,7 +113,7 @@ public class Usuario_Dao {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "acesso negado");
             return false;
-        }finally{
+        } finally {
             con.fecharConecxao(conexao);
         }
 
@@ -135,7 +145,7 @@ public class Usuario_Dao {
             }
         } catch (Exception e) {
             System.out.println("Houve um erro ao  tentar executar método de adicionar usuário no banco de dados: \n" + e);
-        }finally{
+        } finally {
             con.fecharConecxao(conexao);
         }
     }
@@ -171,7 +181,7 @@ public class Usuario_Dao {
             }
         } catch (Exception e) {
             System.out.println("Houve um erro ao  tentar executar método de atualizar usuário no banco de dados: \n" + e);
-        }finally{
+        } finally {
             con.fecharConecxao(conexao);
         }
     }
@@ -193,7 +203,7 @@ public class Usuario_Dao {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Usuário excluído com sucesso!");
             System.out.println("Houve um erro ao  tentar executar método de excluir usuário no banco de dados: \n" + e);
-        }finally{
+        } finally {
             con.fecharConecxao(conexao);
         }
     }

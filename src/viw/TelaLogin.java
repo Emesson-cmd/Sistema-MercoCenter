@@ -136,7 +136,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         lblRedefinir.setForeground(new java.awt.Color(0, 0, 153));
         lblRedefinir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblRedefinir.setText("ESqueceu a senha?");
+        lblRedefinir.setText("Esqueceu a senha?");
         lblRedefinir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblRedefinirMouseClicked(evt);
@@ -508,7 +508,9 @@ public class TelaLogin extends javax.swing.JFrame {
         try {
             Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(txtUserLog.getText()), txtSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
-            TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());;
+            TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());
+            System.out.println("o tipo é" + tipo);
+
             switch (tipo) {
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -519,10 +521,10 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRh.setEnabled(true);
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
+                    break;
 
                 case "caixa":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -530,21 +532,20 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.setVisible(true);
                         TelaPrincipal.menCaixa.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
-
+                    break;
                 case "almoxarife":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
                         TelaPrincipal.setVisible(true);
                         TelaPrincipal.menEstoque.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
+                    break;
 
                 case "gerente":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -555,17 +556,18 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRh.setEnabled(true);
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
-                        break;
                     } else {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
-                default:
-                    JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
                     break;
+               
 
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
+            
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "confira os dados inserido o usuario deve ser numerico e não deve haver campo vazio. Tente Novamente!");
         }
 
     }//GEN-LAST:event_btnLoginActionPerformed
@@ -594,7 +596,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro");
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "O codigo do usuário e seu id inseridos devem ser numerico. Tente Novamente!");
+            JOptionPane.showMessageDialog(null, "confira os dados inserido o usuario deve ser numerico e não deve haver campo vazio. Tente Novamente!");
         }
 
 
@@ -620,7 +622,7 @@ public class TelaLogin extends javax.swing.JFrame {
 //           ESSE CATCH FAZ A CAPTURA EM CASO DE ERRO NA CONVERÇÃO DOS DADOS QUE VEM DO VIW PARA 
 //          FORMATO CORRETO
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "O codigo do usuário inseridodeve ser numerico. Tente Novamente!");
+            JOptionPane.showMessageDialog(null, "confira os dados inserido o usuario deve ser numerico e não deve haver campo vazio. Tente Novamente!");
         }
 
 
