@@ -81,7 +81,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel2" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel4" pref="330" max="32767" attributes="0"/>
+                          <Component id="jPanel4" pref="291" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel6" max="32767" attributes="0"/>
                   </Group>
@@ -755,7 +755,7 @@
                   <Font name="Tahoma" size="11" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                  <Color blue="0" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpar campos"/>
               </Properties>
