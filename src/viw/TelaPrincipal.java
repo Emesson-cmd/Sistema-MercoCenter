@@ -143,7 +143,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        abrRecHum.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_MASK));
+        abrRecHum.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         abrRecHum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/recursos-humanos.png"))); // NOI18N
         abrRecHum.setText("Abrir Recursos Humanos");
         abrRecHum.addActionListener(new java.awt.event.ActionListener() {

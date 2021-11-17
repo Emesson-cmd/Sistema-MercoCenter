@@ -140,6 +140,36 @@ public class Usuario_Dao {
         }
     }
 
+    // Adiciona um novo usuário no banco de dados
+    public void adicionarUsuarioSemFuncionario(Usuario_Modelo usuario) {
+        String sql = "insert into usuario (cod_usuario, senha, permissao, nome, ativo)"
+                + "values"
+                + "(?, ?, ?, ?, ?)";
+
+        try {
+            this.conexao = con.abricConecxao();
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+
+            preparo.setInt(1, usuario.getCod_usuario());
+            preparo.setString(2, usuario.getSenha());
+            preparo.setString(3, usuario.getPermissao());
+            preparo.setString(4, usuario.getNome());
+            preparo.setInt(5, usuario.getAtivo());
+
+            int confirmacaoDeInsercap = preparo.executeUpdate();
+
+            if (confirmacaoDeInsercap < 0) {
+                JOptionPane.showMessageDialog(null, "Houve um erro ao tentar aicionar um novo usuário!");
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário adicionado com sucesso!");
+            }
+        } catch (Exception e) {
+            System.out.println("Houve um erro ao  tentar executar método de adicionar usuário no banco de dados: \n" + e);
+        }finally{
+            con.fecharConecxao(conexao);
+        }
+    }
+    
     // Atualiza um usuário no banco de dados
     public void atualizarUsuario(Usuario_Modelo usuario) {
         String sql = "update usuario set "
