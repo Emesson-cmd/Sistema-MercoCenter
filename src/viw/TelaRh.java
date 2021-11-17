@@ -502,7 +502,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
         btnCampoLimpar.setBackground(new java.awt.Color(0, 8, 90));
         btnCampoLimpar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnCampoLimpar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCampoLimpar.setForeground(new java.awt.Color(255, 255, 0));
         btnCampoLimpar.setText("Limpar campos");
         btnCampoLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -555,7 +555,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
