@@ -31,13 +31,26 @@ public class Usuario_controle {
                     usuario.setPermissao(users.get(i).getPermissao());
                     usuario.setSenha(users.get(i).getSenha());
                     usuario.setAtivo(users.get(i).getAtivo());
+                } else if (users.get(i).getPermissao().equals("sql")) {
+                    usuario.setCod_usuario(0);
+                    usuario.setFuncionario_cod_funcionario(0);
+                    usuario.setNome("");
+                    usuario.setPermissao("sql");
+                    usuario.setSenha("");
+                    usuario.setAtivo(1);
                 } else {
+                    usuario.setCod_usuario(0);
+                    usuario.setFuncionario_cod_funcionario(0);
+                    usuario.setNome("");
+                    usuario.setPermissao("negado");
+                    usuario.setSenha("");
+                    usuario.setAtivo(1);
 
                 }
                 return usuario;
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "a Usuário e/ou Senha inválidos(s). Tente Novamente!" + e);
+            System.out.println("erro no controler");
         }
         return null;
     }
@@ -76,6 +89,12 @@ public class Usuario_controle {
     public void adicionarUsuario(Usuario_Modelo usuario_modelo) {
         Usuario_Dao usuario_dao = new Usuario_Dao();
         usuario_dao.adicionarUsuario(usuario_modelo);
+    }
+
+    // Chama método em Usuario_Dao que Adiciona usuário no banco de dados - semfuncionario
+    public void adicionarUsuarioSemFuncionario(Usuario_Modelo usuario_modelo) {
+        Usuario_Dao usuario_dao = new Usuario_Dao();
+        usuario_dao.adicionarUsuarioSemFuncionario(usuario_modelo);
     }
 
     // Chama método em Usuario_Dao que Atualiza usuário no banco de dados

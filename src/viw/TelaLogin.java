@@ -509,8 +509,7 @@ public class TelaLogin extends javax.swing.JFrame {
             Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(txtUserLog.getText()), txtSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
             TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());
-            System.out.println("o tipo é" + tipo);
-
+            System.out.println("status"+modelo_user_para_login.getAtivo());
             switch (tipo) {
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -536,6 +535,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
                     break;
+
                 case "almoxarife":
                     if (modelo_user_para_login.getAtivo() == 1) {
                         this.dispose();
@@ -560,14 +560,20 @@ public class TelaLogin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Usuario esta inativo");
                     }
                     break;
-               
+                case "sql":
+
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! loaaaa");
+                    break;
 
             }
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
-            
-        }catch(NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "confira os dados inserido o usuario deve ser numerico e não deve haver campo vazio. Tente Novamente!");
+            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! em tela log" + e);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Usuário deve ser um valor numerico e não dever ter campos vazios" + e);
+
         }
 
     }//GEN-LAST:event_btnLoginActionPerformed
@@ -596,7 +602,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Ocorreu um erro");
             }
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "confira os dados inserido o usuario deve ser numerico e não deve haver campo vazio. Tente Novamente!");
+            JOptionPane.showMessageDialog(null, "O codigo do usuário e seu id inseridos devem ser numerico. Tente Novamente!");
         }
 
 
@@ -615,14 +621,15 @@ public class TelaLogin extends javax.swing.JFrame {
             if (new Usuario_controle().efetuarLoginAdm(user, txtAdmSenha.getText()) == true) {
                 CardLayout card = (CardLayout) root.getLayout();
                 card.show(root, "Redefinir");
-            } else {
+            } else if (new Usuario_controle().efetuarLoginAdm(user, txtAdmSenha.getText()) == false) {
                 JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
 
+            } else {
             }
 //           ESSE CATCH FAZ A CAPTURA EM CASO DE ERRO NA CONVERÇÃO DOS DADOS QUE VEM DO VIW PARA 
 //          FORMATO CORRETO
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "confira os dados inserido o usuario deve ser numerico e não deve haver campo vazio. Tente Novamente!");
+            JOptionPane.showMessageDialog(null, "O codigo do usuário inseridodeve ser numerico e não devem ter campos vazios. Tente Novamente!");
         }
 
 

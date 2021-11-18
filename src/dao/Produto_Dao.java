@@ -86,7 +86,7 @@ public class Produto_Dao {
             result = preparo.execute();
 
         } catch (SQLException e) {
-            System.out.println("errono sqlatualizar" + e);
+            System.out.println("erro no sql atualizar" + e);
             return false;
         } finally {
             con.fecharConecxao(conexao);
