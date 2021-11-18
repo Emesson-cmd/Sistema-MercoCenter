@@ -78,6 +78,12 @@ public class Usuario_controle {
         usuario_dao.adicionarUsuario(usuario_modelo);
     }
     
+    // Chama método em Usuario_Dao que Adiciona usuário no banco de dados - semfuncionario
+    public void adicionarUsuarioSemFuncionario(Usuario_Modelo usuario_modelo){
+        Usuario_Dao usuario_dao = new Usuario_Dao();
+        usuario_dao.adicionarUsuarioSemFuncionario(usuario_modelo);
+    }
+    
     // Chama método em Usuario_Dao que Atualiza usuário no banco de dados
     public void atualizarUsuario(Usuario_Modelo usuario_modelo){
         Usuario_Dao usuario_dao = new Usuario_Dao();

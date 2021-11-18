@@ -21,7 +21,7 @@ public class Usuario_Modelo {
     private int cod_usuario;
     private String senha;
     private String permissao;
-    private int funcionario_cod_funcionario;
+    private Integer funcionario_cod_funcionario = null;
     private String nome;
     private int ativo;
 
@@ -31,6 +31,15 @@ public class Usuario_Modelo {
         this.senha = senha;
         this.permissao = permissao;
         this.funcionario_cod_funcionario = funcionario_cod_funcionario;
+        this.nome = nome;
+        this.ativo = ativo;
+    }
+    
+    //CONSTRUTOR PARA INSERÇÃ DE DADOS NA INSTANCIOA DA CLASSE - sem o código do funcionário
+    public Usuario_Modelo(int cod_usuario, String senha, String permissao, String nome, int ativo) {
+        this.cod_usuario = cod_usuario;
+        this.senha = senha;
+        this.permissao = permissao;
         this.nome = nome;
         this.ativo = ativo;
     }
@@ -67,7 +76,7 @@ public class Usuario_Modelo {
     public int getFuncionario_cod_funcionario() {
         return funcionario_cod_funcionario;
     }
-
+    
     public void setFuncionario_cod_funcionario(int funcionario_cod_funcionario) {
         this.funcionario_cod_funcionario = funcionario_cod_funcionario;
     }

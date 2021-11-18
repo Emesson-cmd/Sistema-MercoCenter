@@ -150,7 +150,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="root" pref="784" max="32767" attributes="0"/>
+              <Component id="root" pref="752" max="32767" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -203,9 +203,9 @@
                               <EmptySpace min="-2" pref="215" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnFinalizarCompra" pref="220" max="32767" attributes="0"/>
+                              <Component id="btnFinalizarCompra" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Component id="btnCancelarCarrinho" pref="241" max="32767" attributes="0"/>
+                              <Component id="btnCancelarCarrinho" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -329,9 +329,9 @@
                               <Component id="lblQtdTitulo" max="32767" attributes="0"/>
                               <Component id="lbVt" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnAdicionarProdutos" pref="112" max="32767" attributes="0"/>
+                                  <Component id="btnAdicionarProdutos" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="btnLimpar" pref="113" max="32767" attributes="0"/>
+                                  <Component id="btnLimpar" max="32767" attributes="0"/>
                               </Group>
                               <Component id="txtValorProduto" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblValorProdutoTitulo" alignment="0" max="32767" attributes="0"/>
