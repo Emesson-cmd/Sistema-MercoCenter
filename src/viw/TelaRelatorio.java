@@ -265,7 +265,11 @@ public class TelaRelatorio extends javax.swing.JInternalFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGap(0, 822, Short.MAX_VALUE)
+=======
+            .addGap(0, 773, Short.MAX_VALUE)
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addContainerGap()

@@ -48,12 +48,18 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
         iniciarTabela();
         limparCampos();
+
+        txtFunCod.setDocument(new viw.LimitJTextField(4));
+        txtUsuCod.setDocument(new viw.LimitJTextField(4));
     }
 
     // Inicia a tabela de usuários
     private void iniciarTabela() {
         tabelaUsuarios.setDefaultEditor(Object.class, null);
         DefaultTableModel dtmUsuario = (DefaultTableModel) tabelaUsuarios.getModel();
+
+        // Limpa tabela antes de iniciar
+        dtmUsuario.setRowCount(0);
 
         // Retorna um arrayList de usuários
         this.usuarios = new Usuario_controle().buscarUsuarios();
@@ -120,7 +126,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaUsuarios = new javax.swing.JTable();
-        jPanel7 = new javax.swing.JPanel();
+        JPainel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtFunCod = new javax.swing.JTextField();
         txtFunNome = new javax.swing.JTextField();
@@ -147,6 +153,11 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         txtUsuCod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtUsuCodMouseClicked(evt);
+            }
+        });
+        txtUsuCod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuCodKeyTyped(evt);
             }
         });
 
@@ -219,6 +230,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                     .addComponent(selUsuPermissao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(selUsuAtivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -239,6 +251,28 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                         .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+=======
+                        .addComponent(txtUsuSenha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnSenhaMostrarOcultar))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtUsuCod)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnUsuInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel8)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -255,10 +289,15 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtUsuSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                     .addComponent(btnSenhaMostrarOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+=======
+                    .addComponent(btnSenhaMostrarOcultar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selUsuPermissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -268,9 +307,15 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addComponent(selUsuAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
                     .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(177, Short.MAX_VALUE))
+=======
+                    .addComponent(btnUsuAdicionar)
+                    .addComponent(btnUsuAtualizar))
+                .addContainerGap(24, Short.MAX_VALUE))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -295,8 +340,13 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 20, Short.MAX_VALUE))
+=======
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,13 +355,18 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addContainerGap())
         );
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        JPainel7.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Cod. Func.");
 
         txtFunCod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFunCodActionPerformed(evt);
+            }
+        });
+        txtFunCod.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFunCodKeyTyped(evt);
             }
         });
 
@@ -338,58 +393,63 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+        javax.swing.GroupLayout JPainel7Layout = new javax.swing.GroupLayout(JPainel7);
+        JPainel7.setLayout(JPainel7Layout);
+        JPainel7Layout.setHorizontalGroup(
+            JPainel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPainel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JPainel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtFunNome)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(JPainel7Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtFunCod))
                     .addComponent(txtFunCpf)
-                    .addComponent(selFunCargo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(selFunCargo, 0, 175, Short.MAX_VALUE)
                     .addComponent(selFunSituacao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JPainel7Layout.createSequentialGroup()
+                        .addGroup(JPainel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JPainel7Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(btnFunConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(20, 20, 20))
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        JPainel7Layout.setVerticalGroup(
+            JPainel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JPainel7Layout.createSequentialGroup()
+                .addGroup(JPainel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtFunCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtFunNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtFunCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selFunCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selFunSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+<<<<<<< HEAD
                 .addComponent(btnFunConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(176, Short.MAX_VALUE))
+=======
+                .addComponent(btnFunConsultar)
+                .addContainerGap(24, Short.MAX_VALUE))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -441,7 +501,11 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addGap(0, 609, Short.MAX_VALUE)
+=======
+                .addGap(0, 591, Short.MAX_VALUE)
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -452,7 +516,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(4, 4, 4)))
                     .addGap(18, 18, 18)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JPainel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(275, 275, 275)))
         );
         jPanel2Layout.setVerticalGroup(
@@ -472,7 +536,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                             .addGap(62, 62, 62))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGap(17, 17, 17)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(JPainel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
 
@@ -490,17 +554,12 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtFunCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFunCodActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFunCodActionPerformed
-
     private void tabelaUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaUsuariosMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_tabelaUsuariosMouseClicked
 
     // Pega as linha selecionada na tabela de usuários e insere as informações nos campos de texto
     private void btnUsuVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuVerActionPerformed
-        // TODO add your handling code here:
         limparCampos();
 
         int colunaSelecionada = tabelaUsuarios.getSelectedRow();
@@ -569,6 +628,13 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                             txtUsuSenha.setText((usuarios.get(j).getSenha()));
                             selUsuPermissao.setSelectedItem((usuarios.get(j).getPermissao()));
                             selUsuAtivo.setSelectedIndex(usuarios.get(j).getAtivo());
+                        } else {
+                            // limpa os campos de usuário
+                            txtUsuCod.setText(null);
+                            txtUsuNome.setText(null);
+                            txtUsuSenha.setText(null);
+                            selUsuPermissao.setSelectedItem(null);
+                            selUsuAtivo.setSelectedIndex(0);
                         }
                     }
                     funNaoEncontrado = false;
@@ -580,7 +646,6 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             if (funNaoEncontrado == true) {
                 JOptionPane.showMessageDialog(null, "Funcionário não encontrado por Código. Tente novamente.");
             }
-
         }
     }//GEN-LAST:event_btnFunConsultarActionPerformed
 
@@ -612,17 +677,115 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
     // Adiciona novo usuário
     private void btnUsuAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAdicionarActionPerformed
-        if (txtFunCod.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Para adicionar um usuário o código do funcionário não pode estar vazio!");
-        } else if (funcionarioJaTemLogin() == true) {
-            JOptionPane.showMessageDialog(null, "Funcionário já possui usuário no sistema!");
-        } else {
-            if (validarCampos() == true
-                    && validarCampoNumerico(txtUsuCod) == true
-                    && validarCampoNumerico(txtFunCod) == true) {
 
-                String nomeFun = txtFunNome.getText();
-                int decisao = JOptionPane.showConfirmDialog(null, "Deseja mesmo criar um novo usuário para o funcionário: " + nomeFun + "?");
+        if (usuarioJaTemLogin() == true) {
+            JOptionPane.showMessageDialog(null, "O seguinte código de usuário não pode ser inserido pois já está em uso. Por favor, tente inserir outro código!");
+
+            // Se o funcionário tiver um login no sistema 
+        } else if (funcionarioJaTemLogin() == true) {
+            JOptionPane.showMessageDialog(null, "Funcionário já possui usuário no sistema! Você pode tentar edita-lo.");
+        } else {
+
+            // Verifica se todos os campos estão preenchidos
+            if (validarCampos() == true) {
+
+                // Verifica se o campo Cod. Func. está vazio.
+                if (txtFunCod.getText().isEmpty()) {
+
+                    // Mensagem de confirmação
+                    int confirmacao = JOptionPane.showConfirmDialog(null, "Deseja criar login sem funcionário?");
+
+                    // Se o usuário responder sim
+                    if (confirmacao == 0) {
+                        System.out.println("Selecionei sim");
+
+                        int decisao = JOptionPane.showConfirmDialog(null, "Confirmar ação?");
+
+                        // Se o usuário escolher sim
+                        if (decisao == 0) {
+                            Usuario_Modelo usuario_modelo = new Usuario_Modelo();
+
+                            usuario_modelo.setCod_usuario(Integer.parseInt(txtUsuCod.getText()));
+                            usuario_modelo.setSenha(txtUsuSenha.getText());
+                            usuario_modelo.setPermissao(String.valueOf(selUsuPermissao.getSelectedItem()));
+                            // usuario_modelo.setFuncionario_cod_funcionario(null);
+                            usuario_modelo.setNome(txtUsuNome.getText());
+                            usuario_modelo.setAtivo(selUsuAtivo.getSelectedIndex());
+
+                            Usuario_controle usuario_controle = new Usuario_controle();
+                            usuario_controle.adicionarUsuarioSemFuncionario(usuario_modelo);
+
+                            iniciarTabela();
+                        }
+
+                    } else if (confirmacao == 1) {
+                        System.out.println("Selecionei não");
+
+                        JOptionPane.showMessageDialog(null, "Adicione o código do funcionário para a qual você deseja criar o login do sistema."
+                                + "\nCaso não saiba o código do funcionário, procure-o na tela de Recursos Humanos (Dica de atalho: aperte CTRL + R)."
+                                + "\nPara confirmar a identidade do funcionário, aperte em consultar.");
+                    }
+                } else {
+
+                    // Confirmação da ação do usuário
+                    String nomeFun = txtFunNome.getText();
+                    int decisao = JOptionPane.showConfirmDialog(null, "Deseja mesmo criar um novo usuário para o funcionário: " + nomeFun + "?");
+
+                    // Se o usuário escolher sim
+                    if (decisao == 0) {
+
+                        // Adicionar usuário usando código de funcionário
+                        Usuario_Modelo usuario_modelo = new Usuario_Modelo();
+
+                        usuario_modelo.setCod_usuario(Integer.parseInt(txtUsuCod.getText()));
+                        usuario_modelo.setSenha(txtUsuSenha.getText());
+                        usuario_modelo.setPermissao(String.valueOf(selUsuPermissao.getSelectedItem()));
+                        usuario_modelo.setFuncionario_cod_funcionario(Integer.parseInt(txtFunCod.getText()));
+                        usuario_modelo.setNome(txtUsuNome.getText());
+                        usuario_modelo.setAtivo(selUsuAtivo.getSelectedIndex());
+
+                        Usuario_controle usuario_controle = new Usuario_controle();
+                        usuario_controle.adicionarUsuario(usuario_modelo);
+
+                        iniciarTabela();
+                    }
+                }
+            }
+        }
+
+
+    }//GEN-LAST:event_btnUsuAdicionarActionPerformed
+
+    // Atualiza dados de usuário já existente
+    private void btnUsuAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAtualizarActionPerformed
+
+        if (validarCampos()) {
+
+            // Atualiza usuário caso não tenha código de funcionário
+            if (txtFunCod.getText().isEmpty()) {
+                String nomeUsu = txtUsuNome.getText();
+                int decisao = JOptionPane.showConfirmDialog(null, "Tem certeza que quer atualizar os dados do usuário: " + nomeUsu + "?");
+
+                if (decisao == 0) {
+                    Usuario_Modelo usuario_modelo = new Usuario_Modelo();
+
+                    usuario_modelo.setCod_usuario(Integer.parseInt(txtUsuCod.getText()));
+                    usuario_modelo.setSenha(txtUsuSenha.getText());
+                    usuario_modelo.setPermissao(String.valueOf(selUsuPermissao.getSelectedItem()));
+                    // usuario_modelo.setFuncionario_cod_funcionario(null);
+                    usuario_modelo.setNome(txtUsuNome.getText());
+                    usuario_modelo.setAtivo(selUsuAtivo.getSelectedIndex());
+
+                    Usuario_controle usuario_controle = new Usuario_controle();
+                    usuario_controle.atualizarUsuario(usuario_modelo);
+
+                    iniciarTabela();
+                }
+
+                // Atualiza usuário caso tenha código de funcionário   
+            } else {
+                String nomeUsu = txtUsuNome.getText();
+                int decisao = JOptionPane.showConfirmDialog(null, "Tem certeza que quer atualizar os dados do usuario: " + nomeUsu + "?");
 
                 if (decisao == 0) {
                     Usuario_Modelo usuario_modelo = new Usuario_Modelo();
@@ -635,40 +798,10 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                     usuario_modelo.setAtivo(selUsuAtivo.getSelectedIndex());
 
                     Usuario_controle usuario_controle = new Usuario_controle();
-                    usuario_controle.adicionarUsuario(usuario_modelo);
+                    usuario_controle.atualizarUsuario(usuario_modelo);
+
+                    iniciarTabela();
                 }
-            }
-        }
-
-    }//GEN-LAST:event_btnUsuAdicionarActionPerformed
-
-    // Atualiza dados de usuário já existente
-    private void btnUsuAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAtualizarActionPerformed
-        // TODO add your handling code here:
-        if (validarCampos() == false) {
-
-        } else if (validarCampoNumerico(txtFunCod) == false) {
-
-        } else if (validarCampoNumerico(txtUsuCod) == false) {
-
-        } else {
-            System.out.println("Podemos prosseguir com a atualização!");
-
-            String nomeFun = txtFunNome.getText();
-            int decisao = JOptionPane.showConfirmDialog(null, "Tem certeza que quer atualizar os dados do funcionário: " + nomeFun + "?");
-
-            if (decisao == 0) {
-                Usuario_Modelo usuario_modelo = new Usuario_Modelo();
-
-                usuario_modelo.setCod_usuario(Integer.parseInt(txtUsuCod.getText()));
-                usuario_modelo.setSenha(txtUsuSenha.getText());
-                usuario_modelo.setPermissao(String.valueOf(selUsuPermissao.getSelectedItem()));
-                usuario_modelo.setFuncionario_cod_funcionario(Integer.parseInt(txtFunCod.getText()));
-                usuario_modelo.setNome(txtUsuNome.getText());
-                usuario_modelo.setAtivo(selUsuAtivo.getSelectedIndex());
-
-                Usuario_controle usuario_controle = new Usuario_controle();
-                usuario_controle.atualizarUsuario(usuario_modelo);
             }
         }
     }//GEN-LAST:event_btnUsuAtualizarActionPerformed
@@ -680,24 +813,59 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         int usuCod = usuarios.get(colunaSelecionada).getCod_usuario();
         int decisao = JOptionPane.showConfirmDialog(null, "Deseja mesmo excluir o usuário " + usuNome + "?"
                 + "\nAlerta: essa ação não poderá ser desfeita!");
-        
-        if (decisao == 0){
+
+        if (decisao == 0) {
             Usuario_controle usuario_controle = new Usuario_controle();
             usuario_controle.deletarUsuario(usuCod);
         }
     }//GEN-LAST:event_btnUsuExcluirActionPerformed
 
+    private void txtFunCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFunCodActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFunCodActionPerformed
+
+    private void txtFunCodKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFunCodKeyTyped
+        String caracteres = "0987654321";
+        String quatroCaracteres = txtFunCod.getText();
+
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtFunCodKeyTyped
+
+    private void txtUsuCodKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuCodKeyTyped
+        String caracteres = "0987654321";
+        String quatroCaracteres = txtFunCod.getText();
+
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtUsuCodKeyTyped
+
     // Verifica se um funcionário já tem login (usuário)
-    public boolean funcionarioJaTemLogin() {
-        
+    private boolean funcionarioJaTemLogin() {
+        if (txtFunCod.getText().isEmpty()) {
+            return false;
+        } else {
+            for (int j = 0; j < usuarios.size(); j++) {
+                if (Integer.parseInt(txtFunCod.getText()) == usuarios.get(j).getFuncionario_cod_funcionario()) {
+                    System.out.println("Funcionário já tem login");
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    // Verifica se o código inserido no código do usuário já tem um semelhante no banco de dados
+    private boolean usuarioJaTemLogin() {
         for (int j = 0; j < usuarios.size(); j++) {
-            if (Integer.parseInt(txtFunCod.getText()) == usuarios.get(j).getFuncionario_cod_funcionario()) {
-                System.out.println("Funcionário já tem login");
+            if (Integer.parseInt(txtUsuCod.getText()) == usuarios.get(j).getCod_usuario()) {
+                System.out.println("Código já existe!");
                 return true;
             }
         }
         return false;
-        
     }
 
     // Esse método valida os campos de texto que podem somente receber número
@@ -713,7 +881,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 return true;
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Informe um valor válido! Temte novamente.");
+            JOptionPane.showMessageDialog(null, "Informe um valor válido! Tente novamente.");
             System.out.println("Erro: " + e);
             return false;
         }
@@ -721,19 +889,24 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
     // Esse método verifica se todos os campos referentes à usuário estão preenchidos
     private boolean validarCampos() {
+        boolean a = String.valueOf(selUsuPermissao.getSelectedItem()).equalsIgnoreCase("default");
+        boolean b = String.valueOf(selUsuAtivo.getSelectedItem()).equalsIgnoreCase("default");
         if (txtUsuCod.getText().equalsIgnoreCase("")
                 || txtUsuNome.getText().equalsIgnoreCase("")
                 || txtUsuSenha.getText().equalsIgnoreCase("")
                 || selUsuPermissao.getSelectedIndex() == 0
-                || selUsuAtivo.getSelectedIndex() == 0) {
+                || selUsuAtivo.getSelectedIndex() == 0
+                || a
+                || b){
             JOptionPane.showMessageDialog(null, "Preencha todos os campos necessários!");
             return false;
-        } else {
+        }else {
             return true;
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JPainel7;
     private javax.swing.JButton btnFunConsultar;
     private javax.swing.JButton btnSenhaMostrarOcultar;
     private javax.swing.JButton btnUsuAdicionar;
@@ -754,7 +927,6 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> selFunCargo;

@@ -58,7 +58,11 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
               <EmptySpace min="0" pref="822" max="32767" attributes="0"/>
+=======
+              <EmptySpace min="0" pref="773" max="32767" attributes="0"/>
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>

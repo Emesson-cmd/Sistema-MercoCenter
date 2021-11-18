@@ -150,7 +150,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+<<<<<<< HEAD
               <Component id="root" pref="732" max="32767" attributes="0"/>
+=======
+              <Component id="root" max="32767" attributes="0"/>
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -205,6 +209,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
+<<<<<<< HEAD
                                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                       <Component id="btnFinalizarCompra" max="32767" attributes="0"/>
                                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
@@ -213,6 +218,15 @@
                                   <Component id="jScrollPane4" pref="456" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+=======
+                                      <Component id="btnFinalizarCompra" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarCarrinho" min="-2" pref="183" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                           </Group>
                       </Group>
                       <Component id="ico" min="-2" max="-2" attributes="0"/>
@@ -350,8 +364,8 @@
                               <Component id="lblTrocoTitulo" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="txtValEn" max="32767" attributes="0"/>
-                                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnCalcularTroco" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="btnCalcularTroco" min="-2" pref="90" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
