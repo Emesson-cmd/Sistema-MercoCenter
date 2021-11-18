@@ -201,6 +201,9 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnCancelarCarrinho.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnCancelarCarrinho.setForeground(new java.awt.Color(255, 255, 255));
         btnCancelarCarrinho.setText("Cancelar compras");
+        btnCancelarCarrinho.setMaximumSize(new java.awt.Dimension(173, 31));
+        btnCancelarCarrinho.setMinimumSize(new java.awt.Dimension(173, 31));
+        btnCancelarCarrinho.setPreferredSize(new java.awt.Dimension(173, 31));
         btnCancelarCarrinho.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarCarrinhoActionPerformed(evt);
@@ -233,7 +236,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnLimpar.setBackground(new java.awt.Color(0, 8, 90));
         btnLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpar.setText("Limpar");
+        btnLimpar.setText("Limpar campos");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparActionPerformed(evt);
@@ -336,9 +339,9 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
                     .addComponent(lblQtdTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbVt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(btnAdicionarProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                        .addComponent(btnAdicionarProdutos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(20, 20, 20)
-                        .addComponent(btnLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                        .addComponent(btnLimpar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(txtValorProduto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblValorProdutoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtQtd)
@@ -435,21 +438,22 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(ControleCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ControleCaixaLayout.createSequentialGroup()
-                        .addComponent(lblConProdutoTitulo)
+                        .addComponent(lblConProdutoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbCod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbCod, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE)
                         .addGap(215, 215, 215))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ControleCaixaLayout.createSequentialGroup()
-                        .addComponent(btnFinalizarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                        .addGap(20, 20, 20)
-                        .addComponent(btnCancelarCarrinho, javax.swing.GroupLayout.DEFAULT_SIZE, 241, Short.MAX_VALUE)
-                        .addGap(2, 2, 2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ControleCaixaLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGroup(ControleCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(ControleCaixaLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(btnFinalizarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCancelarCarrinho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE))
                         .addGap(18, 18, 18)))
                 .addComponent(ico)
                 .addGap(16, 16, 16)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, Short.MAX_VALUE)
                 .addGap(10, 10, 10))
         );
         ControleCaixaLayout.setVerticalGroup(
@@ -485,7 +489,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, 784, Short.MAX_VALUE)
+                .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
