@@ -72,12 +72,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         abrMenEstoque = new javax.swing.JMenuItem();
         menRelatorio = new javax.swing.JMenu();
         menRelatorioVenda = new javax.swing.JMenuItem();
+        menSobre = new javax.swing.JMenu();
+        abrMenSobre = new javax.swing.JMenuItem();
         menOpcoes = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         abrTrocarUsuario = new javax.swing.JMenuItem();
         menSair = new javax.swing.JMenuItem();
-        menSobre = new javax.swing.JMenu();
-        abrMenSobre = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -195,6 +195,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(menRelatorio);
 
+        menSobre.setText("Sobre");
+
+        abrMenSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        abrMenSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
+        abrMenSobre.setText("Abrir sobre");
+        menSobre.add(abrMenSobre);
+
+        jMenuBar1.add(menSobre);
+
         menOpcoes.setText("Opções");
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
@@ -223,15 +232,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menOpcoes.add(menSair);
 
         jMenuBar1.add(menOpcoes);
-
-        menSobre.setText("Sobre");
-
-        abrMenSobre.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        abrMenSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sobre.png"))); // NOI18N
-        abrMenSobre.setText("Abrir sobre");
-        menSobre.add(abrMenSobre);
-
-        jMenuBar1.add(menSobre);
 
         setJMenuBar(jMenuBar1);
 
