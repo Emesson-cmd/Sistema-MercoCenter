@@ -167,6 +167,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnUsuAdicionar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUsuAdicionar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuAdicionar.setText("Adicionar");
+        btnUsuAdicionar.setPreferredSize(new java.awt.Dimension(85, 23));
         btnUsuAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuAdicionarActionPerformed(evt);
@@ -181,6 +182,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnUsuAtualizar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUsuAtualizar.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuAtualizar.setText("Atualizar");
+        btnUsuAtualizar.setMaximumSize(null);
         btnUsuAtualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuAtualizarActionPerformed(evt);
@@ -199,6 +201,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnSenhaMostrarOcultar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSenhaMostrarOcultar.setForeground(new java.awt.Color(255, 255, 255));
         btnSenhaMostrarOcultar.setText("Mostrar");
+        btnSenhaMostrarOcultar.setPreferredSize(new java.awt.Dimension(85, 23));
         btnSenhaMostrarOcultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSenhaMostrarOcultarActionPerformed(evt);
@@ -209,6 +212,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnUsuInformation.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUsuInformation.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuInformation.setText("?");
+        btnUsuInformation.setPreferredSize(new java.awt.Dimension(85, 23));
         btnUsuInformation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuInformationActionPerformed(evt);
@@ -226,6 +230,28 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                     .addComponent(selUsuPermissao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(selUsuAtivo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+<<<<<<< HEAD
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtUsuCod, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnUsuInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel8)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtUsuSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnSenhaMostrarOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 38, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+=======
                         .addComponent(txtUsuSenha)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSenhaMostrarOcultar))
@@ -246,6 +272,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -254,7 +281,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtUsuCod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(btnUsuInformation))
+                    .addComponent(btnUsuInformation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -264,8 +291,13 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtUsuSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
+                    .addComponent(btnSenhaMostrarOcultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+=======
                     .addComponent(btnSenhaMostrarOcultar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selUsuPermissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -275,9 +307,15 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addComponent(selUsuAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+<<<<<<< HEAD
+                    .addComponent(btnUsuAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUsuAtualizar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(177, Short.MAX_VALUE))
+=======
                     .addComponent(btnUsuAdicionar)
                     .addComponent(btnUsuAtualizar))
                 .addContainerGap(24, Short.MAX_VALUE))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -302,13 +340,18 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
+=======
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -343,6 +386,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnFunConsultar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnFunConsultar.setForeground(new java.awt.Color(255, 255, 255));
         btnFunConsultar.setText("Consultar");
+        btnFunConsultar.setPreferredSize(new java.awt.Dimension(85, 23));
         btnFunConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFunConsultarActionPerformed(evt);
@@ -399,8 +443,13 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(selFunSituacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+<<<<<<< HEAD
+                .addComponent(btnFunConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(176, Short.MAX_VALUE))
+=======
                 .addComponent(btnFunConsultar)
                 .addContainerGap(24, Short.MAX_VALUE))
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -409,6 +458,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnUsuVer.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUsuVer.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuVer.setText("Ver");
+        btnUsuVer.setPreferredSize(new java.awt.Dimension(85, 23));
         btnUsuVer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuVerActionPerformed(evt);
@@ -419,6 +469,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         btnUsuExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUsuExcluir.setForeground(new java.awt.Color(255, 255, 255));
         btnUsuExcluir.setText("Excluir");
+        btnUsuExcluir.setPreferredSize(new java.awt.Dimension(85, 23));
         btnUsuExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUsuExcluirActionPerformed(evt);
@@ -431,9 +482,9 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnUsuVer, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnUsuVer, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(btnUsuExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnUsuExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -441,8 +492,8 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnUsuVer)
-                    .addComponent(btnUsuExcluir)))
+                    .addComponent(btnUsuVer, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                    .addComponent(btnUsuExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -450,7 +501,11 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+<<<<<<< HEAD
+                .addGap(0, 609, Short.MAX_VALUE)
+=======
                 .addGap(0, 591, Short.MAX_VALUE)
+>>>>>>> 76d9c9b66222b22b6e74420c8cc0ce1092b3c6bb
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -489,17 +544,11 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
