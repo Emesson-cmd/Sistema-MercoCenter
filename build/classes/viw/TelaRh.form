@@ -81,7 +81,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel2" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel4" pref="291" max="32767" attributes="0"/>
+                          <Component id="jPanel4" pref="299" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel6" max="32767" attributes="0"/>
                   </Group>

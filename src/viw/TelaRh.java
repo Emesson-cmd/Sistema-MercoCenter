@@ -7,7 +7,6 @@ package viw;
 
 import controle.Funcionario_controle;
 import dao.Conexao;
-import dao.Funcionario_Dao;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -980,3 +979,4 @@ public class TelaRh extends javax.swing.JInternalFrame {
     private javax.swing.JFormattedTextField txtUsuarioCpf;
     // End of variables declaration//GEN-END:variables
 }
+//
