@@ -44,7 +44,6 @@ public class TelaLogin extends javax.swing.JFrame {
         SubPainelRedefinir = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         btnVoltarAdmAutenticacao1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         txtRedefinirid = new javax.swing.JTextField();
         btnRedefinir = new javax.swing.JToggleButton();
         lblLogoRedefinir = new javax.swing.JLabel();
@@ -57,7 +56,6 @@ public class TelaLogin extends javax.swing.JFrame {
         SubPainelAdmLog = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         btnVoltarAdmAutenticacao = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         txtAdmUser = new javax.swing.JTextField();
         txtAdmSenha = new javax.swing.JPasswordField();
         btnAutenticar = new javax.swing.JToggleButton();
@@ -92,8 +90,8 @@ public class TelaLogin extends javax.swing.JFrame {
             .addGroup(SubPainelLogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(SubPainelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE))
                 .addContainerGap())
         );
         SubPainelLogLayout.setVerticalGroup(
@@ -103,7 +101,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txtUserLog.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -169,24 +167,24 @@ public class TelaLogin extends javax.swing.JFrame {
         logLayout.setHorizontalGroup(
             logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(logLayout.createSequentialGroup()
-                .addComponent(SubPainelLog, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
+                .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 396, Short.MAX_VALUE)
+                .addGap(45, 45, 45)
                 .addGroup(logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+                    .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
                     .addComponent(jSeparator1)
                     .addComponent(txtUserLog, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtSenhaLog))
-                .addGap(34, 34, 34))
+                .addGap(47, 47, 47))
         );
         logLayout.setVerticalGroup(
             logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(logLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(txtUserLog, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -194,11 +192,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(txtSenhaLog, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 57, Short.MAX_VALUE)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(lblRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                .addComponent(lblRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -226,35 +224,27 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sacolas-de-compras (1).png"))); // NOI18N
-
         javax.swing.GroupLayout SubPainelRedefinirLayout = new javax.swing.GroupLayout(SubPainelRedefinir);
         SubPainelRedefinir.setLayout(SubPainelRedefinirLayout);
         SubPainelRedefinirLayout.setHorizontalGroup(
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
+                .addGap(63, 63, 63))
+            .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SubPainelRedefinirLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(115, 115, 115))
         );
         SubPainelRedefinirLayout.setVerticalGroup(
             SubPainelRedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelRedefinirLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVoltarAdmAutenticacao1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(140, 140, 140))
+                .addGap(129, 129, 129)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addGap(226, 226, 226))
         );
 
         txtRedefinirid.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -339,25 +329,25 @@ public class TelaLogin extends javax.swing.JFrame {
         );
         RedefinirLayout.setVerticalGroup(
             RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtRedefinirid, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator3)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
                 .addGap(35, 35, 35)
                 .addComponent(txtRedefinirUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jSeparator8)
+                .addComponent(jSeparator8, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(txtRedefinirSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator5)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 7, Short.MAX_VALUE)
                 .addGap(25, 25, 25)
                 .addComponent(btnRedefinir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
-            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
         );
 
         root.add(Redefinir, "Redefinir");
@@ -383,35 +373,27 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/sacolas-de-compras (1).png"))); // NOI18N
-
         javax.swing.GroupLayout SubPainelAdmLogLayout = new javax.swing.GroupLayout(SubPainelAdmLog);
         SubPainelAdmLog.setLayout(SubPainelAdmLogLayout);
         SubPainelAdmLogLayout.setHorizontalGroup(
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                .addGap(62, 62, 62))
+            .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVoltarAdmAutenticacao, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(304, Short.MAX_VALUE))
-            .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SubPainelAdmLogLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(117, 117, 117))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         SubPainelAdmLogLayout.setVerticalGroup(
             SubPainelAdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SubPainelAdmLogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVoltarAdmAutenticacao, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(167, 167, 167))
+                .addGap(122, 122, 122)
+                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                .addGap(233, 233, 233))
         );
 
         txtAdmUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -481,18 +463,18 @@ public class TelaLogin extends javax.swing.JFrame {
         );
         AdmLogLayout.setVerticalGroup(
             AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(AdmLogLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtAdmUser, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(1, 1, 1)
-                .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtAdmSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAutenticar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(92, 92, 92))
@@ -767,8 +749,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnVoltarAdmAutenticacao;
     private javax.swing.JButton btnVoltarAdmAutenticacao1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
