@@ -535,9 +535,6 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     // Após informar um código de funcionário válido, consulta as informações do funcionário
     // e do usuário (se este houver)
     private void btnFunConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFunConsultarActionPerformed
-        limparCampos();
-        
-        
         String codFunInserido = txtFunCod.getText();
         boolean funNaoEncontrado = true;
 
@@ -566,6 +563,13 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
                             txtUsuSenha.setText((usuarios.get(j).getSenha()));
                             selUsuPermissao.setSelectedItem((usuarios.get(j).getPermissao()));
                             selUsuAtivo.setSelectedIndex(usuarios.get(j).getAtivo());
+                        } else {
+                            // limpa os campos de usuário
+                            txtUsuCod.setText(null);
+                            txtUsuNome.setText(null);
+                            txtUsuSenha.setText(null);
+                            selUsuPermissao.setSelectedItem(null);
+                            selUsuAtivo.setSelectedIndex(0);
                         }
                     }
                     funNaoEncontrado = false;
@@ -688,7 +692,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
     private void btnUsuAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUsuAtualizarActionPerformed
 
         if (validarCampos()) {
-            
+
             // Atualiza usuário caso não tenha código de funcionário
             if (txtFunCod.getText().isEmpty()) {
                 String nomeUsu = txtUsuNome.getText();
@@ -706,11 +710,11 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
                     Usuario_controle usuario_controle = new Usuario_controle();
                     usuario_controle.atualizarUsuario(usuario_modelo);
-                    
+
                     iniciarTabela();
                 }
 
-            // Atualiza usuário caso tenha código de funcionário   
+                // Atualiza usuário caso tenha código de funcionário   
             } else {
                 String nomeUsu = txtUsuNome.getText();
                 int decisao = JOptionPane.showConfirmDialog(null, "Tem certeza que quer atualizar os dados do usuario: " + nomeUsu + "?");
@@ -727,7 +731,7 @@ public class TelaCriarLogin extends javax.swing.JInternalFrame {
 
                     Usuario_controle usuario_controle = new Usuario_controle();
                     usuario_controle.atualizarUsuario(usuario_modelo);
-                    
+
                     iniciarTabela();
                 }
             }
