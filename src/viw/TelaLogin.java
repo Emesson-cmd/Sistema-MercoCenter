@@ -500,9 +500,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private void txtUserLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserLogActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserLogActionPerformed
+
 //FUNCIONALIDADE DE LOGIN DO SISTEMA
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-//DENTRO DESSE TRATAMENTO DE ECEÇÃO E REALIZADO UMA REQUISIÇÃO AO BANCO OS DADOS SÃO AUTENTICADOS
+//DENTRO DESSE TRATAMENTO DE EXCEÇÃO E REALIZADO UMA REQUISIÇÃO AO BANCO OS DADOS SÃO AUTENTICADOS
 //E SE FOR CONDIZENTE COM OS DADOS DO BANCO O ACESSO E DADO DE ACORDO COM O NIVEL DE PERMIÇÃO DOS 
 //DADOS DE LOGIN INSERIDOS
         try {

@@ -16,32 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `usuario`
+-- Table structure for table `itemVenda`
 --
 
-DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `itemVenda`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuario` (
-  `cod_usuario` int NOT NULL,
-  `senha` varchar(32) DEFAULT NULL,
-  `permissao` varchar(20) DEFAULT NULL,
-  `funcionario_cod_funcionario` int DEFAULT NULL,
-  `nome` varchar(20) DEFAULT NULL,
-  `ativo` int DEFAULT NULL,
-  PRIMARY KEY (`cod_usuario`),
-  KEY `funcionario_cod_funcionario` (`funcionario_cod_funcionario`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+CREATE TABLE `itemVenda` (
+  `cod_item_venda` int NOT NULL AUTO_INCREMENT,
+  `notavenda_cod_venda` int NOT NULL,
+  `valor` decimal(10,2) DEFAULT NULL,
+  `datacad` date DEFAULT NULL,
+  `horacad` time DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
+  `valor_total` decimal(10,2) DEFAULT NULL,
+  `produto_cod_produto` int NOT NULL,
+  PRIMARY KEY (`cod_item_venda`),
+  KEY `notavenda_cod_venda` (`notavenda_cod_venda`),
+  KEY `produto_cod_produto` (`produto_cod_produto`)
+) ENGINE=MyISAM AUTO_INCREMENT=30963 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuario`
+-- Dumping data for table `itemVenda`
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (2122,'3532','adm',1,'Alan',1),(3532,'3532','caixa',2,'Alan',1),(2523,'3532','almoxarife',3,'Alan',1),(7808,'123','adm',NULL,'teste1',2),(7403,'123','adm',NULL,'teste2',2),(9242,'123','adm',NULL,'teste3',2),(6905,'123','almoxarife',NULL,'teste4',1),(693,'123','almoxarife',NULL,'teste5',1),(6828,'123','almoxarife',NULL,'teste6',2),(6666,'123','adm',15,'Matheus',2),(4811,'123','adm',NULL,'guilherme',1),(4883,'123','null',11,'maria',1),(4600,'123','null',NULL,'teste',1),(6057,'123456','caixa',8,'Emesson-login',2);
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+LOCK TABLES `itemVenda` WRITE;
+/*!40000 ALTER TABLE `itemVenda` DISABLE KEYS */;
+INSERT INTO `itemVenda` VALUES (30956,0,15.00,'2021-10-21','12:26:05',1,15.00,2),(30957,0,15.00,'2021-10-21','12:26:21',1,15.00,2),(30958,0,15.00,'2021-10-21','12:28:26',1,15.00,2),(30959,197245732,15.00,'2021-10-21','12:38:20',1,15.00,1),(30960,85825808,15.00,'2021-10-21','12:45:39',1,15.00,2),(30961,33520240,15.00,'2021-10-21','12:52:40',23,345.00,2),(30962,759168730,15.00,'2021-10-21','13:10:21',2,30.00,1);
+/*!40000 ALTER TABLE `itemVenda` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18 17:12:44
+-- Dump completed on 2021-11-18 17:12:43
