@@ -8,6 +8,7 @@ package viw;
 import static java.awt.Frame.MAXIMIZED_BOTH;
 import java.beans.PropertyVetoException;
 import javax.swing.JButton;
+import javax.swing.border.Border;
 
 /**
  *
@@ -21,6 +22,12 @@ public class TelaHome extends javax.swing.JInternalFrame {
     public TelaHome() {
         initComponents();
         
+        /**
+        Border border = null;
+        border.getBorderInsets(lblInformacao);
+        lblInformacao.setBorder(border);
+         */
+       
         lblInformacao.setText("Clique no botão ao lado para mais informações sobre cada módulo.");
 
     }
@@ -121,7 +128,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
         btnFinanceiro.setBackground(new java.awt.Color(0, 8, 90));
         btnFinanceiro.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnFinanceiro.setForeground(new java.awt.Color(255, 255, 255));
-        btnFinanceiro.setText("Financeiro");
+        btnFinanceiro.setText("Vendas");
         btnFinanceiro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFinanceiroMouseClicked(evt);
@@ -267,23 +274,43 @@ public class TelaHome extends javax.swing.JInternalFrame {
             .addComponent(panel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 650, 530);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrativoActionPerformed
-        lblInformacao.setText("Inserir informação sobre módulo administrativo");
+        lblInformacao.setText("Módulo Administrativo"
+                + "\n"
+                + "\n"
+                + "Nessa seção você tem a possibilidade de gerenciar os relatórios de venda. "
+                + "Escolha o ano, o mês e gere seu relatório. Você verá o nome do produto, "
+                + "a quantidade vendida e o gaturalmente geral. É possível ver também o faturamento total, "
+                + "entre outras informações.");
     }//GEN-LAST:event_btnAdministrativoActionPerformed
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
-       lblInformacao.setText("Inserir informação sobre módulo estoque");
+       lblInformacao.setText("Módulo de estoque"
+                + "\n"
+                + "\n"
+                + "Nessa seção você poderá gerenciar os produtos disponíveis no estoque. "
+               + "Poderár ver todas as informações específicas de cada produtos assim como adicionar, "
+               + "remover e atualizar cada item do estoque. "
+               + "Também nessa seção é possível verificar quais produtos estão com baixa no estoque.");
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
-        lblInformacao.setText("Inserir informação sobre módulo financeiro");
+        lblInformacao.setText("Módulo de vendas"
+                + "\n"
+                + "\n"
+                + "Nessa seção será possível realizar os registros de vendas do caixa, "
+                + "gerar uma nota fiscal e fazer buscas por notas fiscais específicas no sistema.");
     }//GEN-LAST:event_btnFinanceiroActionPerformed
 
     private void btnRecursosHumanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosHumanosActionPerformed
-        lblInformacao.setText("Inserir informação sobre módulo recursos humanos");
+        lblInformacao.setText("Módulo de recursos humanos"
+                + "\n"
+                + "\n"
+                + "Nessa seção é possível gerenciar os funcionários do supermercado "
+                + "assim como criar logins para acesso ao sistema.");
     }//GEN-LAST:event_btnRecursosHumanosActionPerformed
 
     private void btnAdministrativoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrativoMouseClicked
