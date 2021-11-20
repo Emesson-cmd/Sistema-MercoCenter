@@ -1,56 +1,58 @@
--- phpMyAdmin SQL Dump
--- version 5.1.0
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.13  Distrib 8.0.26, for Linux (x86_64)
 --
--- Host: 127.0.0.1
--- Tempo de geração: 21-Out-2021 às 21:06
--- Versão do servidor: 10.4.18-MariaDB
--- versão do PHP: 8.0.3
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: bancomercado
+-- ------------------------------------------------------
+-- Server version	8.0.26-0ubuntu0.20.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Banco de dados: `bancomercado`
+-- Table structure for table `itemcompra`
 --
 
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `itemcompra`
---
-
+DROP TABLE IF EXISTS `itemcompra`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `itemcompra` (
-  `cod_item_compra` int(20) NOT NULL,
-  `nota_compra_cod_venda` int(20) NOT NULL,
+  `cod_item_compra` int NOT NULL,
+  `nota_compra_cod_venda` int NOT NULL,
   `valor_total` decimal(10,2) DEFAULT NULL,
-  `quantidade` int(11) DEFAULT NULL,
+  `quantidade` int DEFAULT NULL,
   `valor` decimal(10,2) DEFAULT NULL,
-  `produto_cod_produto` int(20) NOT NULL,
+  `produto_cod_produto` int NOT NULL,
   `datacad` date DEFAULT NULL,
-  `horacad` time DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `horacad` time DEFAULT NULL,
+  PRIMARY KEY (`cod_item_compra`),
+  KEY `nota_compra_cod_venda` (`nota_compra_cod_venda`),
+  KEY `produto_cod_produto` (`produto_cod_produto`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb3;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Índices para tabelas despejadas
+-- Dumping data for table `itemcompra`
 --
 
---
--- Índices para tabela `itemcompra`
---
-ALTER TABLE `itemcompra`
-  ADD PRIMARY KEY (`cod_item_compra`),
-  ADD KEY `nota_compra_cod_venda` (`nota_compra_cod_venda`),
-  ADD KEY `produto_cod_produto` (`produto_cod_produto`);
-COMMIT;
+LOCK TABLES `itemcompra` WRITE;
+/*!40000 ALTER TABLE `itemcompra` DISABLE KEYS */;
+/*!40000 ALTER TABLE `itemcompra` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-11-18 17:12:43
