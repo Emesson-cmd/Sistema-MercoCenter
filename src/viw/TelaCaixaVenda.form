@@ -159,7 +159,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="root" max="32767" attributes="0"/>
+              <Component id="root" pref="546" max="32767" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -194,7 +194,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="lblConProdutoTitulo" min="-2" max="-2" attributes="0"/>
@@ -205,13 +205,13 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnFinalizarCompra" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="btnCancelarCarrinho" min="-2" pref="183" max="-2" attributes="0"/>
+                                      <Component id="btnFinalizarCompra" pref="190" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="btnCancelarCarrinho" pref="205" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="ico" min="-2" max="-2" attributes="0"/>
@@ -330,31 +330,26 @@
                               <Component id="lblQtdTitulo" max="32767" attributes="0"/>
                               <Component id="lbVt" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnAdicionarProdutos" max="32767" attributes="0"/>
+                                  <Component id="btnAdicionarProdutos" pref="210" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="btnLimpar" max="32767" attributes="0"/>
+                                  <Component id="btnLimpar" pref="209" max="32767" attributes="0"/>
                               </Group>
                               <Component id="txtValorProduto" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblValorProdutoTitulo" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtQtd" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblTrocoTitulo" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="txtValEn" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="btnCalcularTroco" min="-2" pref="90" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblValorTotalTitulo" min="-2" pref="106" max="-2" attributes="0"/>
-                                      <Component id="lblDinheiroEntadaTitulo" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                                      <Component id="txtProdutoTitulo" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="cmbListaProdutos" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAjuda" min="-2" pref="41" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="lblValorTotalTitulo" min="-2" pref="106" max="-2" attributes="0"/>
+                              <Component id="lblDinheiroEntadaTitulo" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
+                              <Component id="txtProdutoTitulo" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtValEn" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnCalcularTroco" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -486,6 +481,12 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Calcular troco"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[175, 31]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[175, 30]"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularTrocoActionPerformed"/>

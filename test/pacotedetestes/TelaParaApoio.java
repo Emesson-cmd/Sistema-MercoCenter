@@ -42,6 +42,7 @@ public class TelaParaApoio extends javax.swing.JFrame {
         lblSistema = new javax.swing.JLabel();
         lblEquipe = new javax.swing.JLabel();
         lblVersao = new javax.swing.JLabel();
+        txtAdmUser = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,7 +70,7 @@ public class TelaParaApoio extends javax.swing.JFrame {
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel4Layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addComponent(lblInformacao, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                .addComponent(lblInformacao, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -228,6 +229,15 @@ public class TelaParaApoio extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
+        txtAdmUser.setBorder(null);
+        txtAdmUser.setForeground(new java.awt.Color(0, 8, 90));
+        try {
+            txtAdmUser.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtAdmUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -245,12 +255,16 @@ public class TelaParaApoio extends javax.swing.JFrame {
                                 .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(4, 4, 4)))
                         .addGap(17, 17, 17))))
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(txtAdmUser))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblBemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtAdmUser, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(lblBemVindo)
                 .addGap(18, 18, 18)
                 .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
@@ -375,5 +389,6 @@ public class TelaParaApoio extends javax.swing.JFrame {
     private javax.swing.JPanel panel2;
     private javax.swing.JPanel panel3;
     private javax.swing.JPanel panel4;
+    private javax.swing.JFormattedTextField txtAdmUser;
     // End of variables declaration//GEN-END:variables
 }

@@ -96,8 +96,10 @@ public class Usuario_Dao {
         try {
             this.conexao = con.abricConecxao();
             String sql = ("UPDATE usuario SET cod_usuario=" + usuario + " , senha=" + senha + " WHERE funcionario_cod_funcionario=" + cod_funcionario + ";");;
+            System.out.println(sql);
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             preparo.executeUpdate();
+            
 
             return true;
         } catch (Exception e) {
