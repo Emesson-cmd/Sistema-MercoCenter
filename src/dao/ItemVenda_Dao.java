@@ -49,7 +49,7 @@ public class ItemVenda_Dao {
     // METODO RESPONASAVEL POR BUSCAR UM ITEM ATRAVES DE SEU ID NO BANCO DE DADOS
 
     public ArrayList<ItemVenda_modelo> buscar(int codNota) {
-        String sql_formatando = "select * from itemVenda where notavenda_cod_venda = " + codNota + "";
+        String sql_formatando = "select * from itemvenda where notavenda_cod_venda = " + codNota + "";
 
         try {
             this.conexao = con.abricConecxao();

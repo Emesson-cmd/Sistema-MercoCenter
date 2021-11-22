@@ -190,7 +190,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnFinalizarCompra.setBackground(new java.awt.Color(0, 8, 90));
         btnFinalizarCompra.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnFinalizarCompra.setForeground(new java.awt.Color(255, 255, 255));
-        btnFinalizarCompra.setText("Finaliza compra");
+        btnFinalizarCompra.setText("Finalizar compra");
         btnFinalizarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinalizarCompraActionPerformed(evt);
@@ -211,7 +211,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
 
         lblTrocoTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblTrocoTitulo.setForeground(new java.awt.Color(0, 8, 90));
-        lblTrocoTitulo.setText("Troco");
+        lblTrocoTitulo.setText("Troco (R$)");
 
         lblTroco.setBackground(new java.awt.Color(255, 255, 255));
         lblTroco.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -221,7 +221,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnAdicionarProdutos.setBackground(new java.awt.Color(0, 8, 90));
         btnAdicionarProdutos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnAdicionarProdutos.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdicionarProdutos.setText("Adicionar ");
+        btnAdicionarProdutos.setText("Adicionar produto ");
         btnAdicionarProdutos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAdicionarProdutos.setBorderPainted(false);
         btnAdicionarProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +233,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnLimpar.setBackground(new java.awt.Color(0, 8, 90));
         btnLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpar.setText("Limpar");
+        btnLimpar.setText("Limpar campos");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparActionPerformed(evt);
@@ -270,7 +270,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
 
         lblDinheiroEntadaTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDinheiroEntadaTitulo.setForeground(new java.awt.Color(0, 8, 90));
-        lblDinheiroEntadaTitulo.setText("Dinheiro Entrada");
+        lblDinheiroEntadaTitulo.setText("Dinheiro Entrada (R$)");
 
         lblQtdTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblQtdTitulo.setForeground(new java.awt.Color(0, 8, 90));
@@ -283,13 +283,13 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
 
         lblValorTotalTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblValorTotalTitulo.setForeground(new java.awt.Color(0, 8, 90));
-        lblValorTotalTitulo.setText("Valor Total");
+        lblValorTotalTitulo.setText("Valor Total (R$)");
 
         lblValorProdutoTitulo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblValorProdutoTitulo.setForeground(new java.awt.Color(0, 8, 90));
-        lblValorProdutoTitulo.setText("Valor");
+        lblValorProdutoTitulo.setText("Valor (R$)");
 
-        cmbListaProdutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE UMPRODUTO" }));
+        cmbListaProdutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE UM PRODUTO" }));
         cmbListaProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbListaProdutosMouseClicked(evt);
@@ -344,19 +344,20 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
                     .addComponent(txtQtd)
                     .addComponent(lblTrocoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtValEn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCalcularTroco, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblValorTotalTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblDinheiroEntadaTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtProdutoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cmbListaProdutos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnAjuda, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnAjuda, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtProdutoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblValorTotalTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblDinheiroEntadaTitulo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtValEn))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCalcularTroco, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -403,7 +404,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "COD", "Produto", "Valor", "Quantidade", "vatol total unitario", "Remover"
+                "COD", "Produto", "Valor (R$)", "Quantidade", "vatol total unitario (R$)", "Remover"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -437,14 +438,14 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
                     .addGroup(ControleCaixaLayout.createSequentialGroup()
                         .addComponent(lblConProdutoTitulo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbCod, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbCod, javax.swing.GroupLayout.DEFAULT_SIZE, 12, Short.MAX_VALUE)
                         .addGap(215, 215, 215))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ControleCaixaLayout.createSequentialGroup()
                         .addGroup(ControleCaixaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(ControleCaixaLayout.createSequentialGroup()
                                 .addComponent(btnFinalizarCompra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(20, 20, 20)
-                                .addComponent(btnCancelarCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCancelarCarrinho, javax.swing.GroupLayout.PREFERRED_SIZE, 186, Short.MAX_VALUE))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addGap(18, 18, 18)))
                 .addComponent(ico)
@@ -798,7 +799,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
 // OCODIGO ABAIXO SERVE PARA FORNECER AJUDA AO USUARIO NA TELA CAIXA VENDA ALEM DE MODIFICAR A COR DO BOTÃO AO PRECIONALO
     private void btnAjudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjudaActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Ao abrir o dropdown de produtos você pode digitar o nome do produto que ele ira aparecer!");
+        JOptionPane.showMessageDialog(null, "Ao abrir a lista de produtos você pode digitar o nome do produto que ele ira aparecer!");
         btnAjuda.setBackground(Color.GRAY);
     }//GEN-LAST:event_btnAjudaActionPerformed
 

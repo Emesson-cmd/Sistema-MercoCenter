@@ -95,7 +95,8 @@ public class Usuario_Dao {
     public boolean Update(int usuario, String senha, int cod_funcionario) {
         try {
             this.conexao = con.abricConecxao();
-            String sql = ("UPDATE usuario SET cod_usuario=" + usuario + " , senha=" + senha + " WHERE funcionario_cod_funcionario=" + cod_funcionario + ";");;
+            String sql = ("UPDATE usuario SET cod_usuario=" + usuario 
+                    + " , senha=" + senha + " WHERE funcionario_cod_funcionario=" + cod_funcionario + ";");
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             preparo.executeUpdate();
 
