@@ -29,7 +29,7 @@ public class Produto_Dao {
 
         try {
             this.conexao = con.abricConecxao();
-            String sql = "select * from produto";
+            String sql = "select * from produto order by nome";
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             ResultSet resultado = preparo.executeQuery();
 
@@ -83,6 +83,7 @@ public class Produto_Dao {
             this.conexao = con.abricConecxao();
             String sql = "update produto set nome = '" + produto.getNome() + "' ,descricao = '" + produto.getDescricao() + "',valor_compra = " + produto.getValor_compra() + ",valor_venda =" + produto.getValor_venda() + ",quantidade=" + produto.getQuantidade() + ",tipo='" + produto.getTipo() + "',datacad='" + produto.getDatacad() + "',horacad='" + produto.getHoracad() + "',quantidade_minima=" + produto.getQuantidademinima() + ",datavalidade='" + produto.getData_validade() + "'where cod_produto = " + produto.getCod_produto() + ";";
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
+            System.out.println(sql);
             result = preparo.execute();
 
         } catch (SQLException e) {
@@ -100,6 +101,7 @@ public class Produto_Dao {
         try {
             this.conexao = con.abricConecxao();
             String sql = "INSERT INTO `produto` ( `nome`, `descricao`, `valor_compra`, `valor_venda`, `quantidade`, `tipo`, `datacad`, `horacad`, `quantidade_minima`,`datavalidade`)VALUES( '" + produto.getNome() + "', '" + produto.getDescricao() + "', " + produto.getValor_compra() + ", " + produto.getValor_venda() + ", " + produto.getQuantidade() + ", '" + produto.getTipo() + "', '" + produto.getDatacad() + "', '" + produto.getHoracad() + "', " + produto.getQuantidademinima() + ",'" + produto.getData_validade() + "');";
+            System.out.println(sql);
             PreparedStatement preparo = this.conexao.prepareStatement(sql);
             result = preparo.execute();
 

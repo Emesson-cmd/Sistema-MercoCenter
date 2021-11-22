@@ -3,31 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package viw;
-
-import java.awt.Dimension;
-import static java.awt.Frame.MAXIMIZED_BOTH;
-import java.beans.PropertyVetoException;
-import javax.swing.JButton;
-import javax.swing.border.Border;
+package pacotedetestes;
 
 /**
  *
  * @author emesson
  */
-public class TelaHome extends javax.swing.JInternalFrame {
+public class TelaParaApoio extends javax.swing.JFrame {
 
     /**
-     * Creates new form TelaHome
+     * Creates new form TelaParaApoio
      */
-    public TelaHome() {
+    public TelaParaApoio() {
         initComponents();
-        
-        definirTexto("", 
-                "", 
-                "Clique no botão ao lado para mais informações sobre cada módulo.", 
-                "", 
-                "");
     }
 
     /**
@@ -43,10 +31,6 @@ public class TelaHome extends javax.swing.JInternalFrame {
         panel3 = new javax.swing.JPanel();
         panel4 = new javax.swing.JPanel();
         lblInformacao = new javax.swing.JLabel();
-        lblInformacao1 = new javax.swing.JLabel();
-        lblInformacao2 = new javax.swing.JLabel();
-        lblInformacao3 = new javax.swing.JLabel();
-        lblInformacao4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnRecursosHumanos = new javax.swing.JButton();
         btnFinanceiro = new javax.swing.JButton();
@@ -58,11 +42,9 @@ public class TelaHome extends javax.swing.JInternalFrame {
         lblSistema = new javax.swing.JLabel();
         lblEquipe = new javax.swing.JLabel();
         lblVersao = new javax.swing.JLabel();
+        txtAdmUser = new javax.swing.JFormattedTextField();
 
-        setTitle("Página Inicial");
-        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMinimumSize(new java.awt.Dimension(650, 531));
-        setPreferredSize(new java.awt.Dimension(650, 531));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         panel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -71,30 +53,9 @@ public class TelaHome extends javax.swing.JInternalFrame {
 
         panel4.setBackground(new java.awt.Color(204, 255, 255));
 
-        lblInformacao.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblInformacao.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblInformacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInformacao.setText("Quando você clicar no módulo ao lado ");
-        lblInformacao.setMaximumSize(new java.awt.Dimension(500, 15));
-
-        lblInformacao1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblInformacao1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInformacao1.setText("Quando você clicar no módulo ao lado ");
-        lblInformacao1.setMaximumSize(new java.awt.Dimension(500, 15));
-
-        lblInformacao2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblInformacao2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInformacao2.setText("Quando você clicar no módulo ao lado ");
-        lblInformacao2.setMaximumSize(new java.awt.Dimension(500, 15));
-
-        lblInformacao3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblInformacao3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInformacao3.setText("Quando você clicar no módulo ao lado ");
-        lblInformacao3.setMaximumSize(new java.awt.Dimension(500, 15));
-
-        lblInformacao4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblInformacao4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInformacao4.setText("Quando você clicar no módulo ao lado ");
-        lblInformacao4.setMaximumSize(new java.awt.Dimension(500, 15));
 
         javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
         panel4.setLayout(panel4Layout);
@@ -102,28 +63,15 @@ public class TelaHome extends javax.swing.JInternalFrame {
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblInformacao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInformacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInformacao4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInformacao2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInformacao3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(lblInformacao, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panel4Layout.setVerticalGroup(
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel4Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(lblInformacao, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addGap(30, 30, 30)
-                .addComponent(lblInformacao1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblInformacao2, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblInformacao3, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblInformacao4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addGap(35, 35, 35))
+                .addGap(29, 29, 29)
+                .addComponent(lblInformacao, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         btnRecursosHumanos.setBackground(new java.awt.Color(0, 8, 90));
@@ -197,12 +145,12 @@ public class TelaHome extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblModulos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAdministrativo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnEstoque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnFinanceiro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRecursosHumanos, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
-                .addGap(21, 21, 21))
+                    .addComponent(lblModulos, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdministrativo, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFinanceiro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRecursosHumanos))
+                .addGap(26, 26, 26))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,7 +177,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(16, 16, 16))
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -281,6 +229,15 @@ public class TelaHome extends javax.swing.JInternalFrame {
                 .addGap(19, 19, 19))
         );
 
+        txtAdmUser.setBorder(null);
+        txtAdmUser.setForeground(new java.awt.Color(0, 8, 90));
+        try {
+            txtAdmUser.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        txtAdmUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -298,17 +255,21 @@ public class TelaHome extends javax.swing.JInternalFrame {
                                 .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(4, 4, 4)))
                         .addGap(17, 17, 17))))
+            .addGroup(panel1Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(txtAdmUser))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(lblBemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtAdmUser, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(lblBemVindo)
                 .addGap(18, 18, 18)
                 .addComponent(panel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(panel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -319,80 +280,99 @@ public class TelaHome extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRecursosHumanosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRecursosHumanosMouseClicked
-        botaoCliclado(btnRecursosHumanos);
-    }//GEN-LAST:event_btnRecursosHumanosMouseClicked
-
-    private void btnRecursosHumanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosHumanosActionPerformed
-        definirTexto("Módulo de recursos humanos", 
-            "", 
-            "Nessa seção é possível gerenciar os funcionários do supermercado,", 
-            "assim como criar logins para acesso ao sistema.", 
-            "");
-    }//GEN-LAST:event_btnRecursosHumanosActionPerformed
-
-    private void btnFinanceiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinanceiroMouseClicked
-        botaoCliclado(btnFinanceiro);
-    }//GEN-LAST:event_btnFinanceiroMouseClicked
-
-    private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
-        definirTexto("Módulo de vendas", 
-            "", 
-            "Nessa seção será possível realizar os registros de vendas do caixa,", 
-            "gerar uma nota fiscal e fazer buscas por notas fiscais específicas no sistema.", 
-            "");
-    }//GEN-LAST:event_btnFinanceiroActionPerformed
-
-    private void btnEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstoqueMouseClicked
-        botaoCliclado(btnEstoque);
-    }//GEN-LAST:event_btnEstoqueMouseClicked
-
-    private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
-        definirTexto("Módulo de estoque", 
-            "Nessa seção você poderá gerenciar os produtos disponíveis no estoque.", 
-            "Poderár ver todas as informações específicas de cada produtos assim como adicionar,", 
-            "remover e atualizar cada item do estoque. ", 
-            "Também nessa seção é possível verificar quais produtos estão com baixa no estoque.");
-    }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnAdministrativoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrativoMouseClicked
         botaoCliclado(btnAdministrativo);
     }//GEN-LAST:event_btnAdministrativoMouseClicked
 
     private void btnAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrativoActionPerformed
-        definirTexto("Módulo Administrativo", 
-            "Nessa seção você tem a possibilidade de gerenciar os relatórios de venda.", 
-            "Escolha o ano, o mês e gere seu relatório. Você verá o nome do produto,", 
-            "a quantidade vendida e o gaturalmente geral. É possível ver também o faturamento total,", 
-            "entre outras informações.");
+        lblInformacao.setText("Módulo Administrativo"
+            + "\n"
+            + "\n"
+            + "Nessa seção você tem a possibilidade de gerenciar os relatórios de venda. "
+            + "Escolha o ano, o mês e gere seu relatório. Você verá o nome do produto, "
+            + "a quantidade vendida e o gaturalmente geral. É possível ver também o faturamento total, "
+            + "entre outras informações.");
     }//GEN-LAST:event_btnAdministrativoActionPerformed
 
-    private void botaoCliclado(JButton botao){
-        limparBotoes();
-        botao.setBackground(new java.awt.Color(0, 0, 0));
+    private void btnEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstoqueMouseClicked
+        botaoCliclado(btnEstoque);
+    }//GEN-LAST:event_btnEstoqueMouseClicked
+
+    private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
+        lblInformacao.setText("Módulo de estoque"
+            + "\n"
+            + "\n"
+            + "Nessa seção você poderá gerenciar os produtos disponíveis no estoque. "
+            + "Poderár ver todas as informações específicas de cada produtos assim como adicionar, "
+            + "remover e atualizar cada item do estoque. "
+            + "Também nessa seção é possível verificar quais produtos estão com baixa no estoque.");
+    }//GEN-LAST:event_btnEstoqueActionPerformed
+
+    private void btnFinanceiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinanceiroMouseClicked
+        botaoCliclado(btnFinanceiro);
+    }//GEN-LAST:event_btnFinanceiroMouseClicked
+
+    private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
+        lblInformacao.setText("Módulo de vendas"
+            + "\n"
+            + "\n"
+            + "Nessa seção será possível realizar os registros de vendas do caixa, "
+            + "gerar uma nota fiscal e fazer buscas por notas fiscais específicas no sistema.");
+    }//GEN-LAST:event_btnFinanceiroActionPerformed
+
+    private void btnRecursosHumanosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRecursosHumanosMouseClicked
+        botaoCliclado(btnRecursosHumanos);
+    }//GEN-LAST:event_btnRecursosHumanosMouseClicked
+
+    private void btnRecursosHumanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosHumanosActionPerformed
+        lblInformacao.setText("Módulo de recursos humanos"
+            + "\n"
+            + "\n"
+            + "Nessa seção é possível gerenciar os funcionários do supermercado "
+            + "assim como criar logins para acesso ao sistema.");
+    }//GEN-LAST:event_btnRecursosHumanosActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(TelaParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(TelaParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(TelaParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(TelaParaApoio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaParaApoio().setVisible(true);
+            }
+        });
     }
-    
-    private void limparBotoes(){
-        btnAdministrativo.setBackground(new java.awt.Color(0, 8, 90));
-        btnEstoque.setBackground(new java.awt.Color(0, 8, 90));
-        btnFinanceiro.setBackground(new java.awt.Color(0, 8, 90));
-        btnRecursosHumanos.setBackground(new java.awt.Color(0, 8, 90));
-    }
-    
-    private void definirTexto(String a, String b, String c, String d, String e){
-        lblInformacao.setText(a);
-        lblInformacao1.setText(b);
-        lblInformacao2.setText(c);
-        lblInformacao3.setText(d);
-        lblInformacao4.setText(e);
-    }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdministrativo;
     private javax.swing.JButton btnEstoque;
@@ -402,10 +382,6 @@ public class TelaHome extends javax.swing.JInternalFrame {
     private javax.swing.JLabel lblBemVindo;
     private javax.swing.JLabel lblEquipe;
     private javax.swing.JLabel lblInformacao;
-    private javax.swing.JLabel lblInformacao1;
-    private javax.swing.JLabel lblInformacao2;
-    private javax.swing.JLabel lblInformacao3;
-    private javax.swing.JLabel lblInformacao4;
     private javax.swing.JLabel lblModulos;
     private javax.swing.JLabel lblSistema;
     private javax.swing.JLabel lblVersao;
@@ -413,5 +389,6 @@ public class TelaHome extends javax.swing.JInternalFrame {
     private javax.swing.JPanel panel2;
     private javax.swing.JPanel panel3;
     private javax.swing.JPanel panel4;
+    private javax.swing.JFormattedTextField txtAdmUser;
     // End of variables declaration//GEN-END:variables
 }

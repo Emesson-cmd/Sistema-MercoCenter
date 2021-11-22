@@ -33,10 +33,11 @@ public class Produto_controle {
         }
         try {
             for (int i = 0; i < produtos.size(); i++) {
+                
                 Produto_modelo produto = new Produto_modelo();
                 produto.setCod_produto(produtos.get(i).getCod_produto());
-                produto.setDatacad(produtos.get(i).getDatacad() + "");
-                produto.setData_validade(produtos.get(i).getData_validade() + "");
+                produto.setDatacad(this.formatarData(produtos.get(i).getDatacad() + ""));
+                produto.setData_validade(this.formatarData(produtos.get(i).getData_validade()+ ""));
                 produto.setDescricao(produtos.get(i).getDescricao());
                 produto.setHoracad(produtos.get(i).getHoracad() + "");
                 produto.setNome(produtos.get(i).getNome());
@@ -65,8 +66,8 @@ public class Produto_controle {
           
             if (produtos.get(i).getCod_produto() == id) {
                 produto.setCod_produto(id);
-                produto.setDatacad(produtos.get(i).getDatacad() + "");
-                produto.setData_validade(produtos.get(i).getData_validade() + "");
+                produto.setDatacad(this.formatarData(produtos.get(i).getDatacad() + ""));
+                produto.setData_validade(this.formatarData(produtos.get(i).getData_validade() + ""));
                 produto.setDescricao(produtos.get(i).getDescricao());
                 produto.setHoracad(produtos.get(i).getHoracad() + "");
                 produto.setNome(produtos.get(i).getNome());
@@ -176,6 +177,13 @@ public class Produto_controle {
             }
         }
         return lista;
+    }
+    public String formatarData(String data){
+        String dia = data.substring(8, 10);
+        String mes = data.substring(5,7);
+        String ano = data.substring(0, 4);
+        String dataFomat = dia+"/"+mes+"/"+ano;
+        return dataFomat;
     }
 
 }

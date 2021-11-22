@@ -27,7 +27,8 @@ public class Relatorio_Dao {
     //Metodo utilizado para buscar orelatorio que é feita com inner join da tabela produto e da item venda
     public ArrayList<Relatorio_modelo> buscar_relatorio(String diainicio,String diatemino){
               sql= "SELECT  produto.nome,sum(itemvenda.quantidade) as Quantidade_total_vendido,sum(itemvenda.valor_total) as faturamento_geral FROM  itemvenda INNER JOIN  produto ON itemvenda.produto_cod_produto=produto.cod_produto Where itemvenda.datacad BETWEEN '"+diainicio+"' AND '"+diatemino+"' group by produto.nome";
-         try {
+              System.out.println(sql);
+              try {
             this.conexao = con.abricConecxao();
             
             PreparedStatement preparo = this.conexao.prepareStatement(sql);

@@ -81,7 +81,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel2" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jPanel4" pref="307" max="32767" attributes="0"/>
+                          <Component id="jPanel4" pref="299" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jPanel6" max="32767" attributes="0"/>
                   </Group>
@@ -193,12 +193,6 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="btnFunInformation">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="5a" green="8" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="?"/>
               </Properties>
               <Events>
@@ -669,13 +663,13 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnUsuAtualizar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btnUsuAtualizar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnUsuPesquisar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnUsuArquivar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="btnUsuAdicionar" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="btnUsuAdicionar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnCampoLimpar" min="-2" pref="30" max="-2" attributes="0"/>

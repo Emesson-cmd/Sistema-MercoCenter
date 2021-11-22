@@ -32,9 +32,14 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         this.sinal = sinal;
         this.nota_local = nota;
         this.tabela=tabela;
+        String dataformatada = nota.getData();
+        String dia = nota.getData().substring(8, 10);
+        String mes = nota.getData().substring(5,7);
+        String ano = nota.getData().substring(0, 4);
+        dataformatada = dia+'/'+mes+"/"+ano;
         try {
             jTprodutosnota.setModel(tabela.getModel());
-            lbDatanota.setText("Data: "+nota.getData());
+            lbDatanota.setText("Data: "+dataformatada);
             lbNumeronota.setText("Numer da nota: "+nota.getCod_venda());
             lbvalortotal.setText("Total: "+nota.getValor_total());
             lbtotalitem.setText("N° de itens:"+nota.getQuantidade());
@@ -78,6 +83,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTprodutosnota = new javax.swing.JTable();
         lbvalortotal = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,7 +92,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         btOk.setBackground(new java.awt.Color(0, 8, 90));
         btOk.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btOk.setForeground(new java.awt.Color(255, 255, 255));
-        btOk.setText("OK");
+        btOk.setText("Imprimir");
         btOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btOkActionPerformed(evt);
@@ -136,11 +142,33 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         lbvalortotal.setForeground(new java.awt.Color(0, 8, 90));
         lbvalortotal.setText("Valor Total:");
 
+        jButton1.setBackground(new java.awt.Color(0, 8, 90));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Fechar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelImprecaoLayout = new javax.swing.GroupLayout(painelImprecao);
         painelImprecao.setLayout(painelImprecaoLayout);
         painelImprecaoLayout.setHorizontalGroup(
             painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 653, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImprecaoLayout.createSequentialGroup()
+                .addGroup(painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelImprecaoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelImprecaoLayout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(lbtotalitem, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)))
+                .addGap(16, 16, 16))
             .addGroup(painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(painelImprecaoLayout.createSequentialGroup()
                     .addContainerGap()
@@ -149,22 +177,26 @@ public class TelaNota_Venda extends javax.swing.JFrame {
                             .addComponent(lbDatanota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(104, 104, 104))
                         .addComponent(lbItemNota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbNumeronota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1)
                         .addComponent(lbltitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(painelImprecaoLayout.createSequentialGroup()
-                            .addComponent(lbvalortotal, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(lbtotalitem, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(lbstatus, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
+                            .addGroup(painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lbvalortotal, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbNumeronota, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 223, Short.MAX_VALUE)))
                     .addContainerGap()))
         );
         painelImprecaoLayout.setVerticalGroup(
             painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelImprecaoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbstatus)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 447, Short.MAX_VALUE)
+                .addGroup(painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbtotalitem)
+                    .addComponent(btOk, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
             .addGroup(painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(painelImprecaoLayout.createSequentialGroup()
                     .addContainerGap()
@@ -176,13 +208,9 @@ public class TelaNota_Venda extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(lbItemNota)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addGroup(painelImprecaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lbvalortotal, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                        .addComponent(lbstatus)
-                        .addComponent(btOk, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbtotalitem))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                    .addGap(28, 28, 28)
+                    .addComponent(lbvalortotal, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
 
@@ -192,8 +220,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(painelImprecao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(painelImprecao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +234,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void btOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btOkActionPerformed
-        // TODO add your handling code here:
+         // TODO add your handling code here:
                                              
         try {
             PrinterJob job = PrinterJob.getPrinterJob();
@@ -234,6 +261,11 @@ public class TelaNota_Venda extends javax.swing.JFrame {
         } catch (PrinterException ex) { }  
         
     }//GEN-LAST:event_btOkActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,6 +311,7 @@ public class TelaNota_Venda extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btOk;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTprodutosnota;
     private javax.swing.JLabel lbDatanota;
