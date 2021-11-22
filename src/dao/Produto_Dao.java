@@ -106,7 +106,7 @@ public class Produto_Dao {
             result = preparo.execute();
 
         } catch (SQLException e) {
-            System.out.println("errono sql inserir" + e);
+            System.out.println("erro no sql inserir" + e);
             return false;
         } finally {
             con.fecharConecxao(conexao);

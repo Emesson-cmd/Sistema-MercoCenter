@@ -180,7 +180,7 @@ public class TelaLogin extends javax.swing.JFrame {
         );
         logLayout.setVerticalGroup(
             logLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(SubPainelLog, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
             .addGroup(logLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(lblLogoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
@@ -322,7 +322,7 @@ public class TelaLogin extends javax.swing.JFrame {
         );
         RedefinirLayout.setVerticalGroup(
             RedefinirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(SubPainelRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
             .addGroup(RedefinirLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(lblLogoRedefinir, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
@@ -407,7 +407,7 @@ public class TelaLogin extends javax.swing.JFrame {
         btnAutenticar.setBackground(new java.awt.Color(0, 8, 90));
         btnAutenticar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnAutenticar.setForeground(new java.awt.Color(255, 255, 255));
-        btnAutenticar.setText("Altenticar");
+        btnAutenticar.setText("Autenticar");
         btnAutenticar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAutenticarActionPerformed(evt);
@@ -450,7 +450,7 @@ public class TelaLogin extends javax.swing.JFrame {
         );
         AdmLogLayout.setVerticalGroup(
             AdmLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(SubPainelAdmLog, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
             .addGroup(AdmLogLayout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addComponent(lblLogoAdm, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)

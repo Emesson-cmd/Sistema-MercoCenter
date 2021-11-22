@@ -159,7 +159,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              <Component id="root" pref="546" max="32767" attributes="0"/>
+              <Component id="root" max="32767" attributes="0"/>
               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -205,9 +205,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnFinalizarCompra" pref="190" max="32767" attributes="0"/>
+                                      <Component id="btnFinalizarCompra" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                                      <Component id="btnCancelarCarrinho" pref="205" max="32767" attributes="0"/>
+                                      <Component id="btnCancelarCarrinho" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane4" pref="0" max="32767" attributes="0"/>
                               </Group>
@@ -288,7 +288,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Finaliza compra"/>
+                <Property name="text" type="java.lang.String" value="Finalizar compra"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFinalizarCompraActionPerformed"/>
@@ -330,9 +330,9 @@
                               <Component id="lblQtdTitulo" max="32767" attributes="0"/>
                               <Component id="lbVt" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="btnAdicionarProdutos" pref="210" max="32767" attributes="0"/>
+                                  <Component id="btnAdicionarProdutos" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                  <Component id="btnLimpar" pref="209" max="32767" attributes="0"/>
+                                  <Component id="btnLimpar" max="32767" attributes="0"/>
                               </Group>
                               <Component id="txtValorProduto" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblValorProdutoTitulo" alignment="0" max="32767" attributes="0"/>
@@ -343,13 +343,18 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAjuda" min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="lblValorTotalTitulo" min="-2" pref="106" max="-2" attributes="0"/>
-                              <Component id="lblDinheiroEntadaTitulo" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                              <Component id="txtProdutoTitulo" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="txtValEn" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnCalcularTroco" min="-2" pref="175" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtProdutoTitulo" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                                      <Component id="lblValorTotalTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lblDinheiroEntadaTitulo" alignment="0" min="-2" pref="218" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -408,7 +413,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Troco"/>
+                    <Property name="text" type="java.lang.String" value="Troco (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTroco">
@@ -440,7 +445,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Adicionar "/>
+                    <Property name="text" type="java.lang.String" value="Adicionar produto "/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                         <BevelBorder/>
@@ -463,7 +468,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Limpar"/>
+                    <Property name="text" type="java.lang.String" value="Limpar campos"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLimparActionPerformed"/>
@@ -530,7 +535,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Dinheiro Entrada"/>
+                    <Property name="text" type="java.lang.String" value="Dinheiro Entrada (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblQtdTitulo">
@@ -570,7 +575,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Valor Total"/>
+                    <Property name="text" type="java.lang.String" value="Valor Total (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblValorProdutoTitulo">
@@ -581,13 +586,13 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Valor"/>
+                    <Property name="text" type="java.lang.String" value="Valor (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cmbListaProdutos">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;SELECIONE UMPRODUTO&quot; })" type="code"/>
+                      <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;SELECIONE UM PRODUTO&quot; })" type="code"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -669,9 +674,9 @@
                       <Table columnCount="6" rowCount="0">
                         <Column editable="false" title="COD" type="java.lang.Object"/>
                         <Column editable="false" title="Produto" type="java.lang.Object"/>
-                        <Column editable="false" title="Valor" type="java.lang.Object"/>
+                        <Column editable="false" title="Valor (R$)" type="java.lang.Object"/>
                         <Column editable="false" title="Quantidade" type="java.lang.Object"/>
-                        <Column editable="false" title="vatol total unitario" type="java.lang.Object"/>
+                        <Column editable="false" title="vatol total unitario (R$)" type="java.lang.Object"/>
                         <Column editable="false" title="Remover" type="java.lang.Object"/>
                       </Table>
                     </Property>
