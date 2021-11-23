@@ -66,7 +66,19 @@ public class Usuario_controle {
 //    NESSE METODO ELE SERVE PARA REPASSAR OS DADOS QUE VEM DE MODELO PARA VIW ELE RECEBE 
 //    O CODIGO DO FUNCIONARIO O NOVO USUARIO E A NOVA SENHHE
     public boolean RedefinirUsuario(int usuario, String senha, int cod_funcionario) {
-        return new Usuario_Modelo().Redefinirsenha(usuario, senha, cod_funcionario);
+        ArrayList<Usuario_Modelo> users = new ArrayList<Usuario_Modelo>();
+        boolean result = false;
+        Usuario_Modelo u = new Usuario_Modelo();
+        users = u.listarUsuariosidfun(cod_funcionario);
+        if(users.size()==0){
+            JOptionPane.showMessageDialog(null, "o id informado não e compativelcom nhenhum funcionario");
+            return false;
+        }else{
+            return new Usuario_Modelo().Redefinirsenha(usuario, senha, cod_funcionario);
+        }
+       
+        
+        
 
     }
 

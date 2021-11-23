@@ -8,9 +8,6 @@ package viw;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import controle.Usuario_controle;
-import java.awt.Desktop;
-import javax.swing.text.DefaultFormatterFactory;
-import javax.swing.text.MaskFormatter;
 import model.Usuario_Modelo;
 
 /**
@@ -575,10 +572,10 @@ public class TelaLogin extends javax.swing.JFrame {
 
             }
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! em tela log" + e);
+            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! em tela log");
            
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Usuário deve ser um valor numerico e não dever ter campos vazios" + e);
+            JOptionPane.showMessageDialog(null, "Usuário deve ser um valor numerico e não dever ter campos vazios");
             
 
         }
@@ -600,13 +597,15 @@ public class TelaLogin extends javax.swing.JFrame {
             int id = Integer.parseInt(txtRedefinirid.getText());
             int user = Integer.parseInt(txtRedefinirUser.getText());
             String senha = txtRedefinirSenha.getText();
+            
+            
             boolean result = new Usuario_controle().RedefinirUsuario(user, senha, id);
             if (result == true) {
                 JOptionPane.showMessageDialog(null, "Dados de usuario e senha alterados com sucesso");
                 new TelaLogin().setVisible(true);
                 this.dispose();
             } else if (result == false) {
-                JOptionPane.showMessageDialog(null, "Ocorreu um erro");
+                
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "O codigo do usuário e seu id inseridos devem ser numerico. Tente Novamente!");
