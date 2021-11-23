@@ -97,7 +97,46 @@ public class Usuario_Dao {
         }
 
     }
+//METODO QUE REALIZA A BUSCA DOS DADOS NO BANCO E RETORNA UM ARRAY LIST DE USUARIO MODELO COM OS DADOS
+    public ArrayList<Usuario_Modelo> buscarporidfun(int id) {
 
+        ArrayList<Usuario_Modelo> usuarios = new ArrayList<>();
+
+        try {
+            this.conexao = con.abricConecxao();
+            String sql = "select * from usuario where funcionario_cod_funcionario = "+id+";";
+            PreparedStatement preparo = this.conexao.prepareStatement(sql);
+            ResultSet resultado = preparo.executeQuery();
+
+            while (resultado.next()) {
+                Usuario_Modelo usuario = new Usuario_Modelo();
+                usuario.setCod_usuario(resultado.getInt("cod_usuario"));
+                usuario.setSenha(resultado.getString("senha"));
+                usuario.setPermissao(resultado.getString("permissao"));
+                usuario.setFuncionario_cod_funcionario(resultado.getInt("funcionario_cod_funcionario"));
+                usuario.setNome(resultado.getString("nome"));
+                usuario.setAtivo(resultado.getInt("ativo"));
+
+                usuarios.add(usuario);
+
+            }
+
+            return usuarios;
+        } catch (CommunicationsException e) {
+            JOptionPane.showMessageDialog(null, "Inicie o servidor");
+            Usuario_Modelo usuario = new Usuario_Modelo(0, "2", "servidor", 1, "aaa", 1);
+            usuarios.add(usuario);
+            return usuarios;
+        } catch (SQLException e) {
+            System.out.println("erro ba busca " + e);
+            Usuario_Modelo usuario = new Usuario_Modelo(0, "2", "sql", 1, "aaa", 1);
+            usuarios.add(usuario);
+            return usuarios;
+        } finally {
+            con.fecharConecxao(conexao);
+        }
+
+    }
 //    METODO UTILIZADO PARA ATUALIZAR OS DADOS DE USUARIO
     public boolean Update(int usuario, String senha, int cod_funcionario) {
         try {
@@ -109,7 +148,7 @@ public class Usuario_Dao {
 
             return true;
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "acesso negado");
+            JOptionPane.showMessageDialog(null, "Usuario não permitido.Escolha outro usuario");
             return false;
         } finally {
             con.fecharConecxao(conexao);
