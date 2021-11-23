@@ -3,12 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/viw/TelaRh.java</file>
-            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/model/Usuario_Modelo.java</file>
-            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/controle/Usuario_controle.java</file>
+<<<<<<< HEAD
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/model/Produto_modelo.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/viw/TelaLogin.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/controle/Usuario_controle.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/model/Usuario_Modelo.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/viw/TelaEstoque.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/controle/Produto_controle.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/dao/Produto_Dao.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/dao/Usuario_Dao.java</file>
+=======
+            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/dao/Relatorio_Dao.java</file>
+            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/test/pacotedetestes/TelaParaApoio.java</file>
+            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/controle/Relatorio_controle.java</file>
+            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/viw/TelaRelatorio.java</file>
             <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/viw/TelaLogin.java</file>
-            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/dao/Usuario_Dao.java</file>
-            <file>file:/C:/Users/sulis/Documents/Projetos/sistema%20geren%20venda/Sistema-MercoCenter(trabalho)/src/viw/TelaEstoque.java</file>
+>>>>>>> 6403eb58ddcbb5e567fea853ac6810cb517fafbf
         </group>
     </open-files>
 </project-private>
