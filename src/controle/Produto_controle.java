@@ -158,9 +158,10 @@ public class Produto_controle {
             Produto_modelo produtom = new Produto_modelo(dataValidade1, cod1, nome1, descricao1, valorCompra1, valorVenda1, qtd1, qtdm1, tipo1, datacad1, horacad1);
             return new Produto_modelo().inserir_Produto(produtom);
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Revise os canpos inseridos");
+            JOptionPane.showMessageDialog(null, "Revise os canpos inserido");
             return true;
         }
+
     }
     
     public ArrayList<String> verificarBaixaEstoque(){

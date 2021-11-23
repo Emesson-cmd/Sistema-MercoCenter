@@ -84,19 +84,19 @@
                   <Component id="SubPainelLog" alignment="0" pref="500" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="lblLogoUser" pref="78" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblLogoUser" pref="70" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                       <Component id="txtUserLog" min="-2" pref="49" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="txtSenhaLog" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="jSeparator2" pref="26" max="32767" attributes="0"/>
+                      <Component id="jSeparator2" pref="22" max="32767" attributes="0"/>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Component id="btnLogin" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Component id="lblRedefinir" pref="40" max="32767" attributes="0"/>
+                      <Component id="lblRedefinir" pref="34" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -234,23 +234,22 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtUserLog">
+            <Component class="javax.swing.JTextField" name="txtUserLog">
               <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="5a" green="8" red="0" type="rgb"/>
                 </Property>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="####" subtype="-1" type="5"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
+                <Property name="text" type="java.lang.String" value="Codigo de login"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUserLogActionPerformed"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtUserLogMouseClicked"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUserLogKeyTyped"/>
               </Events>
             </Component>
           </SubComponents>
@@ -297,9 +296,9 @@
                       <Component id="txtRedefinirid" min="-2" pref="46" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="jSeparator3" pref="7" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Component id="txtRedefinirUser" min="-2" pref="49" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="jSeparator8" pref="9" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="txtRedefinirSenha" min="-2" pref="49" max="-2" attributes="0"/>
@@ -402,6 +401,7 @@
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtRedefiniridMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRedefiniridActionPerformed"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRedefiniridKeyTyped"/>
               </Events>
             </Component>
             <Component class="javax.swing.JToggleButton" name="btnRedefinir">
@@ -474,21 +474,23 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtRedefinirUser">
+            <Component class="javax.swing.JTextField" name="txtRedefinirUser">
               <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="5a" green="8" red="0" type="rgb"/>
                 </Property>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="####" subtype="-1" type="5"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
+                <Property name="text" type="java.lang.String" value="Codigo de login"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtRedefinirUserMouseClicked"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtRedefinirUserKeyTyped"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -515,8 +517,8 @@
                           <Component id="txtAdmSenha" alignment="0" max="32767" attributes="0"/>
                           <Component id="jSeparator6" max="32767" attributes="0"/>
                           <Component id="lblLogoAdm" alignment="0" pref="395" max="32767" attributes="0"/>
-                          <Component id="txtAdmUser" max="32767" attributes="0"/>
                           <Component id="jSeparator7" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtAdmUser" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="47" pref="47" max="-2" attributes="0"/>
                   </Group>
@@ -527,15 +529,15 @@
                   <Component id="SubPainelAdmLog" alignment="0" pref="500" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="lblLogoAdm" pref="123" max="32767" attributes="0"/>
+                      <Component id="lblLogoAdm" pref="121" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="txtAdmUser" min="-2" pref="49" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="jSeparator7" pref="21" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jSeparator7" pref="19" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Component id="txtAdmSenha" min="-2" pref="49" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="jSeparator6" pref="21" max="32767" attributes="0"/>
+                      <Component id="jSeparator6" pref="19" max="32767" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="btnAutenticar" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
@@ -677,21 +679,23 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="txtAdmUser">
+            <Component class="javax.swing.JTextField" name="txtAdmUser">
               <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="5a" green="8" red="0" type="rgb"/>
                 </Property>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="####" subtype="-1" type="5"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="0"/>
+                <Property name="text" type="java.lang.String" value="Codigo de login"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="txtAdmUserMouseClicked"/>
+                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAdmUserKeyTyped"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

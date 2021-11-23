@@ -116,4 +116,8 @@ public class Usuario_Modelo {
     public ArrayList<Usuario_Modelo> listarUsuarios() {
         return new Usuario_Dao().buscarUsuarios();
     }
+    
+     public ArrayList<Usuario_Modelo> listarUsuariosidfun(int id) {
+        return new Usuario_Dao().buscarporidfun(id);
+    }
 }
