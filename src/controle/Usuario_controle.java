@@ -31,7 +31,10 @@ public class Usuario_controle {
                     usuario.setPermissao(users.get(i).getPermissao());
                     usuario.setSenha(users.get(i).getSenha());
                     usuario.setAtivo(users.get(i).getAtivo());
+                }if (users.get(i).getCod_usuario() == 0){
+                    usuario=users.get(i);
                 } else {
+                    
 
                 }
                 return usuario;

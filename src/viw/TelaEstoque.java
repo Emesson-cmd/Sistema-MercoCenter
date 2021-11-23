@@ -458,7 +458,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
-
+   
     private void btnBuscarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProdutosActionPerformed
         // TODO add your handling code here:
         DefaultTableModel tbm = (DefaultTableModel) tabelaProdutos.getModel();
@@ -478,6 +478,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             }
 
         } catch (NumberFormatException e) {
+            
             JOptionPane.showMessageDialog(null, "insira um valor numerico valido para busca" + e);
             while (tbm.getRowCount() > 0) {
                 tbm.removeRow(0);
