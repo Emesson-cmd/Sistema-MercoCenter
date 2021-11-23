@@ -25,7 +25,7 @@ public class ItemVenda_Dao {
 
     public boolean insert(ArrayList<ItemVenda_modelo> itens, int cod_nota) {
         String sql_formatando = "insert into itemvenda(notavenda_cod_venda,valor,datacad,horacad,quantidade,valor_total,produto_cod_produto) values";
-
+  
         try {
             this.conexao = con.abricConecxao();
             for (int i = 0; i < itens.size(); i++) {
