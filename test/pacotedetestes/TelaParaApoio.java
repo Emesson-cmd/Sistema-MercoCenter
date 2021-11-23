@@ -287,7 +287,7 @@ public class TelaParaApoio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdministrativoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrativoMouseClicked
-        botaoCliclado(btnAdministrativo);
+//        botaoCliclado(btnAdministrativo);
     }//GEN-LAST:event_btnAdministrativoMouseClicked
 
     private void btnAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrativoActionPerformed
@@ -301,7 +301,7 @@ public class TelaParaApoio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAdministrativoActionPerformed
 
     private void btnEstoqueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEstoqueMouseClicked
-        botaoCliclado(btnEstoque);
+//        botaoCliclado(btnEstoque);
     }//GEN-LAST:event_btnEstoqueMouseClicked
 
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
@@ -315,7 +315,7 @@ public class TelaParaApoio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEstoqueActionPerformed
 
     private void btnFinanceiroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFinanceiroMouseClicked
-        botaoCliclado(btnFinanceiro);
+//        botaoCliclado(btnFinanceiro);
     }//GEN-LAST:event_btnFinanceiroMouseClicked
 
     private void btnFinanceiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinanceiroActionPerformed
@@ -327,7 +327,7 @@ public class TelaParaApoio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnFinanceiroActionPerformed
 
     private void btnRecursosHumanosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRecursosHumanosMouseClicked
-        botaoCliclado(btnRecursosHumanos);
+//        botaoCliclado(btnRecursosHumanos);
     }//GEN-LAST:event_btnRecursosHumanosMouseClicked
 
     private void btnRecursosHumanosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursosHumanosActionPerformed
