@@ -598,7 +598,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             txtNomeEdit.setText(source.getModel().getValueAt(row, 1) + "");
             txaDescricao.setText(source.getModel().getValueAt(row, 2) + "");;
             txtValorCompra.setText(source.getModel().getValueAt(row, 3) + "");
-            txtValorCompra.setText(source.getModel().getValueAt(row, 4) + "");
+            txtValorVendido1.setText(source.getModel().getValueAt(row, 4) + "");
             txtQuantidade.setText(source.getModel().getValueAt(row, 5) + "");
             txtQuantidadeMin.setText(source.getModel().getValueAt(row, 6) + "");
             txtTipo.setText(source.getModel().getValueAt(row, 7) + "");
