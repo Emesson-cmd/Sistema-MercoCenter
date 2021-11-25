@@ -59,6 +59,8 @@ public class TelaRh extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         btgSexo = new javax.swing.ButtonGroup();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaUsuarios = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         btnFunInformation = new javax.swing.JButton();
@@ -107,14 +109,25 @@ public class TelaRh extends javax.swing.JInternalFrame {
         btnUsuAdicionar = new javax.swing.JButton();
         btnUsuArquivar = new javax.swing.JButton();
         btnCampoLimpar = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        tabelaUsuarios = new javax.swing.JTable();
         btnUsuVer = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setTitle("RH");
         setPreferredSize(new java.awt.Dimension(930, 462));
+
+        tabelaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Código", "Nome", "Celular", "CPF", "Cargo", "Situação"
+            }
+        ));
+        jScrollPane1.setViewportView(tabelaUsuarios);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -192,7 +205,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(137, 137, 137)
-                    .addComponent(btnFunInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(btnFunInformation, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addGap(553, 553, 553)))
         );
         jPanel1Layout.setVerticalGroup(
@@ -329,7 +342,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addGap(13, 13, 13)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
                         .addGap(148, 148, 148))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -501,7 +514,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
 
         btnCampoLimpar.setBackground(new java.awt.Color(0, 8, 90));
         btnCampoLimpar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnCampoLimpar.setForeground(new java.awt.Color(255, 255, 0));
+        btnCampoLimpar.setForeground(new java.awt.Color(254, 254, 254));
         btnCampoLimpar.setText("Limpar campos");
         btnCampoLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -576,26 +589,6 @@ public class TelaRh extends javax.swing.JInternalFrame {
                         .addGap(5, 5, 5))))
         );
 
-        tabelaUsuarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Código", "Nome", "Celular", "CPF", "Cargo", "Situação"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tabelaUsuarios.setMinimumSize(new java.awt.Dimension(90, 200));
-        tabelaUsuarios.setPreferredSize(new java.awt.Dimension(450, 100000));
-        jScrollPane3.setViewportView(tabelaUsuarios);
-
         btnUsuVer.setBackground(new java.awt.Color(0, 8, 90));
         btnUsuVer.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnUsuVer.setForeground(new java.awt.Color(255, 255, 255));
@@ -615,21 +608,28 @@ public class TelaRh extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnUsuVer, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 695, Short.MAX_VALUE)
+                    .addGap(212, 212, 212)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                    .addComponent(btnUsuVer))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnUsuVer)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(27, 27, 27))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                    .addGap(399, 399, 399)))
         );
 
         pack();
@@ -956,7 +956,7 @@ public class TelaRh extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblCpf;
     private javax.swing.JComboBox<String> selBuscaCargo;
     private javax.swing.JComboBox<String> selBuscaStatus;
