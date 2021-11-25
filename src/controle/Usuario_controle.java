@@ -101,8 +101,21 @@ public class Usuario_controle {
     
     // Chama método em Usuario_Dao que Atualiza usuário no banco de dados
     public void atualizarUsuario(Usuario_Modelo usuario_modelo){
-        Usuario_Dao usuario_dao = new Usuario_Dao();
-        usuario_dao.atualizarUsuario(usuario_modelo);
+        boolean temUsuario = false;
+        ArrayList<Usuario_Modelo> usuarios = new Usuario_Modelo().listarUsuarios();
+        
+        for (int i = 0; i < usuarios.size(); i++){
+            if (usuario_modelo.getCod_usuario() == usuarios.get(i).getCod_usuario()) {
+                Usuario_Dao usuario_dao = new Usuario_Dao();
+                usuario_dao.atualizarUsuario(usuario_modelo);
+                temUsuario = true;
+            } 
+        }  
+        
+        if (temUsuario == false){
+            JOptionPane.showMessageDialog(null, "Usuário não pôde ser atualizado pois não existe. Por favor, crie um usuário antes de atualiza-lo.");
+        }
+        
     }
     
     // Chama método em Usuario_Dao que Deleta usuário no banco de dados

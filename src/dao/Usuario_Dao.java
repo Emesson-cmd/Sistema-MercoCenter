@@ -248,6 +248,7 @@ public class Usuario_Dao {
             }
         } catch (Exception e) {
             System.out.println("Houve um erro ao  tentar executar método de atualizar usuário no banco de dados: \n" + e);
+            JOptionPane.showMessageDialog(null, "Houve um erro ao tentar atualizar um usuário!");
         } finally {
             con.fecharConecxao(conexao);
         }

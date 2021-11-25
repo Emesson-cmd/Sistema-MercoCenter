@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-<<<<<<< HEAD
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/viw/TelaPrincipal.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/controle/Usuario_controle.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/viw/TelaCriarLogin.java</file>
+            <file>file:/home/emesson/NetBeansProjects/MercoCenter/MercoCenter%20Workspace%20Oficial%2002/src/dao/Usuario_Dao.java</file>
+        </group>
     </open-files>
-=======
->>>>>>> df51364ad6bc30537b346236e368a0bd2e078edf
 </project-private>
