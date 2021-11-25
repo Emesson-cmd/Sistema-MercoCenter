@@ -8,6 +8,8 @@ package viw;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import controle.Usuario_controle;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import model.Usuario_Modelo;
 
 /**
@@ -21,6 +23,12 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
+        addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent e) {
+                System.out.println("ok");
+   
+            }
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -134,6 +142,11 @@ public class TelaLogin extends javax.swing.JFrame {
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
+            }
+        });
+        btnLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                btnLoginKeyTyped(evt);
             }
         });
 
@@ -509,7 +522,6 @@ public class TelaLogin extends javax.swing.JFrame {
             Usuario_Modelo modelo_user_para_login = new Usuario_controle().efetuarLogin(Integer.parseInt(txtUserLog.getText()), txtSenhaLog.getText());
             String tipo = modelo_user_para_login.getPermissao();
             TelaPrincipal TelaPrincipal = new TelaPrincipal(modelo_user_para_login.getFuncionario_cod_funcionario());
-            System.out.println("tipo "+tipo);
             switch (tipo) {
                 case "adm":
                     if (modelo_user_para_login.getAtivo() == 1) {
@@ -565,7 +577,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     break;
                 case "sql":
 
-                        break;
+                    break;
                 default:
                     JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! loaaaa");
                     break;
@@ -573,10 +585,9 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! em tela log");
-           
+
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Usuário deve ser um valor numerico e não dever ter campos vazios");
-            
 
         }
 
@@ -591,21 +602,20 @@ public class TelaLogin extends javax.swing.JFrame {
 //    NO QUAL SOLICITA DADOS DE LOGIN DO ADM E CASO SEJAM COERENTES DA ACESSO A FUNCIONALIDADE
 //    DE REDEFINIÇÃO QUE SOLICITA O CODIGO DO FUNCIONARIO E O NOVO USUARIO E SENHA
     private void btnRedefinirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedefinirActionPerformed
-         // ESSE TRY FAZ O TRATAMENTO DOS DADOS QUE VEM DO CARD DE REDEFINIÇÃO DE SENHA:
+        // ESSE TRY FAZ O TRATAMENTO DOS DADOS QUE VEM DO CARD DE REDEFINIÇÃO DE SENHA:
 
         try {
             int id = Integer.parseInt(txtRedefinirid.getText());
             int user = Integer.parseInt(txtRedefinirUser.getText());
             String senha = txtRedefinirSenha.getText();
-            
-            
+
             boolean result = new Usuario_controle().RedefinirUsuario(user, senha, id);
             if (result == true) {
                 JOptionPane.showMessageDialog(null, "Dados de usuario e senha alterados com sucesso");
                 new TelaLogin().setVisible(true);
                 this.dispose();
             } else if (result == false) {
-                
+
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "O codigo do usuário e seu id inseridos devem ser numerico. Tente Novamente!");
@@ -693,9 +703,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         String caracteres = "0987654321";
         String quatroCaracteres = txtUserLog.getText();
-        if ((!caracteres.contains(evt.getKeyChar() + ""))||(quatroCaracteres.length()>=4)) {
+        if ((!caracteres.contains(evt.getKeyChar() + "")) || (quatroCaracteres.length() >= 4)) {
             evt.consume();
-           
+
         }
     }//GEN-LAST:event_txtUserLogKeyTyped
 
@@ -703,9 +713,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         String caracteres = "0987654321";
         String quatroCaracteres = txtRedefinirUser.getText();
-        if ((!caracteres.contains(evt.getKeyChar() + ""))||(quatroCaracteres.length()>=4)) {
+        if ((!caracteres.contains(evt.getKeyChar() + "")) || (quatroCaracteres.length() >= 4)) {
             evt.consume();
-           
+
         }
     }//GEN-LAST:event_txtRedefinirUserKeyTyped
 
@@ -713,9 +723,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         String caracteres = "0987654321";
         String quatroCaracteres = txtAdmUser.getText();
-        if ((!caracteres.contains(evt.getKeyChar() + ""))||(quatroCaracteres.length()>=4)) {
+        if ((!caracteres.contains(evt.getKeyChar() + "")) || (quatroCaracteres.length() >= 4)) {
             evt.consume();
-           
+
         }
     }//GEN-LAST:event_txtAdmUserKeyTyped
 
@@ -728,9 +738,9 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         String caracteres = "0987654321";
         String quatroCaracteres = txtRedefinirid.getText();
-        if ((!caracteres.contains(evt.getKeyChar() + ""))||(quatroCaracteres.length()>=1)) {
+        if ((!caracteres.contains(evt.getKeyChar() + "")) || (quatroCaracteres.length() >= 1)) {
             evt.consume();
-           
+
         }
     }//GEN-LAST:event_txtRedefiniridKeyTyped
 
@@ -743,6 +753,10 @@ public class TelaLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         txtRedefinirUser.setText("");
     }//GEN-LAST:event_txtRedefinirUserMouseClicked
+
+    private void btnLoginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginKeyTyped
 
     /**
      * @param args the command line arguments
@@ -781,7 +795,7 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
-   
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdmLog;

@@ -155,7 +155,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         menRh.add(abrRecHum);
 
         abrCriarLogin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        abrCriarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/adicionar-usuario.png"))); // NOI18N
+        abrCriarLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/user.png"))); // NOI18N
         abrCriarLogin.setText("Criar login");
         abrCriarLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,7 +167,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(menRh);
 
         menEstoque.setText("Estoque");
-        menEstoque.setEnabled(false);
 
         abrMenEstoque.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         abrMenEstoque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viw/img/telaPrincipal/estoque.png"))); // NOI18N

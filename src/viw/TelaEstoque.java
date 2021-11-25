@@ -32,6 +32,16 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         }
         new Produto_controle().prencherTabela(tbm);
         notificarBaixaEstoque();
+
+        // Limita determinados campos
+        txtNomeEdit.setDocument(new viw.LimitJTextField(50));
+        txaDescricao.setDocument(new viw.LimitJTextField(50));
+        txtTipo.setDocument(new viw.LimitJTextField(50));
+        txtValorCompra.setDocument(new viw.LimitJTextField(10));
+        txtValorVendido1.setDocument(new viw.LimitJTextField(10));
+        txtQuantidade.setDocument(new viw.LimitJTextField(10));
+        txtQuantidadeMin.setDocument(new viw.LimitJTextField(10));
+
     }
 
     /**
@@ -64,17 +74,18 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txaDescricao = new javax.swing.JTextArea();
-        btnSalvar = new javax.swing.JButton();
         btnAdicionar = new javax.swing.JButton();
+        btnLimparCampos = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         txtNomeEdit = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtValorCompra = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        txtValorVendido = new javax.swing.JTextField();
+        txtValorCompra = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtValidad = new javax.swing.JFormattedTextField();
+        txtValorVendido1 = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -126,7 +137,19 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
 
         jLabel8.setText("Quantidade:");
 
+        txtQuantidade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQuantidadeKeyTyped(evt);
+            }
+        });
+
         jLabel9.setText("Quantidade minima:");
+
+        txtQuantidadeMin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQuantidadeMinKeyTyped(evt);
+            }
+        });
 
         jLabel2.setText("ID:");
 
@@ -175,7 +198,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtIdEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
@@ -224,16 +247,6 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         txaDescricao.setRows(5);
         jScrollPane2.setViewportView(txaDescricao);
 
-        btnSalvar.setBackground(new java.awt.Color(0, 8, 90));
-        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalvar.setText("Salvar Produto");
-        btnSalvar.setPreferredSize(new java.awt.Dimension(155, 30));
-        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalvarActionPerformed(evt);
-            }
-        });
-
         btnAdicionar.setBackground(new java.awt.Color(0, 8, 90));
         btnAdicionar.setForeground(new java.awt.Color(255, 255, 255));
         btnAdicionar.setText("Adicionar Produto");
@@ -244,30 +257,53 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             }
         });
 
+        btnLimparCampos.setBackground(new java.awt.Color(0, 8, 90));
+        btnLimparCampos.setForeground(new java.awt.Color(255, 255, 255));
+        btnLimparCampos.setText("Limpar campos");
+        btnLimparCampos.setPreferredSize(new java.awt.Dimension(155, 30));
+        btnLimparCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparCamposActionPerformed(evt);
+            }
+        });
+
+        btnSalvar.setBackground(new java.awt.Color(0, 8, 90));
+        btnSalvar.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalvar.setText("Salvar produto");
+        btnSalvar.setPreferredSize(new java.awt.Dimension(155, 30));
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(btnLimparCampos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(106, 106, 106))
+                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLimparCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -275,15 +311,20 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Produto:");
 
-        jLabel6.setText("Valor comprado:");
+        jLabel6.setText("Valor comprado (R$):");
 
-        txtValorVendido.addActionListener(new java.awt.event.ActionListener() {
+        txtValorCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorVendidoActionPerformed(evt);
+                txtValorCompraActionPerformed(evt);
+            }
+        });
+        txtValorCompra.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtValorCompraKeyTyped(evt);
             }
         });
 
-        jLabel4.setText("Valor vendido:");
+        jLabel4.setText("Valor vendido (R$):");
 
         jLabel7.setText("Validade:");
 
@@ -293,6 +334,17 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
 
+        txtValorVendido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorVendido1ActionPerformed(evt);
+            }
+        });
+        txtValorVendido1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtValorVendido1KeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -300,22 +352,22 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtValorVendido)
+                    .addComponent(txtValorCompra)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(txtNomeEdit)
                         .addGap(2, 2, 2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
                         .addGap(49, 49, 49))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(txtValorCompra)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(14, 14, 14))
-                    .addComponent(txtValidad, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE))
+                    .addComponent(txtValidad, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                    .addComponent(txtValorVendido1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -332,13 +384,13 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
                 .addComponent(txtValorCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtValorVendido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtValorVendido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtValidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel7.setBackground(new java.awt.Color(255, 208, 0));
@@ -394,7 +446,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 614, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 616, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
@@ -402,13 +454,13 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel5Layout.createSequentialGroup()
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)))
                     .addContainerGap()))
@@ -417,7 +469,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(168, 168, 168)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
                 .addGap(306, 306, 306))
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
@@ -428,11 +480,12 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap()))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)))
+                    .addGap(46, 46, 46)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -458,7 +511,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
     private void txtIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdActionPerformed
-   
+
     private void btnBuscarProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarProdutosActionPerformed
         // TODO add your handling code here:
         DefaultTableModel tbm = (DefaultTableModel) tabelaProdutos.getModel();
@@ -478,7 +531,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             }
 
         } catch (NumberFormatException e) {
-            
+
             JOptionPane.showMessageDialog(null, "insira um valor numerico valido para busca" + e);
             while (tbm.getRowCount() > 0) {
                 tbm.removeRow(0);
@@ -495,31 +548,30 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_btnBuscarProdutosActionPerformed
 
-    private void txtValorVendidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorVendidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtValorVendidoActionPerformed
+    private void txtValorCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorCompraActionPerformed
+
+    }//GEN-LAST:event_txtValorCompraActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
         // TODO add your handling code here:
         String dataformatada = this.formatarData(txtValidad.getText());
-        boolean result = new Produto_controle().atualizar_Produto(txtIdEdit.getText(), txtNomeEdit.getText(), txaDescricao.getText(), txtValorCompra.getText(), txtValorVendido.getText(), txtQuantidade.getText(), txtQuantidadeMin.getText(), txtTipo.getText(), dataformatada);
+        boolean result = new Produto_controle().atualizar_Produto(txtIdEdit.getText(), txtNomeEdit.getText(), txaDescricao.getText(), txtValorCompra.getText(), txtValorCompra.getText(), txtQuantidade.getText(), txtQuantidadeMin.getText(), txtTipo.getText(), dataformatada);
         if (result == true) {
             JOptionPane.showMessageDialog(null, "Erro na atualização");
         } else {
-
+            JOptionPane.showMessageDialog(null, "Produto atualizado com sucesso!");
             new Produto_controle().prencherTabela((DefaultTableModel) tabelaProdutos.getModel());
         }
         notificarBaixaEstoque();
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-        // TODO add your handling code here:
         String dataformatada = this.formatarData(txtValidad.getText());
-        boolean result = new Produto_controle().inserir_Produto(txtIdEdit.getText(), txtNomeEdit.getText(), txaDescricao.getText(), txtValorCompra.getText(), txtValorVendido.getText(), txtQuantidade.getText(), txtQuantidadeMin.getText(), txtTipo.getText(), dataformatada);
+        boolean result = new Produto_controle().inserir_Produto(txtIdEdit.getText(), txtNomeEdit.getText(), txaDescricao.getText(), txtValorCompra.getText(), txtValorCompra.getText(), txtQuantidade.getText(), txtQuantidadeMin.getText(), txtTipo.getText(), dataformatada);
         if (result == true) {
             JOptionPane.showMessageDialog(null, "Erro na atualização");
         } else {
-
+            JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso!");
             new Produto_controle().prencherTabela((DefaultTableModel) tabelaProdutos.getModel());
         }
         notificarBaixaEstoque();
@@ -546,7 +598,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
             txtNomeEdit.setText(source.getModel().getValueAt(row, 1) + "");
             txaDescricao.setText(source.getModel().getValueAt(row, 2) + "");;
             txtValorCompra.setText(source.getModel().getValueAt(row, 3) + "");
-            txtValorVendido.setText(source.getModel().getValueAt(row, 4) + "");
+            txtValorCompra.setText(source.getModel().getValueAt(row, 4) + "");
             txtQuantidade.setText(source.getModel().getValueAt(row, 5) + "");
             txtQuantidadeMin.setText(source.getModel().getValueAt(row, 6) + "");
             txtTipo.setText(source.getModel().getValueAt(row, 7) + "");
@@ -556,6 +608,51 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_tabelaProdutosMouseClicked
 
+    private void txtValorCompraKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorCompraKeyTyped
+        String caracteres = "0987654321.";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtValorCompraKeyTyped
+
+    private void txtQuantidadeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantidadeKeyTyped
+        String caracteres = "0987654321";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtQuantidadeKeyTyped
+
+    private void txtQuantidadeMinKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQuantidadeMinKeyTyped
+        String caracteres = "0987654321";
+        if (!caracteres.contains(evt.getKeyChar() + "")) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtQuantidadeMinKeyTyped
+
+    private void txtValorVendido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtValorVendido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorVendido1ActionPerformed
+
+    private void txtValorVendido1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtValorVendido1KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtValorVendido1KeyTyped
+
+    private void btnLimparCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparCamposActionPerformed
+        txtNomeEdit.setText(null);
+        txaDescricao.setText(null);;
+        txtValorCompra.setText(null);
+        txtValorCompra.setText(null);
+        txtQuantidade.setText(null);
+        txtQuantidadeMin.setText(null);
+        txtTipo.setText(null);
+        txtValidad.setText(null);
+        txtIdEdit.setText(null);
+    }//GEN-LAST:event_btnLimparCamposActionPerformed
+
+    /*------------------------------------------------------------------------------------------------------*/
+    // FIM
+
+    /*------------------------------------------------------------------------------------------------------*/
     // Retornas uma lista com os nomes dos produtos que têm baixa no estoque
     private void notificarBaixaEstoque() {
         lblEstoqueInformacao.setText("");
@@ -597,6 +694,7 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnBuscarProdutos;
+    private javax.swing.JButton btnLimparCampos;
     private javax.swing.JButton btnSalvar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -630,6 +728,6 @@ public class TelaEstoque extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTipo;
     private javax.swing.JFormattedTextField txtValidad;
     private javax.swing.JTextField txtValorCompra;
-    private javax.swing.JTextField txtValorVendido;
+    private javax.swing.JTextField txtValorVendido1;
     // End of variables declaration//GEN-END:variables
 }

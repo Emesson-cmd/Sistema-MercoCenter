@@ -380,7 +380,6 @@ public void PrencheCamposProdutos(){
                txtNomeProdutoMenos.setText(tbm.getValueAt(i, 0)+"");
            }
        }
-       System.out.println("menor"+Menor+",Mairo"+Maior);
        this.txtFaturamentoTotal.setText(faturamento+"");
     }
 
