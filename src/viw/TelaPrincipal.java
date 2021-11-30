@@ -5,6 +5,7 @@
  */
 package viw;
 
+import java.awt.Dimension;
 import java.beans.PropertyVetoException;
 import java.text.ParseException;
 import java.util.logging.Level;
@@ -35,6 +36,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal(int cod_usuario) {
         initComponents();
+        
+        // Define o tamanhos mínimo da JFrame
+        this.setMinimumSize(new Dimension(1000, 600));
 
 //      COLOCANDO A TELA PRINCIPAL E A TELA HOME EM TAMANHO MAXIMO
         try {
@@ -251,7 +255,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
+                .addComponent(desktop, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -655,27 +659,27 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem abrBusca;
-    private javax.swing.JMenuItem abrCriarLogin;
-    private javax.swing.JMenuItem abrMenCaixa;
-    private javax.swing.JMenuItem abrMenEstoque;
-    private javax.swing.JMenuItem abrMenSobre;
-    private javax.swing.JMenuItem abrRecHum;
-    private javax.swing.JMenuItem abrTrocarUsuario;
-    private javax.swing.JDesktopPane desktop;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
+    javax.swing.JMenuItem abrBusca;
+    javax.swing.JMenuItem abrCriarLogin;
+    javax.swing.JMenuItem abrMenCaixa;
+    javax.swing.JMenuItem abrMenEstoque;
+    javax.swing.JMenuItem abrMenSobre;
+    javax.swing.JMenuItem abrRecHum;
+    javax.swing.JMenuItem abrTrocarUsuario;
+    javax.swing.JDesktopPane desktop;
+    javax.swing.JMenu jMenu1;
+    javax.swing.JMenu jMenu2;
+    javax.swing.JMenuBar jMenuBar1;
+    javax.swing.JMenuItem jMenuItem1;
+    javax.swing.JMenuItem jMenuItem2;
     public javax.swing.JMenu menCaixa;
     public javax.swing.JMenu menEstoque;
-    private javax.swing.JMenu menHome;
-    private javax.swing.JMenu menOpcoes;
+    javax.swing.JMenu menHome;
+    javax.swing.JMenu menOpcoes;
     public javax.swing.JMenu menRelatorio;
-    private javax.swing.JMenuItem menRelatorioVenda;
+    javax.swing.JMenuItem menRelatorioVenda;
     public javax.swing.JMenu menRh;
-    private javax.swing.JMenuItem menSair;
-    private javax.swing.JMenu menSobre;
+    javax.swing.JMenuItem menSair;
+    javax.swing.JMenu menSobre;
     // End of variables declaration//GEN-END:variables
 }
