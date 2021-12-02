@@ -67,7 +67,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
         panel1.setBackground(new java.awt.Color(255, 255, 255));
 
         panel3.setBackground(new java.awt.Color(255, 255, 255));
-        panel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 2));
+        panel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 8, 90), 2));
 
         panel4.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -104,7 +104,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblInformacao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblInformacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblInformacao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
                     .addComponent(lblInformacao4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblInformacao2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblInformacao3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -125,6 +125,8 @@ public class TelaHome extends javax.swing.JInternalFrame {
                 .addComponent(lblInformacao4, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addGap(35, 35, 35))
         );
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         btnRecursosHumanos.setBackground(new java.awt.Color(0, 8, 90));
         btnRecursosHumanos.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -246,7 +248,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
         lblBemVindo.setText("SEJA BEM-VINDO(A)");
 
         panel2.setBackground(new java.awt.Color(255, 255, 255));
-        panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204), 2));
+        panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 8, 90), 2));
 
         lblSistema.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblSistema.setText("Bem-vindo ao Sistema MercoCenter. Sistema de supermercado. ");
@@ -356,7 +358,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
         definirTexto("Módulo de estoque", 
             "Nessa seção você poderá gerenciar os produtos disponíveis no estoque.", 
-            "Poderár ver todas as informações específicas de cada produtos assim como adicionar,", 
+            "Poderá ver todas as informações específicas de cada produtos assim como adicionar,", 
             "remover e atualizar cada item do estoque. ", 
             "Também nessa seção é possível verificar quais produtos estão com baixa no estoque.");
     }//GEN-LAST:event_btnEstoqueActionPerformed
@@ -369,7 +371,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
         definirTexto("Módulo Administrativo", 
             "Nessa seção você tem a possibilidade de gerenciar os relatórios de venda.", 
             "Escolha o ano, o mês e gere seu relatório. Você verá o nome do produto,", 
-            "a quantidade vendida e o gaturalmente geral. É possível ver também o faturamento total,", 
+            "a quantidade vendida e o faturalmente geral. É possível ver também o faturamento total,", 
             "entre outras informações.");
     }//GEN-LAST:event_btnAdministrativoActionPerformed
 

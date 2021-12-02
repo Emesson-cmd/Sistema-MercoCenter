@@ -190,7 +190,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnFinalizarCompra.setBackground(new java.awt.Color(0, 8, 90));
         btnFinalizarCompra.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnFinalizarCompra.setForeground(new java.awt.Color(255, 255, 255));
-        btnFinalizarCompra.setText("Finaliza compra");
+        btnFinalizarCompra.setText("Finalizar compra");
         btnFinalizarCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFinalizarCompraActionPerformed(evt);
@@ -221,7 +221,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnAdicionarProdutos.setBackground(new java.awt.Color(0, 8, 90));
         btnAdicionarProdutos.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnAdicionarProdutos.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdicionarProdutos.setText("Adicionar ");
+        btnAdicionarProdutos.setText("Adicionar Item");
         btnAdicionarProdutos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAdicionarProdutos.setBorderPainted(false);
         btnAdicionarProdutos.addActionListener(new java.awt.event.ActionListener() {
@@ -233,7 +233,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         btnLimpar.setBackground(new java.awt.Color(0, 8, 90));
         btnLimpar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnLimpar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLimpar.setText("Limpar");
+        btnLimpar.setText("Limpar Campos");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLimparActionPerformed(evt);
@@ -291,7 +291,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         lblValorProdutoTitulo.setForeground(new java.awt.Color(0, 8, 90));
         lblValorProdutoTitulo.setText("Valor");
 
-        cmbListaProdutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE UMPRODUTO" }));
+        cmbListaProdutos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE UM PRODUTO" }));
         cmbListaProdutos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cmbListaProdutosMouseClicked(evt);
@@ -484,7 +484,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, 799, Short.MAX_VALUE)
+                .addComponent(root, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -709,7 +709,7 @@ public class TelaCaixaVenda extends javax.swing.JInternalFrame {
         txtValEn.setText("0");
         txtValorProduto.setText("0");
 
-        cmbListaProdutos.setSelectedItem("");
+        cmbListaProdutos.setSelectedItem("SELECIONE UM PRODUTO");
 
     }//GEN-LAST:event_btnAdicionarProdutosActionPerformed
 //O CODGO ABAIXO E RESPONSAVEL POR REALIZAR UM TESTE SEMPRE QUE FOR EFETUADO UM CLICK SOBRE A TABELA PARA SABER SE ESTA SENDO CLIKADO NO CAMPO

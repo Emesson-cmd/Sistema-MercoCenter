@@ -31,7 +31,10 @@ public class Usuario_controle {
                     usuario.setPermissao(users.get(i).getPermissao());
                     usuario.setSenha(users.get(i).getSenha());
                     usuario.setAtivo(users.get(i).getAtivo());
+                }if (users.get(i).getCod_usuario() == 0){
+                    usuario=users.get(i);
                 } else {
+                    
 
                 }
                 return usuario;
@@ -63,7 +66,19 @@ public class Usuario_controle {
 //    NESSE METODO ELE SERVE PARA REPASSAR OS DADOS QUE VEM DE MODELO PARA VIW ELE RECEBE 
 //    O CODIGO DO FUNCIONARIO O NOVO USUARIO E A NOVA SENHHE
     public boolean RedefinirUsuario(int usuario, String senha, int cod_funcionario) {
-        return new Usuario_Modelo().Redefinirsenha(usuario, senha, cod_funcionario);
+        ArrayList<Usuario_Modelo> users = new ArrayList<Usuario_Modelo>();
+        boolean result = false;
+        Usuario_Modelo u = new Usuario_Modelo();
+        users = u.listarUsuariosidfun(cod_funcionario);
+        if(users.size()==0){
+            JOptionPane.showMessageDialog(null, "o id informado não e compativelcom nhenhum funcionario");
+            return false;
+        }else{
+            return new Usuario_Modelo().Redefinirsenha(usuario, senha, cod_funcionario);
+        }
+       
+        
+        
 
     }
 
@@ -86,8 +101,21 @@ public class Usuario_controle {
     
     // Chama método em Usuario_Dao que Atualiza usuário no banco de dados
     public void atualizarUsuario(Usuario_Modelo usuario_modelo){
-        Usuario_Dao usuario_dao = new Usuario_Dao();
-        usuario_dao.atualizarUsuario(usuario_modelo);
+        boolean temUsuario = false;
+        ArrayList<Usuario_Modelo> usuarios = new Usuario_Modelo().listarUsuarios();
+        
+        for (int i = 0; i < usuarios.size(); i++){
+            if (usuario_modelo.getCod_usuario() == usuarios.get(i).getCod_usuario()) {
+                Usuario_Dao usuario_dao = new Usuario_Dao();
+                usuario_dao.atualizarUsuario(usuario_modelo);
+                temUsuario = true;
+            } 
+        }  
+        
+        if (temUsuario == false){
+            JOptionPane.showMessageDialog(null, "Usuário não pôde ser atualizado pois não existe. Por favor, crie um usuário antes de atualiza-lo.");
+        }
+        
     }
     
     // Chama método em Usuario_Dao que Deleta usuário no banco de dados

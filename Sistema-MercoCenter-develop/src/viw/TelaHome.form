@@ -95,7 +95,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="cc" green="33" red="0" type="rgb"/>
+                  <Color PropertyName="color" blue="5a" green="8" red="0" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
@@ -141,7 +141,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblInformacao1" max="32767" attributes="0"/>
-                              <Component id="lblInformacao" alignment="1" max="32767" attributes="0"/>
+                              <Component id="lblInformacao" alignment="1" pref="418" max="32767" attributes="0"/>
                               <Component id="lblInformacao4" alignment="1" max="32767" attributes="0"/>
                               <Component id="lblInformacao2" alignment="1" max="32767" attributes="0"/>
                               <Component id="lblInformacao3" alignment="1" max="32767" attributes="0"/>
@@ -232,6 +232,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -370,7 +375,7 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                 <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="cc" green="33" red="0" type="rgb"/>
+                  <Color PropertyName="color" blue="5a" green="8" red="0" type="rgb"/>
                 </LineBorder>
               </Border>
             </Property>
