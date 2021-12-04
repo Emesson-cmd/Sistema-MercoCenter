@@ -152,7 +152,7 @@ public class TelaAjuda extends javax.swing.JInternalFrame {
 
         jLabel18.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("T estador (Jarbas Júnior)");
+        jLabel18.setText("Testador (Jarbas Júnior)");
 
         jLabel19.setFont(new java.awt.Font("Ubuntu", 0, 20)); // NOI18N
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
