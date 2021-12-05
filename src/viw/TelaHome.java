@@ -345,7 +345,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
         definirTexto("Módulo de vendas", 
             "", 
             "Nessa seção será possível realizar os registros de vendas do caixa,", 
-            "gerar uma nota fiscal e fazer buscas por notas fiscais específicas no sistema.", 
+            "gerar nota fiscal e fazer buscas por notas fiscais específicas no sistema.", 
             "");
     }//GEN-LAST:event_btnFinanceiroActionPerformed
 
@@ -356,7 +356,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
     private void btnEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEstoqueActionPerformed
         definirTexto("Módulo de estoque", 
             "Nessa seção você poderá gerenciar os produtos disponíveis no estoque.", 
-            "Poderár ver todas as informações específicas de cada produtos assim como adicionar,", 
+            "Poderá ver todas as informações específicas de cada produto assim como adicionar,", 
             "remover e atualizar cada item do estoque. ", 
             "Também nessa seção é possível verificar quais produtos estão com baixa no estoque.");
     }//GEN-LAST:event_btnEstoqueActionPerformed
@@ -369,7 +369,7 @@ public class TelaHome extends javax.swing.JInternalFrame {
         definirTexto("Módulo Administrativo", 
             "Nessa seção você tem a possibilidade de gerenciar os relatórios de venda.", 
             "Escolha o ano, o mês e gere seu relatório. Você verá o nome do produto,", 
-            "a quantidade vendida e o gaturalmente geral. É possível ver também o faturamento total,", 
+            "a quantidade vendida e o faturalmente geral. É possível ver também o faturamento total,", 
             "entre outras informações.");
     }//GEN-LAST:event_btnAdministrativoActionPerformed
 

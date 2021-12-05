@@ -305,7 +305,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Cancelar compras"/>
+                <Property name="text" type="java.lang.String" value="Cancelar compra"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarCarrinhoActionPerformed"/>
@@ -323,9 +323,10 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblDinheiroEntadaTitulo" max="32767" attributes="0"/>
                               <Component id="lblTroco" alignment="1" max="32767" attributes="0"/>
                               <Component id="lblQtdTitulo" max="32767" attributes="0"/>
                               <Component id="lbVt" alignment="0" max="32767" attributes="0"/>
@@ -343,16 +344,18 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAjuda" min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="lblValorTotalTitulo" min="-2" pref="106" max="-2" attributes="0"/>
-                              <Component id="lblDinheiroEntadaTitulo" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
-                              <Component id="txtProdutoTitulo" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="txtProdutoTitulo" min="-2" pref="77" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="txtValEn" max="32767" attributes="0"/>
                                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   <Component id="btnCalcularTroco" min="-2" pref="175" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="lblValorTotalTitulo" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -408,7 +411,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Troco"/>
+                    <Property name="text" type="java.lang.String" value="Troco (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTroco">
@@ -530,7 +533,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Dinheiro Entrada"/>
+                    <Property name="text" type="java.lang.String" value="Dinheiro Entrada (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblQtdTitulo">
@@ -570,7 +573,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Valor Total"/>
+                    <Property name="text" type="java.lang.String" value="Valor Total (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblValorProdutoTitulo">
@@ -581,7 +584,7 @@
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="5a" green="8" red="0" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Valor"/>
+                    <Property name="text" type="java.lang.String" value="Valor (R$)"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cmbListaProdutos">
