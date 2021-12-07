@@ -609,6 +609,7 @@ public class TelaLogin extends javax.swing.JFrame {
             int user = Integer.parseInt(txtRedefinirUser.getText());
             String senha = txtRedefinirSenha.getText();
 
+
             boolean result = new Usuario_controle().RedefinirUsuario(user, senha, id);
             if (result == true) {
                 JOptionPane.showMessageDialog(null, "Dados de usuario e senha alterados com sucesso");
