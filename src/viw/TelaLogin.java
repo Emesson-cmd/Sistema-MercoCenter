@@ -8,6 +8,7 @@ package viw;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
 import controle.Usuario_controle;
+import java.awt.Toolkit;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import model.Usuario_Modelo;
@@ -23,10 +24,10 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage("src/viw/img/logo-mercocenter-128px.png"));
         addKeyListener(new KeyAdapter() {
             public void keyPressed(KeyEvent e) {
                 System.out.println("ok");
-   
             }
         });
     }
@@ -533,7 +534,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo.");
                     }
                     break;
 
@@ -544,7 +545,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menCaixa.setEnabled(true);
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo.");
                     }
                     break;
 
@@ -555,7 +556,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menEstoque.setEnabled(true);
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo.");
                     }
                     break;
 
@@ -569,7 +570,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         TelaPrincipal.menRelatorio.setEnabled(true);
 
                     } else {
-                        JOptionPane.showMessageDialog(null, "Usuario esta inativo");
+                        JOptionPane.showMessageDialog(null, "Usuario esta inativo.");
                     }
                     break;
                 case "servidor":
@@ -579,12 +580,12 @@ public class TelaLogin extends javax.swing.JFrame {
 
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! loaaaa");
+                    JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválido(s). Tente Novamente! loaaaa");
                     break;
 
             }
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente! em tela log");
+            JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválido(s). Tente Novamente! em tela log");
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Usuário deve ser um valor numerico e não dever ter campos vazios");
@@ -635,7 +636,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 CardLayout card = (CardLayout) root.getLayout();
                 card.show(root, "Redefinir");
             } else if (new Usuario_controle().efetuarLoginAdm(user, txtAdmSenha.getText()) == false) {
-                JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválidos(s). Tente Novamente!");
+                JOptionPane.showMessageDialog(null, "Usuário e/ou Senha inválido(s). Tente Novamente!");
 
             } else {
             }
