@@ -12,7 +12,7 @@ Para fazer a instalação do Sistema MercoCenter você deve seguir os passos a s
 
 ## Download e extração da pasta do projeto e geração do executável do sistema
 
-- Acesse o GitHub para fazer o download da pasta do sistema. Link para download:https://github.com/Emesson-cmd/Sistema-MercoCenter/archive/refs/heads/develop.zip
+- Acesse o GitHub para fazer o download da pasta do sistema. Link para download: https://github.com/Emesson-cmd/Sistema-MercoCenter/archive/refs/heads/develop.zip
 - O arquivo será baixado como ZIP. Faça a extração dele.
 - Após extrair o arquivo, abra a pasta do projeto na sua IDE de preferência (fizemos esse tutorial com base da IDE NetBeans 8,2).
 - Uma vez que seu projeto está aberto na IDE, clique com o botão direito do mouse no projeto “Mercado(ofc)-Ulisses”, que se encontra na aba “Projetos” e selecione a opção “Limpar e Construir".
