@@ -2,11 +2,11 @@
 
 #### Palavras-chave
 
-Arquivo Jar
-Instalar Java
-Instalar servidor apache2
-Instalar servidor de banco de dados
-Importar banco de dados
+- Arquivo Jar
+- Instalar Java
+- Instalar servidor apache2
+- Instalar servidor de banco de dados
+- Importar banco de dados
 
 Para fazer a instalação do Sistema MercoCenter você deve seguir os passos a seguir:
 
