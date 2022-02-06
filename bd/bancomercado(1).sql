@@ -233,6 +233,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`cod_usuario`, `senha`, `permissao`, `funcionario_cod_funcionario`, `nome`, `ativo`) VALUES
+(1234, '1234', 'adm', 0, 'Usuário Padrão', 1),
 (6666, '3532', 'adm', 0, 'Alan', 1),
 (9934, '2122', 'caixa', 5, 'José', 1),
 (2523, '3532', 'almoxarife', 4, 'Emanuel', 1),
