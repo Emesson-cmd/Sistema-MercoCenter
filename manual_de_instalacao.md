@@ -14,7 +14,7 @@ Para fazer a instalação do Sistema MercoCenter você deve seguir os passos a s
 
 - Acesse o GitHub para fazer o download da pasta do sistema. Link para download: https://github.com/Emesson-cmd/Sistema-MercoCenter/archive/refs/heads/develop.zip
 - O arquivo será baixado como ZIP. Faça a extração dele.
-- Após extrair o arquivo, abra a pasta do projeto na sua IDE de preferência (fizemos esse tutorial com base da IDE NetBeans 8,2).
+- Após extrair o arquivo, abra a pasta do projeto na sua IDE de preferência (fizemos esse tutorial com base da IDE NetBeans 8.2).
 - Uma vez que seu projeto está aberto na IDE, clique com o botão direito do mouse no projeto “Mercado(ofc)-Ulisses”, que se encontra na aba “Projetos” e selecione a opção “Limpar e Construir".
 - Após essa ação, uma pasta chamada “dist” será criada na raíz da pasta que você extraiu anteriormente. 
 
@@ -32,6 +32,8 @@ Após o download e instalação, certifique-se que o XAMPP esteja com os serviç
 ## Importação do banco de dados
 
 Agora chegou a hora de importar o banco de dados. Abra o PhpMyAdmin (para isso basta clicar em “admin” do MySQL no Painel Administrativo do XAMPP). Após iniciar o PhpMyAdmin, crie uma base de banco de dados chamada “bancomercado”. Nela, faça a importação do banco de dados “bancomercado(1).sql” que está na pasta bd da pasta que foi extraída inicialmente.
+
+- Obs.: Para realiza login utilize as credenciais do Usuário Padrão (Código de Login: 1234. Senha: 1234).
 
 ## Conclusão
 
